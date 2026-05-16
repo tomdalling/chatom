@@ -1,10 +1,3 @@
-# PHONETICS:
-# a = A-pple
-# e = E-nd
-# i = EA-gle
-# o = O-n
-# u = wh-O
-
 big [adjective]
 smal [adjective] small
 person [noun] person, individual human
@@ -27,6 +20,7 @@ nouz [noun] nose
 maud [noun] mouth
 tut [noun] tooth
 tan [noun] tongue, anatomical
+mi [pronoun] I/me, first person singular pronoun
 
 # TODO: check/fix spelling
 claw [noun] claw
@@ -68,7 +62,6 @@ ash [noun] ashes
 name [noun]
 
 # TODO: incorporate
-#I [pronoun] first person singular pronoun
 #you [pronoun] second person singular pronoun
 #we [pronoun]
 #this [pronoun]
