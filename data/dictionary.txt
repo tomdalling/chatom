@@ -1,0 +1,110 @@
+# PHONETICS:
+# a = A-pple
+# e = E-nd
+# i = EA-gle
+# o = O-n
+# u = wh-O
+
+big [adjective]
+smal [adjective] small
+person [noun] person, individual human
+fis [noun] fish
+bird [noun] bird
+dog [noun] dog
+tri [noun] tree
+blud [noun] blood
+boun [noun] bone
+gris [noun] grease, fat, organic substance
+eg [noun] egg
+horn [noun] of bull etc.
+teil [noun] tail
+feder [noun] fether, large, not down
+her [noun] hair, on head of humans
+hed [noun] head, anatomic
+ear [noun] ear
+ai [noun] eye
+nouz [noun] nose
+maud [noun] mouth
+tut [noun] tooth
+tan [noun] tongue, anatomical
+
+# TODO: check/fix spelling
+claw [noun] claw
+foot [noun] foot, not leg
+knee [noun] knee
+hand [noun] hand
+belly [noun] belly
+heart [noun] heart
+liver [noun] liver
+drink [verb] drink
+eat [verb] eat 
+bite [verb] bite 
+see [verb] see 
+hear [verb] hear 
+know [verb] know, facts
+sleep [verb] sleep 
+die [verb] die 
+kill [verb] kill 
+swim [verb] swim 
+fly [verb] fly 
+walk [verb] walk 
+come [verb] come 
+lie [verb] lie 
+sit [verb] sit 
+stand [verb] stand 
+give [verb] give 
+say [verb] say 
+sun [noun] sun 
+moon [noun] moon 
+star [noun] star 
+water [noun] water 
+stone [noun] stone 
+sand [noun] sand 
+earth [noun] soil
+cloud [noun] not fog
+smoke [noun] of fire
+fire [noun]
+ash [noun] ashes
+name [noun]
+
+# TODO: incorporate
+#I [pronoun] first person singular pronoun
+#you [pronoun] second person singular pronoun
+#we [pronoun]
+#this [pronoun]
+#that [pronoun]
+#who? (“?” not 1971)
+#what? (“?” not 1971)
+#not [adverb]
+#all (of a number)
+#many [determiner]
+#one
+#two
+#long (not wide)
+#woman
+#man (adult male human)
+#louse
+#leaf (botanics)
+#root (botanics)
+#bark (of tree)
+#skin (1952: person’s)
+#flesh (1952: meat, flesh)
+#neck (not nape)
+#breast
+#rain (noun, 1952: verb)
+#burn (verb intransitive)
+#path (1952: road, trail; not street)
+#mountain (not hill)
+#red (color)
+#green (color)
+#yellow (color)
+#white (color)
+#black (color)
+#night
+#hot (adjective; 1952: warm, of weather)
+#cold (of weather)
+#full†
+#new
+#good
+#round (not 1952)†
+#dry (substance)
