@@ -1,5 +1,5 @@
 ---
-status: done
+status: done_done
 ---
 
 Add dictionary functionality to the CLI tool. The canonical source of data for
