@@ -1,26 +1,55 @@
+# Spelling Rulez
+# - This is a phonetic alphabet. Knowing how a word is spelled tells you exactly how it's pronounced.
+# - No 'c'. Hard 'c' -> 'k'. Soft 'c' -> 's'.
+# - No 'y'. All 'y' -> 'i'.
+# - No 'w'. All 'w' -> 'u'.
+# - No double letters. "kill" -> "kil"
+# - Graphemes are all single letters. No multi-letter sounds.
+#   - "th" -> 'd'
+#   - "sh" -> 's'
+#   - "ph" -> 'f'
+# - No weird extra vowels. "head" -> "hed"
+# - TODO: get rid of 'd' and replace with 't'?
+
+ai [noun] eye
+bait [verb] bite 
+bi [verb] is, the copula
+berd [noun] bird
 big [adjective]
-smal [adjective] small
-person [noun] person, individual human
-fis [noun] fish
-bird [noun] bird
-dog [noun] dog
-tri [noun] tree
 blud [noun] blood
 boun [noun] bone
-gris [noun] grease, fat, organic substance
-eg [noun] egg
-horn [noun] of bull etc.
-teil [noun] tail
-feder [noun] fether, large, not down
-her [noun] hair, on head of humans
-hed [noun] head, anatomic
+dog [noun] dog
 ear [noun] ear
-ai [noun] eye
-nouz [noun] nose
+eg [noun] egg
+faia [noun] fire
+feder [noun] fether, large, not down
+fis [noun] fish
+gris [noun] grease, fat, organic substance
+hear [verb] hear 
+hed [noun] head, anatomic
+her [noun] hair, on head of humans
+horn [noun] of bull etc.
+it [verb] eat 
+kil [verb] kill 
 maud [noun] mouth
-tut [noun] tooth
-tan [noun] tongue, anatomical
 mi [pronoun] I/me, first person singular pronoun
+mun [noun] moon 
+nouz [noun] nose
+person [noun] person, individual human
+sai [verb] say 
+san [noun] sun 
+si [verb] see 
+sit [verb] sit 
+slip [verb] sleep 
+smol [adjective] small
+sta [noun] star 
+suim [verb] swim 
+tan [noun] tongue, anatomical
+teil [noun] tail
+tri [noun] tree
+tud [noun] tooth
+uak [verb] walk 
+uata [noun] water 
 
 # TODO: check/fix spelling
 claw [noun] claw
@@ -31,35 +60,20 @@ belly [noun] belly
 heart [noun] heart
 liver [noun] liver
 drink [verb] drink
-eat [verb] eat 
-bite [verb] bite 
-see [verb] see 
-hear [verb] hear 
 know [verb] know, facts
-sleep [verb] sleep 
 die [verb] die 
-kill [verb] kill 
-swim [verb] swim 
 fly [verb] fly 
-walk [verb] walk 
 come [verb] come 
-lie [verb] lie 
-sit [verb] sit 
+lie [verb] lie, as in lie down
 stand [verb] stand 
 give [verb] give 
-say [verb] say 
-sun [noun] sun 
-moon [noun] moon 
-star [noun] star 
-water [noun] water 
 stone [noun] stone 
 sand [noun] sand 
 earth [noun] soil
 cloud [noun] not fog
 smoke [noun] of fire
-fire [noun]
 ash [noun] ashes
-name [noun]
+name [noun] name
 
 # TODO: incorporate
 #you [pronoun] second person singular pronoun
