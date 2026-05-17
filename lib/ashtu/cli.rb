@@ -11,6 +11,7 @@ module Ashtu
       case command
       when "lookup"           then lookup(rest)
       when "search"           then search(rest)
+      when "list"             then list(rest)
       when "-h", "--help"     then help
       else                         help
       end
@@ -40,9 +41,21 @@ module Ashtu
       @dictionary.search(args.first).each { puts format_entry(_1) }
     end
 
+    def list(args)
+      if args.first == "-h" || args.first == "--help"
+        puts "Usage: ashtu list [--pos <part-of-speech>]"
+        puts "List all dictionary entries, optionally filtered by part of speech."
+        return
+      end
+      pos = args[args.index("--pos") + 1] if args.include?("--pos")
+      @dictionary.list(pos: pos).each { puts format_entry(_1) }
+    end
+
     def format_entry(entry)
       ipa = IPA.call(entry.word)
       "#{entry.word} [#{entry.part_of_speech}] /#{ipa}/ #{entry.definition}"
+    rescue KeyError
+      "#{entry.word} [#{entry.part_of_speech}] #{entry.definition}"
     end
 
     def help
@@ -50,8 +63,9 @@ module Ashtu
         Usage: ashtu <command> [args]
 
         Commands:
-          lookup <word>   Look up an Ashtu word
-          search <term>   Search for Ashtu words by English meaning
+          lookup <word>          Look up an Ashtu word
+          search <term>          Search for Ashtu words by English meaning
+          list [--pos <pos>]     List all dictionary entries
       HELP
     end
   end

@@ -41,6 +41,34 @@ RSpec.describe Ashtu::CLI do
       end
     end
 
+    describe "list" do
+      let(:noun_entry) { Ashtu::Dictionary::Entry.new(word: "dog", part_of_speech: "noun", definition: "dog") }
+      let(:verb_entry) { Ashtu::Dictionary::Entry.new(word: "si", part_of_speech: "verb", definition: "see") }
+
+      it "prints all entries when called with no args" do
+        allow(dictionary).to receive(:list).with(pos: nil).and_return([noun_entry, verb_entry])
+        expect { subject.run(["list"]) }.to output("dog [noun] /dog/ dog\nsi [verb] /si/ see\n").to_stdout
+      end
+
+      it "prints only matching entries when --pos is given" do
+        allow(dictionary).to receive(:list).with(pos: "noun").and_return([noun_entry])
+        expect { subject.run(["list", "--pos", "noun"]) }.to output("dog [noun] /dog/ dog\n").to_stdout
+      end
+
+      it "prints nothing for an unknown pos" do
+        allow(dictionary).to receive(:list).with(pos: "unknown").and_return([])
+        expect { subject.run(["list", "--pos", "unknown"]) }.to output("").to_stdout
+      end
+
+      it "prints usage with -h" do
+        expect { subject.run(["list", "-h"]) }.to output(/Usage: ashtu list/).to_stdout
+      end
+
+      it "prints usage with --help" do
+        expect { subject.run(["list", "--help"]) }.to output(/Usage: ashtu list/).to_stdout
+      end
+    end
+
     describe "search" do
       it "prints matching entries" do
         entries = [Ashtu::Dictionary::Entry.new(word: "faia", part_of_speech: "noun", definition: "fire")]

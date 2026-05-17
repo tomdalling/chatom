@@ -18,6 +18,10 @@ module Ashtu
       @entries.select { _1.definition.include?(query) }
     end
 
+    def list(pos: nil)
+      pos ? @entries.select { _1.part_of_speech == pos } : @entries
+    end
+
     private
 
     def parse(path)

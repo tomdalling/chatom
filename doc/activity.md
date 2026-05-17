@@ -1,3 +1,16 @@
+## 2026-05-17 (list_subcommand)
+
+Completed `list_subcommand` task (status: ready → done_done).
+
+- Added `Dictionary#list(pos: nil)` in `lib/ashtu/dictionary.rb`.
+- Added `list` case in `CLI#run` and private `list(args)` method with `--pos` flag and `-h`/`--help` support in `lib/ashtu/cli.rb`.
+- Added `rescue KeyError` in `format_entry` to gracefully handle TODO-section words with unmapped IPA characters.
+- Updated help text to include `list` command.
+- Added 3 tests for `Dictionary#list` in `spec/ashtu/dictionary_spec.rb` and 5 tests for CLI `list` in `spec/ashtu/cli_spec.rb`.
+- Ran `bundle exec rspec`: 28 examples, 0 failures.
+- Manually verified `./bin/ashtu list --pos verb`, `./bin/ashtu list -h`.
+- No issues encountered.
+
 ## 2026-05-17 (ipa_cli_display)
 
 Completed `ipa_cli_display` task (status: ready → done_done).

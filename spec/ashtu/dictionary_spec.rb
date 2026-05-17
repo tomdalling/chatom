@@ -27,4 +27,23 @@ RSpec.describe Ashtu::Dictionary do
       expect(subject.search("xyzxyz")).to be_empty
     end
   end
+
+  describe "#list" do
+    it "returns all entries when no pos filter given" do
+      results = subject.list
+      expect(results).not_to be_empty
+      expect(results).to include(have_attributes(word: "dog"), have_attributes(word: "si"))
+    end
+
+    it "returns only entries matching the given pos" do
+      results = subject.list(pos: "verb")
+      expect(results).to all(have_attributes(part_of_speech: "verb"))
+      expect(results).to include(have_attributes(word: "si"))
+      expect(results).not_to include(have_attributes(word: "dog"))
+    end
+
+    it "returns an empty array for an unknown pos" do
+      expect(subject.list(pos: "unknown_pos")).to be_empty
+    end
+  end
 end
