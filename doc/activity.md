@@ -1,3 +1,15 @@
+## 2026-05-17 (text_parser)
+
+Completed `text_parser` task (status: ready → done_done).
+
+- Created `lib/ashtu/parser.rb` with `Ashtu::Parser.parse(text, dictionary:)` → `AST::Clause`.
+- Validates: exactly 3 tokens, all words known, SVO part-of-speech order (noun/pronoun, verb, noun/pronoun).
+- Added `parse` case in `CLI#run` and private `parse_sentence(args)` method with `-h`/`--help` support in `lib/ashtu/cli.rb`.
+- Created `spec/ashtu/parser_spec.rb` with 8 tests covering happy path, unknown words, wrong token count, and wrong POS order.
+- Ran `bundle exec rspec`: 36 examples, 0 failures.
+- Manually verified: `./bin/ashtu parse "mi si dog"` → structured output; unknown word, wrong count, and `-h` all behave correctly.
+- No issues encountered.
+
 ## 2026-05-17 (list_subcommand)
 
 Completed `list_subcommand` task (status: ready → done_done).
