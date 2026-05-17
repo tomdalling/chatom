@@ -1,3 +1,13 @@
+## 2026-05-17 (ipa_complete_mapping)
+
+Completed `ipa_complete_mapping` task (status: ready → done_done).
+
+- Audited `data/dictionary.txt` for all characters in non-comment, non-TODO word column.
+- Added 10 missing characters to `CHARACTER_LOOKUP` in `lib/ashtu/ipa.rb`: `a`, `f`, `h`, `m`, `n`, `p`, `s`, `t`, `u`, `z`.
+- Added 2 new tests in `spec/ashtu/ipa_spec.rb`: vowel mapping check and all-dictionary-chars smoke test.
+- Ran `bundle exec rspec`: 20 examples, 0 failures.
+- No issues encountered.
+
 ## 2026-05-17
 
 Implemented `help_option` task (status: ready → done_done).
