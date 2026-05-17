@@ -4,7 +4,7 @@ module Ashtu
       root String
     end
 
-    def to_text = root
+    def to_text = root.capitalize
 
     def self.from_xml_element(element)
       new(root: AST.parse_element_text(element))

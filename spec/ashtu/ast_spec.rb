@@ -23,7 +23,7 @@ RSpec.describe Ashtu::AST, '#to_text' do
             </Predicate>
           </Clause>
         AST
-      ).to eq("dog kil bird")
+      ).to eq("Dog kil Bird")
     end
   end
 
