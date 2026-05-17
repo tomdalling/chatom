@@ -2,23 +2,55 @@
 
 module Ashtu
   class CLI
+    def initialize(dictionary: Dictionary.new)
+      @dictionary = dictionary
+    end
+
     def run(args = ARGV)
-      options = parse_options(args)
-      puts "Hello, world!"
+      command, *rest = args
+      case command
+      when "lookup" then lookup(rest)
+      when "search" then search(rest)
+      else               help
+      end
     end
 
     private
 
-    def parse_options(args)
-      options = {}
-      OptionParser.new do |parser|
-        parser.banner = "Usage: ashtu [options]"
-        parser.on("-h", "--help", "Print help") do
-          puts parser
-          exit
-        end
-      end.parse!(args)
-      options
+    def lookup(args)
+      word = args.first
+      if word.nil?
+        puts "Usage: ashtu lookup <word>"
+        return
+      end
+      if (entry = @dictionary.lookup(word))
+        puts format_entry(entry)
+      else
+        puts "Word not found: #{word}"
+      end
+    end
+
+    def search(args)
+      query = args.first
+      if query.nil?
+        puts "Usage: ashtu search <term>"
+        return
+      end
+      @dictionary.search(query).each { puts format_entry(_1) }
+    end
+
+    def format_entry(entry)
+      "#{entry.word} [#{entry.part_of_speech}] #{entry.definition}"
+    end
+
+    def help
+      puts <<~HELP
+        Usage: ashtu <command> [args]
+
+        Commands:
+          lookup <word>   Look up an Ashtu word
+          search <term>   Search for Ashtu words by English meaning
+      HELP
     end
   end
 end
