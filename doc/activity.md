@@ -1,3 +1,15 @@
+## 2026-05-17 (grammar_intransitive)
+
+Completed `grammar_intransitive` task (status: ready → done).
+
+- Updated `AST::VerbPhrase` in `lib/ashtu/ast/verb_phrase.rb`: made `direct_object` optional with `Either(AST::NounPhrase, nil), default: nil`; updated `to_text` to omit object when nil; updated `from_xml_element` to handle absent `DirectObject` element.
+- Updated `lib/ashtu/parser.rb`: replaced 3-token requirement with 2–3 token range; `direct_object` is nil for intransitive sentences.
+- Updated `lib/ashtu/cli.rb`: `parse_sentence` now omits the `DirectObject:` line when there is no object.
+- Updated `spec/ashtu/parser_spec.rb`: replaced "raises when not exactly 3 tokens" test with intransitive parse test and 1-token error test; updated error message regex to `/Expected 2 or 3 words/`.
+- Ran `bundle exec rspec`: 37 examples, 0 failures.
+- Manually verified: `./bin/ashtu parse "mi slip"` → Clause with no DirectObject; `./bin/ashtu parse "mi si dog"` → unchanged; `./bin/ashtu parse "mi"` → error.
+- No issues encountered.
+
 ## 2026-05-17 (text_parser)
 
 Completed `text_parser` task (status: ready → done_done).

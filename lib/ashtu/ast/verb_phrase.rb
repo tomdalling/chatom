@@ -4,15 +4,18 @@ module Ashtu
   class AST::VerbPhrase
     value_semantics do
       head AST::Verb
-      direct_object AST::NounPhrase
+      direct_object Either(AST::NounPhrase, nil), default: nil
     end
 
-    def to_text = head.to_text + " " + direct_object.to_text
+    def to_text
+      direct_object ? "#{head.to_text} #{direct_object.to_text}" : head.to_text
+    end
 
     def self.from_xml_element(element)
+      do_elements = element.nodes.select { _1.is_a?(Ox::Element) && _1.value == 'DirectObject' }
       new(
         head: AST.parse_child_element(element, 'Verb'),
-        direct_object: AST.parse_child_element(element, 'DirectObject', AST::NounPhrase),
+        direct_object: do_elements.empty? ? nil : AST.parse_element(do_elements.first, AST::NounPhrase),
       )
     end
   end

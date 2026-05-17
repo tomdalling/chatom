@@ -20,16 +20,24 @@ RSpec.describe Ashtu::Parser do
       }.to raise_error(ArgumentError, /Unknown word: xyz/)
     end
 
-    it "raises when not exactly 3 tokens" do
+    it "parses an intransitive sentence (subject + verb only)" do
+      result = subject.parse("mi slip", dictionary: dictionary)
+      expect(result).to be_a(Ashtu::AST::Clause)
+      expect(result.subject.head.root).to eq("mi")
+      expect(result.predicate.head.root).to eq("slip")
+      expect(result.predicate.direct_object).to be_nil
+    end
+
+    it "raises when only 1 token" do
       expect {
-        subject.parse("mi si", dictionary: dictionary)
-      }.to raise_error(ArgumentError, /Expected exactly 3 words/)
+        subject.parse("mi", dictionary: dictionary)
+      }.to raise_error(ArgumentError, /Expected 2 or 3 words/)
     end
 
     it "raises when too many tokens" do
       expect {
         subject.parse("mi si dog dog", dictionary: dictionary)
-      }.to raise_error(ArgumentError, /Expected exactly 3 words/)
+      }.to raise_error(ArgumentError, /Expected 2 or 3 words/)
     end
 
     it "raises when subject is not a noun or pronoun" do

@@ -45,7 +45,7 @@ module Ashtu
     def parse_sentence(args)
       if args.first.nil? || args.first == "-h" || args.first == "--help"
         puts "Usage: ashtu parse \"<sentence>\""
-        puts "Parse an Ashtu sentence (subject verb object) into a structured representation."
+        puts "Parse an Ashtu sentence (subject verb [object]) into a structured representation."
         return
       end
       tokens = args.first.split
@@ -55,7 +55,7 @@ module Ashtu
       puts "  Subject: #{s.word} (#{s.part_of_speech})"
       puts "  Predicate:"
       puts "    Verb: #{v.word} (#{v.part_of_speech})"
-      puts "    DirectObject: #{o.word} (#{o.part_of_speech})"
+      puts "    DirectObject: #{o.word} (#{o.part_of_speech})" if o
     rescue ArgumentError => e
       puts "Error: #{e.message}"
     end
