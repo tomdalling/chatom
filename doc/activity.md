@@ -1,6 +1,6 @@
 ## 2026-05-17
 
-Implemented `help_option` task (status: ready → done).
+Implemented `help_option` task (status: ready → done_done).
 
 - Updated `lib/ashtu/cli.rb`: base `run` now handles `-h`/`--help` flags; `lookup` and `search` subcommands each show their own usage when called with `-h`, `--help`, or no arguments.
 - Added 7 new tests in `spec/ashtu/cli_spec.rb` covering `-h`/`--help` for base, lookup, and search.

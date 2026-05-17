@@ -1,5 +1,5 @@
 ---
-status: done
+status: done_done
 ---
 
 Make sure every CLI subcommand, and the base cli with no subcommand, all take
