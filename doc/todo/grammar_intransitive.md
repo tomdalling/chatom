@@ -1,5 +1,5 @@
 ---
-status: done
+status: done_done
 ---
 
 Allow intransitive sentences — subject + verb only, no object required.
