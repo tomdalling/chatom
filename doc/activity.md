@@ -1,3 +1,13 @@
+## 2026-05-17 (ipa_cli_display)
+
+Completed `ipa_cli_display` task (status: ready → done_done).
+
+- Updated `CLI#format_entry` in `lib/ashtu/cli.rb` to call `IPA.call(entry.word)` and include `/ipa/` between POS tag and definition.
+- Updated 2 tests in `spec/ashtu/cli_spec.rb` to expect the new format (lookup "dog" and search "fire").
+- Ran `bundle exec rspec`: 20 examples, 0 failures.
+- Manually verified: `./bin/ashtu lookup dog` → `dog [noun] /dog/ dog`; `./bin/ashtu search fire` → `faia [noun] /faia/ fire`.
+- No issues encountered.
+
 ## 2026-05-17 (ipa_complete_mapping)
 
 Completed `ipa_complete_mapping` task (status: ready → done_done).

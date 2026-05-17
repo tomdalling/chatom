@@ -24,7 +24,7 @@ RSpec.describe Ashtu::CLI do
 
       it "prints the entry when found" do
         allow(dictionary).to receive(:lookup).with("dog").and_return(entry)
-        expect { subject.run(["lookup", "dog"]) }.to output("dog [noun] dog\n").to_stdout
+        expect { subject.run(["lookup", "dog"]) }.to output("dog [noun] /dog/ dog\n").to_stdout
       end
 
       it "prints a message when not found" do
@@ -45,7 +45,7 @@ RSpec.describe Ashtu::CLI do
       it "prints matching entries" do
         entries = [Ashtu::Dictionary::Entry.new(word: "faia", part_of_speech: "noun", definition: "fire")]
         allow(dictionary).to receive(:search).with("fire").and_return(entries)
-        expect { subject.run(["search", "fire"]) }.to output("faia [noun] fire\n").to_stdout
+        expect { subject.run(["search", "fire"]) }.to output("faia [noun] /faia/ fire\n").to_stdout
       end
 
       it "prints nothing when no matches" do

@@ -41,7 +41,8 @@ module Ashtu
     end
 
     def format_entry(entry)
-      "#{entry.word} [#{entry.part_of_speech}] #{entry.definition}"
+      ipa = IPA.call(entry.word)
+      "#{entry.word} [#{entry.part_of_speech}] /#{ipa}/ #{entry.definition}"
     end
 
     def help
