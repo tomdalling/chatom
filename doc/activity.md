@@ -1,3 +1,14 @@
+## 2026-05-17 (dictionary_fix_todo_words)
+
+Completed `dictionary_fix_todo_words` task (status: ready → done_done).
+
+- Rewrote `data/dictionary.txt`: removed the `# TODO: check/fix spelling` block; applied Ashtu spelling rules to all 23 words (e.g. claw → klo, smoke → smok, ash → as, die → dai, fly → flai, come → kum, etc.) and merged them alphabetically into the main dictionary section. Preserved all English definitions.
+- Added `"v" => "v"` to `CHARACTER_LOOKUP` in `lib/ashtu/ipa.rb` to support `liver` and `giv`.
+- Updated `spec/ashtu/dictionary_spec.rb`: changed `word: "smoke"` to `word: "smok"` in the search test.
+- Ran `bundle exec rspec`: 37 examples, 0 failures.
+- Manually verified: `./bin/ashtu lookup as` → `as [noun] /as/ ashes`; `./bin/ashtu list` → all entries render with correct IPA.
+- No issues encountered.
+
 ## 2026-05-17 (grammar_intransitive)
 
 Completed `grammar_intransitive` task (status: ready → done).

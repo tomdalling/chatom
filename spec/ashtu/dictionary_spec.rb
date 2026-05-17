@@ -19,7 +19,7 @@ RSpec.describe Ashtu::Dictionary do
       results = subject.search("fire")
       expect(results).to contain_exactly(
         have_attributes(word: "faia"),
-        have_attributes(word: "smoke")
+        have_attributes(word: "smok")
       )
     end
 

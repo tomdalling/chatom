@@ -29,6 +29,7 @@ module Ashtu::IPA
       "s" => "s",
       "t" => "t",
       "u" => "u",
+      "v" => "v",
       "z" => "z",
     }
 end
