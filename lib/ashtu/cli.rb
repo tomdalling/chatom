@@ -9,34 +9,35 @@ module Ashtu
     def run(args = ARGV)
       command, *rest = args
       case command
-      when "lookup" then lookup(rest)
-      when "search" then search(rest)
-      else               help
+      when "lookup"           then lookup(rest)
+      when "search"           then search(rest)
+      when "-h", "--help"     then help
+      else                         help
       end
     end
 
     private
 
     def lookup(args)
-      word = args.first
-      if word.nil?
+      if args.first.nil? || args.first == "-h" || args.first == "--help"
         puts "Usage: ashtu lookup <word>"
+        puts "Look up an Ashtu word by exact match."
         return
       end
-      if (entry = @dictionary.lookup(word))
+      if (entry = @dictionary.lookup(args.first))
         puts format_entry(entry)
       else
-        puts "Word not found: #{word}"
+        puts "Word not found: #{args.first}"
       end
     end
 
     def search(args)
-      query = args.first
-      if query.nil?
+      if args.first.nil? || args.first == "-h" || args.first == "--help"
         puts "Usage: ashtu search <term>"
+        puts "Search for Ashtu words by English meaning."
         return
       end
-      @dictionary.search(query).each { puts format_entry(_1) }
+      @dictionary.search(args.first).each { puts format_entry(_1) }
     end
 
     def format_entry(entry)
