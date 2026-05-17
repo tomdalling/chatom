@@ -1,3 +1,17 @@
+## 2026-05-17 (grammar_adjectives)
+
+Completed `grammar_adjectives` task (status: ready → done_done).
+
+- Created `lib/ashtu/ast/adjective.rb`: new `AST::Adjective` class with `root String`, `to_text`, and `from_xml_element`.
+- Updated `lib/ashtu/ast/noun_phrase.rb`: added `adjectives ArrayOf(AST::Adjective), default: []`; updated `to_text` to join head and adjectives; updated `from_xml_element` to collect `<Adjective>` child elements.
+- Updated `lib/ashtu/ast.rb`: registered `"Adjective" => "Adjective"` in `ELEMENT_TO_CLASS`.
+- Rewrote `lib/ashtu/parser.rb`: removed fixed 2–3 token constraint; scans left-to-right for first verb; builds subject and object `NounPhrase` with adjectives; validates POS roles at each position.
+- Updated `lib/ashtu/cli.rb`: `parse_sentence` now uses the returned `AST::Clause` directly; added `format_noun_phrase` helper to display head word + adjectives with their POS tags.
+- Rewrote `spec/ashtu/parser_spec.rb`: updated 3 tests whose error messages changed; added 3 new tests for adjective-bearing sentences; total 13 parser tests.
+- Ran `bundle exec rspec`: 41 examples, 0 failures.
+- Manually verified: `./bin/ashtu parse "mi si dog smol"` → `DirectObject: dog smol (noun, adjective)`; `./bin/ashtu parse "berd smol flai"` → `Subject: berd smol (noun, adjective)`, intransitive; simple sentences unchanged.
+- No issues encountered.
+
 ## 2026-05-17 (dictionary_fix_todo_words)
 
 Completed `dictionary_fix_todo_words` task (status: ready → done_done).

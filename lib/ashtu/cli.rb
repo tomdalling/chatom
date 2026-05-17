@@ -48,14 +48,12 @@ module Ashtu
         puts "Parse an Ashtu sentence (subject verb [object]) into a structured representation."
         return
       end
-      tokens = args.first.split
-      Parser.parse(args.first, dictionary: @dictionary)
-      s, v, o = tokens.map { @dictionary.lookup(_1) }
+      clause = Parser.parse(args.first, dictionary: @dictionary)
       puts "Clause:"
-      puts "  Subject: #{s.word} (#{s.part_of_speech})"
+      puts "  Subject: #{format_noun_phrase(clause.subject)}"
       puts "  Predicate:"
-      puts "    Verb: #{v.word} (#{v.part_of_speech})"
-      puts "    DirectObject: #{o.word} (#{o.part_of_speech})" if o
+      puts "    Verb: #{clause.predicate.head.root} (verb)"
+      puts "    DirectObject: #{format_noun_phrase(clause.predicate.direct_object)}" if clause.predicate.direct_object
     rescue ArgumentError => e
       puts "Error: #{e.message}"
     end
@@ -68,6 +66,13 @@ module Ashtu
       end
       pos = args[args.index("--pos") + 1] if args.include?("--pos")
       @dictionary.list(pos: pos).each { puts format_entry(_1) }
+    end
+
+    def format_noun_phrase(np)
+      head_entry = @dictionary.lookup(np.head.root)
+      words   = [np.head.root] + np.adjectives.map(&:root)
+      pos_tags = [head_entry.part_of_speech] + np.adjectives.map { "adjective" }
+      "#{words.join(' ')} (#{pos_tags.join(', ')})"
     end
 
     def format_entry(entry)

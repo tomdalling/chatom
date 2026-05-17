@@ -11,6 +11,7 @@ module Ashtu
       "DirectObject" => "NounPhrase",
       "Noun"         => "Noun",
       "Verb"         => "Verb",
+      "Adjective"    => "Adjective",
     }.freeze
 
     def parse_xml(xml)
