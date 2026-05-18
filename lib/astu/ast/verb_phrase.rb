@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Ashtu
+module Astu
   class AST::VerbPhrase
     value_semantics do
       head AST::Verb

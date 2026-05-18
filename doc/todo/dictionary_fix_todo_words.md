@@ -7,11 +7,11 @@ Fix the spelling of the ~20 words in the `# TODO: check/fix spelling` section of
 
 ## Why
 
-These words still use English spelling, so `ashtu lookup` won't find them via Ashtu
+These words still use English spelling, so `astu lookup` won't find them via Astu
 spelling, and `IPA.call` will raise on characters not in the IPA map (e.g. `'c'`
 in `"claw"`). The parser also can't use them.
 
-## Ashtu spelling rules (from dictionary.txt header)
+## Astu spelling rules (from dictionary.txt header)
 
 - No `c` — hard c → `k`, soft c → `s`
 - No `y` — → `i`
@@ -22,9 +22,9 @@ in `"claw"`). The parser also can't use them.
 
 ## Words to fix
 
-Apply the rules and pick phonetically faithful Ashtu spellings:
+Apply the rules and pick phonetically faithful Astu spellings:
 
-| English spelling | Suggested Ashtu spelling | Notes |
+| English spelling | Suggested Astu spelling | Notes |
 |---|---|---|
 | claw | klo | 'aw' → 'o' (open-o sound) |
 | foot | fut | 'oo' → 'u' |
@@ -57,14 +57,14 @@ if the phonetics suggest something different.
 1. Remove the `# TODO: check/fix spelling` comment block.
 2. Add each corrected entry to the main dictionary section (alphabetically or
    grouped with related words), following the existing format:
-   `<ashtu_word> [<pos>] <english_definition>`
+   `<astu_word> [<pos>] <english_definition>`
 3. Preserve the existing English definitions.
-4. Run `./bin/ashtu list` to verify all entries parse correctly.
+4. Run `./bin/astu list` to verify all entries parse correctly.
 5. Run the full test suite.
 
 ## Acceptance criteria
 
 - No words remain in a `# TODO: check/fix spelling` section.
-- `./bin/ashtu lookup as` returns the ash entry (or whatever spelling is chosen).
+- `./bin/astu lookup as` returns the ash entry (or whatever spelling is chosen).
 - `IPA.call` does not raise on any main-dictionary word.
 - All tests pass.

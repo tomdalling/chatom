@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Ashtu
+module Astu
   class AST::Verb
     value_semantics do
       root String

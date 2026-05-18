@@ -4,7 +4,7 @@ status: done_done
 
 Add post-nominal adjective support to noun phrases.
 
-In Ashtu, adjectives come AFTER the noun they modify: `"dog smol"` = "small dog".
+In Astu, adjectives come AFTER the noun they modify: `"dog smol"` = "small dog".
 
 ## Prerequisite
 
@@ -13,12 +13,12 @@ in the parser, making it easier to extend to variable-length noun phrases.
 
 ## AST changes
 
-### New file: `lib/ashtu/ast/adjective.rb`
+### New file: `lib/astu/ast/adjective.rb`
 
 Mirror `AST::Noun` / `AST::Verb`:
 
 ```ruby
-module Ashtu
+module Astu
   class AST::Adjective
     value_semantics do
       root String
@@ -29,7 +29,7 @@ module Ashtu
 end
 ```
 
-### `lib/ashtu/ast/noun_phrase.rb`
+### `lib/astu/ast/noun_phrase.rb`
 
 Add an `adjectives` collection (ordered, post-nominal):
 
@@ -47,7 +47,7 @@ end
 Register `"Adjective"` in `AST::ELEMENT_TO_CLASS` and update `from_xml_element`
 to collect all `<Adjective>` child elements inside a `<Subject>` or `<DirectObject>`.
 
-## Parser changes (`lib/ashtu/parser.rb`)
+## Parser changes (`lib/astu/parser.rb`)
 
 The parser must handle variable-length noun phrases. Parsing strategy:
 
@@ -65,9 +65,9 @@ Examples:
 
 ## Acceptance criteria
 
-- `./bin/ashtu parse "mi si dog smol"` shows `DirectObject: dog smol (noun, adjective)`.
-- `./bin/ashtu parse "berd smol flai"` works (intransitive with adjective on subject).
+- `./bin/astu parse "mi si dog smol"` shows `DirectObject: dog smol (noun, adjective)`.
+- `./bin/astu parse "berd smol flai"` works (intransitive with adjective on subject).
 - Existing simple sentences still work unchanged.
-- Unit tests in `spec/ashtu/parser_spec.rb` for each case above.
+- Unit tests in `spec/astu/parser_spec.rb` for each case above.
 - XML-based AST parsing (`AST.parse_xml`) still works for existing XML inputs.
 - All existing tests still pass.

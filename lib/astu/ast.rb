@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Ashtu
+module Astu
   module AST
     extend self
 

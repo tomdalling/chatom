@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Ashtu::AST, '#to_text' do
+RSpec.describe Astu::AST, '#to_text' do
   describe '#to_text' do
     subject do
       ->(ast_xml) do
@@ -46,14 +46,14 @@ RSpec.describe Ashtu::AST, '#to_text' do
           </Clause>
         AST
       ).to eq(
-        Ashtu::AST::Clause.new(
-          subject: Ashtu::AST::NounPhrase.new(
-            head: Ashtu::AST::Noun.new(root: "dog"),
+        Astu::AST::Clause.new(
+          subject: Astu::AST::NounPhrase.new(
+            head: Astu::AST::Noun.new(root: "dog"),
           ),
-          predicate: Ashtu::AST::VerbPhrase.new(
-            head: Ashtu::AST::Verb.new(root: "kil"),
-            direct_object: Ashtu::AST::NounPhrase.new(
-              head: Ashtu::AST::Noun.new(root: "bird"),
+          predicate: Astu::AST::VerbPhrase.new(
+            head: Astu::AST::Verb.new(root: "kil"),
+            direct_object: Astu::AST::NounPhrase.new(
+              head: Astu::AST::Noun.new(root: "bird"),
             ),
           ),
         )

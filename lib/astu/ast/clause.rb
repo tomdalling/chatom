@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Ashtu
+module Astu
   class AST::Clause
     value_semantics do
       subject AST::NounPhrase

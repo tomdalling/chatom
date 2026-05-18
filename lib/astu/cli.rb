@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Ashtu
+module Astu
   class CLI
     def initialize(dictionary: Dictionary.new)
       @dictionary = dictionary
@@ -22,8 +22,8 @@ module Ashtu
 
     def lookup(args)
       if args.first.nil? || args.first == "-h" || args.first == "--help"
-        puts "Usage: ashtu lookup <word>"
-        puts "Look up an Ashtu word by exact match."
+        puts "Usage: astu lookup <word>"
+        puts "Look up an Astu word by exact match."
         return
       end
       if (entry = @dictionary.lookup(args.first))
@@ -35,8 +35,8 @@ module Ashtu
 
     def search(args)
       if args.first.nil? || args.first == "-h" || args.first == "--help"
-        puts "Usage: ashtu search <term>"
-        puts "Search for Ashtu words by English meaning."
+        puts "Usage: astu search <term>"
+        puts "Search for Astu words by English meaning."
         return
       end
       @dictionary.search(args.first).each { puts format_entry(_1) }
@@ -44,8 +44,8 @@ module Ashtu
 
     def parse_sentence(args)
       if args.first.nil? || args.first == "-h" || args.first == "--help"
-        puts "Usage: ashtu parse \"<sentence>\""
-        puts "Parse an Ashtu sentence (subject verb [object]) into a structured representation."
+        puts "Usage: astu parse \"<sentence>\""
+        puts "Parse an Astu sentence (subject verb [object]) into a structured representation."
         return
       end
       clause = Parser.parse(args.first, dictionary: @dictionary)
@@ -57,7 +57,7 @@ module Ashtu
 
     def list(args)
       if args.first == "-h" || args.first == "--help"
-        puts "Usage: ashtu list [--pos <part-of-speech>]"
+        puts "Usage: astu list [--pos <part-of-speech>]"
         puts "List all dictionary entries, optionally filtered by part of speech."
         return
       end
@@ -76,13 +76,13 @@ module Ashtu
 
     def help
       puts <<~HELP
-        Usage: ashtu <command> [args]
+        Usage: astu <command> [args]
 
         Commands:
-          lookup <word>          Look up an Ashtu word
-          search <term>          Search for Ashtu words by English meaning
+          lookup <word>          Look up an Astu word
+          search <term>          Search for Astu words by English meaning
           list [--pos <pos>]     List all dictionary entries
-          parse "<sentence>"     Parse an Ashtu sentence (subject verb object)
+          parse "<sentence>"     Parse an Astu sentence (subject verb object)
       HELP
     end
   end

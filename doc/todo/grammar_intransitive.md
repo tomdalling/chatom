@@ -11,7 +11,7 @@ Allow intransitive sentences — subject + verb only, no object required.
 
 ## Changes required
 
-### `lib/ashtu/ast/verb_phrase.rb`
+### `lib/astu/ast/verb_phrase.rb`
 
 Make `direct_object` optional (nilable):
 
@@ -28,7 +28,7 @@ end
 
 Update `from_xml_element` to not raise when `DirectObject` is absent.
 
-### `lib/ashtu/parser.rb`
+### `lib/astu/parser.rb`
 
 Accept 2- or 3-token sentences (or more once adjectives land):
 
@@ -36,15 +36,15 @@ Accept 2- or 3-token sentences (or more once adjectives land):
 - 3 tokens: `[noun/pronoun, verb, noun/pronoun]` → transitive clause (existing)
 - Otherwise: raise with a clear message
 
-### `lib/ashtu/cli.rb`
+### `lib/astu/cli.rb`
 
 `parse_sentence` currently re-derives subject/verb/object by index after calling
 `Parser.parse` — update to handle the nil direct_object case.
 
 ## Acceptance criteria
 
-- `./bin/ashtu parse "mi slip"` prints a Clause with no DirectObject line.
-- `./bin/ashtu parse "mi si dog"` still works.
+- `./bin/astu parse "mi slip"` prints a Clause with no DirectObject line.
+- `./bin/astu parse "mi si dog"` still works.
 - 1-token and 4+-token inputs still produce a clear error.
-- Unit tests for intransitive parse added in `spec/ashtu/parser_spec.rb`.
+- Unit tests for intransitive parse added in `spec/astu/parser_spec.rb`.
 - All existing tests still pass.

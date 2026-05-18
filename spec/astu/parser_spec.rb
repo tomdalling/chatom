@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-RSpec.describe Ashtu::Parser do
+RSpec.describe Astu::Parser do
   subject { described_class }
 
-  let(:dictionary) { Ashtu::Dictionary.new }
+  let(:dictionary) { Astu::Dictionary.new }
 
   describe ".parse" do
     it "parses a valid SVO sentence into an AST::Clause" do
       result = subject.parse("mi si dog", dictionary: dictionary)
-      expect(result).to be_a(Ashtu::AST::Clause)
+      expect(result).to be_a(Astu::AST::Clause)
       expect(result.subject.head.root).to eq("mi")
       expect(result.predicate.head.root).to eq("si")
       expect(result.predicate.direct_object.head.root).to eq("dog")
@@ -22,7 +22,7 @@ RSpec.describe Ashtu::Parser do
 
     it "parses an intransitive sentence (subject + verb only)" do
       result = subject.parse("mi slip", dictionary: dictionary)
-      expect(result).to be_a(Ashtu::AST::Clause)
+      expect(result).to be_a(Astu::AST::Clause)
       expect(result.subject.head.root).to eq("mi")
       expect(result.predicate.head.root).to eq("slip")
       expect(result.predicate.direct_object).to be_nil
@@ -92,7 +92,7 @@ RSpec.describe Ashtu::Parser do
 
     it "accepts pronouns as subject and object" do
       result = subject.parse("mi si mi", dictionary: dictionary)
-      expect(result).to be_a(Ashtu::AST::Clause)
+      expect(result).to be_a(Astu::AST::Clause)
     end
   end
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Ashtu::IPA
+module Astu::IPA
   extend self
 
   def call(text)

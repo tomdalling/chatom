@@ -1,4 +1,4 @@
-module Ashtu
+module Astu
   class AST::Noun
     value_semantics do
       root String

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Ashtu::Dictionary do
+RSpec.describe Astu::Dictionary do
   subject { described_class.new }
 
   describe "#lookup" do

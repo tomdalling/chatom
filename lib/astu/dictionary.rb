@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Ashtu
+module Astu
   class Dictionary
     Entry = Data.define(:word, :part_of_speech, :definition, :description) do
       def initialize(word:, part_of_speech:, definition:, description: nil)
