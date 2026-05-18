@@ -20,12 +20,10 @@ RSpec.describe Astu::Parser do
       }.to raise_error(ArgumentError, /Unknown word: xyz/)
     end
 
-    it "parses an intransitive sentence (subject + verb only)" do
-      result = subject.parse("mi slip", dictionary: dictionary)
-      expect(result).to be_a(Astu::AST::Clause)
-      expect(result.subject.nouns.first.root).to eq("mi")
-      expect(result.predicate.head.root).to eq("slip")
-      expect(result.predicate.direct_object).to be_nil
+    it "raises when verb has no direct object" do
+      expect {
+        subject.parse("mi slip", dictionary: dictionary)
+      }.to raise_error(ArgumentError, /Expected a direct object/)
     end
 
     it "parses a sentence with an adjective on the object" do
@@ -35,14 +33,6 @@ RSpec.describe Astu::Parser do
       expect(result.predicate.head.root).to eq("si")
       expect(result.predicate.direct_object.nouns.first.root).to eq("dog")
       expect(result.predicate.direct_object.adjectives.map(&:root)).to eq(["smol"])
-    end
-
-    it "parses an intransitive sentence with an adjective on the subject" do
-      result = subject.parse("berd smol flai", dictionary: dictionary)
-      expect(result.subject.nouns.first.root).to eq("berd")
-      expect(result.subject.adjectives.map(&:root)).to eq(["smol"])
-      expect(result.predicate.head.root).to eq("flai")
-      expect(result.predicate.direct_object).to be_nil
     end
 
     it "parses a sentence with adjectives on both subject and object" do
@@ -94,7 +84,7 @@ RSpec.describe Astu::Parser do
 
     it "raises when a noun follows an adjective in the subject noun phrase" do
       expect {
-        subject.parse("mi smol dog si", dictionary: dictionary)
+        subject.parse("mi smol dog si berd", dictionary: dictionary)
       }.to raise_error(ArgumentError, /Expected adjective in subject noun phrase/)
     end
 

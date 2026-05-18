@@ -113,7 +113,7 @@ dem [pronoun] they/them
 #neck (not nape)
 #breast
 #rain (noun, 1952 verb)
-#burn (verb intransitive)
+#burn [verb]
 #path (1952 road, trail; not street)
 #mountain (not hill)
 #red (color)

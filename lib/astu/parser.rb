@@ -21,8 +21,10 @@ module Astu
       verb_entry      = entries[verb_index]
       object_entries  = entries[(verb_index + 1)..]
 
-      subject   = build_noun_phrase(subject_entries, role: "subject")
-      direct_object = object_entries.empty? ? nil : build_noun_phrase(object_entries, role: "object")
+      raise ArgumentError, "Expected a direct object after the verb" if object_entries.empty?
+
+      subject       = build_noun_phrase(subject_entries, role: "subject")
+      direct_object = build_noun_phrase(object_entries, role: "object")
 
       AST::Clause.new(
         subject: subject,

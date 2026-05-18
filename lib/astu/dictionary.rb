@@ -2,8 +2,8 @@
 
 module Astu
   class Dictionary
-    Entry = Data.define(:word, :part_of_speech, :definition, :description, :transitivity) do
-      def initialize(word:, part_of_speech:, definition:, description: nil, transitivity: nil)
+    Entry = Data.define(:word, :part_of_speech, :definition, :description) do
+      def initialize(word:, part_of_speech:, definition:, description: nil)
         super
       end
     end
@@ -33,14 +33,9 @@ module Astu
       pending = nil
 
       File.readlines(path, chomp: true).each do |line|
-        if line =~ /^(\S+)\s+\[(\w+)(?::(\w+))?\]\s+(.+)$/
+        if line =~ /^(\S+)\s+\[(\w+)\]\s+(.+)$/
           entries << Entry.new(**pending) if pending
-          transitivity = case $3
-            when "t"  then :transitive
-            when "i"  then :intransitive
-            when "ti" then :both
-          end
-          pending = { word: $1, part_of_speech: $2, definition: $4.strip, description: nil, transitivity: transitivity }
+          pending = { word: $1, part_of_speech: $2, definition: $3.strip, description: nil }
         elsif line =~ /^\s+\S/ && pending
           pending[:description] = line.strip
         end
