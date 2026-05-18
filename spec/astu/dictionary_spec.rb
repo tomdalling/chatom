@@ -28,6 +28,24 @@ RSpec.describe Astu::Dictionary do
     end
   end
 
+  describe "transitivity" do
+    it "parses transitive verbs" do
+      expect(subject.lookup("si")).to have_attributes(transitivity: :transitive)
+    end
+
+    it "parses intransitive verbs" do
+      expect(subject.lookup("slip")).to have_attributes(transitivity: :intransitive)
+    end
+
+    it "parses verbs that can be both" do
+      expect(subject.lookup("drink")).to have_attributes(transitivity: :both)
+    end
+
+    it "leaves transitivity nil for non-verbs" do
+      expect(subject.lookup("dog")).to have_attributes(transitivity: nil)
+    end
+  end
+
   describe "#list" do
     it "returns all entries when no pos filter given" do
       results = subject.list

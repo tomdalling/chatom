@@ -41,7 +41,10 @@ module Astu
         raise ArgumentError, "Expected noun or pronoun as #{role}, got: #{head_entry.part_of_speech}"
       end
 
-      adj_entries = entries[1..]
+      rest = entries[1..]
+      modifier_noun_entries = rest.take_while { NOUN_POS.include?(_1.part_of_speech) }
+      adj_entries = rest.drop(modifier_noun_entries.size)
+
       adj_entries.each do |entry|
         unless entry.part_of_speech == "adjective"
           raise ArgumentError, "Expected adjective in #{role} noun phrase, got: #{entry.part_of_speech}"
@@ -49,7 +52,7 @@ module Astu
       end
 
       AST::NounPhrase.new(
-        head: AST::Noun.new(root: head_entry.word),
+        nouns:      ([head_entry] + modifier_noun_entries).map { AST::Noun.new(root: _1.word) },
         adjectives: adj_entries.map { AST::Adjective.new(root: _1.word) },
       )
     end

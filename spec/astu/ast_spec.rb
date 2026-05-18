@@ -25,6 +25,25 @@ RSpec.describe Astu::AST, '#to_text' do
         AST
       ).to eq("Dog kil Bird")
     end
+
+    it 'serialises a noun phrase with a modifier noun to text' do
+      expect(
+        subject.(<<~AST)
+          <Clause>
+            <Subject>
+              <Noun>eg</Noun>
+              <Noun>berd</Noun>
+            </Subject>
+            <Predicate>
+              <Verb>fol</Verb>
+              <DirectObject>
+                <Noun>mi</Noun>
+              </DirectObject>
+            </Predicate>
+          </Clause>
+        AST
+      ).to eq("Eg Berd fol Mi")
+    end
   end
 
   describe '.parse_xml' do
@@ -48,12 +67,12 @@ RSpec.describe Astu::AST, '#to_text' do
       ).to eq(
         Astu::AST::Clause.new(
           subject: Astu::AST::NounPhrase.new(
-            head: Astu::AST::Noun.new(root: "dog"),
+            nouns: [Astu::AST::Noun.new(root: "dog")],
           ),
           predicate: Astu::AST::VerbPhrase.new(
             head: Astu::AST::Verb.new(root: "kil"),
             direct_object: Astu::AST::NounPhrase.new(
-              head: Astu::AST::Noun.new(root: "bird"),
+              nouns: [Astu::AST::Noun.new(root: "bird")],
             ),
           ),
         )

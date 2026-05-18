@@ -9,7 +9,7 @@
 #   - "sh" -> 's'
 #   - "ph" -> 'f'
 # - No weird extra vowels. "head" -> "hed"
-# - TODO: get rid of 'd' and replace with 't'?
+# - TODO get rid of 'd' and replace with 't'?
 
 ai [noun] eye
 as [noun] ash
@@ -57,7 +57,7 @@ lai [verb] lie
 liva [noun] liver
 maud [noun] mouth
 mi [pronoun] I/me
-  first person singular pronoun, also used for "me"
+  first person singular pronoun
 mun [noun] moon
 naim [noun] name
 ni [noun] knee
@@ -86,8 +86,10 @@ tri [noun] tree
 tud [noun] tooth
 uak [verb] walk
 uata [noun] water
+dem [pronoun] they/them
+  third person plural pronoun
 
-# TODO: incorporate
+# TODO incorporate
 #you [pronoun] second person singular pronoun
 #we [pronoun]
 #this [pronoun]
@@ -106,13 +108,13 @@ uata [noun] water
 #leaf (botanics)
 #root (botanics)
 #bark (of tree)
-#skin (1952: person's)
-#flesh (1952: meat, flesh)
+#skin (1952 person's)
+#flesh (1952 meat, flesh)
 #neck (not nape)
 #breast
-#rain (noun, 1952: verb)
+#rain (noun, 1952 verb)
 #burn (verb intransitive)
-#path (1952: road, trail; not street)
+#path (1952 road, trail; not street)
 #mountain (not hill)
 #red (color)
 #green (color)
@@ -120,7 +122,7 @@ uata [noun] water
 #white (color)
 #black (color)
 #night
-#hot (adjective; 1952: warm, of weather)
+#hot (adjective; 1952 warm, of weather)
 #cold (of weather)
 #full†
 #new

@@ -66,12 +66,23 @@ module Astu
     end
 
     def format_entry(entry)
+      pos = format_pos(entry)
       ipa = IPA.call(entry.word)
-      first_line = "#{entry.word} [#{entry.part_of_speech}] /#{ipa}/ #{entry.definition}"
+      first_line = "#{entry.word} [#{pos}] /#{ipa}/ #{entry.definition}"
       entry.description ? "#{first_line}\n  #{entry.description}" : first_line
     rescue KeyError
-      first_line = "#{entry.word} [#{entry.part_of_speech}] #{entry.definition}"
+      first_line = "#{entry.word} [#{pos}] #{entry.definition}"
       entry.description ? "#{first_line}\n  #{entry.description}" : first_line
+    end
+
+    def format_pos(entry)
+      suffix = case entry.transitivity
+        when :transitive   then ":t"
+        when :intransitive then ":i"
+        when :both         then ":ti"
+        else ""
+      end
+      "#{entry.part_of_speech}#{suffix}"
     end
 
     def help

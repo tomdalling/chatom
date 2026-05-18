@@ -3,29 +3,30 @@
 module Astu
   class AST::NounPhrase
     value_semantics do
-      head       AST::Noun
+      nouns      ArrayOf(AST::Noun)
       adjectives ArrayOf(AST::Adjective), default: []
     end
 
     def to_text
-      ([head.to_text] + adjectives.map(&:to_text)).join(" ")
+      (nouns + adjectives).map(&:to_text).join(" ")
     end
 
     def to_english_gloss(dictionary:)
-      (adjectives + [head]).map { _1.to_english_gloss(dictionary:) }.join(" ")
+      (adjectives + nouns.rotate(1)).map { _1.to_english_gloss(dictionary:) }.join(" ")
     end
 
     def to_xml_element(tag)
       Ox::Element.new(tag).tap do |el|
-        el << head.to_xml_element
+        nouns.each { el << _1.to_xml_element }
         adjectives.each { el << _1.to_xml_element }
       end
     end
 
     def self.from_xml_element(element)
-      adj_elements = element.nodes.select { _1.is_a?(Ox::Element) && _1.value == 'Adjective' }
+      noun_elements = element.nodes.select { _1.is_a?(Ox::Element) && _1.value == 'Noun' }
+      adj_elements  = element.nodes.select { _1.is_a?(Ox::Element) && _1.value == 'Adjective' }
       new(
-        head: AST.parse_child_element(element, 'Noun'),
+        nouns:      noun_elements.map { AST::Noun.from_xml_element(_1) },
         adjectives: adj_elements.map { AST.parse_element(_1, AST::Adjective) },
       )
     end
