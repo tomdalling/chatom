@@ -4,16 +4,6 @@ module Ashtu
   module AST
     extend self
 
-    ELEMENT_TO_CLASS = {
-      "Clause"       => "Clause",
-      "Subject"      => "NounPhrase",
-      "Predicate"    => "VerbPhrase",
-      "DirectObject" => "NounPhrase",
-      "Noun"         => "Noun",
-      "Verb"         => "Verb",
-      "Adjective"    => "Adjective",
-    }.freeze
-
     def parse_xml(xml)
       parse_element(Ox.parse(xml.strip))
     end

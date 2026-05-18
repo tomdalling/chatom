@@ -49,11 +49,8 @@ module Ashtu
         return
       end
       clause = Parser.parse(args.first, dictionary: @dictionary)
-      puts "Clause:"
-      puts "  Subject: #{format_noun_phrase(clause.subject)}"
-      puts "  Predicate:"
-      puts "    Verb: #{clause.predicate.head.root} (verb)"
-      puts "    DirectObject: #{format_noun_phrase(clause.predicate.direct_object)}" if clause.predicate.direct_object
+      puts clause.to_english_gloss(dictionary: @dictionary)
+      puts Ox.dump(clause.to_xml_element, indent: 2, with_xml: false).strip
     rescue ArgumentError => e
       puts "Error: #{e.message}"
     end
@@ -68,18 +65,13 @@ module Ashtu
       @dictionary.list(pos: pos).each { puts format_entry(_1) }
     end
 
-    def format_noun_phrase(np)
-      head_entry = @dictionary.lookup(np.head.root)
-      words   = [np.head.root] + np.adjectives.map(&:root)
-      pos_tags = [head_entry.part_of_speech] + np.adjectives.map { "adjective" }
-      "#{words.join(' ')} (#{pos_tags.join(', ')})"
-    end
-
     def format_entry(entry)
       ipa = IPA.call(entry.word)
-      "#{entry.word} [#{entry.part_of_speech}] /#{ipa}/ #{entry.definition}"
+      first_line = "#{entry.word} [#{entry.part_of_speech}] /#{ipa}/ #{entry.definition}"
+      entry.description ? "#{first_line}\n  #{entry.description}" : first_line
     rescue KeyError
-      "#{entry.word} [#{entry.part_of_speech}] #{entry.definition}"
+      first_line = "#{entry.word} [#{entry.part_of_speech}] #{entry.definition}"
+      entry.description ? "#{first_line}\n  #{entry.description}" : first_line
     end
 
     def help

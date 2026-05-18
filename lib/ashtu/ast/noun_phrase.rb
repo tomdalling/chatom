@@ -11,6 +11,17 @@ module Ashtu
       ([head.to_text] + adjectives.map(&:to_text)).join(" ")
     end
 
+    def to_english_gloss(dictionary:)
+      (adjectives + [head]).map { _1.to_english_gloss(dictionary:) }.join(" ")
+    end
+
+    def to_xml_element(tag)
+      Ox::Element.new(tag).tap do |el|
+        el << head.to_xml_element
+        adjectives.each { el << _1.to_xml_element }
+      end
+    end
+
     def self.from_xml_element(element)
       adj_elements = element.nodes.select { _1.is_a?(Ox::Element) && _1.value == 'Adjective' }
       new(

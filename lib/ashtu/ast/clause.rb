@@ -15,5 +15,16 @@ module Ashtu
     end
 
     def to_text = subject.to_text + " " + predicate.to_text
+
+    def to_english_gloss(dictionary:)
+      [subject, predicate].map { _1.to_english_gloss(dictionary:) }.join(" ")
+    end
+
+    def to_xml_element
+      Ox::Element.new('Clause').tap do |el|
+        el << subject.to_xml_element('Subject')
+        el << predicate.to_xml_element
+      end
+    end
   end
 end

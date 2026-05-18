@@ -2,7 +2,11 @@
 
 module Ashtu
   class Dictionary
-    Entry = Data.define(:word, :part_of_speech, :definition)
+    Entry = Data.define(:word, :part_of_speech, :definition, :description) do
+      def initialize(word:, part_of_speech:, definition:, description: nil)
+        super
+      end
+    end
 
     DEFAULT_PATH = File.expand_path("../../data/dictionary.txt", __dir__)
 
@@ -15,7 +19,7 @@ module Ashtu
     end
 
     def search(query)
-      @entries.select { _1.definition.include?(query) }
+      @entries.select { _1.definition.include?(query) || _1.description&.include?(query) }
     end
 
     def list(pos: nil)
@@ -25,11 +29,19 @@ module Ashtu
     private
 
     def parse(path)
-      File.readlines(path, chomp: true).filter_map do |line|
-        next if line.empty? || line.start_with?("#")
-        next unless line =~ /^(\S+)\s+\[(\w+)\]\s+(.+)$/
-        Entry.new(word: $1, part_of_speech: $2, definition: $3.strip)
+      entries = []
+      pending = nil
+
+      File.readlines(path, chomp: true).each do |line|
+        if line =~ /^(\S+)\s+\[(\w+)\]\s+(.+)$/
+          entries << Entry.new(**pending) if pending
+          pending = { word: $1, part_of_speech: $2, definition: $3.strip, description: nil }
+        elsif line =~ /^\s+\S/ && pending
+          pending[:description] = line.strip
+        end
       end
+      entries << Entry.new(**pending) if pending
+      entries
     end
   end
 end

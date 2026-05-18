@@ -12,61 +12,75 @@
 # - TODO: get rid of 'd' and replace with 't'?
 
 ai [noun] eye
-as [noun] ashes
+as [noun] ash
 bait [verb] bite
 beli [noun] belly
-bi [verb] is, the copula
+bi [verb] is
+  the copula
 berd [noun] bird
-big [adjective]
+big [adjective] big
 blud [noun] blood
 boun [noun] bone
 dai [verb] die
 dog [noun] dog
 drink [verb] drink
-ear [noun] ear
+iar [noun] ear
 eg [noun] egg
-erd [noun] soil
+ert [noun] soil
 faia [noun] fire
-feder [noun] fether, large, not down
+feder [noun] feather
+  large, not down
 fis [noun] fish
 flai [verb] fly
-fut [noun] foot, not leg
+fut [noun] foot
+  not leg
 giv [verb] give
-gris [noun] grease, fat, organic substance
+gris [noun] grease
+  fat, organic substance
 hand [noun] hand
 hart [noun] heart
 hear [verb] hear
-hed [noun] head, anatomic
-her [noun] hair, on head of humans
-horn [noun] of bull etc.
+hed [noun] head
+  anatomical
+her [noun] hair
+  on the head of humans
+horn [noun] horn
+  of animals such as bulls
 it [verb] eat
 kil [verb] kill
-klaud [noun] cloud, not fog
+klaud [noun] cloud
+  not fog
 klo [noun] claw
 kum [verb] come
-lai [verb] lie, as in lie down
-liver [noun] liver
+lai [verb] lie
+  as in lie down
+liva [noun] liver
 maud [noun] mouth
-mi [pronoun] I/me, first person singular pronoun
+mi [pronoun] I/me
+  first person singular pronoun, also used for "me"
 mun [noun] moon
 naim [noun] name
 ni [noun] knee
-no [verb] know, facts
+ken [verb] know
+  factual knowledge
 nouz [noun] nose
-person [noun] person, individual human
+persin [noun] person
+  individual human
 sai [verb] say
 san [noun] sun
 sand [noun] sand
 si [verb] see
 sit [verb] sit
 slip [verb] sleep
-smok [noun] smoke, of fire
+smok [noun] smoke
+  of fire
 smol [adjective] small
 sta [noun] star
 stand [verb] stand
 ston [noun] stone
 suim [verb] swim
-tan [noun] tongue, anatomical
+tan [noun] tongue
+  anatomical
 teil [noun] tail
 tri [noun] tree
 tud [noun] tooth
@@ -78,8 +92,8 @@ uata [noun] water
 #we [pronoun]
 #this [pronoun]
 #that [pronoun]
-#who? (“?” not 1971)
-#what? (“?” not 1971)
+#who? ("?" not 1971)
+#what? ("?" not 1971)
 #not [adverb]
 #all (of a number)
 #many [determiner]
@@ -92,7 +106,7 @@ uata [noun] water
 #leaf (botanics)
 #root (botanics)
 #bark (of tree)
-#skin (1952: person’s)
+#skin (1952: person's)
 #flesh (1952: meat, flesh)
 #neck (not nape)
 #breast
