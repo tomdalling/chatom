@@ -34,12 +34,15 @@ The rules of the language, and how it works. Examples are in English -> Astu.
 - Repeating an adjective makes it superlative.
   - Example: "huge bird" -> "berd big big"
 
+- The language has Serial Verb Constructions (SVCs): multiple verb phrases can
+  be strung together in a single clause with no conjunction between them.
+
 ## TODO
 
 This section is a list of things that are NOT decided yet.
 
 - Grammar for copula
-- Serial Verb Constructions (SVCs)
+- Details of Serial Verb Constructions (SVCs)
   - All verb phrases share the same TAM
   - All verb phrases share the same subject
   - Some verbs have special meanings, and take the place of adverbials in other
