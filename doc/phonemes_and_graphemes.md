@@ -67,6 +67,8 @@ with a consonant should make it easier to hear word boundaries.
 
 TODO: Should I allow some classes of words to start or end with a vowel?
 
+TODO: Remove alternating consonants and vowels?
+
 
 Relation To Grammar
 -------------------
@@ -76,3 +78,10 @@ Certain classes of words can be identified by the first phoneme/grapheme.
 - All verbs start with a voiceless consonant
 - All nouns start with a voiced consonant
 - TODO: Reserve `/m/`, `/n/`, `/g/`, etc. for particles or some such?
+
+Romanisation
+------------
+
+The graphemes are designed for easy romanisation. For example:
+
+

@@ -88,9 +88,11 @@ uak [verb] walk
 uata [noun] water
 dem [pronoun] they/them
   third person plural pronoun
+ya [pronoun] you
+  second person singular pronoun
+guan [verb] go
 
 # TODO incorporate
-#you [pronoun] second person singular pronoun
 #we [pronoun]
 #this [pronoun]
 #that [pronoun]
