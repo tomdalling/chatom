@@ -32,7 +32,7 @@ Technical terms are explained when they first appear.
 9. [Clauses](#9-clauses)
 10. [Tense, aspect and modality](#10-tense-aspect-and-modality)
 11. [Negation](#11-negation)
-12. [The copula `be` and existence](#12-the-copula-be-and-existence)
+12. [The copula `bi` and existence](#12-the-copula-bi-and-existence)
 13. [Serial verbs](#13-serial-verbs)
 14. [Comparison](#14-comparison)
 15. [Questions](#15-questions)
@@ -71,15 +71,16 @@ I   eat   fish
 | `PST` | past tense (`bin`) |
 | `FUT` | future tense (`fina`) |
 | `PROG` | progressive aspect (`am`) |
-| `COP` | copula (`be`) |
-| `POSS` | possessive marker (`fi`) |
+| `COP` | copula (`bi`) |
 | `PL` | plural marker (`dem`) |
 | `PROX` | near demonstrative, "this" (`ia`) |
 | `DIST` | far demonstrative, "that" (`dea`) |
 | `Q` | yes/no question marker (sentence-final `no`) |
-| `N-` `V-` `A-` | noun-, verb- and adjective-making prefixes (`pu-`, `vu-`, `ru-`) |
+| `N-` `V-` `A-` | noun-, verb- and adjective-making prefixes (`di-`, `me-`, `lai-`) |
 
-All other words are glossed with their English meaning.
+All other words are glossed with their English meaning. A pronoun used as a
+possessor ([§8.8](#88-possession)) is glossed with the English possessive:
+`mi` as "my", `dei` as "his", `deidem` as "their".
 
 **1.4 Sample vocabulary.** Most nouns, verbs and adjectives are not part of
 this specification (see [§6](#6-word-classes)). The examples borrow words from
@@ -213,10 +214,14 @@ such as `tt` or `nn` cannot occur.
 
 ### 3.2 Reserved first syllables
 
-**3.2.1** The syllables `pu`, `vu` and `ru` are reserved for the word-making
-prefixes ([§20](#20-making-new-words)). No root word may begin with them. A
-word that begins with `pu`, `vu` or `ru` is therefore always a prefix followed
-by a root.
+**3.2.1** The syllables `di`, `me` and `lai` are reserved for the word-making
+prefixes ([§20](#20-making-new-words)). No other word may begin with them:
+not a root, not a function word, not a name. A word that begins with `di`,
+`me` or `lai` is therefore always a prefix followed by a root.
+
+**3.2.2** No noun, verb or adjective may begin with `z`. Function words, such
+as `ziro`, may. This lets each prefix take a linking `z` before a root that
+begins with a vowel ([§20.2](#20-making-new-words)).
 
 ### 3.3 Formal definition
 
@@ -232,7 +237,9 @@ The table below states the shape rules as patterns. In each pattern, `?` means
 | Word type | Pattern |
 |---|---|
 | Any word | `C? N (C N)* F?` |
-| Root word | as above, and not beginning with `pu`, `vu` or `ru` |
+| Function word | as above, and not beginning with `di`, `me` or `lai` |
+| Root word | as above, and not beginning with `di`, `me`, `lai` or `z` |
+| Prefixed word | `di`, `me` or `lai`, then a root beginning with a consonant; or `diz`, `mez` or `laiz`, then a root beginning with a vowel |
 
 A consequence of this pattern is that splitting a word into syllables is
 always unambiguous. A new syllable begins at every consonant, except a
@@ -251,7 +258,7 @@ prefix is the first syllable, so it carries the stress.
 **4.3** Stress is never written, and it never changes the meaning of a word.
 
 ```
-PA·sin   SE·liep   LI·kil   PU·niam
+PA·sin   SE·liep   LI·kil   DI·niam
 ```
 
 ---
@@ -361,7 +368,7 @@ any sound.
 
 1. If it is in the function word list ([Appendix A](#appendix-a-function-word-list)),
    it is that function word.
-2. If it begins with `pu`, `vu` or `ru`, it is a prefixed word, and the prefix
+2. If it begins with `di`, `me` or `lai`, it is a prefixed word, and the prefix
    gives its class ([§20](#20-making-new-words)).
 3. Otherwise, look it up in the dictionary.
 
@@ -414,10 +421,10 @@ he   sees self
 
 Compare `dei luk dei.`, which means "he sees him", where "him" is someone else.
 
-**7.8 Pronouns are nouns.** Grammatically, a pronoun is a noun, and it may fill
-any noun position in a noun phrase ([§8.10](#810-pronouns-in-noun-phrases)).
-The one exception is that a pronoun never takes the plural marker `dem`.
-Plurality is shown only by the plural pronouns.
+**7.8 Pronouns are nouns.** Grammatically, a pronoun is a noun, and it may be
+the head of a noun phrase or a possessor ([§8.10](#810-pronouns-in-noun-phrases)).
+A pronoun never takes the plural marker `dem`: plurality is shown only by the
+plural pronouns. A pronoun is never a describing noun.
 
 > ⚠ **Not yet specified:** a word for "each other".
 
@@ -426,13 +433,13 @@ Plurality is shown only by the plural pronouns.
 ## 8. Noun phrases
 
 A **noun phrase** is a noun together with any words that describe it, such as
-"those two small bird eggs of mine".
+"those two small bird eggs".
 
-### 8.1 The head comes first
+### 8.1 The head comes last
 
-**8.1.1** Astu is **head-first**: the main word of a phrase (its **head**) comes
-before everything that describes it. In a noun phrase, the head noun always
-comes first.
+**8.1.1** In a noun phrase, the main word (its **head**) comes **last**.
+Everything that describes it comes before it, much as in English. The only word
+that may follow the head is the plural marker `dem`.
 
 ### 8.2 Order of a noun phrase
 
@@ -441,53 +448,66 @@ is optional.
 
 | # | Part | Example |
 |---|---|---|
-| 1 | Head noun | `eg` egg |
-| 2 | Describing nouns | `bad` bird |
+| 1 | Determiner: a demonstrative (`ia` / `dea`), the question word `wa`, a possessive pronoun, **or** a possessor + linking pronoun ([§8.8](#88-possession)) | `dea` that |
+| 2 | Number **or** quantifier | `tu` two |
 | 3 | Adjectives | `likil` small |
-| 4 | Number **or** quantifier | `tu` two |
-| 5 | Plural marker `dem` | `dem` |
-| 6 | Demonstrative (`ia` / `dea`) | `dea` that |
-| 7 | Question word `wa` | |
-| 8 | `fi` + possessor | `fi mi` of mine |
+| 4 | Describing nouns | `bad` bird |
+| 5 | Head noun | `eg` egg |
+| 6 | Plural marker `dem` | `dem` |
 
 ```
-eg   bad   likil  tu   dem  dea   fi    mi
-egg  bird  small  two  PL   DIST  POSS  I
+dea   tu   likil  bad   eg   dem
+DIST  two  small  bird  egg  PL
 ```
-"those two small bird eggs of mine"
+"those two small bird eggs"
+
+```
+mi  tu   likil  bad   eg   dem
+my  two  small  bird  egg  PL
+```
+"my two small bird eggs"
+
+**8.2.2** A noun phrase has at most one determiner. A demonstrative, `wa` and
+a possessor cannot be combined, so there is no direct equivalent of "those eggs
+of mine" ([§8.8.6](#88-possession)).
 
 ### 8.3 Describing nouns
 
-**8.3.1** A **describing noun** comes after the head and narrows down what kind
-of thing it is. It works like the first noun in English "bird egg".
+**8.3.1** A **describing noun** comes before the head and narrows down what kind
+of thing it is, exactly like the first noun in English "bird egg".
 
 ```
-eg   bad
-egg  bird
+bad   eg
+bird  egg
 ```
 "bird egg"
 
 **8.3.2 Several describing nouns.** When there is more than one describing
-noun, each one narrows down **the word directly before it**. The phrase is
-read as a nested chain from the right.
+noun, each one narrows down **the word directly after it**. The phrase is
+read as a nested chain from the left.
 
 ```
-pelaiz  puseliep  dag
-place   N-sleep   dog
+dag  diseliep  pelaiz
+dog  N-sleep   place
 ```
-"dog-sleeping place", that is, a kennel. `dag` narrows down `puseliep`
-("dog-sleeping"), and `puseliep dag` narrows down `pelaiz`.
+"dog-sleeping place", that is, a kennel. `dag` narrows down `diseliep`
+("dog-sleeping"), and `dag diseliep` narrows down `pelaiz`.
+
+**8.3.3** Because describing nouns and the head are all nouns, the head is
+always the **last** noun in the run. A noun phrase never ends with a describing
+noun.
 
 ### 8.4 Adjectives
 
-**8.4.1** Adjectives come after the head noun and any describing nouns. They
+**8.4.1** Adjectives come before any describing nouns and the head noun. They
 always describe the **head** noun, never a describing noun.
 
 ```
-eg   bad   likil
-egg  bird  small
+likil  bad   eg
+small  bird  egg
 ```
-"small bird egg": the egg is small, not the bird.
+"small bird egg": the egg is small, not the bird. Unlike English, this is never
+ambiguous.
 
 **8.4.2** Adjectives have no fixed order among themselves.
 
@@ -496,9 +516,9 @@ extra repetition adds more intensity. There is no limit on the number of
 repetitions.
 
 ```
-dag  big                a big dog
-dag  big  big           a very big dog
-dag  big  big  big      an extremely big dog
+big  dag                a big dog
+big  big  dag           a very big dog
+big  big  big  dag      an extremely big dog
 ```
 
 ### 8.5 Plural
@@ -506,13 +526,14 @@ dag  big  big  big      an extremely big dog
 **8.5.1** A noun with no plural marker is **singular**: `dag` means exactly one
 dog.
 
-**8.5.2** The plural marker `dem` comes after any number or quantifier, and must
-be used whenever there is more than one. This applies even when a number makes
-the amount obvious.
+**8.5.2** The plural marker `dem` comes directly after the head noun, like the
+English "-s". It must be used whenever there is more than one. This applies even
+when a number makes the amount obvious. The one exception is a possessor
+followed by `deidem` ([§8.8.5](#88-possession)).
 
 ```
-dag  dem          dag  tu   dem
-dog  PL           dog  two  PL
+dag  dem          tu   dag  dem
+dog  PL           two  dog  PL
 ```
 "dogs" / "two dogs"
 
@@ -521,64 +542,138 @@ noun, so they are never followed by `dem` ([§19.3](#193-quantifiers)).
 
 ### 8.6 Demonstratives: `ia` and `dea`
 
-**8.6.1** `ia` means "this" (near), and `dea` means "that" (far). They come after
-the plural marker.
+**8.6.1** `ia` means "this" (near), and `dea` means "that" (far). They fill the
+determiner slot at the start of the noun phrase.
 
 ```
-dag  ia             dag  dem  dea
-dog  PROX           dog  PL   DIST
+ia    dag           dea   dag  dem
+PROX  dog           DIST  dog  PL
 ```
 "this dog" / "those dogs"
 
 ### 8.7 The question word `wa`
 
-**8.7.1** `wa` means "which?". It comes after any demonstrative and before any
-`fi` phrase. A noun phrase containing `wa` makes its sentence a question
+**8.7.1** `wa` means "which?". It fills the determiner slot at the start of the
+noun phrase. A noun phrase containing `wa` makes its sentence a question
 ([§15.2](#152-question-word-questions)).
 
 ```
-dag  big  wa
-dog  big  which
+wa     big  dag
+which  big  dog
 ```
 "which big dog?"
 
-### 8.8 Possession: `fi`
+### 8.8 Possession
 
-**8.8.1** The possessive marker `fi` introduces the **possessor** (the owner).
-The `fi` phrase comes last in the noun phrase.
+Astu has no possessive marker. A possessor (the owner) is shown by its
+position at the start of the noun phrase, in one of two ways.
 
-```
-dag  fi    mi
-dog  POSS  I
-```
-"my dog"
-
-**8.8.2** Everything after `fi` up to the end of the noun phrase belongs to the
-possessor. So adjectives before `fi` describe the head, and adjectives after
-`fi` describe the possessor.
+**8.8.1 Pronoun possessors.** A bare pronoun placed at the start of a noun
+phrase is the **possessor** of the head. It fills the determiner slot, so it
+comes before any number, quantifier or adjective.
 
 ```
-eg   likil  fi    bad   likil
-egg  small  POSS  bird  small
+mi  buk          dei  tu   likil  dag  dem
+my  book         his  two  small  dog  PL
 ```
-"the small bird's small egg"
+"my book" / "his two small dogs"
 
-**8.8.3** Because the possessor is itself a noun phrase, it may contain its own
-`fi`. Possession chains are read from right to left.
+**8.8.2** A possessive pronoun must be **bare**: it must not have its own
+number, quantifier or adjectives. A possessor such as "we two" is expressed
+with a clause instead ([§8.8.10](#88-possession)): `buk fi tu midem.` "The book
+belongs to us two."
+
+**8.8.3 "Own": `sef`.** The reflexive `sef` ([§7.7](#7-pronouns)) may be a
+possessor. It refers to the subject of the clause, like English "own".
 
 ```
-eg   fi    bad   fi    mi
-egg  POSS  bird  POSS  I
+dei  luk  sef  buk.           dei  luk  dei  buk.
+he   sees own  book           he   sees his  book
 ```
-"my bird's egg"
+"He sees his own book." / "He sees his book" (someone else's).
 
-**8.8.4** A noun phrase has at most one `fi`. Any further `fi` belongs to the
-possessor.
+**8.8.4 Noun possessors.** Any other possessor is a full noun phrase,
+followed by a **linking pronoun**, followed by the thing owned. The linking
+pronoun is `dei` if the possessor is singular and `deidem` if it is plural, much
+like English "the dog his egg".
+
+```
+dag  dei  eg                  dag  deidem  eg   dem
+dog  his  egg                 dog  their   egg  PL
+```
+"the dog's egg" / "the dogs' eggs"
+
+**8.8.5 No double plural.** A possessor followed by `deidem` never takes `dem`,
+because `deidem` already shows that it is plural. This is the one exception to
+[§8.5.2](#85-plural).
+
+```
+tu   dag  deidem  eg   dem
+two  dog  their   egg  PL
+```
+"the two dogs' eggs"
+
+**8.8.6** Everything before the linking pronoun, back to the start of the noun
+phrase, belongs to the possessor. Everything after it describes the thing
+owned. In particular, a demonstrative or `wa` at the start of the noun phrase
+always belongs to the possessor.
+
+```
+dea   big  dag  dei  likil  eg          wa     pasin   dei  dag
+DIST  big  dog  his  small  egg         which  person  his  dog
+```
+"that big dog's small egg" / "whose dog?"
+
+The thing owned can never take its own determiner. "Those eggs of mine" is
+expressed as "my eggs" or with a separate sentence.
+
+**8.8.7 Chains.** Because the possessor is itself a noun phrase, it may contain
+its own possessor. Possession chains are read from left to right, as in
+English.
+
+```
+mi  dag  dei  eg
+my  dog  his  egg
+```
+"my dog's egg": `mi dag` ("my dog") is the possessor of `eg`.
+
+**8.8.8** A standalone `ia`, `dea` or quantifier ([§8.9](#89-noun-phrases-with-no-head-noun))
+may be a noun possessor:
+
+```
+dea  dei  eg                  al   deidem  dag  dem
+DIST his  egg                 all  their   dog  PL
+```
+"that one's egg" / "everyone's dogs"
+
+**8.8.9 Rules for linking pronouns.**
+
+- A linking pronoun must always be followed by the thing owned. A noun phrase
+  never ends with a linking pronoun.
+- The possessor before a linking pronoun must not have a pronoun as its head.
+  A pronoun possessor is always a bare pronoun, used as in 8.8.1.
+- The head of the thing owned must be a noun, not a pronoun.
+
+These rules keep possession unambiguous. Two noun phrases never stand side by
+side, and a pronoun is never a describing noun ([§8.10](#810-pronouns-in-noun-phrases)).
+So inside a noun phrase, a bare pronoun at the start that is followed by more
+of the noun phrase is always a possessor, and a pronoun directly after a
+possessor is always a linking pronoun.
+
+**8.8.10 Ownership as a statement.** To *say* that something belongs to
+someone, use the core verb `fi` ("belong to", [§9.3](#93-no-prepositions)):
+
+```
+buk   fi           mi.
+book  belongs-to   me
+```
+"The book is mine."
 
 ### 8.9 Noun phrases with no head noun
 
 **8.9.1** Three kinds of word may stand alone as a complete noun phrase, with
-no head noun and nothing after them:
+no head noun. Nothing may follow them except a linking pronoun
+([§8.8.8](#88-possession)):
 
 - `dea`, which refers **back** to something already said, including a whole
   previous clause or sentence;
@@ -593,8 +688,8 @@ you  eat   fish    I   know  DIST
 "You eat fish. I know that."
 
 ```
-dag  ia    be   big  pas   al.
-dog  PROX  COP  big  pass  all
+ia    dag  bi   big  pas   al.
+PROX  dog  COP  big  pass  all
 ```
 "This dog is the biggest." (literally "this dog is big, surpassing all")
 
@@ -602,19 +697,20 @@ dog  PROX  COP  big  pass  all
 
 **8.10.1** A pronoun is a noun ([§7.8](#7-pronouns)), so it may be the head of a
 noun phrase and take any of the parts in [§8.2](#82-order-of-a-noun-phrase),
-**except** `dem`.
+**except** describing nouns and `dem`.
 
 ```
-midem  tu         deidem  al         mi  tiad
-we     two        they    all        I   tired
+tu   midem        al   deidem        tiad   mi
+two  we           all  they          tired  I
 ```
 "we two" / "all of them" / "tired me"
 
 **8.10.2** A number or quantifier meaning more than one is used only with a
 plural pronoun, in the same way that a plural number needs `dem` after a noun.
 
-**8.10.3** A pronoun may also be a describing noun, but the normal way to show
-possession is with `fi` ([§8.8](#88-possession-fi)).
+**8.10.3** A pronoun is never a describing noun. A bare pronoun directly before
+the rest of a noun phrase is always its possessor ([§8.8.1](#88-possession)):
+`mi buk` means "my book".
 
 ### 8.11 No joined noun phrases
 
@@ -681,8 +777,8 @@ dog  sleeps
 "The dog sleeps."
 
 **9.2.2** This never makes a sentence ambiguous. A verb is followed by an object
-only if the next word can begin a noun phrase (a noun, a pronoun, or a
-standalone `ia`, `dea` or quantifier). If the next word is a verb, a linking
+only if the next word can begin a noun phrase (a noun, a pronoun, an adjective,
+a number, a quantifier, `ia`, `dea` or `wa`). If the next word is a verb, a linking
 word, the question marker or the end of the sentence, the verb has no object.
 
 ### 9.3 No prepositions
@@ -698,10 +794,10 @@ specification. Apart from being listed here, they are ordinary verbs.
 |---|---|---|
 | `tek` | take, use | instrument ("with a knife") |
 | `gib` | give | recipient ("to him") |
-| `fori` | for | beneficiary ("for him") |
+| `fi` | belong to, be for | owner ("is his") and beneficiary or purpose ("for him") |
 | `guan` | go to | direction ("to the house") |
 | `kum` | come from | source ("from the house") |
-| `sidon` | be at | location and time ("in the house", "at noon") |
+| `pon` | be at | location and time ("in the house", "at noon") |
 | `wid` | be with | accompaniment ("with him") |
 | `pas` | pass, exceed | comparison ("more than"), [§14](#14-comparison) |
 | `siem` | equal | comparison ("as … as"), [§14](#14-comparison) |
@@ -718,6 +814,12 @@ mi  tek   fish  gib   dei.
 I   take  fish  give  him
 ```
 "I give the fish to him."
+
+```
+mi  kuk   fish  fi   dei.
+I   cook  fish  for  him
+```
+"I cook fish for him."
 
 ### 9.4 No embedded clauses
 
@@ -740,8 +842,8 @@ expressed in one of two ways:
 | "I slept *because you ate*." | "I slept `kaz` you ate." (see [§17](#17-sentences-with-several-clauses)) |
 
 ```
-dag  bin  niam  fish.   dag  dea   be   sik.
-dog  PST  eat   fish    dog  DIST  COP  sick
+dag  bin  niam  fish.   dea   dag  bi   sik.
+dog  PST  eat   fish    DIST  dog  COP  sick
 ```
 "A dog ate the fish. That dog is sick." That is: "The dog that ate the fish is sick."
 
@@ -875,54 +977,67 @@ makes clear which use is meant.
 
 ---
 
-## 12. The copula `be` and existence
+## 12. The copula `bi` and existence
 
-### 12.1 `be`
+### 12.1 `bi`
 
-**12.1.1** `be` is the **copula**: the word for "is" when it means "is the same
-as" or "is a kind of". Grammatically, `be` is a verb. It fills the verb slot,
+**12.1.1** `bi` is the **copula**: the word for "is" when it means "is the same
+as" or "is a kind of". Grammatically, `bi` is a verb. It fills the verb slot,
 may take negation, tense, aspect and a modal, and may appear in a serial verb
 chain. It is a function word.
 
 ```
-mi  be   pasin.
+mi  bi   pasin.
 I   COP  person
 ```
 "I am a person."
 
 ```
-dei  bin  be   dag  fi    mi.
-it   PST  COP  dog  POSS  I
+dei  bin  bi   mi  dag.
+it   PST  COP  my  dog
 ```
 "It was my dog."
 
-### 12.2 Adjectives after `be`
+### 12.2 Adjectives after `bi`
 
-**12.2.1** `be` is the only word that may take bare adjectives as its object.
+**12.2.1** `bi` is the only word that may take bare adjectives as its object.
 This is how Astu says "X is (adjective)". It is the only place an adjective may
 appear without a noun.
 
-**12.2.2** `be` may be followed by one or more adjectives. Repeating an adjective
+**12.2.2** `bi` may be followed by one or more adjectives. Repeating an adjective
 intensifies it, just as in a noun phrase
 ([§8.4.3](#84-adjectives)).
 
 ```
-dag  be   big.
+dag  bi   big.
 dog  COP  big
 ```
 "The dog is big."
 
 ```
-dag  be   tiad   sik.
+dag  bi   tiad   sik.
 dog  COP  tired  sick
 ```
 "The dog is tired and sick."
 
 ```
-dag  be   big  big.
+dag  bi   big  big.
 dog  COP  big  big
 ```
 "The dog is very big."
+
+**12.2.3** Because adjectives also begin noun phrases, the words after `bi` are
+a predicate adjective only if **no noun follows them**. If a noun follows, they
+all belong to a noun phrase:
+
+```
+dag  bi   big  big.           dag  bi   big  big  kiat.
+dog  COP  big  big            dog  COP  big  big  cat
+```
+"The dog is very big." / "The dog is a very big cat."
+
+This is never ambiguous, because a noun cannot begin the next verb in a chain,
+but a reader must look past the adjectives to tell which is meant.
 
 ### 12.3 Existence: `abi`
 
@@ -936,8 +1051,8 @@ dog  exists
 "There is a dog."
 
 ```
-fish  dem  abi     sidon  pelaiz  ia.
-fish  PL   exist   be-at  place   PROX
+fish  dem  abi     pon    ia    pelaiz.
+fish  PL   exist   be-at  PROX  place
 ```
 "There are fish here."
 
@@ -981,18 +1096,18 @@ eat · fish*.
 replace embedded clauses that share their subject with the main clause
 ([§9.4](#94-no-embedded-clauses)).
 
-**13.6 Place and time.** The place or time of an action is given with `sidon`
+**13.6 Place and time.** The place or time of an action is given with `pon`
 ("be at"), usually at the end of the chain:
 
 ```
-mi  bin  niam  fish  sidon  pelaiz  ia.
-I   PST  eat   fish  be-at  place   PROX
+mi  bin  niam  fish  pon    ia    pelaiz.
+I   PST  eat   fish  be-at  PROX  place
 ```
 "I ate fish here."
 
 ```
-dag  seliep  sidon  taim  dea.
-dog  sleeps  be-at  time  DIST
+dag  seliep  pon    dea   taim.
+dog  sleeps  be-at  DIST  time
 ```
 "The dog sleeps then."
 
@@ -1008,7 +1123,7 @@ phrase ends when the next word cannot continue it.
 serial verb chain. "A is bigger than B" is "A is big, passing B".
 
 ```
-dag  be   big  pas   kiat.
+dag  bi   big  pas   kiat.
 dog  COP  big  pass  cat
 ```
 "The dog is bigger than the cat."
@@ -1025,15 +1140,15 @@ I   eat   fish  pass  you
 ("all"):
 
 ```
-dag  ia    be   big  pas   al.
-dog  PROX  COP  big  pass  all
+ia    dag  bi   big  pas   al.
+PROX  dog  COP  big  pass  all
 ```
 "This dog is the biggest."
 
 **14.4 "As … as".** Equality uses the core verb `siem` ("equal"):
 
 ```
-dag  be   big  siem   kiat.
+dag  bi   big  siem   kiat.
 dog  COP  big  equal  cat
 ```
 "The dog is as big as the cat."
@@ -1053,12 +1168,10 @@ you  eat   fish  Q
 ```
 "Do you eat fish?"
 
-**15.1.2** This is the one exception to the head-first rule ([§8.1](#81-the-head-comes-first)).
-
-**15.1.3** A question-marking `no` can never be mistaken for negation, because
+**15.1.2** A question-marking `no` can never be mistaken for negation, because
 negation always comes before a verb, and nothing follows the question marker.
 
-**15.1.4** Negative questions are allowed:
+**15.1.3** Negative questions are allowed:
 
 ```
 iu   no   niam  fish  no?
@@ -1066,41 +1179,41 @@ you  NEG  eat   fish  Q
 ```
 "Don't you eat fish?"
 
-**15.1.5** In a sentence with several clauses ([§17](#17-sentences-with-several-clauses)),
+**15.1.4** In a sentence with several clauses ([§17](#17-sentences-with-several-clauses)),
 a final `no` makes the **whole sentence** a question. To ask about only one
 clause, make that clause its own sentence.
 
 ### 15.2 Question-word questions
 
 **15.2.1** Questions asking "who", "what", "where" and similar are formed with a
-**general noun** followed by the question word `wa` ("which?"). The general
+question word `wa` ("which?") followed by a **general noun**. The general
 noun says what kind of answer is wanted.
 
 | General noun | Meaning | Question phrase | English |
 |---|---|---|---|
-| `pasin` | person | `pasin wa` | who |
-| `tin` | thing | `tin wa` | what |
-| `pelaiz` | place | `pelaiz wa` | which place |
-| `taim` | time | `taim wa` | which time |
-| `rizon` | reason | `rizon wa` | which reason |
-| `wei` | way | `wei wa` | which way |
-| `moch` | amount | `moch wa` | how much, how many |
+| `pasin` | person | `wa pasin` | who |
+| `tin` | thing | `wa tin` | what |
+| `pelaiz` | place | `wa pelaiz` | which place |
+| `taim` | time | `wa taim` | which time |
+| `rizon` | reason | `wa rizon` | which reason |
+| `wei` | way | `wa wei` | which way |
+| `moch` | amount | `wa moch` | how much, how many |
 
 **15.2.2** The general nouns are ordinary nouns listed in this specification.
-They may also be used in statements: `pasin dea` means "that person".
+They may also be used in statements: `dea pasin` means "that person".
 
 **15.2.3** The question phrase goes in the same place as the answer would go.
 The word order of the sentence does not change.
 
 ```
-iu   niam  tin    wa?
-you  eat   thing  which
+iu   niam  wa     tin?
+you  eat   which  thing
 ```
 "What do you eat?"
 
 ```
-pasin   wa     niam  fish?
-person  which  eats  fish
+wa     pasin   niam  fish?
+which  person  eats  fish
 ```
 "Who eats fish?"
 
@@ -1109,29 +1222,29 @@ use the matching core verb in a serial chain:
 
 | English | Astu | Literally |
 |---|---|---|
-| where? | `… sidon pelaiz wa?` | be at which place |
-| when? | `… sidon taim wa?` | be at which time |
-| why? | `… fori rizon wa?` | for which reason |
-| how? | `… tek wei wa?` | use which way |
+| where? | `… pon wa pelaiz?` | be at which place |
+| when? | `… pon wa taim?` | be at which time |
+| why? | `… fi wa rizon?` | for which reason |
+| how? | `… tek wa wei?` | use which way |
 
 ```
-iu   niam  fish  sidon  pelaiz  wa?
-you  eat   fish  be-at  place   which
+iu   niam  fish  pon    wa     pelaiz?
+you  eat   fish  be-at  which  place
 ```
 "Where do you eat fish?"
 
 ```
-iu   kot  bared  tek  wei  wa?
-you  cut  bread  use  way  which
+iu   kot  bared  tek  wa     wei?
+you  cut  bread  use  which  way
 ```
 "How do you cut bread?"
 
 **15.2.5** "How many" uses `moch` as the head, with the counted noun as a
-describing noun:
+describing noun before it:
 
 ```
-iu   bin  niam  moch    fish  wa?
-you  PST  eat   amount  fish  which
+iu   bin  niam  wa     fish  moch?
+you  PST  eat   which  fish  amount
 ```
 "How many fish did you eat?"
 
@@ -1141,8 +1254,8 @@ you  PST  eat   amount  fish  which
 ([§9.5](#95-every-sentence-is-a-clause)):
 
 ```
-iu   niam  tin    wa?        mi  niam  fish.
-you  eat   thing  which      I   eat   fish
+iu   niam  wa     tin?       mi  niam  fish.
+you  eat   which  thing      I   eat   fish
 ```
 "What do you eat?" "I eat fish."
 
@@ -1203,8 +1316,7 @@ always begins with a noun phrase.
 **17.1** A sentence may contain several clauses. Exactly one **linking word**
 must stand between each pair of clauses.
 
-**17.2** A linking word comes **before** the clause it introduces, in keeping
-with the head-first rule.
+**17.2** A linking word comes **before** the clause it introduces.
 
 **17.3** A linking word must never begin a sentence. The clause it introduces
 always comes after another clause.
@@ -1228,21 +1340,21 @@ I   sleep   if  you  eat   fish
 "I sleep if you eat fish."
 
 ```
-mi  bin  seliep  kaz      mi  bin  be   tiad.
+mi  bin  seliep  kaz      mi  bin  bi   tiad.
 I   PST  sleep   because  I   PST  COP  tired
 ```
 "I slept because I was tired."
 
 **17.5** Clauses inside one sentence must always be separated by a linking word.
 Without one, the boundary between them would be unclear. For example, in
-`mi luk dag kiat niam fish`, `dag kiat` could be a head noun followed by a
-describing noun.
+`mi luk dag kiat niam fish`, `dag kiat` could be a describing noun followed by
+a head noun ("dog cat").
 
 **17.6 Commands come first.** A sentence may mix commands and other clauses,
 but every command clause must come **before** every other clause.
 
 ```
-no   niam  fish  if  iu   be   sik.
+no   niam  fish  if  iu   bi   sik.
 NEG  eat   fish  if  you  COP  sick
 ```
 "Don't eat fish if you're sick."
@@ -1273,7 +1385,7 @@ object, and the content is given in a separate sentence:
 - `dea` points **back** to what has just been said.
 
 ```
-dei  bin  chat  ia.    "mi  be   tiad."
+dei  bin  chat  ia.    "mi  bi   tiad."
 he   PST  say   PROX    I   COP  tired
 ```
 "He said: 'I am tired.'"
@@ -1318,19 +1430,19 @@ wan  ziro  ziro    = 100
 which is `ziro` on its own.
 
 **19.1.4** Number words are function words. In a noun phrase they fill the
-number slot, after the adjectives and before the plural marker
+number slot, after any determiner and before the adjectives
 ([§8.2](#82-order-of-a-noun-phrase)).
 
 ```
-dag  tu   tiri   dem
-dog  two  three  PL
+tu   tiri   dag  dem
+two  three  dog  PL
 ```
 "23 dogs"
 
 ### 19.2 Writing numbers as digits
 
-Numbers may be written with digits ([§5.2.5](#52-punctuation)): `dag 23 dem.`
-is read `dag tu tiri dem.`
+Numbers may be written with digits ([§5.2.5](#52-punctuation)): `23 dag dem`
+is read `tu tiri dag dem`.
 
 ### 19.3 Quantifiers
 
@@ -1347,15 +1459,15 @@ noun phrase.
 | `notin` | none, no | no: singular noun |
 
 ```
-fish  nof   dem        dag  eri
-fish  many  PL         dog  every
+nof   fish  dem        eri    dag
+many  fish  PL         every  dog
 ```
 "many fish" / "every dog"
 
 **19.3.2** A noun phrase may contain a number **or** a quantifier, but not both.
 
 **19.3.3** `notin` ("none") is a different word from `no` (negation).
-`dag notin` means "no dog".
+`notin dag` means "no dog".
 
 **19.3.4** A quantifier may stand alone as a complete noun phrase
 ([§8.9](#89-noun-phrases-with-no-head-noun)):
@@ -1379,25 +1491,43 @@ noun phrases built from a head and describing nouns
 ([§8.3](#83-describing-nouns)).
 
 **20.2 Class-changing prefixes.** Astu has exactly three prefixes. Each one
-turns a word of one class into a word of another class:
+turns a word of one class into a word of another class. Each prefix has two
+forms: one used before a root that begins with a consonant, and one, ending in
+a linking `z`, used before a root that begins with a vowel.
 
-| Prefix | Makes a… | Gloss |
-|---|---|---|
-| `pu-` | noun | `N-` |
-| `vu-` | verb | `V-` |
-| `ru-` | adjective | `A-` |
+| Before a consonant | Before a vowel | Makes a… | Gloss |
+|---|---|---|---|
+| `di-` | `diz-` | noun | `N-` |
+| `me-` | `mez-` | verb | `V-` |
+| `lai-` | `laiz-` | adjective | `A-` |
+
+```
+di + niam  = diniam      me + big  = mebig      lai + dag  = laidag
+di + abi   = dizabi      me + eg   = mezeg      lai + eg   = laizeg
+```
+
+**20.2.1** Because no root begins with `z` ([§3.2.2](#32-reserved-first-syllables)),
+a `z` straight after a prefix is always the linking `z`, never part of the
+root. `dizabi` can only be `diz` + `abi`.
+
+**20.2.2** The linking `z` keeps the root's vowels apart from the prefix's, so a
+prefix never creates a doubled vowel or three vowels in a row
+([§2.2](#22-vowel-glides)).
+
+**20.2.3** In this document, prefixes are named by the form used before a
+consonant: "the prefix `di-`" includes `diz-`.
 
 **20.3 Meanings.** The meaning of a prefixed word depends only on the prefix and
 the class of the root:
 
 | Prefix | From a verb | From an adjective | From a noun |
 |---|---|---|---|
-| `pu-` | the act of doing it: `puniam` "eating" | the quality: `pubig` "bigness" | — |
-| `vu-` | — | make the object that way; with no object, become that way: `vubig` "enlarge, grow" | make the object into it; with no object, become it: `vubared` "make into bread" |
-| `ru-` | tending to do it: `ruseliep` "sleepy" | — | like it, typical of it: `rudag` "dog-like" |
+| `di-` | the act of doing it: `diniam` "eating" | the quality: `dibig` "bigness" | — |
+| `me-` | — | make the object that way; with no object, become that way: `mebig` "enlarge, grow" | make the object into it; with no object, become it: `mebared` "make into bread" |
+| `lai-` | tending to do it: `laiseliep` "sleepy" | — | like it, typical of it: `laidag` "dog-like" |
 
 ```
-mi  vubig  dag.        dag  vubig.
+mi  mebig  dag.        dag  mebig.
 I   V-big  dog         dog  V-big
 ```
 "I make the dog big." / "The dog grows."
@@ -1408,34 +1538,30 @@ prefixed describing noun:
 
 | Astu | Literally | Meaning |
 |---|---|---|
-| `pasin puniam` | eating person | eater |
-| `tin pukot` | cutting thing | cutter |
-| `pelaiz puseliep` | sleeping place | bedroom |
+| `diniam pasin` | eating person | eater |
+| `dikot tin` | cutting thing | cutter |
+| `diseliep pelaiz` | sleeping place | bedroom |
 
 **20.5 Rules.**
 
 - **20.5.1** A prefix may be added to any noun, verb or adjective, including the
-  general nouns and core verbs (`putek` "use", the noun). It must not be added
-  to `be`, to a pronoun or to any other function word.
+  general nouns and core verbs (`ditek` "use", the noun). It must not be added
+  to `bi`, to a pronoun or to any other function word.
 - **20.5.2** A prefix must not be added to a word that is already of the class
-  it makes. There is no `pu-` on a noun.
+  it makes. There is no `di-` on a noun.
 - **20.5.3** A word may have at most one prefix. Prefixes never stack.
 - **20.5.4** A prefixed word is an ordinary word of its new class.
 - **20.5.5** The meaning of a prefixed word is always exactly the meaning given
   by 20.3. The dictionary never gives a prefixed word a special meaning. A
   concept that needs a different meaning gets its own root word.
-- **20.5.6** No root word may begin with `pu`, `vu` or `ru`
-  ([§3.2](#32-reserved-first-syllables)), so a prefix can always be recognised.
+- **20.5.6** No other word may begin with `di`, `me` or `lai`, and no root may
+  begin with `z` ([§3.2](#32-reserved-first-syllables)), so a prefix and its
+  root can always be told apart.
 
 **20.6 Proper names.** Names have no special marker and no special rules. A name
 is an ordinary noun: it obeys every shape rule ([§3](#3-word-shape)) and is
 written in lowercase. This specification gives no rule for adapting names
 from other languages.
-
-> ⚠ **Not yet specified:** what happens when a prefix is added to a root that
-> begins with a vowel. `pu` + `eg` gives `pueg`, where `ue` becomes a glide, and
-> a root beginning with a glide would produce three vowels in a row, which
-> [§2.2.3](#22-vowel-glides) forbids.
 
 ---
 
@@ -1462,7 +1588,8 @@ These small parts of the language are still open:
 - **"Each other".** A reciprocal word ([§7.8](#7-pronouns)).
 - **Ordinals, fractions and decimals** ([§19](#19-numbers-and-quantifiers)).
 - **Zero and plurality.** Whether `ziro` takes `dem` ([§19](#19-numbers-and-quantifiers)).
-- **Prefixes on vowel-initial roots** ([§20](#20-making-new-words)).
+- **Greetings.** Whether `mi luk iu.` (hello) and `mi fina luk iu.` (goodbye)
+  are confirmed, and whether more fixed phrases are listed ([§21](#21-fixed-phrases)).
 
 ---
 
@@ -1483,7 +1610,6 @@ These small parts of the language are still open:
 | `ia` | this (near); refers forward | [§8.6](#86-demonstratives-ia-and-dea) |
 | `dea` | that (far); refers back | [§8.6](#86-demonstratives-ia-and-dea) |
 | `wa` | which? (question word) | [§8.7](#87-the-question-word-wa) |
-| `fi` | possessive marker | [§8.8](#88-possession-fi) |
 | `bin` | past tense | [§10](#10-tense-aspect-and-modality) |
 | `fina` | future tense | [§10](#10-tense-aspect-and-modality) |
 | `am` | progressive aspect | [§10](#10-tense-aspect-and-modality) |
@@ -1493,11 +1619,11 @@ These small parts of the language are still open:
 | `maita` | might | [§10.3](#103-modals) |
 | `no` | negation; yes/no question marker; the answer "no" | [§11](#11-negation), [§15](#15-questions) |
 | `ie` | the answer "yes" | [§15.3](#153-answering-yesno-questions) |
-| `be` | copula ("is") | [§12](#12-the-copula-be-and-existence) |
+| `bi` | copula ("is") | [§12](#12-the-copula-bi-and-existence) |
 | `an` `bot` `ou` `so` `kaz` `if` `wen` | linking words: and, but, or, so, because, if, when | [§17](#17-sentences-with-several-clauses) |
 | `al` `som` `nof` `fiu` `eri` `notin` | quantifiers: all, some, many, few, every, none | [§19.3](#193-quantifiers) |
 | `ziro` `wan` `tu` `tiri` `foa` `faiv` `sikis` `sefen` `eit` `nain` | digits 0–9 | [§19.1](#191-digit-words) |
-| `pu-` `vu-` `ru-` | prefixes: make a noun, verb, adjective | [§20](#20-making-new-words) |
+| `di-` `me-` `lai-` (`diz-` `mez-` `laiz-` before a vowel) | prefixes: make a noun, verb, adjective | [§20](#20-making-new-words) |
 
 ### A.2 General nouns
 
@@ -1517,10 +1643,10 @@ These small parts of the language are still open:
 |---|---|
 | `tek` | take, use |
 | `gib` | give |
-| `fori` | for |
+| `fi` | belong to, be for |
 | `guan` | go to |
 | `kum` | come from |
-| `sidon` | be at |
+| `pon` | be at |
 | `wid` | be with |
 | `pas` | pass, exceed |
 | `siem` | equal |
@@ -1538,12 +1664,14 @@ word obeys the shape rules ([§3](#3-word-shape)).
 |---|---|---|
 | `bared` | noun | bread |
 | `bad` | noun | bird |
+| `buk` | noun | book |
 | `dag` | noun | dog |
 | `naif` | noun | knife |
 | `kiat` | noun | cat |
 | `eg` | noun | egg |
 | `fish` | noun | fish |
 | `kot` | verb | cut |
+| `kuk` | verb | cook |
 | `seliep` | verb | sleep |
 | `sabi` | verb | know |
 | `luk` | verb | see, look at |
@@ -1580,16 +1708,19 @@ aspect        = "am"
 modal         = "kian" | "mos" | "shud" | "maita"
 
 verb-chain    = verb-unit+
-verb-unit     = "be" ( noun-phrase | adjective+ )?
+verb-unit     = "bi" ( noun-phrase | adjective+ )?
               | "abi"
               | verb noun-phrase?
 
-noun-phrase   = "ia" | "dea" | quantifier
-              | head describer* adjective* count? "dem"? demonstrative?
-                "wa"? ( "fi" noun-phrase )?
+noun-phrase   = base ( link nominal )*
+base          = standalone | ( determiner | pronoun )? nominal
+link          = "dei" | "deidem"
+standalone    = "ia" | "dea" | quantifier
+determiner    = demonstrative | "wa"
+nominal       = count? adjective* describer* head "dem"?
 
 head          = noun | pronoun
-describer     = noun | pronoun
+describer     = noun
 count         = number | quantifier
 number        = digit+
 demonstrative = "ia" | "dea"
@@ -1611,11 +1742,26 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
 - A sentence-final `"no"` is the question marker ([§15.1](#151-yesno-questions)).
   A `"no"` at the start of a command, or before the tense, aspect, modal or verb
   of a statement, is negation.
-- A noun phrase after `"fi"` extends to the end of the enclosing noun phrase
-  ([§8.8.2](#88-possession-fi)).
+- In `nominal`, the head is always the last noun in the run; every one before
+  it is a describer ([§8.3.3](#83-describing-nouns)). A pronoun is never a
+  describer, and a pronoun head never has describers.
+- A `pronoun` before a `nominal` in `base` is a possessor
+  ([§8.8.1](#88-possession)). Each `link` is a linking pronoun, and everything
+  before it is the possessor of the `nominal` after it.
+- Possession nests to the left: in `A dei B dei C`, `A dei B` is the possessor
+  of `C` ([§8.8.7](#88-possession)). A determiner belongs to the first
+  `nominal` ([§8.8.6](#88-possession)).
+- After `"bi"`, adjectives are a predicate (`adjective+`) only when no noun or
+  pronoun follows them; otherwise they begin a noun phrase
+  ([§12.2.3](#122-adjectives-after-bi)).
 - Constraints not shown by the rules above:
   - a pronoun is never followed by `"dem"`, and `"eri"` and `"notin"` are never
     followed by `"dem"` ([§8.5](#85-plural));
+  - the `nominal` after a possessor `pronoun` or a `link` has a noun as its
+    head ([§8.8](#88-possession));
+  - the phrase before a `link` does not have a pronoun as its head and does not
+    end in `"dem"`; the `link` is `"dei"` when that phrase is singular and
+    `"deidem"` when it is plural ([§8.8.4](#88-possession)–[§8.8.9](#88-possession));
   - a number must not begin with `"ziro"` unless it is `"ziro"` alone
     ([§19.1.3](#191-digit-words));
   - a sentence containing a command must not contain `"wa"`
