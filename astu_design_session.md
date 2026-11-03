@@ -4,8 +4,8 @@ Working notes from the design interview ("grilling") that produced `astu.md`.
 Resume by running `/grilling` and pointing it at this file, e.g.
 "continue the Astu design session from astu_design_session.md".
 
-Last session: 2026-11-03. Questions are numbered globally (Q1, Q2, …); the next
-new question is **Q127**.
+Last session: 2026-11-04. Questions are numbered globally (Q1, Q2, …); the next
+new question is **Q148**.
 
 ## Ground rules agreed
 
@@ -118,7 +118,7 @@ new question is **Q127**.
 | Q98 | Modals (closed list, function words): can, must, should, might. want/try/start/stop are ordinary verbs in serial chains (Q68). |
 | Q107 | `r` may not be a final consonant (Australian non-rhotic); linker "or" becomes `ou`. |
 | Q109 | A sentence containing a command can't be a question. |
-| Q110 | Prefixes `pu-` (→noun), `vo-` (→verb), `ru-` (→adjective); no root begins with pu/vo/ru. |
+| Q110 | **Forms superseded by Q146/Q147**: prefixes `pu-` (→noun), `vo-` (→verb), `ru-` (→adjective); no root begins with pu/vo/ru. |
 | Q111 | pu+V act of V-ing; pu+A quality; vo+A make ADJ (no object: become); vo+N make into N (no object: become); ru+V tending to V; ru+N like N. Doers/tools/places via general noun + describing noun. |
 | Q112 | Prefixes only on open-class words (incl. general nouns, core verbs) of another class; one per word; no stacking. |
 | Q113 | Derived meanings always predictable; no idiomatic meanings. |
@@ -136,6 +136,27 @@ new question is **Q127**.
 | Q125 | Sample "know" = `sabi`. |
 | Q106 | Word forms final in `word_forms.md`. |
 | Q118 | Spec documents idioms: ⟨be-at⟩ chain for time/place; `fori kozi wich` why; `vusa kaini wich` how; `sate pelis/temi wich` where/when. |
+| Q127 | **Head-first dropped for noun phrases** (supersedes Q61 order and the head-first framing): NPs are head-last, English-like. Order: determiner (`ia`/`dea`/`wa`, or possessor + `fi`) → number/quantifier → adjectives → describing nouns → head → `dem`. Possessor precedes `fi` (`mi fi dag`), chains nest left; possessor excludes a demonstrative on the possessed noun. 2026-11-04. |
+| Q128 | Copula renamed `be` → `bi`: phonetic spelling (/bi/), sounds like English "be". 2026-11-04. |
+| Q129 | Possession by juxtaposition, pronouns only: a bare pronoun at the start of an NP (determiner slot) is the possessor (`mi buk` my book, `mi likil buk dem`). Pronouns are never describing nouns; pronoun heads take no describing nouns. 2026-11-04. |
+| Q130 | Ownership is shown by `mi buk` (NP) or `buk fi mi.` (clause). |
+| Q131 | `fi` is no longer an NP marker; it is a core verb "belong to / be for", replacing `fori` (`buk fi mi.` the book is mine; `mi kuk fish fi dei.` I cook fish for him; why = `fi wa rizon`). |
+| Q132 | `sef` as possessor = "own" (refers to clause subject). |
+| Q133 | Noun possessors: possessor NP + linking pronoun (`dei` sg / `deidem` pl) + possessed nominal (`dag dei eg` the dog's egg; `wa pasin dei dag` whose dog). Nests left; determiner belongs to the possessor. A possessor before `deidem` drops its `dem` (`dag deidem eg dem`) — exception to the always-`dem` rule. |
+| Q134 | A pronoun-headed possessor must be a bare pronoun; "we two's book" → `buk fi tu midem.` |
+| Q135 | A linking pronoun must always be followed by the possessed noun; "is the dog's" = `fi dag`. |
+| Q136 | Core verb "be at" renamed `sidon` → `pon` (from pseudo-Jamaican "upon the" / "pon di"; `pondi` rejected because `nd` is a word-internal cluster). 2026-11-04. |
+| Q137 | Pure rename: meaning (place and time) and gloss `be-at` unchanged; idioms become `pon wa pelaiz` where, `pon wa taim` when. |
+| Q138 | The word's origin is recorded only here, not in astu.md (history out of scope, Q4). |
+| Q139 | Prefix revision changes forms only; meanings, rules, stress and glosses (`N-` `V-` `A-`) unchanged. 2026-11-04. |
+| Q140 | Markers stay prefixes (suffixes would clash with consonant-final and vowel-final roots). |
+| Q141 | Each prefix is one CV syllable (nucleus may be a glide), with a second consonant-final form used before vowel-initial roots. |
+| Q142 | Prefixes needn't be maximally distinct, but should make sense in pseudo-Jamaican creole and have a reason. |
+| Q143 | Chosen mnemonically, in the pidgin-English style. |
+| Q144 | No word of any class (root, function word, name) may begin with a prefix syllable. |
+| Q145 | Vowel form = consonant form + one shared linking consonant that no open-class word may begin with (avoids `me`+`kot` vs `mek`+`ot` ambiguity). |
+| Q146 | `di-` → noun (Jamaican *di* "the"), `me-` → verb (*mek* "make"), `lai-` → adjective ("like"). Risk noted: `me-` vs pronoun `mi`; stress distinguishes. |
+| Q147 | Linking consonant `z`: vowel forms `diz-` `mez-` `laiz-`; no noun/verb/adjective may begin with `z` (function words like `ziro` exempt). Resolves the prefix + vowel-initial root issue. |
 
 ## Open questions (asked, not yet answered)
 
@@ -146,12 +167,9 @@ None. `astu.md` was rewritten on 2026-11-03 to match every decision above and
 
 1. **Zero and plurality**: does a noun counted with `ziro` take `dem`?
    (Marked ⚠ in astu.md §19.)
-2. **Prefix + vowel-initial root**: `pu`+`eg` → `pueg` (ue becomes a glide);
-   a root starting with a glide would give three vowels in a row, which §2.2.3
-   forbids. (Marked ⚠ in astu.md §20.)
-3. **Greetings**: Claude added `mi luk iu.` (hello) and `mi fina luk iu.`
+2. **Greetings**: Claude added `mi luk iu.` (hello) and `mi fina luk iu.`
    (goodbye) to §21; confirm or replace, and decide whether to list more.
-4. Still deferred by user: "each other" (Q94), ordinals (Q77),
+3. Still deferred by user: "each other" (Q94), ordinals (Q77),
    fractions/decimals (Q104).
 
 ## Issues found while writing astu.md (all since resolved: Q86–Q93, Q106)
