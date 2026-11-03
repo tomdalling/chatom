@@ -487,11 +487,11 @@ noun, each one narrows down **the word directly after it**. The phrase is
 read as a nested chain from the left.
 
 ```
-dag  diseliep  pelaiz
+dag  diseliep  pelais
 dog  N-sleep   place
 ```
 "dog-sleeping place", that is, a kennel. `dag` narrows down `diseliep`
-("dog-sleeping"), and `dag diseliep` narrows down `pelaiz`.
+("dog-sleeping"), and `dag diseliep` narrows down `pelais`.
 
 **8.3.3** Because describing nouns and the head are all nouns, the head is
 always the **last** noun in the run. A noun phrase never ends with a describing
@@ -1051,7 +1051,7 @@ dog  exists
 "There is a dog."
 
 ```
-fish  dem  abi     pon    ia    pelaiz.
+fish  dem  abi     pon    ia    pelais.
 fish  PL   exist   be-at  PROX  place
 ```
 "There are fish here."
@@ -1100,7 +1100,7 @@ replace embedded clauses that share their subject with the main clause
 ("be at"), usually at the end of the chain:
 
 ```
-mi  bin  niam  fish  pon    ia    pelaiz.
+mi  bin  niam  fish  pon    ia    pelais.
 I   PST  eat   fish  be-at  PROX  place
 ```
 "I ate fish here."
@@ -1193,7 +1193,7 @@ noun says what kind of answer is wanted.
 |---|---|---|---|
 | `pasin` | person | `wa pasin` | who |
 | `tin` | thing | `wa tin` | what |
-| `pelaiz` | place | `wa pelaiz` | which place |
+| `pelais` | place | `wa pelais` | which place |
 | `taim` | time | `wa taim` | which time |
 | `rizon` | reason | `wa rizon` | which reason |
 | `wei` | way | `wa wei` | which way |
@@ -1222,13 +1222,13 @@ use the matching core verb in a serial chain:
 
 | English | Astu | Literally |
 |---|---|---|
-| where? | `… pon wa pelaiz?` | be at which place |
+| where? | `… pon wa pelais?` | be at which place |
 | when? | `… pon wa taim?` | be at which time |
 | why? | `… fi wa rizon?` | for which reason |
 | how? | `… tek wa wei?` | use which way |
 
 ```
-iu   niam  fish  pon    wa     pelaiz?
+iu   niam  fish  pon    wa     pelais?
 you  eat   fish  be-at  which  place
 ```
 "Where do you eat fish?"
@@ -1540,7 +1540,7 @@ prefixed describing noun:
 |---|---|---|
 | `diniam pasin` | eating person | eater |
 | `dikot tin` | cutting thing | cutter |
-| `diseliep pelaiz` | sleeping place | bedroom |
+| `diseliep pelais` | sleeping place | bedroom |
 
 **20.5 Rules.**
 
@@ -1631,7 +1631,7 @@ These small parts of the language are still open:
 |---|---|
 | `pasin` | person |
 | `tin` | thing |
-| `pelaiz` | place |
+| `pelais` | place |
 | `taim` | time |
 | `rizon` | reason |
 | `wei` | way |
