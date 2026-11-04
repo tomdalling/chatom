@@ -43,9 +43,12 @@ For each content word in the English, search the dictionary by gloss (see the
 dictionary roots (§20.3) and describing-noun phrases (§8.3, §20.4). Note which
 concepts have no Chatom word yet.
 
-Names (people, places, products...) are written verbatim, keeping their
-capitals (§20.6). Never adapt them and never look them up or add them. Join a
-lowercase part of a name with hyphens: `Leonardo-da-Vinci`.
+Names come in two kinds (§20.6). A **native name** such as `chatom` is an
+ordinary lowercase dictionary noun: look it up like any other word. A **foreign
+name** (people, places, products...) contains an uppercase letter and is
+written verbatim, keeping its capitals; never look one up or add it. Offer an
+adapted spelling (`Sara` for Sarah) only if the user asks for one. Join a
+lowercase part of a foreign name with hyphens: `Leonardo-da-Vinci`.
 
 ### 3. Offer structures
 
@@ -102,7 +105,7 @@ check that:
 - it fits the word shape `C? N (C N)* F?` (§3.3), with no doubled vowel;
 - it doesn't begin with `di`, `me` or `lai`, or with `z` (§3.2);
 - its spelling isn't taken, by a function word or any dictionary word;
-- it is all lowercase (a word with a capital would be a name).
+- it is all lowercase (a word with a capital would be a foreign name).
 
 If the user types their own word under "Other", run the same checks. If it
 fails, explain why and offer fixed versions. If the user asks for more options,
@@ -153,6 +156,6 @@ showing it:
    (§12.2.3). Existence uses `abi`, which never takes an object.
 9. **Words**: every word is a function word, a dictionary word, a valid
    prefixed word (one prefix, the right class, not on a function word or a
-   name, §20.5), a name, or a marked placeholder or new word.
+   foreign name, §20.5), a foreign name, or a marked placeholder or new word.
 10. **One parse**: read the sentence as a parser would, and make sure no word
     could be taken as the start of a different phrase.
