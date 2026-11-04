@@ -8,7 +8,9 @@ unambiguous. Its two founding principles are:
    and a learner never has to wonder which word goes with which.
 2. **Phonetic spelling.** Each sound is written exactly one way, and each
    spelling is pronounced exactly one way. If you can read a word, you can say
-   it; if you can hear a word, you can spell it.
+   it; if you can hear a word, you can spell it. The one exception is names,
+   which keep the spelling and pronunciation of their source language
+   ([§20.6](#20-making-new-words)).
 
 This document is the complete specification of the grammar and of every
 function word. It is meant to be precise enough to build software from, while
@@ -216,7 +218,7 @@ such as `tt` or `nn` cannot occur.
 
 **3.2.1** The syllables `di`, `me` and `lai` are reserved for the word-making
 prefixes ([§20](#20-making-new-words)). No other word may begin with them:
-not a root, not a function word, not a name. A word that begins with `di`,
+not a root and not a function word. A word that begins with `di`,
 `me` or `lai` is therefore always a prefix followed by a root.
 
 **3.2.2** No noun, verb or adjective may begin with `z`. Function words, such
@@ -244,6 +246,12 @@ The table below states the shape rules as patterns. In each pattern, `?` means
 A consequence of this pattern is that splitting a word into syllables is
 always unambiguous. A new syllable begins at every consonant, except a
 consonant at the very end of the word, which belongs to the last syllable.
+
+### 3.4 Names
+
+**3.4.1** Names ([§20.6](#20-making-new-words)) are exempt from every rule in
+this section and in [§2](#2-sounds) and [§4](#4-stress). A name keeps the
+spelling and pronunciation of its source language.
 
 ---
 
@@ -283,8 +291,12 @@ by `h` is always /ʃ/, and `c` only ever appears as part of `ch`.
 
 **5.1.3** Words are separated by spaces.
 
-**5.1.4** Everything is written in **lowercase**, including names and the first
-word of a sentence.
+**5.1.4** Everything except names is written in **lowercase**, including the
+first word of a sentence. A word that contains an uppercase letter is always a
+name ([§20.6](#20-making-new-words)).
+
+**5.1.5** Names are exempt from the alphabet above and from 5.1.1 and 5.1.2. A
+name may use any letter, digit or punctuation mark except a quotation mark.
 
 ### 5.2 Punctuation
 
@@ -361,16 +373,18 @@ fixed phrases built from ordinary sentences ([§21](#21-fixed-phrases)).
 
 ### 6.3 Identifying a word's class
 
-**6.3.1** A word's form says nothing about its class. Any word may begin with
-any sound.
+**6.3.1** Apart from names, a word's form says nothing about its class. Any
+word may begin with any sound.
 
 **6.3.2** To find the class of a word:
 
-1. If it is in the function word list ([Appendix A](#appendix-a-function-word-list)),
+1. If it contains an uppercase letter, it is a name, which is a noun
+   ([§20.6](#20-making-new-words)). Names are never listed in the dictionary.
+2. If it is in the function word list ([Appendix A](#appendix-a-function-word-list)),
    it is that function word.
-2. If it begins with `di`, `me` or `lai`, it is a prefixed word, and the prefix
+3. If it begins with `di`, `me` or `lai`, it is a prefixed word, and the prefix
    gives its class ([§20](#20-making-new-words)).
-3. Otherwise, look it up in the dictionary.
+4. Otherwise, look it up in the dictionary.
 
 **6.3.3** No noun, verb or adjective may be spelled the same as a function word.
 
@@ -1546,7 +1560,7 @@ prefixed describing noun:
 
 - **20.5.1** A prefix may be added to any noun, verb or adjective, including the
   general nouns and core verbs (`ditek` "use", the noun). It must not be added
-  to `bi`, to a pronoun or to any other function word.
+  to `bi`, to a pronoun, to a name or to any other function word.
 - **20.5.2** A prefix must not be added to a word that is already of the class
   it makes. There is no `di-` on a noun.
 - **20.5.3** A word may have at most one prefix. Prefixes never stack.
@@ -1558,10 +1572,43 @@ prefixed describing noun:
   begin with `z` ([§3.2](#32-reserved-first-syllables)), so a prefix and its
   root can always be told apart.
 
-**20.6 Proper names.** Names have no special marker and no special rules. A name
-is an ordinary noun: it obeys every shape rule ([§3](#3-word-shape)) and is
-written in lowercase. This specification gives no rule for adapting names
-from other languages.
+**20.6 Proper names.** A **name** refers to one particular person, place or
+thing, such as "Sarah" or "New York".
+
+- **20.6.1** Any word that contains an uppercase letter, anywhere in it, is a
+  name. Every name is a noun.
+- **20.6.2** A name is written and pronounced exactly as in its source
+  language. It is not adapted to Chatom. It is exempt from the rules for sounds,
+  word shape, stress and the alphabet ([§2](#2-sounds)–[§4](#4-stress),
+  [§5.1.5](#51-the-alphabet)).
+- **20.6.3** A name may contain any letter, digit or punctuation mark, except
+  that it must not contain a quotation mark (`"`), and it must not end in `.`,
+  `?` or `!`. So a sentence's final mark is never part of a name, and
+  quotation marks ([§5.2.4](#52-punctuation)) are never part of one.
+- **20.6.4** Several names directly next to each other form a single name:
+  `New York` is one noun, not a describing noun followed by a head
+  ([§8.3](#83-describing-nouns)). A consequence is that a name can never be a
+  describing noun directly before another name.
+- **20.6.5** A lowercase word is never part of a name. A name with a lowercase
+  part may join it to its neighbours with hyphens, making one word that
+  contains an uppercase letter: `Leonardo-da-Vinci`.
+- **20.6.6** In every other way a name is an ordinary noun. It may be a head,
+  a describing noun or a possessor, and it may take `dem`. A name must not take
+  a prefix.
+- **20.6.7** Names are never listed in the dictionary.
+- **20.6.8** In glosses, a name is glossed as itself.
+
+```
+Sarah  bin  guan   New York.
+Sarah  PST  go-to  New York
+```
+"Sarah went to New York."
+
+```
+Sarah  dei  dag  bi   big.
+Sarah  her  dog  COP  big
+```
+"Sarah's dog is big."
 
 ---
 
@@ -1737,6 +1784,9 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
   dictionary ([§6.3](#63-identifying-a-words-class)). They include the general
   nouns, the core verbs (except `abi`, listed separately because it never takes
   an object) and words built with prefixes.
+- A `noun` may also be a name: a run of one or more adjacent words that each
+  contain an uppercase letter, treated as a single word
+  ([§20.6](#20-making-new-words)).
 - Repeating an adjective ([§8.4.3](#84-adjectives)) is covered by `adjective*`
   and `adjective+`.
 - A sentence-final `"no"` is the question marker ([§15.1](#151-yesno-questions)).
