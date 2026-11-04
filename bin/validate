@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate dictionary.sqlite against the Astu specification (astu.md).
+"""Validate dictionary.sqlite against the Chatom specification (chatom.md).
 
 Usage: bin/validate [path/to/dictionary.sqlite]
 
@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SPEC_PATH = ROOT / "astu.md"
+SPEC_PATH = ROOT / "chatom.md"
 DB_PATH = ROOT / "dictionary.sqlite"
 
 SCHEMA_VERSION = 1
@@ -47,7 +47,7 @@ FUNCTION_SUBCLASSES = {
 SUBCLASS_OF = {w: sub for sub, ws in FUNCTION_SUBCLASSES.items() for w in ws.split()}
 
 
-# --- Parsing astu.md ---------------------------------------------------------
+# --- Parsing chatom.md ---------------------------------------------------------
 
 def section(text, heading):
     """Return the text under a markdown heading, up to the next heading of
@@ -63,7 +63,7 @@ def section(text, heading):
                     break
                 out.append(later)
             return "\n".join(out)
-    raise ValueError(f"heading not found in astu.md: {heading!r}")
+    raise ValueError(f"heading not found in chatom.md: {heading!r}")
 
 
 def table_rows(text):

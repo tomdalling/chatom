@@ -1,9 +1,9 @@
-# Astu
+# Chatom
 
-**Astu** is a constructed language designed to be completely regular and
+**Chatom** is a constructed language designed to be completely regular and
 unambiguous. Its two founding principles are:
 
-1. **Unambiguous structure.** Any valid Astu sentence can be broken down into
+1. **Unambiguous structure.** Any valid Chatom sentence can be broken down into
    exactly one grammatical structure. A computer can parse it without guessing,
    and a learner never has to wonder which word goes with which.
 2. **Phonetic spelling.** Each sound is written exactly one way, and each
@@ -54,7 +54,7 @@ Technical terms are explained when they first appear.
 **1.1 Normative language.** "Must" and "must not" state absolute rules of the
 language. "May" states something that is allowed but optional.
 
-**1.2 Examples.** Examples are given in three lines: the Astu sentence, a
+**1.2 Examples.** Examples are given in three lines: the Chatom sentence, a
 word-by-word gloss, and an English translation in quotes.
 
 ```
@@ -91,7 +91,7 @@ the non-normative sample vocabulary in
 
 ## 2. Sounds
 
-Astu has **5 vowels** and **17 consonants**: 22 sounds in total. It has no tone,
+Chatom has **5 vowels** and **17 consonants**: 22 sounds in total. It has no tone,
 and the length of a sound never changes the meaning of a word.
 
 ### 2.1 Vowels
@@ -107,7 +107,7 @@ the sound does not shift while it is held.
 | `o` | /o/ | f**o**rk (but short) |
 | `u` | /u/ | r**u**le |
 
-**2.1.1** Astu has no long vowels. A doubled vowel such as `aa` must not occur.
+**2.1.1** Chatom has no long vowels. A doubled vowel such as `aa` must not occur.
 
 ### 2.2 Vowel glides
 
@@ -176,7 +176,7 @@ belong to different syllables: *mi · a · bi*, never *mia · bi*.
   vowels: `pasin` is *pa-sin*, never *pa-zin*.
 - `sh` is always /ʃ/ as in **sh**ip, and `ch` is always /tʃ/ as in **ch**urch.
 
-**2.3.2** Astu has no sound /h/, no "y" sound /j/, and none of the sounds
+**2.3.2** Chatom has no sound /h/, no "y" sound /j/, and none of the sounds
 /ʒ/ (as in mea**s**ure), /dʒ/ (as in **j**am) or /ŋ/ (as in si**ng**).
 
 ---
@@ -267,7 +267,7 @@ PA·sin   SE·liep   LI·kil   DI·niam
 
 ### 5.1 The alphabet
 
-Astu is written in the basic Latin alphabet (plain ASCII, with no accents). It
+Chatom is written in the basic Latin alphabet (plain ASCII, with no accents). It
 uses 22 letters or letter pairs, one for each sound:
 
 ```
@@ -301,7 +301,7 @@ word of a sentence.
 because of its words (a final `no` or the question word `wa`), not because of
 its `?`. The `!` shows only tone of voice.
 
-**5.2.3** Astu uses **no commas**. Clause boundaries are always marked by
+**5.2.3** Chatom uses **no commas**. Clause boundaries are always marked by
 linking words ([§17](#17-sentences-with-several-clauses)).
 
 **5.2.4** Quoted words may be put in quotation marks (`"…"`) to make writing
@@ -318,13 +318,13 @@ number words. Each digit stands for its digit word
 
 ### 6.1 Open and closed classes
 
-Astu has three **open classes** of words and one **closed class**.
+Chatom has three **open classes** of words and one **closed class**.
 
 | Class | Open or closed | Where its words are listed |
 |---|---|---|
-| Noun | open | the Astu dictionary |
-| Verb | open | the Astu dictionary |
-| Adjective | open | the Astu dictionary |
+| Noun | open | the Chatom dictionary |
+| Verb | open | the Chatom dictionary |
+| Adjective | open | the Chatom dictionary |
 | Function word | closed | this specification ([Appendix A](#appendix-a-function-word-list)) |
 
 **6.1.1** An **open class** can gain new words at any time. Its words are listed
@@ -340,13 +340,13 @@ nouns** ([§15.2](#152-question-word-questions)) and **core verbs**
 but because the grammar depends on them, they are listed here rather than in
 the dictionary.
 
-**6.1.4** Astu has **no adverbs**. Meanings that other languages express with
+**6.1.4** Chatom has **no adverbs**. Meanings that other languages express with
 adverbs are expressed with serial verbs ([§13](#13-serial-verbs)) or with
 function words.
 
 ### 6.2 No inflection
 
-**6.2.1** Astu is an **analytic** language. Words never change form to show
+**6.2.1** Chatom is an **analytic** language. Words never change form to show
 grammar: there are no endings, no agreement and no irregular forms. Grammar is
 expressed entirely through word order and function words.
 
@@ -354,9 +354,9 @@ expressed entirely through word order and function words.
 class-changing prefixes ([§20](#20-making-new-words)). A prefixed word is a new
 word in its own right, not a different form of the old one.
 
-**6.2.3** Astu has no articles ("a", "the").
+**6.2.3** Chatom has no articles ("a", "the").
 
-**6.2.4** Astu has no interjections. Greetings and similar expressions are
+**6.2.4** Chatom has no interjections. Greetings and similar expressions are
 fixed phrases built from ordinary sentences ([§21](#21-fixed-phrases)).
 
 ### 6.3 Identifying a word's class
@@ -378,7 +378,7 @@ any sound.
 
 ## 7. Pronouns
 
-**7.1** Astu has six personal pronouns, distinguished by **person** (I / you /
+**7.1** Chatom has six personal pronouns, distinguished by **person** (I / you /
 he·she·it) and **number** (one / more than one).
 
 | | Singular | Plural |
@@ -410,7 +410,7 @@ the three plural pronouns. It is not a general rule: nouns never fuse with
 consonant, fusing it with `dem` would put two consonants side by side inside a
 word, which [§3.1.2](#31-syllables) forbids.
 
-**7.7 Reflexive.** Astu has a single reflexive pronoun, `sef`, used for every
+**7.7 Reflexive.** Chatom has a single reflexive pronoun, `sef`, used for every
 person and number. It is used when the object is the same as the subject.
 
 ```
@@ -565,7 +565,7 @@ which  big  dog
 
 ### 8.8 Possession
 
-Astu has no possessive marker. A possessor (the owner) is shown by its
+Chatom has no possessive marker. A possessor (the owner) is shown by its
 position at the start of the noun phrase, in one of two ways.
 
 **8.8.1 Pronoun possessors.** A bare pronoun placed at the start of a noun
@@ -714,7 +714,7 @@ the rest of a noun phrase is always its possessor ([§8.8.1](#88-possession)):
 
 ### 8.11 No joined noun phrases
 
-**8.11.1** Astu has no words for "and" or "or" between noun phrases. Instead:
+**8.11.1** Chatom has no words for "and" or "or" between noun phrases. Instead:
 
 - **Repeat the clause**, joined with a linking word
   ([§17](#17-sentences-with-several-clauses)):
@@ -783,7 +783,7 @@ word, the question marker or the end of the sentence, the verb has no object.
 
 ### 9.3 No prepositions
 
-**9.3.1** Astu has **no prepositions** (words like "in", "with", "to", "for").
+**9.3.1** Chatom has **no prepositions** (words like "in", "with", "to", "for").
 Relationships such as instrument, recipient, location and direction are
 expressed with **core verbs** in a serial verb chain ([§13](#13-serial-verbs)).
 
@@ -823,7 +823,7 @@ I   cook  fish  for  him
 
 ### 9.4 No embedded clauses
 
-**9.4.1** Astu has **no embedded clauses**. A clause can never appear inside
+**9.4.1** Chatom has **no embedded clauses**. A clause can never appear inside
 another clause, and a clause can never take the place of a noun phrase. There
 is no equivalent of English "that", "who" or "which" introducing a clause.
 
@@ -835,7 +835,7 @@ expressed in one of two ways:
 - **Separate clauses.** Use these for everything else. The second clause refers
   back with a pronoun, a demonstrative, or a repeated noun.
 
-| English | Astu approach |
+| English | Chatom approach |
 |---|---|
 | "I know *that you ate fish*." | "You ate fish. I know that." (see [§18](#18-reported-speech-and-thought)) |
 | "The dog *that ate the fish* is sick." | "A dog ate fish. That dog is sick." |
@@ -856,7 +856,7 @@ call someone by name.
 **9.5.2** The only exceptions are the answers `ie.` ("yes") and `no.` ("no"),
 which may stand alone ([§15.3](#153-answering-yesno-questions)).
 
-**9.5.3** Astu has no vocative (a way of calling someone by name, as in
+**9.5.3** Chatom has no vocative (a way of calling someone by name, as in
 "Sara, look!"). Who is being spoken to is understood from context.
 
 ---
@@ -885,7 +885,7 @@ by function words placed directly before the first verb of the clause.
 
 ### 10.3 Modals
 
-**10.3.1** Astu has four **modals**:
+**10.3.1** Chatom has four **modals**:
 
 | Modal | Meaning |
 |---|---|
@@ -1001,7 +1001,7 @@ it   PST  COP  my  dog
 ### 12.2 Adjectives after `bi`
 
 **12.2.1** `bi` is the only word that may take bare adjectives as its object.
-This is how Astu says "X is (adjective)". It is the only place an adjective may
+This is how Chatom says "X is (adjective)". It is the only place an adjective may
 appear without a noun.
 
 **12.2.2** `bi` may be followed by one or more adjectives. Repeating an adjective
@@ -1041,7 +1041,7 @@ but a reader must look past the adjectives to tell which is meant.
 
 ### 12.3 Existence: `abi`
 
-**12.3.1** The core verb `abi` means "exist". It is how Astu says "there is" or
+**12.3.1** The core verb `abi` means "exist". It is how Chatom says "there is" or
 "there are". `abi` never takes an object.
 
 ```
@@ -1220,7 +1220,7 @@ which  person  eats  fish
 **15.2.4** Because there are no prepositions, "where", "when", "why" and "how"
 use the matching core verb in a serial chain:
 
-| English | Astu | Literally |
+| English | Chatom | Literally |
 |---|---|---|
 | where? | `… pon wa pelais?` | be at which place |
 | when? | `… pon wa taim?` | be at which time |
@@ -1408,7 +1408,7 @@ sentence keeps the speaker's own words.
 
 ### 19.1 Digit words
 
-**19.1.1** Astu counts in **base 10**. There is one word for each digit:
+**19.1.1** Chatom counts in **base 10**. There is one word for each digit:
 
 | Digit | Word | | Digit | Word |
 |---|---|---|---|---|
@@ -1485,12 +1485,12 @@ all  PST  eat   fish
 
 ## 20. Making new words
 
-**20.1** Astu has **no compounding** (joining two roots into one word) and no
+**20.1** Chatom has **no compounding** (joining two roots into one word) and no
 general system of derivation. New concepts are either new dictionary words, or
 noun phrases built from a head and describing nouns
 ([§8.3](#83-describing-nouns)).
 
-**20.2 Class-changing prefixes.** Astu has exactly three prefixes. Each one
+**20.2 Class-changing prefixes.** Chatom has exactly three prefixes. Each one
 turns a word of one class into a word of another class. Each prefix has two
 forms: one used before a root that begins with a consonant, and one, ending in
 a linking `z`, used before a root that begins with a vowel.
@@ -1536,7 +1536,7 @@ I   V-big  dog         dog  V-big
 thing for" or "a place for". These are made with a general noun and a
 prefixed describing noun:
 
-| Astu | Literally | Meaning |
+| Chatom | Literally | Meaning |
 |---|---|---|
 | `diniam pasin` | eating person | eater |
 | `dikot tin` | cutting thing | cutter |
@@ -1570,12 +1570,12 @@ from other languages.
 **21.1** Greetings and similar expressions are ordinary sentences used as fixed
 phrases. They follow every rule of the grammar.
 
-| Astu | Literally | Meaning |
+| Chatom | Literally | Meaning |
 |---|---|---|
 | `mi luk iu.` | I see you. | hello |
 | `mi fina luk iu.` | I will see you. | goodbye |
 
-**21.2** Astu has no special words for politeness ("please"), emphasis or topic.
+**21.2** Chatom has no special words for politeness ("please"), emphasis or topic.
 Politeness is expressed through fixed phrases and through the choice of modal
 (for example `shud` instead of a bare command).
 
@@ -1657,7 +1657,7 @@ These small parts of the language are still open:
 ## Appendix B: Sample vocabulary (non-normative)
 
 These words are used in the examples in this document. They are **not** part of
-the specification: the real vocabulary belongs in the Astu dictionary. Each
+the specification: the real vocabulary belongs in the Chatom dictionary. Each
 word obeys the shape rules ([§3](#3-word-shape)).
 
 | Word | Class | Meaning |
@@ -1689,7 +1689,7 @@ word obeys the shape rules ([§3](#3-word-shape)).
 This summary gathers the sentence rules into one place, written in a notation
 that is common in programming. `A?` means A is optional, `A*` means zero or
 more A, `A+` means one or more A, `A | B` means A or B, and quoted words are
-literal Astu words.
+literal Chatom words.
 
 ```
 sentence      = ( statements | commands | answer ) end

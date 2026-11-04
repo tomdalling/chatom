@@ -1,13 +1,13 @@
 ---
 name: dictionary
-description: Look up, add, change or remove Astu words in dictionary.sqlite. Use whenever a task touches the Astu dictionary or vocabulary - looking up a word or its English meaning, checking a word's class, proposing or coining a new word, or resyncing the dictionary after astu.md changes.
+description: Look up, add, change or remove Chatom words in dictionary.sqlite. Use whenever a task touches the Chatom dictionary or vocabulary - looking up a word or its English meaning, checking a word's class, proposing or coining a new word, or resyncing the dictionary after chatom.md changes.
 ---
 
-# The Astu dictionary
+# The Chatom dictionary
 
-`dictionary.sqlite` (repo root) is the Astu dictionary referred to in `astu.md`
-§6.1. It holds **every** Astu word, both the words defined by the spec and the
-open-class words that the spec leaves to the dictionary. `astu.md` still wins
+`dictionary.sqlite` (repo root) is the Chatom dictionary referred to in `chatom.md`
+§6.1. It holds **every** Chatom word, both the words defined by the spec and the
+open-class words that the spec leaves to the dictionary. `chatom.md` still wins
 any conflict (CLAUDE.md rule 2).
 
 ## Rules
@@ -20,7 +20,7 @@ any conflict (CLAUDE.md rule 2).
 3. **Proposals live only in the chat.** Never store a proposed or unapproved
    word anywhere: not in the database, not in a file, not in memory.
 4. **Spec words are read-only.** A spec word is any row with a `subclass`. Change
-   spec rows only to resync with `astu.md` after the user has edited the spec
+   spec rows only to resync with `chatom.md` after the user has edited the spec
    (see below). Never change the spec to match the database.
 5. **Run `bin/validate` after every write.** If it fails, fix the problem or
    undo the write before doing anything else.
@@ -62,10 +62,10 @@ So a row comes from the spec exactly when its `subclass` is not NULL.
 ## Recipes
 
 ```sh
-# Look up an Astu word
+# Look up an Chatom word
 sqlite3 -header -column dictionary.sqlite "SELECT * FROM words WHERE word = 'dag'"
 
-# English -> Astu
+# English -> Chatom
 sqlite3 -header -column dictionary.sqlite \
   "SELECT word, class, gloss FROM words WHERE gloss LIKE '%dog%'"
 
@@ -105,7 +105,7 @@ without a subclass, and duplicate spellings.
 
 ## Resyncing after a spec edit
 
-When the user changes Appendix A or B in `astu.md`, run `bin/validate` and fix
+When the user changes Appendix A or B in `chatom.md`, run `bin/validate` and fix
 each reported row to match the spec. A new function word needs a subclass. If
 it isn't obvious, ask the user, then add it to `FUNCTION_SUBCLASSES` in
 `bin/validate`. If a new spec word is already a dictionary word, tell the user;
@@ -127,11 +127,11 @@ part of the spec, and the user's judgement overrides them.
    creoles, and by English as spoken in Australia. Start from the everyday
    English word, or from a creole word where one exists (`niam` from Patois
    *nyam* "eat", `sabi` from pidgin *savvy* "know"). Then reshape it to fit
-   Astu's sounds and word shape.
+   Chatom's sounds and word shape.
 2. Spell it by sound using §2, not by English spelling (`naif` knife, `fish`).
 3. Break up consonant clusters by inserting a vowel, usually one that echoes a
    nearby vowel (`bared` bread, `seliep` sleep, `pelais` place).
-4. Drop sounds Astu lacks, or replace them with the nearest Astu sound. A final
+4. Drop sounds Chatom lacks, or replace them with the nearest Chatom sound. A final
    "r" disappears, as in Australian English (`tiad` tired).
 5. Prefer the shortest form that stays recognisable.
 6. If the result clashes with an existing word, or breaks a shape rule, adjust

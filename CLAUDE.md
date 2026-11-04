@@ -1,32 +1,32 @@
-# Astu
+# Chatom
 
-`astu.md` is the canonical specification of the Astu language and the single
+`chatom.md` is the canonical specification of the Chatom language and the single
 source of truth for it. Its full text is imported below, so it is loaded into
 every session. Consider it at all times, for every change to this repository.
 
-@astu.md
+@chatom.md
 
 ## Rules
 
 1. **The spec is authoritative.** Everything in this repository (README,
    parser, dictionary, tests, examples, and anything added later) must conform
-   to `astu.md`.
+   to `chatom.md`.
 2. **The spec wins conflicts.** If code, docs or a request conflicts with
-   `astu.md`, fix the non-spec side, or stop and ask the user. Never change the
+   `chatom.md`, fix the non-spec side, or stop and ask the user. Never change the
    spec to fit code.
 3. **The language changes only by explicit decision.** Edit the rules of the
-   language in `astu.md` only when the user explicitly asks for that change.
+   language in `chatom.md` only when the user explicitly asks for that change.
 4. **Never invent answers to open items.** Anything marked **⚠ Not yet
    specified**, or listed in §22, is undecided. Do not guess. Flag it and ask
    the user. Code must treat it as unsupported until it is decided.
 
 ## Dictionary
 
-`dictionary.sqlite` holds every Astu word. Before reading or changing it, load
+`dictionary.sqlite` holds every Chatom word. Before reading or changing it, load
 the `dictionary` skill (`.claude/skills/dictionary/SKILL.md`). Never write to
 it without the user's explicit approval.
 
-## Editing `astu.md`
+## Editing `chatom.md`
 
 After any edit to the spec, check every item:
 
