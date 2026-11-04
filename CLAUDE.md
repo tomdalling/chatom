@@ -24,7 +24,8 @@ every session. Consider it at all times, for every change to this repository.
 
 `dictionary.sqlite` holds every Chatom word. Before reading or changing it, load
 the `dictionary` skill (`.claude/skills/dictionary/SKILL.md`). Never write to
-it without the user's explicit approval.
+it without the user's explicit approval. Commit each approved change straight away,
+without being asked (see the skill's "Committing" section).
 
 ## Editing `chatom.md`
 

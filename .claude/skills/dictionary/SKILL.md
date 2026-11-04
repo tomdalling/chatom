@@ -29,6 +29,25 @@ any conflict (CLAUDE.md rule 2).
    and apply §20.3.
 7. **One spelling, one class.** `word` is the primary key. A spelling can never
    be both a noun and a verb, for example.
+8. **Commit every approved change without being asked.** The user's approval of
+   a change also approves its commit. See [Committing](#committing).
+
+## Committing
+
+1. As soon as an approved change set passes `bin/validate`, commit it to `main`
+   in the same turn. Words approved together go in one commit. If validation
+   fails, fix or undo the write first. Never commit a failing dictionary.
+2. Stage only `dictionary.sqlite`, plus `bin/validate` when an approved schema
+   change touches both. Leave any other uncommitted work alone.
+3. Commit message: a title of the form "Add X, Y and Z to dictionary",
+   "Change X in dictionary" or "Remove X from dictionary". The body lists
+   each word with its class and gloss, and the co-author line comes last.
+4. Commit locally only. Never push.
+5. **Exception: spec resyncs.** Leave the resync's dictionary changes
+   uncommitted, so that they go into the same commit as the `chatom.md` edit.
+   Don't commit the spec edit unprompted. If the spec edit is already committed,
+   commit the resync on its own as "Resync dictionary with chatom.md". Never
+   amend the user's commit.
 
 ## Schema
 
