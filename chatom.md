@@ -93,7 +93,7 @@ the non-normative sample vocabulary in
 
 ## 2. Sounds
 
-Chatom has **5 vowels** and **17 consonants**: 22 sounds in total. It has no tone,
+Chatom has **5 vowels** and **18 consonants**: 23 sounds in total. It has no tone,
 and the length of a sound never changes the meaning of a word.
 
 ### 2.1 Vowels
@@ -162,6 +162,7 @@ belong to different syllables: *mi · a · bi*, never *mia · bi*.
 | `ch` | /tʃ/ | **ch**urch |
 | `m` | /m/ | **m**an |
 | `n` | /n/ | **n**o |
+| `nh` | /ŋ/ | si**ng** |
 | `l` | /l/ | **l**eg |
 | `r` | /ɹ/ | **r**ed, as said in Australian English |
 | `w` | /w/ | **w**et |
@@ -177,9 +178,14 @@ belong to different syllables: *mi · a · bi*, never *mia · bi*.
 - `s` is always /s/, as in **s**un. It is never voiced to /z/, even between
   vowels: `pasin` is *pa-sin*, never *pa-zin*.
 - `sh` is always /ʃ/ as in **sh**ip, and `ch` is always /tʃ/ as in **ch**urch.
+- `nh` is always /ŋ/, as in si**ng**er, never /ŋg/ as in fi**ng**er: `sinha`
+  is *si-ŋa*, never *sin-ga*. At the start of a word, say it with no /n/ or
+  /g/ before or after it: `nhabi` is the "ng" of "singer" followed by *abi*.
+- `n` is always /n/, even when the next word begins with `k` or `g`. In
+  `pasin kum`, the `n` is never said as /ŋ/.
 
-**2.3.2** Chatom has no sound /h/, no "y" sound /j/, and none of the sounds
-/ʒ/ (as in mea**s**ure), /dʒ/ (as in **j**am) or /ŋ/ (as in si**ng**).
+**2.3.2** Chatom has no sound /h/, no "y" sound /j/, and neither of the sounds
+/ʒ/ (as in mea**s**ure) or /dʒ/ (as in **j**am).
 
 ---
 
@@ -204,6 +210,9 @@ pa · sin      valid: final consonant n
 fish          valid: one syllable, final consonant sh
 a · bi        valid: begins with a vowel
 kiat          valid: glide ia, final consonant t
+si · nha      valid: nh inside the word
+sinh          valid: final consonant nh
+nha · bi      valid: begins with nh
 pan · tu      invalid: two consonants inside the word (n t)
 dagw          invalid: ends in w
 kar           invalid: ends in r
@@ -276,18 +285,19 @@ PA·sin   SE·liep   LI·kil   DI·niam
 ### 5.1 The alphabet
 
 Chatom is written in the basic Latin alphabet (plain ASCII, with no accents). It
-uses 22 letters or letter pairs, one for each sound:
+uses 23 letters or letter pairs, one for each sound:
 
 ```
-a  b  ch  d  e  f  g  i  k  l  m  n  o  p  r  s  sh  t  u  v  w  z
+a  b  ch  d  e  f  g  i  k  l  m  n  nh  o  p  r  s  sh  t  u  v  w  z
 ```
 
 **5.1.1** The letters `c`, `h`, `j`, `q`, `x` and `y` are never used on their
 own.
 
-**5.1.2** `sh` and `ch` are each a single sound written with two letters.
-Because `h` never appears on its own, they can never be misread: `s` followed
-by `h` is always /ʃ/, and `c` only ever appears as part of `ch`.
+**5.1.2** `sh`, `ch` and `nh` are each a single sound written with two
+letters. Because `h` never appears on its own, they can never be misread: `s`
+followed by `h` is always /ʃ/, `n` followed by `h` is always /ŋ/, and `c` only
+ever appears as part of `ch`.
 
 **5.1.3** Words are separated by spaces.
 

@@ -20,8 +20,8 @@ SCHEMA_VERSION = 1
 
 # --- Word shape (§3, §5.1) --------------------------------------------------
 
-CONSONANT = r"(?:sh|ch|[pbtdkgfvszmnlrw])"
-FINAL = r"(?:sh|ch|[pbtdkgfvszmnl])"  # any consonant except w and r (§3.1.3)
+CONSONANT = r"(?:sh|ch|nh|[pbtdkgfvszmnlrw])"
+FINAL = r"(?:sh|ch|nh|[pbtdkgfvszmnl])"  # any consonant except w and r (§3.1.3)
 NUCLEUS = r"[aeiou]{1,2}"  # one vowel or a glide (§2.2)
 WORD_SHAPE = re.compile(rf"^{CONSONANT}?{NUCLEUS}(?:{CONSONANT}{NUCLEUS})*{FINAL}?$")
 DOUBLED_VOWEL = re.compile(r"(aa|ee|ii|oo|uu)")  # §2.1.1

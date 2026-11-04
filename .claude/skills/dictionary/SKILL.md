@@ -129,6 +129,8 @@ part of the spec, and the user's judgement overrides them.
    *nyam* "eat", `sabi` from pidgin *savvy* "know"). Then reshape it to fit
    Chatom's sounds and word shape.
 2. Spell it by sound using §2, not by English spelling (`naif` knife, `fish`).
+   The sound /ŋ/ ("ng" in "sing") is written `nh` wherever it occurs, including
+   at the start of a word (`sinh` sing).
 3. Break up consonant clusters by inserting a vowel, usually one that echoes a
    nearby vowel (`bared` bread, `seliep` sleep, `pelais` place).
 4. Drop sounds Chatom lacks, or replace them with the nearest Chatom sound. A final
