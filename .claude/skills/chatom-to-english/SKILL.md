@@ -1,0 +1,184 @@
+---
+name: chatom-to-english
+description: Translate Chatom into natural English in one pass, inferring the detail and intended meaning that Chatom leaves unstated (articles, tense, prepositions, clause structure, tone, who a pronoun refers to), and explaining every inference. Use for /chatom-to-english, any request to translate Chatom into English, questions like "what does ... mean in Chatom", or pasted Chatom text with a request to translate it, even for a single word.
+---
+
+# Chatom to English
+
+Translate the Chatom text the user gives you (a word, a sentence or a passage)
+into natural English. Chatom states much less than English does: it has no
+articles, optional tense, no prepositions, no embedded clauses and genderless
+pronouns. Your job is to recover what the speaker most likely meant, to say
+it the way a native English speaker would, and to show your reasoning.
+
+`chatom.md` is the authority on the language. Never fill a gap the spec leaves
+open (anything marked **⚠ Not yet specified** or listed in §22).
+
+**First, load the `dictionary` skill.** Use it for every word lookup. This
+skill is **read-only**: never write to the dictionary, and never offer to add
+a word. Take every meaning from the dictionary, not from Appendix B or from
+memory.
+
+## How to work
+
+- **One pass, no questions.** Commit to the most likely reading and explain
+  it. Don't stop to ask the user to choose.
+- **Use any context the user gives** ("this is a letter to a child", "the
+  speaker is a chef") when inferring meaning. Never ask for context.
+- **Infer, but don't invent.** The English may add what the Chatom and its
+  context support, never more. Every addition that isn't in the gloss line
+  goes in the inference list.
+
+## Steps
+
+### 1. Identify every word
+
+Classify each word as §6.3.2 does:
+
+1. A word with an uppercase letter is a **foreign name** (a noun). Adjacent
+   foreign names are one name (§20.6.7). Keep it verbatim in the English.
+2. A word in Appendix A is that function word.
+3. A word beginning with `di`, `me` or `lai` (or `diz`, `mez`, `laiz`) is a
+   **prefixed word**. Look up the root and apply §20.3. The dictionary never
+   stores prefixed words.
+4. Otherwise, look it up in the dictionary.
+
+A lowercase word that is none of these is **unknown**. Write it as `⟨word⟩`
+in the gloss line. In the inference list, guess its meaning from its position
+(which class it must be, §13.7) and from context, clearly labelled as a guess.
+Never offer to add it.
+
+### 2. Check the grammar
+
+Check every sentence by hand against Appendix C, using the **checklist at the
+end of `.claude/skills/english-to-chatom/SKILL.md`** (read that file). Point 9
+there allows placeholders and new words; here, treat an unknown word as a
+`⟨word⟩` of whatever class its position requires.
+
+If a sentence breaks a rule, list each violation with its § reference, then
+still give a best-effort translation, clearly marked
+**(best effort: ungrammatical)**.
+
+If a sentence touches an open item (§22), such as a noun counted with `ziro`,
+an ordinal, a fraction, or an attempt at "each other", say that the spec
+leaves it unspecified. Translate only what the grammar does specify, and don't
+decide the open item.
+
+### 3. Parse and gloss
+
+Find the single parse of each sentence (Appendix C), and write it in the
+three-line format (§1.2): the Chatom, a word-by-word gloss using the §1.3
+abbreviations, and the English in quotes. Align the columns as the spec does.
+
+### 4. Infer the meaning
+
+Read the whole passage before translating any sentence, because later
+sentences often settle earlier ones. Infer each of these from context:
+
+1. **Articles** (§6.2.3). "The" for something already mentioned, known, or
+   unique in context; "a" for something new. Plural and mass nouns may take
+   no article.
+2. **Tense** with no marker (§10.2). Present or habitual by default, but an
+   earlier `bin` or `fina` usually sets the time for the sentences that
+   follow, and words like `dea taim` move it. Choose simple or progressive
+   English from context.
+3. **Serial verbs as English prepositions** (§9.3, §13). `tek naif kot` →
+   "cut with a knife"; `tek fish gib dei` → "give him the fish"; `pon ia
+   pelais` → "here"; `wid` → "with"; `guan` / `kum` → "to" / "from"; `pas` →
+   "-er than"; `siem` → "as … as".
+4. **Rebuilt embedded clauses** (§9.4, §18). Separate sentences that refer
+   back may become one English sentence: `dag bin niam fish. dea dag bi sik.`
+   → "The dog that ate the fish is sick." Reported speech with `ia` / `dea`
+   becomes "said that…", "I know that…", or a direct quote, whichever reads
+   best.
+5. **Natural connectives.** Render linkers (§17) and the reference words
+   `dea` / `ia` the way English would, not word for word. `wen` may mean
+   "when" or "whenever"; `an` may mean "and then".
+6. **Intensity** (§8.4.3, §12.2.2). Repeated adjectives become stronger
+   English: `big big` → "very big" or "huge", `big big big` → "enormous".
+7. **Fixed phrases** (§21) by their meaning: `mi luk iu.` → "Hello." Note
+   which ones §22 still lists as unconfirmed.
+8. **Idiomatic words.** Prefixed words and describing-noun phrases become
+   the natural English word: `diseliep pelais` → "bedroom", `diniam pasin` →
+   "eater", `dag diseliep pelais` → "kennel".
+9. **Tone and register.** `!` and `?!` show exclamation (§5.2). `shud`
+   instead of a bare command is softer and more polite (§21.2). A bare command
+   may be curt or neutral, depending on context.
+10. **Reference.** Decide who each `dei` / `deidem` refers to, and whether
+    `midem` ("we") includes the listener (§7.3).
+
+**Gender.** Chatom pronouns have no gender (§7.2). Use "he" or "she" only when
+the Chatom text itself gives the person's gender, for example through a
+dictionary word glossed "mother". Otherwise use "they" for people and "it" for
+animals and things. Never guess a gender from a name.
+
+### 5. Write the result
+
+Give the result in chat, in this order:
+
+1. **Breakdown.** Each sentence in the three-line format (step 3), with any
+   grammar violations or open items (step 2) noted directly under it.
+2. **Translation.** The whole passage as fluent, idiomatic English, the way
+   a native speaker would say it.
+3. **Inferences.** A short bulleted list of everything the English adds or
+   decides that the Chatom doesn't state, each with its reason: "*the* dog:
+   already mentioned in sentence 1"; "*he*: …"; "past tense: carried over from
+   `bin` in sentence 1". Include unknown-word guesses here. Skip trivial
+   inferences that have only one sensible option.
+4. **Alternatives.** Only when there is something worth listing, and at most
+   3 entries per sentence:
+   - **Alternative meanings**: readings that really differ in meaning (who
+     `dei` is, "when" vs "whenever", habitual vs present). Give the
+     alternative English and one line on why it is less likely.
+   - **Variations**: the same meaning with a different phrasing or tone,
+     e.g. `shud seliep.` → "You should sleep." / "Why don't you get some
+     sleep?"
+
+   Leave the section out when there is nothing to list.
+
+**Long passages.** For more than about 10 sentences, leave out the breakdown
+unless the user asks for it. Still give the translation, inferences and
+alternatives, and still list any grammar violations and open items, each with
+the sentence it occurs in.
+
+**A single word.** Give its class and gloss (and definition or notes, if the
+dictionary has them). For a prefixed word, show the breakdown into prefix and
+root and the meaning §20.3 gives it, plus the natural English word. Then give
+one short example sentence in the three-line format.
+
+## Example
+
+Input: `mi bin luk dag. dei bin niam fish pon ia pelais. mi bi tiad tiad.`
+
+```
+mi  bin  luk  dag.
+I   PST  see  dog
+```
+"I saw a dog."
+
+```
+dei  bin  niam  fish  pon    ia    pelais.
+it   PST  eat   fish  be-at  PROX  place
+```
+"It ate fish here."
+
+```
+mi  bi   tiad   tiad.
+I   COP  tired  tired
+```
+"I am very tired."
+
+**Translation:** "I saw a dog eating fish here. I'm exhausted."
+
+**Inferences:**
+- *a* dog: first mention.
+- *it*: `dei` most likely refers back to the dog, the only thing mentioned.
+- "a dog eating fish here": sentences 1 and 2 merged, since sentence 2 most
+  likely describes what was seen.
+- "exhausted": `tiad tiad` is intensified "tired".
+- present tense in sentence 3: no marker, and tiredness is a current state.
+
+**Alternatives:**
+- Sentence 3, alternative meaning: "I was very tired" (the past carried over
+  from sentences 1–2). Less likely, because a state with no marker usually
+  describes the present.
