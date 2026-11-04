@@ -1,0 +1,215 @@
+#!/usr/bin/env python3
+"""Validate dictionary.sqlite against the Astu specification (astu.md).
+
+Usage: bin/validate [path/to/dictionary.sqlite]
+
+Exits 0 if the dictionary is valid, 1 otherwise. Every problem found is
+printed, one per line.
+"""
+
+import re
+import sqlite3
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+SPEC_PATH = ROOT / "astu.md"
+DB_PATH = ROOT / "dictionary.sqlite"
+
+SCHEMA_VERSION = 1
+
+# --- Word shape (§3, §5.1) --------------------------------------------------
+
+CONSONANT = r"(?:sh|ch|[pbtdkgfvszmnlrw])"
+FINAL = r"(?:sh|ch|[pbtdkgfvszmnl])"  # any consonant except w and r (§3.1.3)
+NUCLEUS = r"[aeiou]{1,2}"  # one vowel or a glide (§2.2)
+WORD_SHAPE = re.compile(rf"^{CONSONANT}?{NUCLEUS}(?:{CONSONANT}{NUCLEUS})*{FINAL}?$")
+DOUBLED_VOWEL = re.compile(r"(aa|ee|ii|oo|uu)")  # §2.1.1
+RESERVED_STARTS = ("di", "me", "lai")  # §3.2.1
+
+# --- Subclasses (decided outside the spec; see the dictionary skill) --------
+
+FUNCTION_SUBCLASSES = {
+    "pronoun": "mi iu dei midem iudem deidem sef",
+    "plural": "dem",
+    "demonstrative": "ia dea",
+    "question": "wa",
+    "tense": "bin fina",
+    "aspect": "am",
+    "modal": "kian mos shud maita",
+    "negation": "no",
+    "answer": "ie",
+    "copula": "bi",
+    "linker": "an bot ou so kaz if wen",
+    "quantifier": "al som nof fiu eri notin",
+    "digit": "ziro wan tu tiri foa faiv sikis sefen eit nain",
+}
+SUBCLASS_OF = {w: sub for sub, ws in FUNCTION_SUBCLASSES.items() for w in ws.split()}
+
+
+# --- Parsing astu.md ---------------------------------------------------------
+
+def section(text, heading):
+    """Return the text under a markdown heading, up to the next heading of
+    the same or higher level."""
+    level = len(heading) - len(heading.lstrip("#"))
+    lines = text.splitlines()
+    for i, line in enumerate(lines):
+        if line.strip() == heading:
+            out = []
+            for later in lines[i + 1:]:
+                m = re.match(r"^(#+) ", later)
+                if m and len(m.group(1)) <= level:
+                    break
+                out.append(later)
+            return "\n".join(out)
+    raise ValueError(f"heading not found in astu.md: {heading!r}")
+
+
+def table_rows(text):
+    """Yield the cells of each body row of every markdown table in text."""
+    rows = [l for l in text.splitlines() if l.startswith("|")]
+    for line in rows:
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if all(re.fullmatch(r":?-+:?", c) for c in cells):
+            continue
+        yield cells
+
+
+def backticked(cell):
+    return re.findall(r"`([^`]+)`", cell)
+
+
+def expected_spec_words(spec):
+    """Return {word: (class, subclass, gloss-or-None)} from Appendix A.
+
+    A gloss of None means the spec gives no per-word meaning to check."""
+    appendix = section(spec, "## Appendix A: Function word list")
+    expected = {}
+
+    a1 = section(appendix, "### A.1 Grammatical words")
+    for cells in table_rows(a1):
+        if cells[0] == "Word":
+            continue
+        words = backticked(cells[0])
+        if any(w.endswith("-") for w in words):
+            continue  # prefixes are not words (they are not stored)
+        meaning = cells[1]
+        if len(words) == 1:
+            glosses = [meaning]
+        elif ":" in meaning:
+            glosses = [g.strip() for g in meaning.split(":", 1)[1].split(",")]
+            if len(glosses) != len(words):
+                glosses = [None] * len(words)
+        else:
+            glosses = [None] * len(words)
+        for word, gloss in zip(words, glosses):
+            expected[word] = ("function", SUBCLASS_OF.get(word), gloss)
+
+    for heading, cls, sub in (
+        ("### A.2 General nouns", "noun", "general"),
+        ("### A.3 Core verbs", "verb", "core"),
+    ):
+        for cells in table_rows(section(appendix, heading)):
+            if cells[0] == "Word":
+                continue
+            (word,) = backticked(cells[0])
+            expected[word] = (cls, sub, cells[1])
+    return expected
+
+
+def sample_words(spec):
+    """Return {word: class} from Appendix B."""
+    appendix = section(spec, "## Appendix B: Sample vocabulary (non-normative)")
+    out = {}
+    for cells in table_rows(appendix):
+        if cells[0] == "Word":
+            continue
+        (word,) = backticked(cells[0])
+        out[word] = cells[1]
+    return out
+
+
+# --- Checks ------------------------------------------------------------------
+
+def check_shape(word, cls):
+    problems = []
+    if not WORD_SHAPE.match(word) or DOUBLED_VOWEL.search(word):
+        problems.append("does not fit the word shape C? N (C N)* F? (§3, §2.1.1)")
+    if word.startswith(RESERVED_STARTS):
+        problems.append("begins with a reserved prefix syllable di/me/lai (§3.2.1); "
+                        "prefixed words are not stored")
+    if cls != "function" and word.startswith("z"):
+        problems.append("a noun, verb or adjective must not begin with z (§3.2.2)")
+    return problems
+
+
+def validate(db_path, spec_path):
+    problems = []
+    spec = spec_path.read_text(encoding="utf-8")
+    con = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
+    con.row_factory = sqlite3.Row
+
+    version = con.execute("PRAGMA user_version").fetchone()[0]
+    if version != SCHEMA_VERSION:
+        problems.append(f"schema version is {version}, expected {SCHEMA_VERSION}")
+
+    rows = {r["word"]: r for r in con.execute("SELECT * FROM words")}
+
+    for word, r in rows.items():
+        for p in check_shape(word, r["class"]):
+            problems.append(f"{word}: {p}")
+        if r["subclass"] is None and r["class"] == "function":
+            problems.append(f"{word}: function word without a subclass")
+
+    # Spec words: exactly the rows with a subclass (§6.1, Appendix A).
+    expected = expected_spec_words(spec)
+    for word, (cls, sub, gloss) in expected.items():
+        r = rows.get(word)
+        if r is None:
+            problems.append(f"{word}: in Appendix A but missing from the dictionary")
+            continue
+        if sub is None:
+            problems.append(f"{word}: in Appendix A.1 but has no subclass mapping in "
+                            "bin/validate (FUNCTION_SUBCLASSES); ask the user which "
+                            "subclass it belongs to")
+        if r["class"] != cls:
+            problems.append(f"{word}: class is {r['class']!r}, Appendix A says {cls!r}")
+        if sub is not None and r["subclass"] != sub:
+            problems.append(f"{word}: subclass is {r['subclass']!r}, expected {sub!r}")
+        if gloss is not None and r["gloss"] != gloss:
+            problems.append(f"{word}: gloss is {r['gloss']!r}, Appendix A says {gloss!r}")
+    for word, r in rows.items():
+        if r["subclass"] is not None and word not in expected:
+            problems.append(f"{word}: has subclass {r['subclass']!r} but is not in "
+                            "Appendix A; only spec words may have a subclass")
+
+    # Appendix B sample vocabulary must be present with the same class.
+    for word, cls in sample_words(spec).items():
+        r = rows.get(word)
+        if r is None:
+            problems.append(f"{word}: in Appendix B but missing from the dictionary")
+        elif r["class"] != cls:
+            problems.append(f"{word}: class is {r['class']!r}, Appendix B says {cls!r}")
+
+    con.close()
+    return problems
+
+
+def main():
+    db_path = Path(sys.argv[1]) if len(sys.argv) > 1 else DB_PATH
+    if not db_path.exists():
+        print(f"error: {db_path} does not exist", file=sys.stderr)
+        return 1
+    problems = validate(db_path, SPEC_PATH)
+    for p in problems:
+        print(p)
+    if problems:
+        print(f"\n{len(problems)} problem(s) found in {db_path.name}", file=sys.stderr)
+        return 1
+    print(f"{db_path.name}: OK")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

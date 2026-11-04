@@ -1,0 +1,19 @@
+#!/bin/sh
+# One-time local setup for this checkout:
+#  1. a git diff driver that shows dictionary.sqlite as SQL text
+#  2. a pre-commit hook that runs bin/validate
+set -eu
+
+cd "$(git rev-parse --show-toplevel)"
+
+git config diff.sqlite.textconv "sh -c 'sqlite3 \"\$0\" .dump'"
+
+hook=.git/hooks/pre-commit
+cat > "$hook" <<'EOF'
+#!/bin/sh
+# Installed by bin/setup.
+exec "$(git rev-parse --show-toplevel)/bin/validate"
+EOF
+chmod +x "$hook"
+
+echo "Configured the sqlite diff driver and installed $hook"
