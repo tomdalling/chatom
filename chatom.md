@@ -1621,6 +1621,7 @@ phrases. They follow every rule of the grammar.
 |---|---|---|
 | `mi luk iu.` | I see you. | hello |
 | `mi fina luk iu.` | I will see you. | goodbye |
+| `guan ia pelais tek airi.` | Go to this place, take peace. | welcome |
 
 **21.2** Chatom has no special words for politeness ("please"), emphasis or topic.
 Politeness is expressed through fixed phrases and through the choice of modal
@@ -1637,6 +1638,7 @@ These small parts of the language are still open:
 - **Zero and plurality.** Whether `ziro` takes `dem` ([§19](#19-numbers-and-quantifiers)).
 - **Greetings.** Whether `mi luk iu.` (hello) and `mi fina luk iu.` (goodbye)
   are confirmed, and whether more fixed phrases are listed ([§21](#21-fixed-phrases)).
+  `guan ia pelais tek airi.` (welcome) is confirmed.
 
 ---
 
@@ -1709,6 +1711,7 @@ word obeys the shape rules ([§3](#3-word-shape)).
 
 | Word | Class | Meaning |
 |---|---|---|
+| `airi` | noun | peace |
 | `bared` | noun | bread |
 | `bad` | noun | bird |
 | `buk` | noun | book |
