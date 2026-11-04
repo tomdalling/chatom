@@ -35,13 +35,17 @@ memory.
 
 Classify each word as §6.3.2 does:
 
-1. A word with an uppercase letter is a **foreign name** (a noun). Adjacent
+1. Text between single backticks is a **code span** (a noun, §5.3). Its
+   contents are not Chatom: never translate, classify or check anything inside
+   it. Keep it verbatim in the English, backticks included. Adjacent code
+   spans are separate nouns (describer + head).
+2. A word with an uppercase letter is a **foreign name** (a noun). Adjacent
    foreign names are one name (§20.6.7). Keep it verbatim in the English.
-2. A word in Appendix A is that function word.
-3. A word beginning with `di`, `me` or `lai` (or `diz`, `mez`, `laiz`) is a
+3. A word in Appendix A is that function word.
+4. A word beginning with `di`, `me` or `lai` (or `diz`, `mez`, `laiz`) is a
    **prefixed word**. Look up the root and apply §20.3. The dictionary never
    stores prefixed words.
-4. Otherwise, look it up in the dictionary.
+5. Otherwise, look it up in the dictionary.
 
 A lowercase word that is none of these is **unknown**. Write it as `⟨word⟩`
 in the gloss line. In the inference list, guess its meaning from its position

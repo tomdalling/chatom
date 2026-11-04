@@ -8,9 +8,11 @@ unambiguous. Its two founding principles are:
    and a learner never has to wonder which word goes with which.
 2. **Phonetic spelling.** Each sound is written exactly one way, and each
    spelling is pronounced exactly one way. If you can read a word, you can say
-   it; if you can hear a word, you can spell it. The one exception is foreign
-   names, which are marked by an uppercase letter and may keep the spelling and
-   pronunciation of their source language ([§20.6](#20-making-new-words)).
+   it; if you can hear a word, you can spell it. There are two exceptions.
+   Foreign names are marked by an uppercase letter and may keep the spelling
+   and pronunciation of their source language ([§20.6](#20-making-new-words)).
+   Code spans are text between backticks that is not Chatom at all
+   ([§5.3](#53-code-spans)).
 
 This document is the complete specification of the grammar and of every
 function word. It is meant to be precise enough to build software from, while
@@ -264,6 +266,9 @@ rule in this section and in [§2](#2-sounds) and [§4](#4-stress).
 **3.4.2** Native names, such as `chatom`, are ordinary Chatom words and obey
 every rule.
 
+**3.4.3** The contents of a code span ([§5.3](#53-code-spans)) are also exempt
+from these rules.
+
 ---
 
 ## 4. Stress
@@ -303,14 +308,16 @@ ever appears as part of `ch`.
 
 **5.1.3** Words are separated by spaces.
 
-**5.1.4** Everything except foreign names is written in **lowercase**,
-including the first word of a sentence and native names such as `chatom`. A
-word that contains an uppercase letter is always a foreign name
+**5.1.4** Everything except foreign names and code spans
+([§5.3](#53-code-spans)) is written in **lowercase**, including the first word
+of a sentence and native names such as `chatom`. Outside a code span, a word
+that contains an uppercase letter is always a foreign name
 ([§20.6](#20-making-new-words)).
 
 **5.1.5** Foreign names are exempt from the alphabet above and from 5.1.1 and
 5.1.2. A foreign name may use any letter, digit or punctuation mark except a
-quotation mark.
+quotation mark or a backtick. Code spans are also exempt
+([§5.3](#53-code-spans)).
 
 ### 5.2 Punctuation
 
@@ -337,6 +344,52 @@ optional.
 **5.2.5 Digits.** Numbers may be written with the digits `0`–`9` instead of
 number words. Each digit stands for its digit word
 ([§19](#19-numbers-and-quantifiers)): `23` is read `tu tiri`.
+
+### 5.3 Code spans
+
+Chatom text is often written in Markdown, a common plain-text format that marks
+computer code and other literal text by putting it between backticks
+(`` ` ``). Code spans let such text stay valid Chatom. They exist only for
+compatibility with Markdown and are not a major part of the language.
+
+**5.3.1** A **code span** is text between two single backticks, such as
+`` `README.md` ``. Nothing inside a code span is Chatom. Its contents are never
+read as words, digits, punctuation or the end of a sentence, and they are kept
+exactly as written, including any spaces at the start or end.
+
+**5.3.2** A code span may contain any characters, including spaces and line
+breaks, except a backtick. It must contain at least one character. So two
+backticks in a row never occur, and a backtick with no matching closing
+backtick makes a sentence invalid.
+
+**5.3.3** A code span stands as a word of its own, separated from its
+neighbours by spaces. The sentence's final mark may follow it directly.
+
+**5.3.4** A code span is a noun, and apart from 5.3.5 it follows the same
+grammar as a foreign name ([§20.6.9](#20-making-new-words)–[§20.6.11](#20-making-new-words)).
+It may be a head, a describing noun or a possessor, and it may take `dem`. It
+must not take a prefix, it is never listed in the dictionary, and in glosses it
+is glossed as itself, backticks included.
+
+**5.3.5** Unlike foreign names ([§20.6.7](#20-making-new-words)), code spans
+never join together. Two code spans side by side, or a code span beside a
+foreign name, are a describing noun followed by a head
+([§8.3](#83-describing-nouns)).
+
+**5.3.6** The contents of a code span are exempt from every rule in
+[§2](#2-sounds)–[§4](#4-stress), [§5.1](#51-the-alphabet) and
+[§5.2](#52-punctuation). A code span is pronounced however its
+contents are normally read.
+
+**5.3.7** A code span may appear inside quotation marks
+([§5.2.4](#52-punctuation)). A quotation mark inside a code span is part of the
+code span, never the start or end of a quotation.
+
+```
+dei  luk  `README.md`.
+he   sees `README.md`
+```
+"He looks at `README.md`."
 
 ---
 
@@ -387,19 +440,21 @@ fixed phrases built from ordinary sentences ([§21](#21-fixed-phrases)).
 
 ### 6.3 Identifying a word's class
 
-**6.3.1** Apart from foreign names, a word's form says nothing about its class. Any
-word may begin with any sound.
+**6.3.1** Apart from code spans and foreign names, a word's form says nothing
+about its class. Any word may begin with any sound.
 
 **6.3.2** To find the class of a word:
 
-1. If it contains an uppercase letter, it is a foreign name, which is a noun
+1. If it is a code span (text between backticks), it is a noun
+   ([§5.3](#53-code-spans)).
+2. If it contains an uppercase letter, it is a foreign name, which is a noun
    ([§20.6](#20-making-new-words)). Foreign names are never listed in the
-   dictionary. Native names are dictionary nouns, found in step 4.
-2. If it is in the function word list ([Appendix A](#appendix-a-function-word-list)),
+   dictionary. Native names are dictionary nouns, found in step 5.
+3. If it is in the function word list ([Appendix A](#appendix-a-function-word-list)),
    it is that function word.
-3. If it begins with `di`, `me` or `lai`, it is a prefixed word, and the prefix
+4. If it begins with `di`, `me` or `lai`, it is a prefixed word, and the prefix
    gives its class ([§20](#20-making-new-words)).
-4. Otherwise, look it up in the dictionary.
+5. Otherwise, look it up in the dictionary.
 
 **6.3.3** No noun, verb or adjective may be spelled the same as a function word.
 
@@ -1606,7 +1661,8 @@ of name: **native names** and **foreign names**.
 **Foreign names**
 
 - **20.6.4** A **foreign name** is a name taken from another language. Any
-  word that contains an uppercase letter, anywhere in it, is a foreign name,
+  word that contains an uppercase letter, anywhere in it, is a foreign name
+  (unless it is a code span, [§5.3](#53-code-spans)),
   and every foreign name must contain at least one. Every foreign name is a
   noun.
 - **20.6.5** A foreign name may be written exactly as in its source language
@@ -1617,9 +1673,10 @@ of name: **native names** and **foreign names**.
   language is pronounced as in that language.
   > ⚠ **Not yet specified:** how an adapted foreign name is pronounced.
 - **20.6.6** A foreign name may contain any letter, digit or punctuation mark,
-  except that it must not contain a quotation mark (`"`), and it must not end
-  in `.`, `?` or `!`. So a sentence's final mark is never part of a name, and
-  quotation marks ([§5.2.4](#52-punctuation)) are never part of one.
+  except that it must not contain a quotation mark (`"`) or a backtick
+  (`` ` ``), and it must not end in `.`, `?` or `!`. So a sentence's final mark
+  is never part of a name, and quotation marks ([§5.2.4](#52-punctuation)) and
+  code spans ([§5.3](#53-code-spans)) are never part of one.
 - **20.6.7** Several foreign names directly next to each other form a single
   name: `New York` is one noun, not a describing noun followed by a head
   ([§8.3](#83-describing-nouns)). A consequence is that a foreign name can
@@ -1835,6 +1892,9 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
 - A `noun` may also be a foreign name: a run of one or more adjacent words
   that each contain an uppercase letter, treated as a single word
   ([§20.6](#20-making-new-words)). Native names are ordinary dictionary nouns.
+- A `noun` may also be a code span: text between two single backticks, treated
+  as a single word whose contents are not Chatom ([§5.3](#53-code-spans)).
+  Adjacent code spans are separate nouns.
 - Repeating an adjective ([§8.4.3](#84-adjectives)) is covered by `adjective*`
   and `adjective+`.
 - A sentence-final `"no"` is the question marker ([§15.1](#151-yesno-questions)).

@@ -50,6 +50,12 @@ written verbatim, keeping its capitals; never look one up or add it. Offer an
 adapted spelling (`Sara` for Sarah) only if the user asks for one. Join a
 lowercase part of a foreign name with hyphens: `Leonardo-da-Vinci`.
 
+Markdown **code spans** in the English (text between backticks, §5.3) are
+carried over verbatim as nouns, backticks included. Never translate, respell or
+look up anything inside them. A code span must use single backticks and must
+not contain a backtick; if the English uses a double-backtick span, point out
+that it has to be rewritten to be valid Chatom.
+
 ### 3. Offer structures
 
 Offer **2–4 genuinely different** ways to express the meaning: different
@@ -155,7 +161,9 @@ showing it:
 8. **`bi`**: bare adjectives only after `bi`, and only when no noun follows
    (§12.2.3). Existence uses `abi`, which never takes an object.
 9. **Words**: every word is a function word, a dictionary word, a valid
-   prefixed word (one prefix, the right class, not on a function word or a
-   foreign name, §20.5), a foreign name, or a marked placeholder or new word.
+   prefixed word (one prefix, the right class, not on a function word, a
+   foreign name or a code span, §20.5), a foreign name, a code span (single
+   backticks, non-empty, no backtick inside, spaces around it, §5.3), or a
+   marked placeholder or new word.
 10. **One parse**: read the sentence as a parser would, and make sure no word
     could be taken as the start of a different phrase.
