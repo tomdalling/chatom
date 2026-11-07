@@ -48,7 +48,7 @@ and  Chatom  its  all  word  PL   exist  be-at  dictionary.sqlite
 
 > You can read these files manually, but they are actually indended to be read by AI.
 
-iu   kian  wuk   wid      dea   fail  dem  tek  sef   bot  dei   dem  fi       AI.
+iu   kian  wok   wid      dea   fail  dem  tek  sef   bot  dei   dem  fi       AI.
 you  can   work  be-with  DIST  file  PL   use  self  but  they  PL   are-for  AI
 
 Combined
