@@ -845,9 +845,9 @@ dog  eats  fish
 
 ### 9.2 Transitivity
 
-**9.2.1** Every verb has a fixed **transitivity**, which says whether it takes
-an object. The dictionary records the transitivity of every verb. There are
-three kinds:
+**9.2.1** Every verb except `bi` has a fixed **transitivity**, which says
+whether it takes an object. The dictionary records the transitivity of every
+verb. There are three kinds:
 
 | Transitivity | Object |
 |---|---|
@@ -857,7 +857,8 @@ three kinds:
 
 **9.2.2** The core verbs have the transitivity given in
 [§9.3](#93-no-prepositions). Every verb made with the prefix `me-` is
-ambitransitive ([§20.3](#20-making-new-words)).
+ambitransitive ([§20.3](#20-making-new-words)). `bi` has its own rule
+([§12.1](#121-bi)).
 
 `niam` ("eat") is ambitransitive, and `seliep` ("sleep") is intransitive:
 
@@ -873,12 +874,16 @@ dog  sleeps
 ```
 "The dog sleeps."
 
-**9.2.3** This never makes a sentence ambiguous. A verb is followed by an object
-only if the next word can begin a noun phrase (a noun, a pronoun, an adjective,
-a number, a quantifier, `ia`, `dea` or `wa`). If the next word is a verb, a linking
-word, the question marker or the end of the sentence, the verb has no object.
-A sentence in which a transitive verb has no object, or an intransitive verb
-has one, is ungrammatical.
+**9.2.3** Finding a verb's object never depends on its transitivity. A verb is
+followed by an object only if the next word can begin a noun phrase (a noun, a
+pronoun, an adjective, a number, a quantifier, `ia`, `dea` or `wa`). If the next
+word is a verb, a linking word, the question marker or the end of the sentence,
+the verb has no object. So the structure of a sentence is always found the same
+way, whatever its verbs are.
+
+**9.2.4** Transitivity only decides whether that structure is grammatical. A
+sentence in which a transitive verb has no object, or an intransitive verb has
+one, is ungrammatical.
 
 ### 9.3 No prepositions
 
@@ -893,7 +898,7 @@ the transitivity given in the table ([§9.2](#92-transitivity)).
 | Word | Meaning | Role it expresses | Transitivity |
 |---|---|---|---|
 | `tek` | take, use | instrument ("with a knife") | transitive |
-| `gib` | give | recipient ("to him") | ambitransitive |
+| `gib` | give | recipient ("to him"); with no object, the recipient is unstated | ambitransitive |
 | `fi` | belong to, be for | owner ("is his") and beneficiary or purpose ("for him") | transitive |
 | `guan` | go to | direction ("to the house"); with no object, "go" | ambitransitive |
 | `kum` | come from | source ("from the house"); with no object, "come" | ambitransitive |
@@ -914,6 +919,17 @@ mi  tek   fish  gib   dei.
 I   take  fish  give  him
 ```
 "I give the fish to him."
+
+**9.3.3** The object of `gib` is always the **recipient**, never the thing
+given. The thing given is the object of an earlier verb in the chain, usually
+`tek`. With no object, `gib` leaves the recipient unstated, to be understood
+from context.
+
+```
+mi  tek   naif   gib.
+I   take  knife  give
+```
+"I give the knife away." or "I hand the knife over."
 
 ```
 mi  kuk   fish  fi   dei.
@@ -1086,6 +1102,11 @@ as" or "is a kind of". Grammatically, `bi` is a verb. It fills the verb slot,
 may take negation, tense, aspect and a modal, and may appear in a serial verb
 chain. It is a function word.
 
+**12.1.2** `bi` has no transitivity of its own ([§9.2](#92-transitivity)). It
+must always be followed by a noun phrase or by one or more adjectives
+([§12.2](#122-adjectives-after-bi)). A bare `bi` is ungrammatical. To say that
+something exists, use `abi` ([§12.3](#123-existence-abi)).
+
 ```
 mi  bi   pasin.
 I   COP  person
@@ -1187,7 +1208,7 @@ I   PST  take  knife  cut  bread
 "I cut the bread with a knife." (past)
 
 **13.4 Want, try, start, stop.** Verbs such as "want", "try", "start" and
-"stop" are ordinary dictionary verbs, and they are ambitransitive
+"stop" are ordinary dictionary verbs, and they must not be transitive
 ([§9.2](#92-transitivity)). With no object of their own, they come first in a
 chain, and the verbs after them say what is wanted, tried, started
 or stopped. Because they are verbs, not modals, several may be combined, and a
@@ -1882,7 +1903,7 @@ aspect        = "am"
 modal         = "kian" | "mos" | "shud" | "maita"
 
 verb-chain    = verb-unit+
-verb-unit     = "bi" ( noun-phrase | adjective+ )?
+verb-unit     = "bi" ( noun-phrase | adjective+ )
               | transitive-verb noun-phrase
               | intransitive-verb
               | ambitransitive-verb noun-phrase?

@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SPEC_PATH = ROOT / "chatom.md"
 DB_PATH = ROOT / "dictionary.sqlite"
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 # --- Word shape (§3, §5.1) --------------------------------------------------
 
@@ -81,9 +81,11 @@ def backticked(cell):
 
 
 def expected_spec_words(spec):
-    """Return {word: (class, subclass, gloss-or-None)} from Appendix A.
+    """Return {word: (class, subclass, gloss-or-None, transitivity-or-None)}
+    from Appendix A.
 
-    A gloss of None means the spec gives no per-word meaning to check."""
+    A gloss of None means the spec gives no per-word meaning to check.
+    Transitivity is given only for the core verbs (A.3, §9.2)."""
     appendix = section(spec, "## Appendix A: Function word list")
     expected = {}
 
@@ -104,7 +106,7 @@ def expected_spec_words(spec):
         else:
             glosses = [None] * len(words)
         for word, gloss in zip(words, glosses):
-            expected[word] = ("function", SUBCLASS_OF.get(word), gloss)
+            expected[word] = ("function", SUBCLASS_OF.get(word), gloss, None)
 
     for heading, cls, sub in (
         ("### A.2 General nouns", "noun", "general"),
@@ -114,19 +116,20 @@ def expected_spec_words(spec):
             if cells[0] == "Word":
                 continue
             (word,) = backticked(cells[0])
-            expected[word] = (cls, sub, cells[1])
+            transitivity = cells[2] if cls == "verb" else None
+            expected[word] = (cls, sub, cells[1], transitivity)
     return expected
 
 
 def sample_words(spec):
-    """Return {word: class} from Appendix B."""
+    """Return {word: (class, transitivity-or-None)} from Appendix B."""
     appendix = section(spec, "## Appendix B: Sample vocabulary (non-normative)")
     out = {}
     for cells in table_rows(appendix):
         if cells[0] == "Word":
             continue
         (word,) = backticked(cells[0])
-        out[word] = cells[1]
+        out[word] = (cells[1], cells[3] if cells[1] == "verb" else None)
     return out
 
 
@@ -164,7 +167,7 @@ def validate(db_path, spec_path):
 
     # Spec words: exactly the rows with a subclass (§6.1, Appendix A).
     expected = expected_spec_words(spec)
-    for word, (cls, sub, gloss) in expected.items():
+    for word, (cls, sub, gloss, trans) in expected.items():
         r = rows.get(word)
         if r is None:
             problems.append(f"{word}: in Appendix A but missing from the dictionary")
@@ -179,18 +182,25 @@ def validate(db_path, spec_path):
             problems.append(f"{word}: subclass is {r['subclass']!r}, expected {sub!r}")
         if gloss is not None and r["gloss"] != gloss:
             problems.append(f"{word}: gloss is {r['gloss']!r}, Appendix A says {gloss!r}")
+        if trans is not None and r["transitivity"] != trans:
+            problems.append(f"{word}: transitivity is {r['transitivity']!r}, "
+                            f"Appendix A.3 says {trans!r}")
     for word, r in rows.items():
         if r["subclass"] is not None and word not in expected:
             problems.append(f"{word}: has subclass {r['subclass']!r} but is not in "
                             "Appendix A; only spec words may have a subclass")
 
-    # Appendix B sample vocabulary must be present with the same class.
-    for word, cls in sample_words(spec).items():
+    # Appendix B sample vocabulary must be present with the same class and,
+    # for verbs, the same transitivity (§9.2). Glosses may differ.
+    for word, (cls, trans) in sample_words(spec).items():
         r = rows.get(word)
         if r is None:
             problems.append(f"{word}: in Appendix B but missing from the dictionary")
         elif r["class"] != cls:
             problems.append(f"{word}: class is {r['class']!r}, Appendix B says {cls!r}")
+        elif trans is not None and r["transitivity"] != trans:
+            problems.append(f"{word}: transitivity is {r['transitivity']!r}, "
+                            f"Appendix B says {trans!r}")
 
     con.close()
     return problems
