@@ -539,6 +539,15 @@ else.
 With a plural subject, `sef` alone still means "themselves", "ourselves" or
 "yourselves": `mi dem luk sef.` "We see ourselves."
 
+**7.7.1** `sef` and `sef dem` always refer to the subject of their clause, so
+they must not appear anywhere inside that subject: not as the subject itself,
+not as its possessor, and not deeper inside it. `sef luk mi.`,
+`sef dag luk mi.` and `sef dag dei eg bi big.` are ungrammatical.
+
+**7.7.2** A command has no subject ([§16](#16-commands)). In a command, `sef`
+refers to the person spoken to, and `sef dem` to the people spoken to:
+`luk sef.` "Look at yourself."
+
 **7.8 Pronouns act like nouns.** A pronoun is a function word, not a noun. In
 a noun phrase, though, it acts like a noun: it may be the head of a noun phrase
 or a possessor ([§8.10](#810-pronouns-in-noun-phrases)). Elsewhere in this
@@ -738,7 +747,8 @@ A possessor such as "we two" is expressed with a clause instead
 ([§8.8.10](#88-possession)): `buk fi tu mi dem.` "The book belongs to us two."
 
 **8.8.3 "Own": `sef`.** The reflexive `sef` ([§7.7](#7-pronouns)) may be a
-possessor. It refers to the subject of the clause, like English "own".
+possessor. It refers to the subject of the clause, like English "own", so it
+must not appear inside that subject ([§7.7.1](#7-pronouns)).
 
 ```
 dei   luk  sef  buk.          dei   luk  dei    buk.
@@ -2134,6 +2144,8 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
   - `"sef"` never has a `count`, and `"sef" "dem"` appears only in a command
     or in a clause whose subject is plural ([§7.9](#7-pronouns),
     [§8.10.4](#810-pronouns-in-noun-phrases));
+  - `"sef"` and `"sef" "dem"` never appear anywhere inside the subject
+    `noun-phrase` of their own `statement` ([§7.7.1](#7-pronouns));
   - the `nominal` after a `determiner`, a `possessor` or a `link` has a
     noun as its head ([§8.8](#88-possession),
     [§8.10.1](#810-pronouns-in-noun-phrases));
