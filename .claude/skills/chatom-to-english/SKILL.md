@@ -90,7 +90,7 @@ sentences often settle earlier ones. Infer each of these from context:
    follow, and words like `dea taim` move it. Choose simple or progressive
    English from context.
 3. **Serial verbs as English prepositions** (§9.3, §13). `tek naif kot` →
-   "cut with a knife"; `tek fish gib dei` → "give him the fish"; `pon ia
+   "cut with a knife"; `tek fish gib dei` → "give them the fish"; `pon ia
    pelais` → "here"; `wid` → "with"; `guan` / `kum` → "to" / "from"; `pas` →
    "-er than"; `siem` → "as … as".
 4. **Rebuilt embedded clauses** (§9.4, §18). Separate sentences that refer
@@ -114,10 +114,12 @@ sentences often settle earlier ones. Infer each of these from context:
 10. **Reference.** Decide who each `dei` / `dei dem` refers to, and whether
     `mi dem` ("we") includes the listener (§7.3).
 
-**Gender.** Chatom pronouns have no gender (§7.2). Use "he" or "she" only when
-the Chatom text itself gives the person's gender, for example through a
-dictionary word glossed "mother". Otherwise use "they" for people and "it" for
-animals and things. Never guess a gender from a name.
+**Gender.** Chatom pronouns have no gender (§7.2), and glosses and
+translations follow §1.3.1. Use "he" or "she" only when the Chatom text itself
+gives the person's gender, for example through a dictionary word glossed
+"mother". Otherwise use "it" for animals and things, and singular "they" for
+people and anything whose kind is unknown, with "themself" as its reflexive.
+Never guess a gender from a name.
 
 ### 5. Write the result
 
@@ -129,7 +131,7 @@ Give the result in chat, in this order:
    a native speaker would say it.
 3. **Inferences.** A short bulleted list of everything the English adds or
    decides that the Chatom doesn't state, each with its reason: "*the* dog:
-   already mentioned in sentence 1"; "*he*: …"; "past tense: carried over from
+   already mentioned in sentence 1"; "*they*: …"; "past tense: carried over from
    `bin` in sentence 1". Include unknown-word guesses here. Skip trivial
    inferences that have only one sensible option.
 4. **Alternatives.** Only when there is something worth listing, and at most

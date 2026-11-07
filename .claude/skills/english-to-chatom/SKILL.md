@@ -50,6 +50,13 @@ written verbatim, keeping its capitals; never look one up or add it. Offer an
 adapted spelling (`Sara` for Sarah) only if the user asks for one. Join a
 lowercase part of a foreign name with hyphens: `Leonardo-da-Vinci`.
 
+**Gender.** Chatom has no gender (§7.2). English "he", "she", "it" and
+singular "they" all become `dei` (plural "they" is `dei dem`), and the gender
+is lost; tell the user when it mattered. Any English you write, including
+glosses and back-translations, follows §1.3.1: "it" for things and animals,
+singular "they" for people, and "he" or "she" only when a Chatom word such as
+one meaning "mother" gives the gender.
+
 Markdown **code spans** in the English (text between backticks, §5.3) are
 carried over verbatim as nouns, backticks included. Never translate, respell or
 look up anything inside them. A code span must use single backticks and must

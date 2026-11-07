@@ -84,10 +84,17 @@ I   eat   fish
 
 All other words are glossed with their English meaning. A pronoun used as a
 possessor ([§8.8](#88-possession)) is glossed with the English possessive:
-`mi` as "my", `dei` as "his", `sef` as "own". A following `dem` is still
-glossed `PL`: `mi dem buk` is "my PL book". The linking pronoun `dei`
-([§8.8.4](#88-possession)) is glossed "his" after a singular possessor and
-"their" after a plural one.
+`mi` as "my", `dei` as "their" or "its", `sef` as "own". A following `dem` is
+still glossed `PL`: `mi dem buk` is "my PL book". The linking pronoun `dei`
+([§8.8.4](#88-possession)) is glossed "its" after a singular possessor that is
+a thing or an animal, and "their" after any other possessor.
+
+**1.3.1 No added gender.** Chatom has no gender ([§7.2](#7-pronouns)), so
+glosses and translations must not add one that the Chatom does not state.
+`dei` is glossed and translated "it" for a thing or an animal, and singular
+"they" for a person or for anything whose kind is unknown, with "themself" as
+its reflexive. "He" or "she" may be used only when a word in the Chatom, such
+as a word meaning "mother", gives the gender. A name never gives the gender.
 
 **1.4 Sample vocabulary.** Most nouns, verbs and adjectives are not part of
 this specification (see [§6](#6-word-classes)). The examples borrow words from
@@ -389,10 +396,10 @@ contents are normally read.
 code span, never the start or end of a quotation.
 
 ```
-dei  luk  `README.md`.
-he   sees `README.md`
+dei   luk  `README.md`.
+they  see  `README.md`
 ```
-"He looks at `README.md`."
+"They look at `README.md`."
 
 ---
 
@@ -466,16 +473,17 @@ about its class. Any word may begin with any sound.
 ## 7. Pronouns
 
 **7.1** Chatom has three personal pronouns, distinguished by **person** (I / you /
-he·she·it). Each one is made plural with the plural marker `dem`, which is a
+they·it). Each one is made plural with the plural marker `dem`, which is a
 separate word ([§7.5](#7-pronouns)).
 
 | | Singular | Plural |
 |---|---|---|
 | 1st person | `mi` I, me | `mi dem` we, us |
 | 2nd person | `iu` you | `iu dem` you (all) |
-| 3rd person | `dei` he, him, she, her, it | `dei dem` they, them |
+| 3rd person | `dei` they, them (one person), it | `dei dem` they, them |
 
-**7.2** Pronouns have no gender. `dei` covers "he", "she" and "it".
+**7.2** Pronouns have no gender. `dei` covers "he", "she", "it" and singular
+"they". Glosses and translations of `dei` follow [§1.3.1](#1-conventions-used-in-this-document).
 
 **7.3** There is only one "we". It does not distinguish "we, including you" from
 "we, not including you".
@@ -484,10 +492,10 @@ separate word ([§7.5](#7-pronouns)).
 object and the possessor.
 
 ```
-mi  luk  dei.        dei  luk  mi.
-I   see  him         he   sees me
+mi  luk  dei.        dei   luk  mi.
+I   see  them        they  see  me
 ```
-"I see him." / "He sees me."
+"I see them." / "They see me."
 
 **7.5 Plural pronouns.** A pronoun is made plural in the same way as a noun:
 the plural marker `dem` follows it as a separate word ([§8.5](#85-plural)).
@@ -495,8 +503,8 @@ A plural pronoun is therefore two words, and `dem` must be used whenever the
 pronoun means more than one.
 
 ```
-mi  dem  luk  dei  dem.
-I   PL   see  he   PL
+mi  dem  luk  dei   dem.
+I   PL   see  they  PL
 ```
 "We see them."
 
@@ -508,12 +516,13 @@ between the pronoun and `dem`: `tu mi dem` means "we two"
 person and number. It is used when the object is the same as the subject.
 
 ```
-dei  luk  sef.
-he   sees self
+dei   luk  sef.
+they  see  self
 ```
-"He sees himself."
+"They see themself."
 
-Compare `dei luk dei.`, which means "he sees him", where "him" is someone else.
+Compare `dei luk dei.`, which means "they see them", where "them" is someone
+else.
 With a plural subject, `sef` alone still means "themselves", "ourselves" or
 "yourselves": `mi dem luk sef.` "We see ourselves."
 
@@ -526,8 +535,8 @@ other" ([§7.9](#7-pronouns)). A pronoun is never a describing noun.
 It is used when the members of a plural subject act on one another.
 
 ```
-dei  dem  luk  sef   dem.          dei  dem  luk  sef.
-he   PL   see  self  PL            he   PL   see  self
+dei   dem  luk  sef   dem.          dei   dem  luk  sef.
+they  PL   see  self  PL            they  PL   see  self
 ```
 "They see each other." / "They see themselves."
 
@@ -691,17 +700,17 @@ phrase is the **possessor** of the head. It fills the determiner slot, so it
 comes before any number, quantifier or adjective.
 
 ```
-mi  buk          dei  tu   likil  dag  dem
-my  book         his  two  small  dog  PL
+mi  buk          dei    tu   likil  dag  dem
+my  book         their  two  small  dog  PL
 ```
-"my book" / "his two small dogs"
+"my book" / "their two small dogs"
 
 **8.8.2** A possessive pronoun must be **bare**: it may be followed by `dem`,
 but it must not have its own number, quantifier or adjectives.
 
 ```
-mi  dem  buk          dei  dem  tu   dag  dem
-my  PL   book         his  PL   two  dog  PL
+mi  dem  buk          dei    dem  tu   dag  dem
+my  PL   book         their  PL   two  dog  PL
 ```
 "our book" / "their two dogs"
 
@@ -712,10 +721,10 @@ A possessor such as "we two" is expressed with a clause instead
 possessor. It refers to the subject of the clause, like English "own".
 
 ```
-dei  luk  sef  buk.           dei  luk  dei  buk.
-he   sees own  book           he   sees his  book
+dei   luk  sef  buk.          dei   luk  dei    buk.
+they  see  own  book          they  see  their  book
 ```
-"He sees his own book." / "He sees his book" (someone else's).
+"They see their own book." / "They see their book" (someone else's).
 
 The reciprocal `sef dem` ([§7.9](#7-pronouns)) may also be a possessor, meaning
 "each other's".
@@ -728,13 +737,14 @@ I   PL   see  own  PL   book  PL
 
 **8.8.4 Noun possessors.** Any other possessor is a full noun phrase,
 followed by the **linking pronoun** `dei`, followed by the thing owned, much
-like English "the dog his egg". The linking pronoun is always `dei`, whatever
-the number of the possessor. In glosses it is "his" after a singular possessor
-and "their" after a plural one.
+like English "the dog its egg". The linking pronoun is always `dei`, whatever
+the number of the possessor. In glosses it is "its" after a singular possessor
+that is a thing or an animal, and "their" after any other possessor
+([§1.3](#1-conventions-used-in-this-document)).
 
 ```
 dag  dei  eg                  dag  dem  dei    eg   dem
-dog  his  egg                 dog  PL   their  egg  PL
+dog  its  egg                 dog  PL   their  egg  PL
 ```
 "the dog's egg" / "the dogs' eggs"
 
@@ -754,8 +764,8 @@ owned. In particular, a demonstrative or `wa` at the start of the noun phrase
 always belongs to the possessor.
 
 ```
-dea   big  dag  dei  likil  eg          wa     pasin   dei  dag
-DIST  big  dog  his  small  egg         which  person  his  dog
+dea   big  dag  dei  likil  eg          wa     pasin   dei    dag
+DIST  big  dog  its  small  egg         which  person  their  dog
 ```
 "that big dog's small egg" / "whose dog?"
 
@@ -768,7 +778,7 @@ English.
 
 ```
 mi  dag  dei  eg
-my  dog  his  egg
+my  dog  its  egg
 ```
 "my dog's egg": `mi dag` ("my dog") is the possessor of `eg`.
 
@@ -776,8 +786,8 @@ my  dog  his  egg
 may be a noun possessor:
 
 ```
-dea  dei  eg                  al   dei    dag  dem
-DIST his  egg                 all  their  dog  PL
+dea   dei    eg                al   dei    dag  dem
+DIST  their  egg               all  their  dog  PL
 ```
 "that one's egg" / "everyone's dogs"
 
@@ -839,8 +849,8 @@ noun phrase and take any of the parts in [§8.2](#82-order-of-a-noun-phrase)
 `sef` may take it only as "each other" ([§7.8](#7-pronouns)).
 
 ```
-tu   mi  dem        al   dei  dem        tiad   mi
-two  I   PL         all  he   PL         tired  I
+tu   mi  dem        al   dei   dem        tiad   mi
+two  I   PL         all  they  PL         tired  I
 ```
 "we two" / "all of them" / "tired me"
 
@@ -957,12 +967,12 @@ the transitivity given in the table ([§9.2](#92-transitivity)).
 | Word | Meaning | Role it expresses | Transitivity |
 |---|---|---|---|
 | `tek` | take, use | instrument ("with a knife") | transitive |
-| `gib` | give | recipient ("to him"); with no object, the recipient is unstated | ambitransitive |
-| `fi` | belong to, be for | owner ("is his") and beneficiary or purpose ("for him") | transitive |
+| `gib` | give | recipient ("to them"); with no object, the recipient is unstated | ambitransitive |
+| `fi` | belong to, be for | owner ("is theirs") and beneficiary or purpose ("for them") | transitive |
 | `guan` | go to | direction ("to the house"); with no object, "go" | ambitransitive |
 | `kum` | come from | source ("from the house"); with no object, "come" | ambitransitive |
 | `pon` | be at | location and time ("in the house", "at noon") | transitive |
-| `wid` | be with | accompaniment ("with him") | transitive |
+| `wid` | be with | accompaniment ("with them") | transitive |
 | `pas` | pass, exceed | comparison ("more than"), [§14](#14-comparison) | transitive |
 | `siem` | equal | comparison ("as … as"), [§14](#14-comparison) | transitive |
 | `abi` | exist | existence ("there is"), [§12.3](#123-existence-abi) | intransitive |
@@ -975,9 +985,9 @@ I   use  knife  cut  bread
 
 ```
 mi  tek   fish  gib   dei.
-I   take  fish  give  him
+I   take  fish  give  them
 ```
-"I give the fish to him."
+"I give the fish to them."
 
 **9.3.3** The object of `gib` is always the **recipient**, never the thing
 given. The thing given is the object of an earlier verb in the chain, usually
@@ -992,9 +1002,9 @@ I   take  knife  give
 
 ```
 mi  kuk   fish  fi   dei.
-I   cook  fish  for  him
+I   cook  fish  for  them
 ```
-"I cook fish for him."
+"I cook fish for them."
 
 ### 9.4 No embedded clauses
 
@@ -1114,10 +1124,10 @@ I   NEG  PST  can   eat   fish
 "I couldn't eat fish."
 
 ```
-dei  maita  seliep.
-he   might  sleep
+dei   maita  seliep.
+they  might  sleep
 ```
-"He might be asleep."
+"They might be asleep."
 
 ---
 
@@ -1567,10 +1577,10 @@ object, and the content is given in a separate sentence:
 - `dea` points **back** to what has just been said.
 
 ```
-dei  bin  chat  ia.    "mi  bi   tiad."
-he   PST  say   PROX    I   COP  tired
+dei   bin  chat  ia.    "mi  bi   tiad."
+they  PST  say   PROX    I   COP  tired
 ```
-"He said: 'I am tired.'"
+"They said: 'I am tired.'"
 
 ```
 iu   bin  niam  fish.   mi  sabi  dea.
@@ -1805,8 +1815,8 @@ Sarah  PST  go-to  New York
 "Sarah went to New York."
 
 ```
-Sarah  dei  dag  bi   big.
-Sarah  her  dog  COP  big
+Sarah  dei    dag  bi   big.
+Sarah  their  dog  COP  big
 ```
 "Sarah's dog is big."
 
@@ -1851,8 +1861,8 @@ These small parts of the language are still open:
 |---|---|---|
 | `mi` | I, me | [§7](#7-pronouns) |
 | `iu` | you (one person) | [§7](#7-pronouns) |
-| `dei` | he, she, it | [§7](#7-pronouns) |
-| `sef` | reflexive: myself, yourself, himself…; with `dem`, each other | [§7.7](#7-pronouns), [§7.9](#7-pronouns) |
+| `dei` | they (one person), it | [§7](#7-pronouns) |
+| `sef` | reflexive: myself, yourself, themself, itself…; with `dem`, each other | [§7.7](#7-pronouns), [§7.9](#7-pronouns) |
 | `dem` | plural marker | [§8.5](#85-plural) |
 | `ia` | this (near); refers forward | [§8.6](#86-demonstratives-ia-and-dea) |
 | `dea` | that (far); refers back | [§8.6](#86-demonstratives-ia-and-dea) |
