@@ -87,8 +87,8 @@ can't express:
 
 - things the grammar lacks: articles (§6.2.3), the tense the English left
   vague, vocatives (§9.5.3), commas, adverbs;
-- open items from §22 ("each other", ordinals, fractions, decimals, whether
-  `ziro` takes `dem`).
+- open items from §22 (ordinals, fractions, decimals, whether `ziro` takes
+  `dem`).
 
 Offer workarounds that use only specified grammar. Never propose a new
 function word, and never guess at an open item. If a gap needs a new function
@@ -155,11 +155,14 @@ showing it:
    question in a sentence containing a command (§15.4).
 5. **Noun phrase**: determiner – count – adjectives – describing nouns – head –
    `dem` (§8.2). At most one determiner. Adjectives describe the head.
-6. **Plural**: `dem` after every plural noun, even with a number; never after a
-   pronoun, after `eri`/`notin`, or after a possessor followed by `deidem`
-   (§8.5, §8.8.5).
-7. **Possession**: pronoun possessors are bare; noun possessors take `dei`
-   (singular) or `deidem` (plural); the thing owned has a noun head (§8.8.9).
+6. **Plural**: `dem` after every plural noun or pronoun (`mi dem` "we"), even
+   with a number and even on a possessor; never after `eri`/`notin` (§7.5,
+   §8.5, §8.8.5). `sef dem` means "each other" and needs a plural subject or a
+   command (§7.9).
+7. **Possession**: pronoun possessors are bare apart from `dem` (`mi dem buk`
+   "our book"); noun possessors are always followed by `dei`, with a plural
+   possessor taking its own `dem` (`dag dem dei eg`); the thing owned has a
+   noun head (§8.8).
 8. **`bi`**: always followed by a noun phrase or adjectives, never bare
    (§12.1.2). Bare adjectives only after `bi`, and only when no noun follows
    (§12.2.3). Existence uses `abi`.

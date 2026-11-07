@@ -84,7 +84,10 @@ I   eat   fish
 
 All other words are glossed with their English meaning. A pronoun used as a
 possessor ([§8.8](#88-possession)) is glossed with the English possessive:
-`mi` as "my", `dei` as "his", `deidem` as "their".
+`mi` as "my", `dei` as "his", `sef` as "own". A following `dem` is still
+glossed `PL`: `mi dem buk` is "my PL book". The linking pronoun `dei`
+([§8.8.4](#88-possession)) is glossed "his" after a singular possessor and
+"their" after a plural one.
 
 **1.4 Sample vocabulary.** Most nouns, verbs and adjectives are not part of
 this specification (see [§6](#6-word-classes)). The examples borrow words from
@@ -123,7 +126,7 @@ movement from the first vowel to the second. A pair like this is called a
 ```
 dei    = one syllable: d + ei
 iu     = one syllable: iu
-deidem = two syllables: dei · dem
+seliep = two syllables: se · liep
 ```
 
 **2.2.2** Every ordered pair of two different vowels is a valid glide. That
@@ -462,14 +465,15 @@ about its class. Any word may begin with any sound.
 
 ## 7. Pronouns
 
-**7.1** Chatom has six personal pronouns, distinguished by **person** (I / you /
-he·she·it) and **number** (one / more than one).
+**7.1** Chatom has three personal pronouns, distinguished by **person** (I / you /
+he·she·it). Each one is made plural with the plural marker `dem`, which is a
+separate word ([§7.5](#7-pronouns)).
 
 | | Singular | Plural |
 |---|---|---|
-| 1st person | `mi` I, me | `midem` we, us |
-| 2nd person | `iu` you | `iudem` you (all) |
-| 3rd person | `dei` he, him, she, her, it | `deidem` they, them |
+| 1st person | `mi` I, me | `mi dem` we, us |
+| 2nd person | `iu` you | `iu dem` you (all) |
+| 3rd person | `dei` he, him, she, her, it | `dei dem` they, them |
 
 **7.2** Pronouns have no gender. `dei` covers "he", "she" and "it".
 
@@ -485,14 +489,20 @@ I   see  him         he   sees me
 ```
 "I see him." / "He sees me."
 
-**7.5** The plural pronouns are fixed words, formed historically by fusing a
-singular pronoun with the plural marker `dem`. This fusion happens **only** in
-the three plural pronouns. It is not a general rule: nouns never fuse with
-`dem` (see [§8.5](#85-plural)).
+**7.5 Plural pronouns.** A pronoun is made plural in the same way as a noun:
+the plural marker `dem` follows it as a separate word ([§8.5](#85-plural)).
+A plural pronoun is therefore two words, and `dem` must be used whenever the
+pronoun means more than one.
 
-**7.6** Because of 7.5, every singular pronoun ends in a vowel. If one ended in a
-consonant, fusing it with `dem` would put two consonants side by side inside a
-word, which [§3.1.2](#31-syllables) forbids.
+```
+mi  dem  luk  dei  dem.
+I   PL   see  he   PL
+```
+"We see them."
+
+**7.6** Anything else in the noun phrase comes before the pronoun, never
+between the pronoun and `dem`: `tu mi dem` means "we two"
+([§8.10](#810-pronouns-in-noun-phrases)).
 
 **7.7 Reflexive.** Chatom has a single reflexive pronoun, `sef`, used for every
 person and number. It is used when the object is the same as the subject.
@@ -504,13 +514,37 @@ he   sees self
 "He sees himself."
 
 Compare `dei luk dei.`, which means "he sees him", where "him" is someone else.
+With a plural subject, `sef` alone still means "themselves", "ourselves" or
+"yourselves": `mi dem luk sef.` "We see ourselves."
 
 **7.8 Pronouns are nouns.** Grammatically, a pronoun is a noun, and it may be
 the head of a noun phrase or a possessor ([§8.10](#810-pronouns-in-noun-phrases)).
-A pronoun never takes the plural marker `dem`: plurality is shown only by the
-plural pronouns. A pronoun is never a describing noun.
+`mi`, `iu` and `dei` may take `dem`. `sef` takes `dem` only to mean "each
+other" ([§7.9](#7-pronouns)). A pronoun is never a describing noun.
 
-> ⚠ **Not yet specified:** a word for "each other".
+**7.9 Reciprocal: "each other".** `sef` followed by `dem` means "each other".
+It is used when the members of a plural subject act on one another.
+
+```
+dei  dem  luk  sef   dem.          dei  dem  luk  sef.
+he   PL   see  self  PL            he   PL   see  self
+```
+"They see each other." / "They see themselves."
+
+```
+mi  dem  tek   fish  gib   sef   dem.
+I   PL   take  fish  give  self  PL
+```
+"We give fish to each other."
+
+**7.9.1** `sef dem` may be used only when the subject of its clause is plural:
+its head must be followed by `dem`, or it must be a standalone `al`, `som`,
+`nof` or `fiu` ([§8.9](#89-noun-phrases-with-no-head-noun)). It may also be
+used in a command ([§16](#16-commands)), which then speaks to more than one
+person. `dag luk sef dem.` and `eri dag luk sef dem.` are ungrammatical.
+
+**7.9.2** `sef dem` may be a possessor, meaning "each other's"
+([§8.8.3](#88-possession)).
 
 ---
 
@@ -612,8 +646,8 @@ dog.
 
 **8.5.2** The plural marker `dem` comes directly after the head noun, like the
 English "-s". It must be used whenever there is more than one. This applies even
-when a number makes the amount obvious. The one exception is a possessor
-followed by `deidem` ([§8.8.5](#88-possession)).
+when a number makes the amount obvious, and it applies to pronouns too
+([§7.5](#7-pronouns)) and to possessors ([§8.8.5](#88-possession)).
 
 ```
 dag  dem          tu   dag  dem
@@ -662,10 +696,17 @@ my  book         his  two  small  dog  PL
 ```
 "my book" / "his two small dogs"
 
-**8.8.2** A possessive pronoun must be **bare**: it must not have its own
-number, quantifier or adjectives. A possessor such as "we two" is expressed
-with a clause instead ([§8.8.10](#88-possession)): `buk fi tu midem.` "The book
-belongs to us two."
+**8.8.2** A possessive pronoun must be **bare**: it may be followed by `dem`,
+but it must not have its own number, quantifier or adjectives.
+
+```
+mi  dem  buk          dei  dem  tu   dag  dem
+my  PL   book         his  PL   two  dog  PL
+```
+"our book" / "their two dogs"
+
+A possessor such as "we two" is expressed with a clause instead
+([§8.8.10](#88-possession)): `buk fi tu mi dem.` "The book belongs to us two."
 
 **8.8.3 "Own": `sef`.** The reflexive `sef` ([§7.7](#7-pronouns)) may be a
 possessor. It refers to the subject of the clause, like English "own".
@@ -676,24 +717,34 @@ he   sees own  book           he   sees his  book
 ```
 "He sees his own book." / "He sees his book" (someone else's).
 
-**8.8.4 Noun possessors.** Any other possessor is a full noun phrase,
-followed by a **linking pronoun**, followed by the thing owned. The linking
-pronoun is `dei` if the possessor is singular and `deidem` if it is plural, much
-like English "the dog his egg".
+The reciprocal `sef dem` ([§7.9](#7-pronouns)) may also be a possessor, meaning
+"each other's".
 
 ```
-dag  dei  eg                  dag  deidem  eg   dem
-dog  his  egg                 dog  their   egg  PL
+mi  dem  luk  sef  dem  buk   dem.
+I   PL   see  own  PL   book  PL
+```
+"We look at each other's books."
+
+**8.8.4 Noun possessors.** Any other possessor is a full noun phrase,
+followed by the **linking pronoun** `dei`, followed by the thing owned, much
+like English "the dog his egg". The linking pronoun is always `dei`, whatever
+the number of the possessor. In glosses it is "his" after a singular possessor
+and "their" after a plural one.
+
+```
+dag  dei  eg                  dag  dem  dei    eg   dem
+dog  his  egg                 dog  PL   their  egg  PL
 ```
 "the dog's egg" / "the dogs' eggs"
 
-**8.8.5 No double plural.** A possessor followed by `deidem` never takes `dem`,
-because `deidem` already shows that it is plural. This is the one exception to
-[§8.5.2](#85-plural).
+**8.8.5 Plural possessors.** A plural possessor takes `dem` like any other
+plural noun phrase ([§8.5.2](#85-plural)). The `dem` comes before the linking
+pronoun.
 
 ```
-tu   dag  deidem  eg   dem
-two  dog  their   egg  PL
+tu   dag  dem  dei    eg   dem
+two  dog  PL   their  egg  PL
 ```
 "the two dogs' eggs"
 
@@ -725,10 +776,13 @@ my  dog  his  egg
 may be a noun possessor:
 
 ```
-dea  dei  eg                  al   deidem  dag  dem
-DIST his  egg                 all  their   dog  PL
+dea  dei  eg                  al   dei    dag  dem
+DIST his  egg                 all  their  dog  PL
 ```
 "that one's egg" / "everyone's dogs"
+
+A standalone word never takes `dem`, but `al`, `som`, `nof` and `fiu` are
+plural, so the linking `dei` after them is glossed "their".
 
 **8.8.9 Rules for linking pronouns.**
 
@@ -780,21 +834,26 @@ PROX  dog  COP  big  pass  all
 ### 8.10 Pronouns in noun phrases
 
 **8.10.1** A pronoun is a noun ([§7.8](#7-pronouns)), so it may be the head of a
-noun phrase and take any of the parts in [§8.2](#82-order-of-a-noun-phrase),
-**except** describing nouns and `dem`.
+noun phrase and take any of the parts in [§8.2](#82-order-of-a-noun-phrase)
+**except** describing nouns. Only `mi`, `iu` and `dei` may take `dem`, and
+`sef` may take it only as "each other" ([§7.8](#7-pronouns)).
 
 ```
-tu   midem        al   deidem        tiad   mi
-two  we           all  they          tired  I
+tu   mi  dem        al   dei  dem        tiad   mi
+two  I   PL         all  he   PL         tired  I
 ```
 "we two" / "all of them" / "tired me"
 
 **8.10.2** A number or quantifier meaning more than one is used only with a
 plural pronoun, in the same way that a plural number needs `dem` after a noun.
+`tu mi` is ungrammatical. "We two" is `tu mi dem`.
 
 **8.10.3** A pronoun is never a describing noun. A bare pronoun directly before
 the rest of a noun phrase is always its possessor ([§8.8.1](#88-possession)):
 `mi buk` means "my book".
+
+**8.10.4** `sef` and `sef dem` never take a number or quantifier. They may
+take adjectives.
 
 ### 8.11 No joined noun phrases
 
@@ -1774,7 +1833,6 @@ Politeness is expressed through fixed phrases and through the choice of modal
 
 These small parts of the language are still open:
 
-- **"Each other".** A reciprocal word ([§7.8](#7-pronouns)).
 - **Ordinals, fractions and decimals** ([§19](#19-numbers-and-quantifiers)).
 - **Zero and plurality.** Whether `ziro` takes `dem` ([§19](#19-numbers-and-quantifiers)).
 - **Greetings.** Whether `mi luk iu.` (hello) and `mi fina luk iu.` (goodbye)
@@ -1794,10 +1852,7 @@ These small parts of the language are still open:
 | `mi` | I, me | [§7](#7-pronouns) |
 | `iu` | you (one person) | [§7](#7-pronouns) |
 | `dei` | he, she, it | [§7](#7-pronouns) |
-| `midem` | we, us | [§7](#7-pronouns) |
-| `iudem` | you (more than one person) | [§7](#7-pronouns) |
-| `deidem` | they, them | [§7](#7-pronouns) |
-| `sef` | reflexive: myself, yourself, himself… | [§7.7](#7-pronouns) |
+| `sef` | reflexive: myself, yourself, himself…; with `dem`, each other | [§7.7](#7-pronouns), [§7.9](#7-pronouns) |
 | `dem` | plural marker | [§8.5](#85-plural) |
 | `ia` | this (near); refers forward | [§8.6](#86-demonstratives-ia-and-dea) |
 | `dea` | that (far); refers back | [§8.6](#86-demonstratives-ia-and-dea) |
@@ -1909,8 +1964,9 @@ verb-unit     = "bi" ( noun-phrase | adjective+ )
               | ambitransitive-verb noun-phrase?
 
 noun-phrase   = base ( link nominal )*
-base          = standalone | ( determiner | pronoun )? nominal
-link          = "dei" | "deidem"
+base          = standalone | ( determiner | possessor )? nominal
+possessor     = pronoun "dem"?
+link          = "dei"
 standalone    = "ia" | "dea" | quantifier
 determiner    = demonstrative | "wa"
 nominal       = count? adjective* describer* head "dem"?
@@ -1921,7 +1977,7 @@ count         = number | quantifier
 number        = digit+
 demonstrative = "ia" | "dea"
 
-pronoun       = "mi" | "iu" | "dei" | "midem" | "iudem" | "deidem" | "sef"
+pronoun       = "mi" | "iu" | "dei" | "sef"
 quantifier    = "al" | "som" | "nof" | "fiu" | "eri" | "notin"
 digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
               | "faiv" | "sikis" | "sefen" | "eit" | "nain"
@@ -1949,9 +2005,11 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
 - In `nominal`, the head is always the last noun in the run; every one before
   it is a describer ([§8.3.3](#83-describing-nouns)). A pronoun is never a
   describer, and a pronoun head never has describers.
-- A `pronoun` before a `nominal` in `base` is a possessor
-  ([§8.8.1](#88-possession)). Each `link` is a linking pronoun, and everything
-  before it is the possessor of the `nominal` after it.
+- A `possessor` (a pronoun, optionally followed by `"dem"`) before a
+  `nominal` in `base` is a possessor ([§8.8.1](#88-possession)). Each `link` is
+  a linking pronoun, and everything before it is the possessor of the
+  `nominal` after it.
+- `"sef" "dem"` is the reciprocal "each other" ([§7.9](#7-pronouns)).
 - Possession nests to the left: in `A dei B dei C`, `A dei B` is the possessor
   of `C` ([§8.8.7](#88-possession)). A determiner belongs to the first
   `nominal` ([§8.8.6](#88-possession)).
@@ -1959,13 +2017,16 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
   pronoun follows them; otherwise they begin a noun phrase
   ([§12.2.3](#122-adjectives-after-bi)).
 - Constraints not shown by the rules above:
-  - a pronoun is never followed by `"dem"`, and `"eri"` and `"notin"` are never
-    followed by `"dem"` ([§8.5](#85-plural));
-  - the `nominal` after a possessor `pronoun` or a `link` has a noun as its
+  - `"eri"` and `"notin"` are never followed by `"dem"` ([§8.5](#85-plural));
+  - a `count` meaning more than one before a pronoun head requires `"dem"`
+    after it ([§8.10.2](#810-pronouns-in-noun-phrases));
+  - `"sef"` never has a `count`, and `"sef" "dem"` appears only in a command
+    or in a clause whose subject is plural ([§7.9](#7-pronouns),
+    [§8.10.4](#810-pronouns-in-noun-phrases));
+  - the `nominal` after a `possessor` or a `link` has a noun as its
     head ([§8.8](#88-possession));
-  - the phrase before a `link` does not have a pronoun as its head and does not
-    end in `"dem"`; the `link` is `"dei"` when that phrase is singular and
-    `"deidem"` when it is plural ([§8.8.4](#88-possession)–[§8.8.9](#88-possession));
+  - the phrase before a `link` does not have a pronoun as its head
+    ([§8.8.9](#88-possession));
   - a number must not begin with `"ziro"` unless it is `"ziro"` alone
     ([§19.1.3](#191-digit-words));
   - a sentence containing a command must not contain `"wa"`

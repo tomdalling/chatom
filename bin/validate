@@ -30,7 +30,7 @@ RESERVED_STARTS = ("di", "me", "lai")  # §3.2.1
 # --- Subclasses (decided outside the spec; see the dictionary skill) --------
 
 FUNCTION_SUBCLASSES = {
-    "pronoun": "mi iu dei midem iudem deidem sef",
+    "pronoun": "mi iu dei sef",
     "plural": "dem",
     "demonstrative": "ia dea",
     "question": "wa",

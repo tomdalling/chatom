@@ -48,8 +48,8 @@ and  Chatom  its  all  word  PL   exist  be-at  dictionary.sqlite
 
 > You can read these files manually, but they are actually indended to be read by AI.
 
-iu   kian  wuk   wid      dea   fail  dem  tek  sef   bot  deidem  fi       AI.
-you  can   work  be-with  DIST  file  PL   use  self  but  they    are-for  AI
+iu   kian  wuk   wid      dea   fail  dem  tek  sef   bot  dei  dem  fi       AI.
+you  can   work  be-with  DIST  file  PL   use  self  but  he   PL   are-for  AI
 
 Combined
 --------
@@ -62,7 +62,7 @@ Analytic/Isolating Language siem English Creole dem an dei tek som tin dem kum
 Jamaican Patois. Tom bin kiriet dei fi pasin dem fi robo dem fi AI dem.
 
 chatom dei tonh lo dem abi pon `chatom.md` an chatom dei al wod dem abi pon
-`dictionary.sqlite`. iu kian wuk wid dea fail dem tek sef bot deidem fi AI.
+`dictionary.sqlite`. iu kian wuk wid dea fail dem tek sef bot dei dem fi AI.
 
 TODO
 ----

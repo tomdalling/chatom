@@ -67,7 +67,7 @@ still give a best-effort translation, clearly marked
 **(best effort: ungrammatical)**.
 
 If a sentence touches an open item (§22), such as a noun counted with `ziro`,
-an ordinal, a fraction, or an attempt at "each other", say that the spec
+an ordinal or a fraction, say that the spec
 leaves it unspecified. Translate only what the grammar does specify, and don't
 decide the open item.
 
@@ -111,8 +111,8 @@ sentences often settle earlier ones. Infer each of these from context:
 9. **Tone and register.** `!` and `?!` show exclamation (§5.2). `shud`
    instead of a bare command is softer and more polite (§21.2). A bare command
    may be curt or neutral, depending on context.
-10. **Reference.** Decide who each `dei` / `deidem` refers to, and whether
-    `midem` ("we") includes the listener (§7.3).
+10. **Reference.** Decide who each `dei` / `dei dem` refers to, and whether
+    `mi dem` ("we") includes the listener (§7.3).
 
 **Gender.** Chatom pronouns have no gender (§7.2). Use "he" or "she" only when
 the Chatom text itself gives the person's gender, for example through a
