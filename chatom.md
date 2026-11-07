@@ -821,10 +821,10 @@ the rest of a noun phrase is always its possessor ([§8.8.1](#88-possession)):
 - **"Or"** can only join whole clauses:
 
   ```
-  iu   niam  fish  ou  iu   niam  bared?
+  iu   niam  fish  ou  iu   niam  bared.
   you  eat   fish  or  you  eat   bread
   ```
-  "Do you eat fish or bread?"
+  "You eat fish or you eat bread."
 
 ---
 
