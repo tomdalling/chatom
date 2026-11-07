@@ -843,10 +843,23 @@ dog  eats  fish
 ```
 "The dog eats the fish."
 
-### 9.2 Objects are optional
+### 9.2 Transitivity
 
-**9.2.1** Every verb may be used with an object or without one. The dictionary
-does not record which verbs take objects.
+**9.2.1** Every verb has a fixed **transitivity**, which says whether it takes
+an object. The dictionary records the transitivity of every verb. There are
+three kinds:
+
+| Transitivity | Object |
+|---|---|
+| **transitive** | must have an object |
+| **intransitive** | must not have an object |
+| **ambitransitive** | may have an object or not |
+
+**9.2.2** The core verbs have the transitivity given in
+[§9.3](#93-no-prepositions). Every verb made with the prefix `me-` is
+ambitransitive ([§20.3](#20-making-new-words)).
+
+`niam` ("eat") is ambitransitive, and `seliep` ("sleep") is intransitive:
 
 ```
 mi  niam.            mi  niam  fish.
@@ -860,10 +873,12 @@ dog  sleeps
 ```
 "The dog sleeps."
 
-**9.2.2** This never makes a sentence ambiguous. A verb is followed by an object
+**9.2.3** This never makes a sentence ambiguous. A verb is followed by an object
 only if the next word can begin a noun phrase (a noun, a pronoun, an adjective,
 a number, a quantifier, `ia`, `dea` or `wa`). If the next word is a verb, a linking
 word, the question marker or the end of the sentence, the verb has no object.
+A sentence in which a transitive verb has no object, or an intransitive verb
+has one, is ungrammatical.
 
 ### 9.3 No prepositions
 
@@ -872,20 +887,21 @@ Relationships such as instrument, recipient, location and direction are
 expressed with **core verbs** in a serial verb chain ([§13](#13-serial-verbs)).
 
 **9.3.2** The core verbs are a small, fixed set of verbs defined in this
-specification. Apart from being listed here, they are ordinary verbs.
+specification. Apart from being listed here, they are ordinary verbs. Each has
+the transitivity given in the table ([§9.2](#92-transitivity)).
 
-| Word | Meaning | Role it expresses |
-|---|---|---|
-| `tek` | take, use | instrument ("with a knife") |
-| `gib` | give | recipient ("to him") |
-| `fi` | belong to, be for | owner ("is his") and beneficiary or purpose ("for him") |
-| `guan` | go to | direction ("to the house") |
-| `kum` | come from | source ("from the house") |
-| `pon` | be at | location and time ("in the house", "at noon") |
-| `wid` | be with | accompaniment ("with him") |
-| `pas` | pass, exceed | comparison ("more than"), [§14](#14-comparison) |
-| `siem` | equal | comparison ("as … as"), [§14](#14-comparison) |
-| `abi` | exist | existence ("there is"), [§12.3](#123-existence-abi) |
+| Word | Meaning | Role it expresses | Transitivity |
+|---|---|---|---|
+| `tek` | take, use | instrument ("with a knife") | transitive |
+| `gib` | give | recipient ("to him") | ambitransitive |
+| `fi` | belong to, be for | owner ("is his") and beneficiary or purpose ("for him") | transitive |
+| `guan` | go to | direction ("to the house"); with no object, "go" | ambitransitive |
+| `kum` | come from | source ("from the house"); with no object, "come" | ambitransitive |
+| `pon` | be at | location and time ("in the house", "at noon") | transitive |
+| `wid` | be with | accompaniment ("with him") | transitive |
+| `pas` | pass, exceed | comparison ("more than"), [§14](#14-comparison) | transitive |
+| `siem` | equal | comparison ("as … as"), [§14](#14-comparison) | transitive |
+| `abi` | exist | existence ("there is"), [§12.3](#123-existence-abi) | intransitive |
 
 ```
 mi  tek  naif   kot  bared.
@@ -1126,7 +1142,8 @@ but a reader must look past the adjectives to tell which is meant.
 ### 12.3 Existence: `abi`
 
 **12.3.1** The core verb `abi` means "exist". It is how Chatom says "there is" or
-"there are". `abi` never takes an object.
+"there are". `abi` is intransitive ([§9.2](#92-transitivity)), so it never
+takes an object.
 
 ```
 dag  abi.
@@ -1170,8 +1187,9 @@ I   PST  take  knife  cut  bread
 "I cut the bread with a knife." (past)
 
 **13.4 Want, try, start, stop.** Verbs such as "want", "try", "start" and
-"stop" are ordinary dictionary verbs. With no object of their own, they come
-first in a chain, and the verbs after them say what is wanted, tried, started
+"stop" are ordinary dictionary verbs, and they are ambitransitive
+([§9.2](#92-transitivity)). With no object of their own, they come first in a
+chain, and the verbs after them say what is wanted, tried, started
 or stopped. Because they are verbs, not modals, several may be combined, and a
 modal may come before them: "I can start eating fish" is *I · can · start ·
 eat · fish*.
@@ -1610,6 +1628,9 @@ the class of the root:
 | `me-` | — | make the object that way; with no object, become that way: `mebig` "enlarge, grow" | make the object into it; with no object, become it: `mebared` "make into bread" |
 | `lai-` | tending to do it: `laiseliep` "sleepy" | — | like it, typical of it: `laidag` "dog-like" |
 
+Because a `me-` verb has a meaning both with and without an object, every `me-`
+verb is ambitransitive ([§9.2](#92-transitivity)).
+
 ```
 mi  mebig  dag.        dag  mebig.
 I   V-big  dog         dog  V-big
@@ -1789,18 +1810,18 @@ These small parts of the language are still open:
 
 ### A.3 Core verbs
 
-| Word | Meaning |
-|---|---|
-| `tek` | take, use |
-| `gib` | give |
-| `fi` | belong to, be for |
-| `guan` | go to |
-| `kum` | come from |
-| `pon` | be at |
-| `wid` | be with |
-| `pas` | pass, exceed |
-| `siem` | equal |
-| `abi` | exist |
+| Word | Meaning | Transitivity |
+|---|---|---|
+| `tek` | take, use | transitive |
+| `gib` | give | ambitransitive |
+| `fi` | belong to, be for | transitive |
+| `guan` | go to | ambitransitive |
+| `kum` | come from | ambitransitive |
+| `pon` | be at | transitive |
+| `wid` | be with | transitive |
+| `pas` | pass, exceed | transitive |
+| `siem` | equal | transitive |
+| `abi` | exist | intransitive |
 
 ---
 
@@ -1808,31 +1829,32 @@ These small parts of the language are still open:
 
 These words are used in the examples in this document. They are **not** part of
 the specification: the real vocabulary belongs in the Chatom dictionary. Each
-word obeys the shape rules ([§3](#3-word-shape)).
+word obeys the shape rules ([§3](#3-word-shape)). Each verb's transitivity
+([§9.2](#92-transitivity)) is chosen to fit the examples.
 
-| Word | Class | Meaning |
-|---|---|---|
-| `airi` | noun | peace |
-| `bared` | noun | bread |
-| `bad` | noun | bird |
-| `buk` | noun | book |
-| `dag` | noun | dog |
-| `naif` | noun | knife |
-| `kiat` | noun | cat |
-| `eg` | noun | egg |
-| `fish` | noun | fish |
-| `kot` | verb | cut |
-| `kuk` | verb | cook |
-| `seliep` | verb | sleep |
-| `sabi` | verb | know |
-| `luk` | verb | see, look at |
-| `niam` | verb | eat |
-| `chat` | verb | say, talk |
-| `chatom` | noun | Chatom (the language) |
-| `big` | adjective | big |
-| `likil` | adjective | small |
-| `sik` | adjective | sick |
-| `tiad` | adjective | tired |
+| Word | Class | Meaning | Transitivity |
+|---|---|---|---|
+| `airi` | noun | peace | — |
+| `bared` | noun | bread | — |
+| `bad` | noun | bird | — |
+| `buk` | noun | book | — |
+| `dag` | noun | dog | — |
+| `naif` | noun | knife | — |
+| `kiat` | noun | cat | — |
+| `eg` | noun | egg | — |
+| `fish` | noun | fish | — |
+| `kot` | verb | cut | transitive |
+| `kuk` | verb | cook | ambitransitive |
+| `seliep` | verb | sleep | intransitive |
+| `sabi` | verb | know | ambitransitive |
+| `luk` | verb | see, look at | transitive |
+| `niam` | verb | eat | ambitransitive |
+| `chat` | verb | say, talk | ambitransitive |
+| `chatom` | noun | Chatom (the language) | — |
+| `big` | adjective | big | — |
+| `likil` | adjective | small | — |
+| `sik` | adjective | sick | — |
+| `tiad` | adjective | tired | — |
 
 ---
 
@@ -1861,8 +1883,9 @@ modal         = "kian" | "mos" | "shud" | "maita"
 
 verb-chain    = verb-unit+
 verb-unit     = "bi" ( noun-phrase | adjective+ )?
-              | "abi"
-              | verb noun-phrase?
+              | transitive-verb noun-phrase
+              | intransitive-verb
+              | ambitransitive-verb noun-phrase?
 
 noun-phrase   = base ( link nominal )*
 base          = standalone | ( determiner | pronoun )? nominal
@@ -1885,10 +1908,12 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
 
 **Notes on the grammar:**
 
-- `noun`, `verb` and `adjective` are open-class words, identified from the
-  dictionary ([§6.3](#63-identifying-a-words-class)). They include the general
-  nouns, the core verbs (except `abi`, listed separately because it never takes
-  an object) and words built with prefixes.
+- `noun`, `adjective` and the three kinds of verb are open-class words,
+  identified from the dictionary ([§6.3](#63-identifying-a-words-class)). They
+  include the general nouns, the core verbs and words built with prefixes. The
+  dictionary records each verb's transitivity ([§9.2](#92-transitivity)); the
+  core verbs' transitivity is given in [§9.3](#93-no-prepositions), and every
+  `me-` verb is ambitransitive.
 - A `noun` may also be a foreign name: a run of one or more adjacent words
   that each contain an uppercase letter, treated as a single word
   ([§20.6](#20-making-new-words)). Native names are ordinary dictionary nouns.
