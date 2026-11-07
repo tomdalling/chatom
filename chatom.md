@@ -851,10 +851,16 @@ PROX  dog  COP  big  pass  all
 
 ### 8.10 Pronouns in noun phrases
 
-**8.10.1** A pronoun acts like a noun ([§7.8](#7-pronouns)), so it may be the head of a
-noun phrase and take any of the parts in [§8.2](#82-order-of-a-noun-phrase)
-**except** describing nouns. Only `mi`, `iu` and `dei` may take `dem`, and
-`sef` may take it only as "each other" ([§7.8](#7-pronouns)).
+**8.10.1** A pronoun acts like a noun ([§7.8](#7-pronouns)), so it may be the
+head of a noun phrase. A pronoun head may take only a number or quantifier,
+adjectives and `dem` (parts 2, 3 and 6 in [§8.2](#82-order-of-a-noun-phrase)).
+It must not take a determiner, so no demonstrative, no `wa` and no possessor
+may come before it, and it must not take describing nouns. Only `mi`, `iu` and
+`dei` may take `dem`, and `sef` may take it only as "each other"
+([§7.8](#7-pronouns)).
+
+`ia mi`, `wa dei dem` and `mi dei` are ungrammatical. To ask "which of them?",
+ask about a general noun instead, such as `wa pasin` ("which person?").
 
 ```
 tu   mi  dem        al   dei   dem        tiad   mi
@@ -2088,18 +2094,23 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
   ([§12.2.3](#122-adjectives-after-bi)).
 - Constraints not shown by the rules above:
   - `"eri"` and `"notin"` are never followed by `"dem"` ([§8.5](#85-plural));
-  - a `count` meaning more than one before a pronoun head requires `"dem"`
-    after it ([§8.10.2](#810-pronouns-in-noun-phrases));
+  - a `number` greater than one, or `"al"`, `"som"`, `"nof"` or `"fiu"`, as
+    the `count` requires `"dem"` after the head, whether it is a noun or a
+    pronoun ([§8.5.2](#85-plural), [§8.10.2](#810-pronouns-in-noun-phrases),
+    [§19.3](#193-quantifiers));
   - `"sef"` never has a `count`, and `"sef" "dem"` appears only in a command
     or in a clause whose subject is plural ([§7.9](#7-pronouns),
     [§8.10.4](#810-pronouns-in-noun-phrases));
-  - the `nominal` after a `possessor` or a `link` has a noun as its
-    head ([§8.8](#88-possession));
+  - the `nominal` after a `determiner`, a `possessor` or a `link` has a
+    noun as its head ([§8.8](#88-possession),
+    [§8.10.1](#810-pronouns-in-noun-phrases));
   - the phrase before a `link` does not have a pronoun as its head
     ([§8.8.9](#88-possession));
   - a number must not begin with `"ziro"` unless it is `"ziro"` alone
     ([§19.1.3](#191-digit-words));
   - a sentence containing a command must not contain `"wa"`
     ([§15.4](#154-questions-and-commands));
+  - a sentence containing `"wa"` must not end in the question marker
+    `"no"` ([§15.2.6](#152-question-word-questions));
   - a sentence ends in `"?"` or `"?!"` exactly when it is a question
     ([§5.2](#52-punctuation)).
