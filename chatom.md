@@ -1049,19 +1049,63 @@ which may stand alone ([§15.3](#153-answering-yesno-questions)).
 ## 10. Tense, aspect and modality
 
 **10.1** Tense (when something happens), aspect (how it unfolds over time) and
-modality (ability, necessity and possibility) are **optional**. They are shown
-by function words placed directly before the first verb of the clause.
+modality (ability, necessity and possibility) are shown by function words
+placed directly before the first verb of the clause. Leaving out a tense or
+aspect marker has a fixed meaning of its own ([§10.2](#102-tense-and-aspect)).
+Modals are optional ([§10.3](#103-modals)).
 
 ### 10.2 Tense and aspect
 
 | Marker | Meaning | Gloss |
 |---|---|---|
-| *(none)* | present or habitual: "eats", "is eating" or "eats regularly", with the time taken from context | |
+| *(no tense marker)* | present | |
 | `bin` | past | `PST` |
 | `fina` | future | `FUT` |
+| *(no `am`)* | simple: the action as a whole, a habit, a general truth or a state | |
 | `am` | progressive: an action in progress, "is …ing" | `PROG` |
 
-**10.2.1** One tense marker may combine with `am`:
+**10.2.1 Tense.** A verb with no tense marker is always **present**. It never
+means past or future, whatever the context: not because of an earlier sentence
+or clause, and not because of a time phrase such as `pon dea taim`. Every
+clause about the past must use `bin`, and every clause about the future must
+use `fina`. This includes a clause after a linking word
+([§17](#17-sentences-with-several-clauses)), and a future event that English
+would put in the present:
+
+```
+mi  fina  seliep  if  iu   fina  niam  fish.
+I   FUT   sleep   if  you  FUT   eat   fish
+```
+"I will sleep if you eat fish."
+
+**10.2.2** Tense is counted from the moment of speaking or writing. A quoted
+sentence ([§18](#18-reported-speech-and-thought)) keeps its speaker's own
+words, so its tense is counted from the moment that speaker spoke.
+
+**10.2.3 Aspect.** A verb without `am` is never progressive. It presents the
+action as a whole, a habit, a general truth or a state. `am` must be used
+whenever an action is in progress at the time being talked about.
+
+```
+dag  seliep.            dag  am    seliep.
+dog  sleeps             dog  PROG  sleep
+```
+"The dog sleeps." / "The dog is sleeping."
+
+**10.2.4** `am` may be used with every verb, including `bi`, `abi` and verbs
+that name a state, such as `sabi` ("know"). With a state, it means that the
+state holds only for now, at the time being talked about.
+
+```
+dag  am    bi   sik.
+dog  PROG  COP  sick
+```
+"The dog is sick at the moment."
+
+**10.2.5** Commands never take a tense or aspect marker
+([§16.3](#16-commands)), so 10.2.1 and 10.2.3 do not apply to them.
+
+**10.2.6** One tense marker may combine with `am`:
 
 | Combination | Meaning |
 |---|---|
@@ -1127,7 +1171,7 @@ I   NEG  PST  can   eat   fish
 dei   maita  seliep.
 they  might  sleep
 ```
-"They might be asleep."
+"They might sleep."
 
 ---
 

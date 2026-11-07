@@ -7,7 +7,7 @@ description: Translate Chatom into natural English in one pass, inferring the de
 
 Translate the Chatom text the user gives you (a word, a sentence or a passage)
 into natural English. Chatom states much less than English does: it has no
-articles, optional tense, no prepositions, no embedded clauses and genderless
+articles, no prepositions, no embedded clauses and genderless
 pronouns. Your job is to recover what the speaker most likely meant, to say
 it the way a native English speaker would, and to show your reasoning.
 
@@ -85,10 +85,12 @@ sentences often settle earlier ones. Infer each of these from context:
 1. **Articles** (§6.2.3). "The" for something already mentioned, known, or
    unique in context; "a" for something new. Plural and mass nouns may take
    no article.
-2. **Tense** with no marker (§10.2). Present or habitual by default, but an
-   earlier `bin` or `fina` usually sets the time for the sentences that
-   follow, and words like `dea taim` move it. Choose simple or progressive
-   English from context.
+2. **Tense and aspect** (§10.2). These are never inferred. A verb with no
+   tense marker is always present, `bin` is past and `fina` is future, in
+   every clause, whatever the earlier sentences or time phrases suggest.
+   Translate the tense the Chatom states, not one you guess the writer meant.
+   A verb without `am` is English simple ("eats", "ate"); `am` is English
+   progressive ("is eating", "was eating").
 3. **Serial verbs as English prepositions** (§9.3, §13). `tek naif kot` →
    "cut with a knife"; `tek fish gib dei` → "give them the fish"; `pon ia
    pelais` → "here"; `wid` → "with"; `guan` / `kum` → "to" / "from"; `pas` →
@@ -131,8 +133,7 @@ Give the result in chat, in this order:
    a native speaker would say it.
 3. **Inferences.** A short bulleted list of everything the English adds or
    decides that the Chatom doesn't state, each with its reason: "*the* dog:
-   already mentioned in sentence 1"; "*they*: …"; "past tense: carried over from
-   `bin` in sentence 1". Include unknown-word guesses here. Skip trivial
+   already mentioned in sentence 1"; "*they*: …". Include unknown-word guesses here. Skip trivial
    inferences that have only one sensible option.
 4. **Alternatives.** Only when there is something worth listing, and at most
    3 entries per sentence:
@@ -177,17 +178,12 @@ I   COP  tired  tired
 ```
 "I am very tired."
 
-**Translation:** "I saw a dog eating fish here. I'm exhausted."
+**Translation:** "I saw a dog eat fish here. I'm exhausted."
 
 **Inferences:**
 - *a* dog: first mention.
 - *it*: `dei` most likely refers back to the dog, the only thing mentioned.
-- "a dog eating fish here": sentences 1 and 2 merged, since sentence 2 most
-  likely describes what was seen.
+- "a dog eat fish here": sentences 1 and 2 merged, since sentence 2 most
+  likely describes what was seen. "Eat", not "eating", because sentence 2 has
+  no `am`.
 - "exhausted": `tiad tiad` is intensified "tired".
-- present tense in sentence 3: no marker, and tiredness is a current state.
-
-**Alternatives:**
-- Sentence 3, alternative meaning: "I was very tired" (the past carried over
-  from sentences 1–2). Less likely, because a state with no marker usually
-  describes the present.

@@ -69,8 +69,8 @@ Offer **2–4 genuinely different** ways to express the meaning: different
 grammatical strategies or word choices, for example a serial verb vs separate
 clauses (§9.4, §13), reported speech with `ia`/`dea` (§18), a comparison with
 `pas` vs another phrasing (§14), or a describing-noun phrase vs a new root.
-Don't offer trivial variants, such as the same sentence with and without an
-optional `bin`. If only one structure is reasonable, say so and offer it alone
+Don't offer trivial variants, such as the same sentence with and without a
+modal the English doesn't ask for. If only one structure is reasonable, say so and offer it alone
 for confirmation.
 
 For each option:
@@ -155,6 +155,11 @@ showing it:
    is a question; every sentence has a full clause (except `ie.` and `no.`).
 2. **Clause**: subject – (`no`) (`bin`/`fina`) (`am`) (modal) – verb chain, in
    that order, each at most once (§10.4). No preposition, no embedded clause.
+   Tense and aspect follow the English *meaning*, not its form (§10.2): `bin`
+   in every clause about the past and `fina` in every clause about the future,
+   including after `if` or `wen` and for planned events English puts in the
+   present ("I'm leaving tomorrow" → `fina`, no `am`); `am` whenever an action
+   is in progress at that time, and never otherwise.
 3. **Linking words**: exactly one between clauses, never at the start
    (§17). Command clauses come before all other clauses (§17.6). No tense or
    aspect in a command (§16.3).
