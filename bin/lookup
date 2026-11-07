@@ -1,0 +1,528 @@
+#!/usr/bin/env python3
+"""Look up Chatom words in dictionary.sqlite.
+
+Usage:
+  bin/lookup [options] WORD...
+  bin/lookup [options] "dag niam fish."
+  echo "dag niam fish." | bin/lookup [options]
+
+Each argument may be a single word or a whole sentence. With no arguments,
+the words are read from standard input.
+
+Words built with a prefix (di-, me-, lai-) are taken apart and given their
+meaning from §20.3 of chatom.md. Foreign names (any word with an uppercase
+letter) are recognised; numbers written as digits and code spans are skipped.
+
+Options:
+  --json                 print machine-readable JSON instead of cards
+  --color=auto|always|never
+                         colour the cards (default: auto, which colours only
+                         when writing to a terminal and NO_COLOR is unset)
+  -h, --help             show this help
+
+Exits 0 if every word was found, 1 if any word was not found or is an invalid
+prefixed word, and 2 on a usage error.
+"""
+
+import json
+import os
+import re
+import shutil
+import sqlite3
+import sys
+import textwrap
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DB_PATH = ROOT / "dictionary.sqlite"
+SPEC_PATH = ROOT / "chatom.md"
+
+MAX_WIDTH = 80
+MIN_WIDTH = 30
+COLUMNS = ("word", "class", "subclass", "transitivity", "gloss", "definition", "notes")
+
+
+# --- Styling ----------------------------------------------------------------
+
+class Style:
+    def __init__(self, enabled):
+        self.enabled = enabled
+
+    def __call__(self, text, *codes):
+        if not self.enabled or not codes or not text:
+            return text
+        return f"\033[{';'.join(codes)}m{text}\033[0m"
+
+
+BOLD, DIM, ITALIC = "1", "2", "3"
+RED, CYAN = "31", "36"
+
+
+# --- The spec -------------------------------------------------------------
+
+SUBCLASS_LABELS = {
+    "pronoun": "pronoun",
+    "plural": "plural marker",
+    "demonstrative": "demonstrative",
+    "question": "question word",
+    "tense": "tense marker",
+    "aspect": "aspect marker",
+    "modal": "modal",
+    "negation": "negation",
+    "answer": "answer",
+    "copula": "copula",
+    "linker": "linking word",
+    "quantifier": "quantifier",
+    "digit": "digit word",
+    "general": "general noun",
+    "core": "core verb",
+}
+
+# Appendix A.2 and A.3 have no section column; these are the sections that
+# define the general nouns and core verbs (§6.1.3).
+SUBCLASS_SECTIONS = {"general": "§15.2", "core": "§9.3"}
+
+PREFIXES = {
+    # prefix: (form before a vowel, class it makes)
+    "di": ("diz", "noun"),
+    "me": ("mez", "verb"),
+    "lai": ("laiz", "adjective"),
+}
+
+VOWELS = "aeiou"
+
+
+def spec_sections():
+    """Return {word: '§n.n'} for the function words of Appendix A.1, read from
+    chatom.md. Returns {} if the spec can't be read."""
+    try:
+        spec = SPEC_PATH.read_text(encoding="utf-8")
+    except OSError:
+        return {}
+    m = re.search(r"^### A\.1 .*?$(.*?)^###? ", spec, re.M | re.S)
+    if not m:
+        return {}
+    sections = {}
+    for line in m.group(1).splitlines():
+        if not line.startswith("|"):
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) < 3:
+            continue
+        ref = re.search(r"§[\d.]+", cells[2])
+        if not ref:
+            continue
+        for word in re.findall(r"`([^`]+)`", cells[0]):
+            if not word.endswith("-"):
+                sections[word] = ref.group(0).rstrip(".")
+    return sections
+
+
+def derived_meaning(prefix, root_class, gloss):
+    """The meaning of a prefixed word, from the table in §20.3."""
+    g = f"“{gloss}”"
+    return {
+        ("di", "verb"): f"the act of {g}",
+        ("di", "adjective"): f"the quality of being {g}",
+        ("me", "adjective"): f"make the object {g}; with no object, become {g}",
+        ("me", "noun"): f"make the object into {g}; with no object, become {g}",
+        ("lai", "verb"): f"tending to {g}",
+        ("lai", "noun"): f"like {g}, typical of {g}",
+    }.get((prefix, root_class))
+
+
+# --- The dictionary ------------------------------------------------------
+
+class Dictionary:
+    def __init__(self, path):
+        if not path.exists():
+            sys.exit(f"lookup: dictionary not found: {path}")
+        con = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+        con.row_factory = sqlite3.Row
+        cols = ", ".join(COLUMNS)
+        self.words = {
+            r["word"]: dict(r) for r in con.execute(f"SELECT {cols} FROM words")
+        }
+        con.close()
+        self.sections = spec_sections()
+        for entry in self.words.values():
+            sub = entry["subclass"]
+            entry["spec_section"] = (
+                self.sections.get(entry["word"]) or SUBCLASS_SECTIONS.get(sub)
+                if sub else None
+            )
+
+    def suggestions(self, word, limit=3):
+        """Close spellings, nearest first."""
+        max_dist = 1 if len(word) <= 3 else 2
+        scored = []
+        for other in self.words:
+            if abs(len(other) - len(word)) > max_dist:
+                continue
+            d = edit_distance(word, other)
+            if d <= max_dist:
+                scored.append((d, other))
+        scored.sort()
+        return [
+            {"word": w, "gloss": first_gloss(self.words[w]["gloss"])}
+            for _, w in scored[:limit]
+        ]
+
+    def resolve(self, word):
+        """Return a result dict for one lowercase word."""
+        if word in self.words:
+            return {"status": "found", **self.words[word]}
+        split = split_prefix(word)
+        if split:
+            return self.resolve_prefixed(word, *split)
+        return {
+            "status": "not_found",
+            "word": word,
+            "suggestions": self.suggestions(word),
+        }
+
+    def resolve_prefixed(self, word, prefix, root, problem):
+        makes = PREFIXES[prefix][1]
+        result = {
+            "status": "invalid_derived",
+            "word": word,
+            "prefix": prefix + "-",
+            "root_word": root,
+            "root": self.words.get(root),
+        }
+        if problem:
+            return {**result, "reason": problem}
+        entry = self.words.get(root)
+        if entry is None:
+            reason = f"the root {root} is not in the dictionary"
+            if split_prefix(root):
+                reason = f"prefixes never stack (§20.5.3), and {root} is not in the dictionary"
+            return {**result, "reason": reason, "suggestions": self.suggestions(root)}
+        if entry["class"] == "function":
+            return {**result, "reason": f"a prefix can't go on a function word like {root} (§20.5.1)"}
+        if entry["class"] == makes:
+            article = "an" if makes[0] in VOWELS else "a"
+            return {**result, "reason": f"{prefix}- makes {article} {makes}, but {root} "
+                                         f"is already {article} {makes} (§20.5.2)"}
+        meaning = derived_meaning(prefix, entry["class"], first_gloss(entry["gloss"]))
+        return {
+            "status": "derived",
+            "word": word,
+            "prefix": prefix + "-",
+            "class": makes,
+            "transitivity": "ambitransitive" if makes == "verb" else None,
+            "meaning": meaning,
+            "root": entry,
+        }
+
+
+def split_prefix(word):
+    """Split a word that begins with a prefix into (prefix, root, problem).
+    problem is None if the form is right, or a reason if it is not. Returns
+    None if the word does not begin with a prefix."""
+    for prefix, (vowel_form, _) in sorted(PREFIXES.items(), key=lambda p: -len(p[0])):
+        if not word.startswith(prefix):
+            continue
+        rest = word[len(prefix):]
+        if not rest:
+            return (prefix, rest, f"{prefix}- needs a root after it (§20.2)")
+        if rest[0] == "z" and len(rest) > 1 and rest[1] in VOWELS:
+            return (prefix, rest[1:], None)  # the linking z (§20.2.1)
+        if rest[0] in VOWELS:
+            return (prefix, rest, f"before a vowel the prefix is {vowel_form}-, "
+                                  f"so this would be {vowel_form}{rest} (§20.2)")
+        return (prefix, rest, None)
+    return None
+
+
+def first_gloss(gloss):
+    return gloss.split(",")[0].strip()
+
+
+def edit_distance(a, b):
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
+        prev = cur
+    return prev[-1]
+
+
+# --- Reading the input -----------------------------------------------------
+
+QUOTES = "\"“”"
+END_MARKS = ".?!"
+
+
+def tokens(text):
+    """Yield (kind, text) for each word of the input: 'word' for a lowercase
+    word, 'name' for a foreign name (adjacent names joined, §20.6.7). Code
+    spans and numbers written as digits are skipped."""
+    pending_name = []
+
+    def flush():
+        if pending_name:
+            yield ("name", " ".join(pending_name))
+            pending_name.clear()
+
+    for raw in re.findall(r"`[^`]*`?|[^\s`]+", text):
+        if raw.startswith("`"):
+            yield from flush()
+            continue  # a code span (§5.3)
+        word = raw.strip(QUOTES)
+        ends_sentence = word.rstrip(QUOTES).endswith(tuple(END_MARKS))
+        word = word.rstrip(END_MARKS + QUOTES).lstrip(QUOTES)
+        if not word:
+            yield from flush()
+            continue
+        if any(c.isupper() for c in word):
+            pending_name.append(word)
+            if ends_sentence or raw.endswith(tuple(QUOTES)):
+                yield from flush()
+            continue
+        yield from flush()
+        if word.isdigit():
+            continue  # digits are skipped (§5.2.5)
+        yield ("word", word.lower())
+    yield from flush()
+
+
+def lookup_all(dictionary, text):
+    seen = set()
+    results = []
+    for kind, word in tokens(text):
+        if word in seen:
+            continue
+        seen.add(word)
+        if kind == "name":
+            results.append({"status": "foreign_name", "word": word})
+        else:
+            results.append(dictionary.resolve(word))
+    return results
+
+
+# --- Cards -------------------------------------------------------------------
+
+class Card:
+    """A box of a fixed width, with a title, a label and body lines. Each body
+    line is a list of (text, codes) segments, or a nested Card."""
+
+    def __init__(self, title, label, border=(DIM,), title_codes=(BOLD, CYAN),
+                 label_codes=(DIM,)):
+        self.title = title
+        self.label = label
+        self.border = border
+        self.title_codes = title_codes
+        self.label_codes = label_codes
+        self.body = []
+
+    def text(self, text, *codes):
+        self.body.append(("text", text, codes))
+
+    def labelled(self, label, text, *codes):
+        self.body.append(("labelled", label, text, codes))
+
+    def rule(self):
+        self.body.append(("rule",))
+
+    def blank(self):
+        self.body.append(("blank",))
+
+    def nest(self, card):
+        self.body.append(("card", card))
+
+    def render(self, width, s):
+        inner = width - 4
+        b = lambda t: s(t, *self.border)
+        title = truncate(self.title, max(inner - 6, 1))
+        label = truncate(self.label, max(inner - len(title) - 4, 0))
+        fill = width - len(title) - len(label) - (8 if label else 5)
+        head = b("╭─ ") + s(title, *self.title_codes) + " " + b("─" * max(fill, 1))
+        if label:
+            head += " " + s(label, *self.label_codes) + b(" ─╮")
+        else:
+            head += b("╮")
+        lines = [head]
+
+        def row(content, visible):
+            lines.append(b("│") + " " + content + " " * (inner - visible) + " " + b("│"))
+
+        for item in self.body:
+            kind = item[0]
+            if kind == "text":
+                _, text, codes = item
+                for line in wrap(text, inner):
+                    row(s(line, *codes), len(line))
+            elif kind == "labelled":
+                _, lab, text, codes = item
+                pad = len(lab) + 2
+                for i, line in enumerate(wrap(text, inner - pad)):
+                    lead = s(lab, DIM, ITALIC) + "  " if i == 0 else " " * pad
+                    row(lead + s(line, *codes), pad + len(line))
+            elif kind == "rule":
+                lines.append(b("├" + "─" * (width - 2) + "┤"))
+            elif kind == "blank":
+                row("", 0)
+            elif kind == "card":
+                for line, visible in item[1].render_lines(inner, s):
+                    row(line, visible)
+        lines.append(b("╰" + "─" * (width - 2) + "╯"))
+        return lines
+
+    def render_lines(self, width, s):
+        """Render, returning (line, visible length) pairs for nesting."""
+        return [(line, width) for line in self.render(width, s)]
+
+
+def truncate(text, n):
+    return text if len(text) <= n else text[: max(n - 1, 0)] + "…"
+
+
+def wrap(text, width):
+    out = []
+    for para in text.split("\n"):
+        out.extend(textwrap.wrap(para, max(width, 1)) or [""])
+    return out
+
+
+def entry_label(entry):
+    parts = []
+    sub = entry.get("subclass")
+    if sub:
+        parts.append(SUBCLASS_LABELS.get(sub, sub))
+    else:
+        parts.append(entry["class"])
+    if entry.get("transitivity"):
+        parts.append(entry["transitivity"])
+    if sub and entry.get("spec_section"):
+        parts.append("spec " + entry["spec_section"])
+    return " · ".join(parts)
+
+
+def entry_card(entry):
+    card = Card(entry["word"], entry_label(entry))
+    card.text(entry["gloss"], BOLD)
+    if entry.get("definition") or entry.get("notes"):
+        card.rule()
+        if entry.get("definition"):
+            card.text(entry["definition"])
+        if entry.get("definition") and entry.get("notes"):
+            card.blank()
+        if entry.get("notes"):
+            card.labelled("note", entry["notes"], DIM)
+    return card
+
+
+def suggestion_text(suggestions):
+    return " · ".join(f"{s['word']} ({s['gloss']})" for s in suggestions)
+
+
+def error_card(title, label):
+    return Card(title, label, border=(RED,), title_codes=(BOLD, RED), label_codes=(RED,))
+
+
+def result_card(result):
+    status = result["status"]
+    if status == "found":
+        return entry_card(result)
+    if status == "derived":
+        label = " · ".join(p for p in (result["class"], result["transitivity"], "derived") if p)
+        card = Card(result["word"], label)
+        card.text(result["meaning"], BOLD)
+        makes = PREFIXES[result["prefix"].rstrip("-")][1]
+        card.text(f"{result['prefix']} (makes {'an' if makes[0] in VOWELS else 'a'} "
+                  f"{makes}) + {result['root']['word']}", DIM)
+        card.nest(entry_card(result["root"]))
+        return card
+    if status == "invalid_derived":
+        card = error_card(result["word"], "invalid prefixed word")
+        card.text(result["reason"])
+        if result.get("suggestions"):
+            card.labelled("did you mean", suggestion_text(result["suggestions"]))
+        elif result.get("root"):
+            card.nest(entry_card(result["root"]))
+        return card
+    if status == "not_found":
+        card = error_card(result["word"], "not in dictionary")
+        if result["suggestions"]:
+            card.labelled("did you mean", suggestion_text(result["suggestions"]))
+        else:
+            card.text("no close matches", DIM)
+        return card
+    if status == "foreign_name":
+        card = Card(result["word"], "foreign name", title_codes=(DIM,))
+        card.text("a name from another language (§20.6)", DIM)
+        return card
+    raise ValueError(status)
+
+
+# --- Main -----------------------------------------------------------------
+
+def parse_args(argv):
+    opts = {"json": False, "color": "auto"}
+    words = []
+    args = iter(argv)
+    for arg in args:
+        if arg == "--":
+            words.extend(args)
+        elif arg in ("-h", "--help"):
+            print(__doc__.strip())
+            sys.exit(0)
+        elif arg == "--json":
+            opts["json"] = True
+        elif arg.startswith("--color"):
+            value = arg.partition("=")[2] if "=" in arg else next(args, "")
+            if value not in ("auto", "always", "never"):
+                usage_error(f"--color must be auto, always or never, not {value!r}")
+            opts["color"] = value
+        elif arg.startswith("-") and len(arg) > 1:
+            usage_error(f"unknown option {arg}")
+        else:
+            words.append(arg)
+    return opts, words
+
+
+def usage_error(message):
+    print(f"lookup: {message}\nTry 'bin/lookup --help'.", file=sys.stderr)
+    sys.exit(2)
+
+
+def use_color(setting):
+    if setting == "always":
+        return True
+    if setting == "never":
+        return False
+    return sys.stdout.isatty() and not os.environ.get("NO_COLOR")
+
+
+def main(argv):
+    opts, words = parse_args(argv)
+    if words:
+        text = " ".join(words)
+    elif sys.stdin.isatty():
+        print(__doc__.strip())
+        return 2
+    else:
+        text = sys.stdin.read()
+
+    results = lookup_all(Dictionary(DB_PATH), text)
+
+    if opts["json"]:
+        print(json.dumps(results, ensure_ascii=False, indent=2))
+    else:
+        s = Style(use_color(opts["color"]))
+        cols = shutil.get_terminal_size((MAX_WIDTH, 24)).columns
+        width = max(MIN_WIDTH, min(cols, MAX_WIDTH))
+        for result in results:
+            print("\n".join(result_card(result).render(width, s)))
+
+    failed = any(r["status"] in ("not_found", "invalid_derived") for r in results)
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main(sys.argv[1:]))
+    except BrokenPipeError:
+        sys.exit(0)

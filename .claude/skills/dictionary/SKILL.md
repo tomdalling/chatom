@@ -92,10 +92,22 @@ both uses in `definition`. There is no separate column for this.
 
 ## Recipes
 
-```sh
-# Look up an Chatom word
-sqlite3 -header -column dictionary.sqlite "SELECT * FROM words WHERE word = 'dag'"
+To look up Chatom words, use `bin/lookup --json`. It takes words or whole
+sentences, and it handles what plain SQL can't: prefixed words are taken apart
+and given their §20.3 meaning, foreign names are recognised, and digits and
+code spans are skipped. Each result has a `status` of `found`, `derived`,
+`invalid_derived` (with a `reason`), `not_found` (with `suggestions`) or
+`foreign_name`. Without `--json` it prints cards for a human to read.
 
+```sh
+bin/lookup --json dag diniam
+bin/lookup --json "dag niam fish."
+```
+
+Use SQL for everything else: English searches, listings, spelling checks and
+all writes.
+
+```sh
 # English -> Chatom
 sqlite3 -header -column dictionary.sqlite \
   "SELECT word, class, gloss FROM words WHERE gloss LIKE '%dog%'"

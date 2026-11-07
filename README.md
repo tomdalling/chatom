@@ -16,3 +16,14 @@ Specification
 
 [`chatom.md`](chatom.md) is the complete specification of the grammar and function
 words, and the source of truth for the language.
+
+Dictionary
+----------
+
+`dictionary.sqlite` holds every Chatom word. Look words up with `bin/lookup`:
+
+```sh
+bin/lookup dag niam
+bin/lookup "dag niam fish."
+bin/lookup --json diniam   # machine-readable
+```
