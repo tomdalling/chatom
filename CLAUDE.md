@@ -31,12 +31,12 @@ without being asked (see the skill's "Committing" section).
 
 After any edit to the spec, check every item:
 
-1. **Appendix A** (function words), **Appendix C** (grammar summary), the
+1. **Appendix A** (words defined in the spec), **Appendix C** (grammar summary), the
    **Contents** list and **§22** (open items) still agree with the body text.
 2. Every `§` cross-reference and anchor link still resolves, especially after
    renumbering.
 3. Every new word (in examples or vocabulary) obeys the word-shape rules (§3)
-   and the reserved first syllables (§3.2), and is not spelled like an
+   and the reserved beginnings (§3.2), and is not spelled like an
    existing function word (§6.3.3).
 4. Every new example uses the three-line format (§1.2) and parses under
    Appendix C.

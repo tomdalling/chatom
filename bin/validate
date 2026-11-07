@@ -86,10 +86,10 @@ def expected_spec_words(spec):
 
     A gloss of None means the spec gives no per-word meaning to check.
     Transitivity is given only for the core verbs (A.3, §9.2)."""
-    appendix = section(spec, "## Appendix A: Function word list")
+    appendix = section(spec, "## Appendix A: Words defined in this specification")
     expected = {}
 
-    a1 = section(appendix, "### A.1 Grammatical words")
+    a1 = section(appendix, "### A.1 Function words")
     for cells in table_rows(a1):
         if cells[0] == "Word":
             continue
@@ -140,7 +140,7 @@ def check_shape(word, cls):
     if not WORD_SHAPE.match(word) or DOUBLED_VOWEL.search(word):
         problems.append("does not fit the word shape C? N (C N)* F? (§3, §2.1.1)")
     if word.startswith(RESERVED_STARTS):
-        problems.append("begins with a reserved prefix syllable di/me/lai (§3.2.1); "
+        problems.append("begins with a reserved prefix beginning di/me/lai (§3.2.1); "
                         "prefixed words are not stored")
     if cls != "function" and word.startswith("z"):
         problems.append("a noun, verb or adjective must not begin with z (§3.2.2)")

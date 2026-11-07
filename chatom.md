@@ -47,7 +47,7 @@ Technical terms are explained when they first appear.
 20. [Making new words](#20-making-new-words)
 21. [Fixed phrases](#21-fixed-phrases)
 22. [Not yet specified](#22-not-yet-specified)
-23. [Appendix A: Function word list](#appendix-a-function-word-list)
+23. [Appendix A: Words defined in this specification](#appendix-a-words-defined-in-this-specification)
 24. [Appendix B: Sample vocabulary (non-normative)](#appendix-b-sample-vocabulary-non-normative)
 25. [Appendix C: Grammar summary](#appendix-c-grammar-summary)
 
@@ -235,12 +235,14 @@ such as `tt` or `nn` cannot occur.
 
 **3.1.5** A word may be any number of syllables long, including one.
 
-### 3.2 Reserved first syllables
+### 3.2 Reserved beginnings
 
-**3.2.1** The syllables `di`, `me` and `lai` are reserved for the word-making
-prefixes ([§20](#20-making-new-words)). No other word may begin with them:
-not a root and not a function word. A word that begins with `di`,
-`me` or `lai` is therefore always a prefix followed by a root.
+**3.2.1** The letters `di`, `me` and `lai` at the start of a word are reserved
+for the word-making prefixes ([§20](#20-making-new-words)). No other word may
+begin with them: not a root and not a function word. This holds even when they
+are only part of the first syllable, so `dian`, `mei`, `dish` and `laik` are
+not valid roots. A word that begins with `di`, `me` or `lai` is therefore
+always a prefix followed by a root.
 
 **3.2.2** No noun, verb or adjective may begin with `z`. Function words, such
 as `ziro`, may. This lets each prefix take a linking `z` before a root that
@@ -287,7 +289,9 @@ from these rules.
 syllable**. In a word built with a prefix ([§20](#20-making-new-words)), the
 prefix is the first syllable, so it carries the stress.
 
-**4.2** Function words are **unstressed** in normal speech.
+**4.2** Function words are **unstressed** in normal speech. This includes the
+pronouns ([§7](#7-pronouns)) and `bi` ([§12.1](#121-bi)), even though they
+stand where a noun or a verb would.
 
 **4.3** Stress is never written, and it never changes the meaning of a word.
 
@@ -414,7 +418,7 @@ Chatom has three **open classes** of words and one **closed class**.
 | Noun | open | the Chatom dictionary |
 | Verb | open | the Chatom dictionary |
 | Adjective | open | the Chatom dictionary |
-| Function word | closed | this specification ([Appendix A](#appendix-a-function-word-list)) |
+| Function word | closed | this specification ([Appendix A.1](#a1-function-words)) |
 
 **6.1.1** An **open class** can gain new words at any time. Its words are listed
 in a separate dictionary and are not part of this specification.
@@ -426,8 +430,10 @@ markers, modals, linking words, quantifiers, digit words and prefixes.
 **6.1.3** This specification also defines a small, fixed set of **general
 nouns** ([§15.2](#152-question-word-questions)) and **core verbs**
 ([§9.3](#93-no-prepositions)). Grammatically they are ordinary nouns and verbs,
-but because the grammar depends on them, they are listed here rather than in
-the dictionary.
+not function words. Because the grammar depends on them, they are defined here
+([Appendix A.2](#a2-general-nouns) and [A.3](#a3-core-verbs)). Like every
+other noun and verb, they are also listed in the dictionary, which must agree
+with this specification.
 
 **6.1.4** Chatom has **no adverbs**. Meanings that other languages express with
 adverbs are expressed with serial verbs ([§13](#13-serial-verbs)) or with
@@ -460,8 +466,8 @@ about its class. Any word may begin with any sound.
 2. If it contains an uppercase letter, it is a foreign name, which is a noun
    ([§20.6](#20-making-new-words)). Foreign names are never listed in the
    dictionary. Native names are dictionary nouns, found in step 5.
-3. If it is in the function word list ([Appendix A](#appendix-a-function-word-list)),
-   it is that function word.
+3. If it is a function word ([Appendix A.1](#a1-function-words)), it is that
+   function word.
 4. If it begins with `di`, `me` or `lai`, it is a prefixed word, and the prefix
    gives its class ([§20](#20-making-new-words)).
 5. Otherwise, look it up in the dictionary.
@@ -526,8 +532,10 @@ else.
 With a plural subject, `sef` alone still means "themselves", "ourselves" or
 "yourselves": `mi dem luk sef.` "We see ourselves."
 
-**7.8 Pronouns are nouns.** Grammatically, a pronoun is a noun, and it may be
-the head of a noun phrase or a possessor ([§8.10](#810-pronouns-in-noun-phrases)).
+**7.8 Pronouns act like nouns.** A pronoun is a function word, not a noun. In
+a noun phrase, though, it acts like a noun: it may be the head of a noun phrase
+or a possessor ([§8.10](#810-pronouns-in-noun-phrases)). Elsewhere in this
+specification, "noun" never includes pronouns.
 `mi`, `iu` and `dei` may take `dem`. `sef` takes `dem` only to mean "each
 other" ([§7.9](#7-pronouns)). A pronoun is never a describing noun.
 
@@ -843,7 +851,7 @@ PROX  dog  COP  big  pass  all
 
 ### 8.10 Pronouns in noun phrases
 
-**8.10.1** A pronoun is a noun ([§7.8](#7-pronouns)), so it may be the head of a
+**8.10.1** A pronoun acts like a noun ([§7.8](#7-pronouns)), so it may be the head of a
 noun phrase and take any of the parts in [§8.2](#82-order-of-a-noun-phrase)
 **except** describing nouns. Only `mi`, `iu` and `dei` may take `dem`, and
 `sef` may take it only as "each other" ([§7.8](#7-pronouns)).
@@ -914,7 +922,7 @@ dog  eats  fish
 
 ### 9.2 Transitivity
 
-**9.2.1** Every verb except `bi` has a fixed **transitivity**, which says
+**9.2.1** Every verb has a fixed **transitivity**, which says
 whether it takes an object. The dictionary records the transitivity of every
 verb. There are three kinds:
 
@@ -1092,8 +1100,8 @@ dog  sleeps             dog  PROG  sleep
 ```
 "The dog sleeps." / "The dog is sleeping."
 
-**10.2.4** `am` may be used with every verb, including `bi`, `abi` and verbs
-that name a state, such as `sabi` ("know"). With a state, it means that the
+**10.2.4** `am` may be used with every verb and with `bi`, including `abi` and
+verbs that name a state, such as `sabi` ("know"). With a state, it means that the
 state holds only for now, at the time being talked about.
 
 ```
@@ -1211,9 +1219,12 @@ makes clear which use is meant.
 ### 12.1 `bi`
 
 **12.1.1** `bi` is the **copula**: the word for "is" when it means "is the same
-as" or "is a kind of". Grammatically, `bi` is a verb. It fills the verb slot,
-may take negation, tense, aspect and a modal, and may appear in a serial verb
-chain. It is a function word.
+as" or "is a kind of". `bi` is a function word, not a verb, but it acts like
+one: it fills the verb slot, may take negation, tense, aspect and a modal, and
+may appear in a serial verb chain. Wherever this specification speaks of the
+verb of a clause or the verbs of a chain, `bi` is included. Rules about a
+verb's transitivity ([§9.2](#92-transitivity)) and about prefixes
+([§20.5.1](#20-making-new-words)) do not apply to it.
 
 **12.1.2** `bi` has no transitivity of its own ([§9.2](#92-transitivity)). It
 must always be followed by a noun phrase or by one or more adjectives
@@ -1236,7 +1247,7 @@ it   PST  COP  my  dog
 
 **12.2.1** `bi` is the only word that may take bare adjectives as its object.
 This is how Chatom says "X is (adjective)". It is the only place an adjective may
-appear without a noun.
+appear without a noun or a pronoun after it.
 
 **12.2.2** `bi` may be followed by one or more adjectives. Repeating an adjective
 intensifies it, just as in a noun phrase
@@ -1742,7 +1753,7 @@ di + niam  = diniam      me + big  = mebig      lai + dag  = laidag
 di + abi   = dizabi      me + eg   = mezeg      lai + eg   = laizeg
 ```
 
-**20.2.1** Because no root begins with `z` ([§3.2.2](#32-reserved-first-syllables)),
+**20.2.1** Because no root begins with `z` ([§3.2.2](#32-reserved-beginnings)),
 a `z` straight after a prefix is always the linking `z`, never part of the
 root. `dizabi` can only be `diz` + `abi`.
 
@@ -1794,7 +1805,7 @@ prefixed describing noun:
   by 20.3. The dictionary never gives a prefixed word a special meaning. A
   concept that needs a different meaning gets its own root word.
 - **20.5.6** No other word may begin with `di`, `me` or `lai`, and no root may
-  begin with `z` ([§3.2](#32-reserved-first-syllables)), so a prefix and its
+  begin with `z` ([§3.2](#32-reserved-beginnings)), so a prefix and its
   root can always be told apart.
 
 **20.6 Proper names.** A **name** refers to one particular person, place or
@@ -1877,6 +1888,8 @@ phrases. They follow every rule of the grammar.
 | `mi fina luk iu.` | I will see you. | goodbye |
 | `guan ia pelais tek airi.` | Go to this place, take peace. | welcome |
 
+> ⚠ **Not yet specified:** whether more fixed phrases are listed.
+
 **21.2** Chatom has no special words for politeness ("please"), emphasis or topic.
 Politeness is expressed through fixed phrases and through the choice of modal
 (for example `shud` instead of a bare command).
@@ -1889,17 +1902,20 @@ These small parts of the language are still open:
 
 - **Ordinals, fractions and decimals** ([§19](#19-numbers-and-quantifiers)).
 - **Zero and plurality.** Whether `ziro` takes `dem` ([§19](#19-numbers-and-quantifiers)).
-- **Greetings.** Whether `mi luk iu.` (hello) and `mi fina luk iu.` (goodbye)
-  are confirmed, and whether more fixed phrases are listed ([§21](#21-fixed-phrases)).
-  `guan ia pelais tek airi.` (welcome) is confirmed.
+- **More fixed phrases.** Whether more fixed phrases are listed
+  ([§21](#21-fixed-phrases)).
 - **Adapted foreign names.** How an adapted foreign name is pronounced
   ([§20.6](#20-making-new-words)).
 
 ---
 
-## Appendix A: Function word list
+## Appendix A: Words defined in this specification
 
-### A.1 Grammatical words
+A.1 lists every function word. A.2 and A.3 list the general nouns and core
+verbs, which are ordinary nouns and verbs, not function words
+([§6.1.3](#61-open-and-closed-classes)).
+
+### A.1 Function words
 
 | Word | Meaning | Section |
 |---|---|---|
