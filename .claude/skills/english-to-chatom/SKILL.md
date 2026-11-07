@@ -111,7 +111,9 @@ check that:
 - it fits the word shape `C? N (C N)* F?` (§3.3), with no doubled vowel;
 - it doesn't begin with `di`, `me` or `lai`, or with `z` (§3.2);
 - its spelling isn't taken, by a function word or any dictionary word;
-- it is all lowercase (a word with a capital would be a foreign name).
+- it is all lowercase (a word with a capital would be a foreign name);
+- if it is a verb, it has a transitivity (§9.2) that fits how the
+  translation uses it.
 
 If the user types their own word under "Other", run the same checks. If it
 fails, explain why and offer fixed versions. If the user asks for more options,
@@ -120,7 +122,7 @@ offer more.
 ### 6. Offer to add new words
 
 List every new root the user chose as a full proposed row: `word`, `class`,
-`gloss`, `definition`, `notes`. Ask once whether to add all, some or none of
+`transitivity` (verbs only), `gloss`, `definition`, `notes`. Ask once whether to add all, some or none of
 them. Write only the approved rows, then run `bin/validate`, following the
 `dictionary` skill. Don't commit.
 
@@ -158,12 +160,18 @@ showing it:
    (§8.5, §8.8.5).
 7. **Possession**: pronoun possessors are bare; noun possessors take `dei`
    (singular) or `deidem` (plural); the thing owned has a noun head (§8.8.9).
-8. **`bi`**: bare adjectives only after `bi`, and only when no noun follows
-   (§12.2.3). Existence uses `abi`, which never takes an object.
-9. **Words**: every word is a function word, a dictionary word, a valid
-   prefixed word (one prefix, the right class, not on a function word, a
-   foreign name or a code span, §20.5), a foreign name, a code span (single
-   backticks, non-empty, no backtick inside, spaces around it, §5.3), or a
-   marked placeholder or new word.
-10. **One parse**: read the sentence as a parser would, and make sure no word
+8. **`bi`**: always followed by a noun phrase or adjectives, never bare
+   (§12.1.2). Bare adjectives only after `bi`, and only when no noun follows
+   (§12.2.3). Existence uses `abi`.
+9. **Transitivity**: look up each verb's transitivity in the dictionary
+   (§9.2). A transitive verb has an object, an intransitive verb has none.
+   Remember that an object is found by position alone (§9.2.3): a word that
+   can begin a noun phrase straight after an intransitive verb makes the
+   sentence ungrammatical.
+10. **Words**: every word is a function word, a dictionary word, a valid
+    prefixed word (one prefix, the right class, not on a function word, a
+    foreign name or a code span, §20.5), a foreign name, a code span (single
+    backticks, non-empty, no backtick inside, spaces around it, §5.3), or a
+    marked placeholder or new word.
+11. **One parse**: read the sentence as a parser would, and make sure no word
     could be taken as the start of a different phrase.

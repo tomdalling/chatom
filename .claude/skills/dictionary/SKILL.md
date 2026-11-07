@@ -15,8 +15,8 @@ any conflict (CLAUDE.md rule 2).
 1. **Reading is free.** Query the database whenever it helps.
 2. **Every write needs the user's explicit approval.** That covers adding,
    editing, reclassifying or deleting a dictionary word. Propose the exact change
-   in chat (the word, class, gloss, definition and notes), and wait for an
-   explicit "yes". Approval covers only the change it was given for.
+   in chat (the word, class, transitivity for a verb, gloss, definition and
+   notes), and wait for an explicit "yes". Approval covers only the change it was given for.
 3. **Proposals live only in the chat.** Never store a proposed or unapproved
    word anywhere: not in the database, not in a file, not in memory.
 4. **Spec words are read-only.** A spec word is any row with a `subclass`. Change
@@ -53,18 +53,19 @@ any conflict (CLAUDE.md rule 2).
 
 ```sql
 CREATE TABLE words (
-  word       TEXT PRIMARY KEY,  -- lowercase a-z only
-  class      TEXT NOT NULL,     -- noun | verb | adjective | function
-  subclass   TEXT,              -- set only for spec words (see below)
-  gloss      TEXT NOT NULL,     -- short English meanings, comma-separated
-  definition TEXT,              -- optional longer explanation
-  notes      TEXT,              -- optional usage notes
-  created_at TEXT NOT NULL,     -- ISO 8601 UTC, set by default
-  updated_at TEXT NOT NULL      -- maintained by a trigger
+  word         TEXT PRIMARY KEY,  -- lowercase a-z only
+  class        TEXT NOT NULL,     -- noun | verb | adjective | function
+  subclass     TEXT,              -- set only for spec words (see below)
+  transitivity TEXT,              -- verbs only (see below)
+  gloss        TEXT NOT NULL,     -- short English meanings, comma-separated
+  definition   TEXT,              -- optional longer explanation
+  notes        TEXT,              -- optional usage notes
+  created_at   TEXT NOT NULL,     -- ISO 8601 UTC, set by default
+  updated_at   TEXT NOT NULL      -- maintained by a trigger
 ) WITHOUT ROWID;
 ```
 
-`PRAGMA user_version` holds the schema version (currently 1). Any schema change
+`PRAGMA user_version` holds the schema version (currently 2). Any schema change
 needs the user's approval and must bump the version and update `bin/validate`.
 
 ### Classes and subclasses
@@ -77,6 +78,17 @@ needs the user's approval and must bump the version and update `bin/validate`.
 | `noun` `verb` `adjective` | NULL | dictionary |
 
 So a row comes from the spec exactly when its `subclass` is not NULL.
+
+### Transitivity
+
+Every verb has a `transitivity` (§9.2): `transitive` (must have an object),
+`intransitive` (must not have one) or `ambitransitive` (may have one or not).
+It is required for verbs and must be NULL for every other class. Core verbs
+take the values in Appendix A.3. `bi` is a function word and has none.
+
+When an ambitransitive verb means something different with no object than
+just "the object is left unstated" (as with `guan` "go to" / "go"), describe
+both uses in `definition`. There is no separate column for this.
 
 ## Recipes
 
@@ -91,6 +103,9 @@ sqlite3 -header -column dictionary.sqlite \
 # All open-class words of one class
 sqlite3 dictionary.sqlite "SELECT word, gloss FROM words WHERE class = 'verb' AND subclass IS NULL ORDER BY word"
 
+# Verbs with their transitivity
+sqlite3 dictionary.sqlite "SELECT word, transitivity, gloss FROM words WHERE class = 'verb' ORDER BY word"
+
 # Is a spelling taken?
 sqlite3 dictionary.sqlite "SELECT class FROM words WHERE word = 'kiat'"
 ```
@@ -100,6 +115,7 @@ Writes (only after approval, and always followed by `bin/validate`):
 ```sh
 sqlite3 dictionary.sqlite "INSERT INTO words (word, class, gloss) VALUES ('siton', 'noun', 'stone, rock')"
 sqlite3 dictionary.sqlite "UPDATE words SET gloss = 'dog, hound' WHERE word = 'dag'"
+sqlite3 dictionary.sqlite "INSERT INTO words (word, class, transitivity, gloss) VALUES ('ron', 'verb', 'intransitive', 'run')"
 sqlite3 dictionary.sqlite "DELETE FROM words WHERE word = 'siton'"
 bin/validate
 ```
@@ -116,16 +132,19 @@ Quote SQL strings carefully: a `'` inside a value is written as `''`.
   prefixes), with the right class and subclass. Each gloss must match the
   Meaning column where the spec gives a per-word meaning. The digit glosses
   are not checked.
-- Every Appendix B word is present with the same class. Glosses may differ.
+- Each core verb's transitivity matches Appendix A.3.
+- Every Appendix B word is present with the same class, and every Appendix B
+  verb with the same transitivity. Glosses may differ.
 - The schema version.
 
 The schema itself rejects bad classes, non-`a-z` spellings, function words
-without a subclass, and duplicate spellings.
+without a subclass, verbs without a valid transitivity, non-verbs with one,
+and duplicate spellings.
 
 ## Resyncing after a spec edit
 
 When the user changes Appendix A or B in `chatom.md`, run `bin/validate` and fix
-each reported row to match the spec. A new function word needs a subclass. If
+each reported row (including transitivity) to match the spec. A new function word needs a subclass. If
 it isn't obvious, ask the user, then add it to `FUNCTION_SUBCLASSES` in
 `bin/validate`. If a new spec word is already a dictionary word, tell the user;
 don't silently reclassify it.
@@ -135,7 +154,9 @@ don't silently reclassify it.
 Before proposing a word, check that the spelling is free, that it fits the shape
 rules, and that the concept isn't already covered (including by a prefixed word
 or a describing-noun phrase, §20.4). Propose the full row and briefly explain
-where the form comes from.
+where the form comes from. A verb must come with a transitivity: choose it
+from how the verb is used, and remember that want/try/start/stop-type verbs
+must not be transitive (§13.4).
 
 ### Style guide for coining roots (non-normative)
 

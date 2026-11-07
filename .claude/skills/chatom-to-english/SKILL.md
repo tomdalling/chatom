@@ -45,7 +45,10 @@ Classify each word as §6.3.2 does:
 4. A word beginning with `di`, `me` or `lai` (or `diz`, `mez`, `laiz`) is a
    **prefixed word**. Look up the root and apply §20.3. The dictionary never
    stores prefixed words.
-5. Otherwise, look it up in the dictionary.
+5. Otherwise, look it up in the dictionary. For a verb, note its
+   transitivity (§9.2): a verb used against it makes the sentence
+   ungrammatical (step 2), and an ambitransitive verb with no object leaves
+   that object unstated, which is an inference to explain.
 
 A lowercase word that is none of these is **unknown**. Write it as `⟨word⟩`
 in the gloss line. In the inference list, guess its meaning from its position
@@ -55,7 +58,7 @@ Never offer to add it.
 ### 2. Check the grammar
 
 Check every sentence by hand against Appendix C, using the **checklist at the
-end of `.claude/skills/english-to-chatom/SKILL.md`** (read that file). Point 9
+end of `.claude/skills/english-to-chatom/SKILL.md`** (read that file). Point 10
 there allows placeholders and new words; here, treat an unknown word as a
 `⟨word⟩` of whatever class its position requires.
 
