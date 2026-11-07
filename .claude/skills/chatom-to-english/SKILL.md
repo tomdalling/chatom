@@ -83,8 +83,12 @@ Read the whole passage before translating any sentence, because later
 sentences often settle earlier ones. Infer each of these from context:
 
 1. **Articles** (§6.2.3). "The" for something already mentioned, known, or
-   unique in context; "a" for something new. Plural and mass nouns may take
-   no article.
+   unique in context; "a" for something new. Plural nouns may take no
+   article. Chatom has no mass nouns (§8.12): a bare `wata` is one portion
+   ("a water", "a glass of water", with the unit inferred from context), and
+   `wata dem` is water in general or more than one portion, which English
+   gives as "water" or "some water". An amount phrase `tu kop dem a wata` is
+   "two cups of water".
 2. **Tense and aspect** (§10.2). These are never inferred. A verb with no
    tense marker is always present, `bin` is past and `fina` is future, in
    every clause, whatever the earlier sentences or time phrases suggest.

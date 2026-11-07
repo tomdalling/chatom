@@ -65,14 +65,14 @@ CREATE TABLE words (
 ) WITHOUT ROWID;
 ```
 
-`PRAGMA user_version` holds the schema version (currently 2). Any schema change
+`PRAGMA user_version` holds the schema version (currently 3). Any schema change
 needs the user's approval and must bump the version and update `bin/validate`.
 
 ### Classes and subclasses
 
 | class | subclass | source |
 |---|---|---|
-| `function` | `pronoun` `plural` `demonstrative` `question` `tense` `aspect` `modal` `negation` `answer` `copula` `linker` `quantifier` `digit` (always required) | spec, Appendix A.1 |
+| `function` | `pronoun` `plural` `measure` `demonstrative` `question` `tense` `aspect` `modal` `negation` `answer` `copula` `linker` `quantifier` `digit` (always required) | spec, Appendix A.1 |
 | `noun` | `general` | spec, Appendix A.2 |
 | `verb` | `core` | spec, Appendix A.3 |
 | `noun` `verb` `adjective` | NULL | dictionary |

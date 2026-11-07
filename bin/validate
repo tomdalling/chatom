@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SPEC_PATH = ROOT / "chatom.md"
 DB_PATH = ROOT / "dictionary.sqlite"
 
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 
 # --- Word shape (§3, §5.1) --------------------------------------------------
 
@@ -32,6 +32,7 @@ RESERVED_STARTS = ("di", "me", "lai")  # §3.2.1
 FUNCTION_SUBCLASSES = {
     "pronoun": "mi iu dei sef",
     "plural": "dem",
+    "measure": "a",
     "demonstrative": "ia dea",
     "question": "wa",
     "tense": "bin fina",

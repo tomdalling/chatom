@@ -175,18 +175,25 @@ showing it:
    "our book"); noun possessors are always followed by `dei`, with a plural
    possessor taking its own `dem` (`dag dem dei eg`); the thing owned has a
    noun head (§8.8).
-8. **`bi`**: always followed by a noun phrase or adjectives, never bare
+8. **Amounts**: there are no mass nouns (§8.12). A bare noun is exactly one
+   portion (`mi chug wata` "I drink a water"); water in general or any other
+   amount takes `dem` (`mi chug wata dem` "I drink water"). To state a unit,
+   use `[count] [unit] dem? a [kind]` (`tu kop dem a wata` "two cups of
+   water"). `a` means only "an amount of"; the unit before it has a noun head;
+   the kind after it takes no determiner, possessor or count. "How much/many"
+   is `wa moch a …` (§15.2.5).
+9. **`bi`**: always followed by a noun phrase or adjectives, never bare
    (§12.1.2). Bare adjectives only after `bi`, and only when no noun follows
    (§12.2.3). Existence uses `abi`.
-9. **Transitivity**: look up each verb's transitivity in the dictionary
+10. **Transitivity**: look up each verb's transitivity in the dictionary
    (§9.2). A transitive verb has an object, an intransitive verb has none.
    Remember that an object is found by position alone (§9.2.3): a word that
    can begin a noun phrase straight after an intransitive verb makes the
    sentence ungrammatical.
-10. **Words**: every word is a function word, a dictionary word, a valid
+11. **Words**: every word is a function word, a dictionary word, a valid
     prefixed word (one prefix, the right class, not on a function word, a
     foreign name or a code span, §20.5), a foreign name, a code span (single
     backticks, non-empty, no backtick inside, spaces around it, §5.3), or a
     marked placeholder or new word.
-11. **One parse**: read the sentence as a parser would, and make sure no word
+12. **One parse**: read the sentence as a parser would, and make sure no word
     could be taken as the start of a different phrase.

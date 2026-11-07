@@ -77,6 +77,7 @@ I   eat   fish
 | `PROG` | progressive aspect (`am`) |
 | `COP` | copula (`bi`) |
 | `PL` | plural marker (`dem`) |
+| `MEAS` | measure link, "an amount of" (`a`) |
 | `PROX` | near demonstrative, "this" (`ia`) |
 | `DIST` | far demonstrative, "that" (`dea`) |
 | `Q` | yes/no question marker (sentence-final `no`) |
@@ -592,7 +593,8 @@ A **noun phrase** is a noun together with any words that describe it, such as
 Everything that describes it comes before it, much as in English. Nothing may
 follow the head of a noun phrase except the plural marker `dem`. In a
 possessive noun phrase, the head of the whole phrase is the head of the thing
-owned ([§8.8.4](#88-possession)).
+owned ([§8.8.4](#88-possession)). In an amount phrase, it is the head of the
+kind measured ([§8.12.6](#812-amounts)).
 
 ### 8.2 Order of a noun phrase
 
@@ -623,6 +625,10 @@ my  two  small  bird  egg  PL
 **8.2.2** A noun phrase has at most one determiner. A demonstrative, `wa` and
 a possessor cannot be combined, so there is no direct equivalent of "those eggs
 of mine" ([§8.8.6](#88-possession)).
+
+**8.2.3** A possessive noun phrase ([§8.8](#88-possession)) or an amount
+phrase ([§8.12](#812-amounts)) joins two or more of these orders with a link
+word, `dei` or `a`.
 
 ### 8.3 Describing nouns
 
@@ -677,7 +683,8 @@ big  big  big  dag      an extremely big dog
 ### 8.5 Plural
 
 **8.5.1** A noun with no plural marker is **singular**: `dag` means exactly one
-dog.
+dog. This holds for every noun, including words for substances such as
+`wata` ("water"), where "one" means one portion ([§8.12](#812-amounts)).
 
 **8.5.2** The plural marker `dem` comes directly after the head noun, like the
 English "-s". It must be used whenever there is more than one. This applies even
@@ -940,6 +947,111 @@ take adjectives.
   ```
   "You eat fish or you eat bread."
 
+### 8.12 Amounts
+
+**8.12.1 Every noun can be counted.** Chatom has no **mass nouns**, which are
+nouns such as English "water" or "sand" that cannot take a number. Every noun
+may take a number, a quantifier and `dem`. This includes words for
+substances, ideas and actions, such as `wata` ("water"), `airi` ("peace") and
+`diniam` ("eating").
+
+**8.12.2 One portion.** A noun with no `dem` always means exactly one
+([§8.5.1](#85-plural)). For a substance or an idea, "one" means one portion,
+serving or instance, and the reader works out how much from context.
+
+```
+mi  chug   wata.
+I   drink  water
+```
+"I drink a water": one glass, cup or bottle of it, as context shows. Compare
+English "I'll have a beer."
+
+```
+tu   wata   dem
+two  water  PL
+```
+"two waters": two cups, two bottles or two of some other portion, as context
+shows.
+
+**8.12.3 Other amounts.** Any amount that is not exactly one portion takes
+`dem`, just as a plural count noun does. This includes general statements
+about a substance.
+
+```
+mi  chug   wata   dem.
+I   drink  water  PL
+```
+"I drink water." (in general, or an amount larger than one portion)
+
+```
+som   wata   dem  abi.
+some  water  PL   exist
+```
+"There is some water."
+
+```
+notin  wata   abi.
+none   water  exist
+```
+"There is no water." `notin` takes a singular noun ([§8.5.3](#85-plural)).
+
+**8.12.4 Units.** To state the unit, put the unit first, then the
+**measure link** `a`, then the kind of thing being measured. This is called an
+**amount phrase**.
+
+```
+tu   kop  dem  a     wata
+two  cup  PL   MEAS  water
+```
+"two cups of water"
+
+A unit is an ordinary noun, such as `kop` ("cup"). Any noun may be used as a
+unit. The unit is optional: `tu wata dem` leaves it to context, and
+`tu kop dem a wata` states it.
+
+**8.12.5 Meaning.** An amount phrase "X `a` Y" means only "an amount of Y,
+measured in X". `a` must not be used for any other kind of English "of". "A
+book about Chatom" is `chatom buk`, with a describing noun
+([§8.3](#83-describing-nouns)). "A person from Sydney" uses the core verb `kum`
+([§9.3](#93-no-prepositions)). Without `a`, `wata kop` is an ordinary
+describing noun before a head: a water cup, that is, a cup used for water.
+
+**8.12.6 Grammar.** The measure link `a` follows the same grammar as the
+linking pronoun `dei` ([§8.8.4](#88-possession)–[§8.8.9](#88-possession)):
+
+- Everything before `a`, back to the start of the noun phrase, is the unit.
+  A determiner, possessor or count at the start belongs to the unit, and so do
+  the adjectives before it. A plural unit's `dem` comes before `a`.
+- Everything after `a` is the kind measured. The head of the whole noun phrase
+  is the head of the kind ([§8.1.1](#81-the-head-comes-last)).
+- `a` must always be followed by the kind. A noun phrase never ends with `a`.
+- The unit must have a noun as its head. It must not be a pronoun or a
+  standalone `ia`, `dea` or quantifier ([§8.9](#89-noun-phrases-with-no-head-noun)),
+  so `mi a wata`, `dea a wata` and `al a wata` are ungrammatical. "All the
+  water" is `al wata dem`.
+- The kind must have a noun as its head.
+
+```
+ia    big  kop  a     wata
+PROX  big  cup  MEAS  water
+```
+"this big cup of water": `ia` and `big` belong to the cup.
+
+**8.12.7 The kind.** The kind says *what* is measured, not how many. It must
+not take a determiner, a possessor, a number or a quantifier. A bare kind means
+the substance in general, and a kind with `dem` means separate items:
+`kop a wata` "a cup of water", `kop a eg dem` "a cup of eggs". This is the only
+place where a noun without `dem` does not mean exactly one.
+
+**8.12.8 Chains.** Links nest to the left, as in possession chains
+([§8.8.7](#88-possession)). Each `dei` or `a` applies to everything before it.
+
+```
+mi  dag  dei  kop  a     wata
+my  dog  its  cup  MEAS  water
+```
+"my dog's cup of water": `mi dag dei kop` ("my dog's cup") is the unit.
+
 ---
 
 ## 9. Clauses
@@ -1006,6 +1118,9 @@ one, is ungrammatical.
 **9.3.1** Chatom has **no prepositions** (words like "in", "with", "to", "for").
 Relationships such as instrument, recipient, location and direction are
 expressed with **core verbs** in a serial verb chain ([§13](#13-serial-verbs)).
+The measure link `a` ([§8.12](#812-amounts)) is not a preposition. Like the
+linking pronoun `dei`, it links parts of a noun phrase, and it means only "an
+amount of".
 
 **9.3.2** The core verbs are a small, fixed set of verbs defined in this
 specification. Apart from being listed here, they are ordinary verbs. Each has
@@ -1526,14 +1641,20 @@ you  cut  bread  use  which  way
 ```
 "How do you cut bread?"
 
-**15.2.5** "How many" uses `moch` as the head, with the counted noun as a
-describing noun before it:
+**15.2.5** "How many" and "how much" use `wa moch` ("which amount") as the
+unit of an amount phrase ([§8.12](#812-amounts)):
 
 ```
-iu   bin  niam  wa     fish  moch?
-you  PST  eat   which  fish  amount
+iu   bin  niam  wa     moch    a     fish  dem?
+you  PST  eat   which  amount  MEAS  fish  PL
 ```
 "How many fish did you eat?"
+
+```
+iu   bin  chug   wa     moch    a     wata?
+you  PST  drink  which  amount  MEAS  water
+```
+"How much water did you drink?"
 
 **15.2.6** A question-word question does not end in `no`.
 
@@ -1967,6 +2088,7 @@ verbs, which are ordinary nouns and verbs, not function words
 | `dei` | they (one person), it; linking pronoun in possession | [§7](#7-pronouns), [§8.8.4](#88-possession) |
 | `sef` | reflexive: myself, yourself, themself, itself…; with `dem`, each other | [§7.7](#7-pronouns), [§7.9](#7-pronouns) |
 | `dem` | plural marker | [§8.5](#85-plural) |
+| `a` | measure link: an amount of | [§8.12](#812-amounts) |
 | `ia` | this (near); refers forward | [§8.6](#86-demonstratives-ia-and-dea) |
 | `dea` | that (far); refers back | [§8.6](#86-demonstratives-ia-and-dea) |
 | `wa` | which? (question word) | [§8.7](#87-the-question-word-wa) |
@@ -2030,6 +2152,8 @@ word obeys the shape rules ([§3](#3-word-shape)). Each verb's transitivity
 | `dag` | noun | dog | — |
 | `naif` | noun | knife | — |
 | `kiat` | noun | cat | — |
+| `kop` | noun | cup | — |
+| `wata` | noun | water | — |
 | `eg` | noun | egg | — |
 | `fish` | noun | fish | — |
 | `kot` | verb | cut | transitive |
@@ -2038,6 +2162,7 @@ word obeys the shape rules ([§3](#3-word-shape)). Each verb's transitivity
 | `sabi` | verb | know | ambitransitive |
 | `luk` | verb | see, look at | transitive |
 | `niam` | verb | eat | ambitransitive |
+| `chug` | verb | drink | ambitransitive |
 | `chat` | verb | say, talk | ambitransitive |
 | `chatom` | noun | Chatom (the language) | — |
 | `big` | adjective | big | — |
@@ -2079,7 +2204,7 @@ verb-unit     = "bi" ( noun-phrase | adjective+ )
 noun-phrase   = base ( link nominal )*
 base          = standalone | ( determiner | possessor )? nominal
 possessor     = pronoun "dem"?
-link          = "dei"
+link          = "dei" | "a"
 standalone    = "ia" | "dea" | quantifier
 determiner    = demonstrative | "wa"
 nominal       = count? adjective* describer* head "dem"?
@@ -2124,12 +2249,15 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
   it is a describer ([§8.3.3](#83-describing-nouns)). A pronoun is never a
   describer, and a pronoun head never has describers.
 - A `possessor` (a pronoun, optionally followed by `"dem"`) before a
-  `nominal` in `base` is a possessor ([§8.8.1](#88-possession)). Each `link` is
-  a linking pronoun, and everything before it is the possessor of the
-  `nominal` after it.
+  `nominal` in `base` is a possessor ([§8.8.1](#88-possession)). A `"dei"`
+  `link` is a linking pronoun, and everything before it is the possessor of
+  the `nominal` after it. An `"a"` `link` is the measure link: everything
+  before it is the unit, and the `nominal` after it is the kind measured
+  ([§8.12](#812-amounts)).
 - `"sef" "dem"` is the reciprocal "each other" ([§7.9](#7-pronouns)).
-- Possession nests to the left: in `A dei B dei C`, `A dei B` is the possessor
-  of `C` ([§8.8.7](#88-possession)). A determiner belongs to the first
+- Possession and amounts nest to the left: in `A dei B dei C`, `A dei B` is the
+  possessor of `C` ([§8.8.7](#88-possession)), and in `A dei B a C`, `A dei B`
+  is the unit of `C` ([§8.12.8](#812-amounts)). A determiner belongs to the first
   `nominal` ([§8.8.6](#88-possession)).
 - After `"bi"`, adjectives are a predicate (`adjective+`) only when no noun or
   pronoun follows them; otherwise they begin a noun phrase
@@ -2151,6 +2279,9 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
     [§8.10.1](#810-pronouns-in-noun-phrases));
   - the phrase before a `link` does not have a pronoun as its head
     ([§8.8.9](#88-possession));
+  - the phrase before an `"a"` is not a `standalone`, and the `nominal`
+    after an `"a"` has no `count` ([§8.12.6](#812-amounts),
+    [§8.12.7](#812-amounts));
   - a number must not begin with `"ziro"` unless it is `"ziro"` alone
     ([§19.1.3](#191-digit-words));
   - a sentence containing a command must not contain `"wa"`
