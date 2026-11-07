@@ -226,7 +226,7 @@ si · nha      valid: nh inside the word
 sinh          valid: final consonant nh
 nha · bi      valid: begins with nh
 pan · tu      invalid: two consonants inside the word (n t)
-dagw          invalid: ends in w
+daw           invalid: ends in w
 kar           invalid: ends in r
 ```
 
@@ -330,12 +330,13 @@ that contains an uppercase letter is always a foreign name
 
 **5.1.5** Foreign names are exempt from the alphabet above and from 5.1.1 and
 5.1.2. A foreign name may use any letter, digit or punctuation mark except a
-quotation mark or a backtick. Code spans are also exempt
+quotation mark, a backtick or a comma. Code spans are also exempt
 ([§5.3](#53-code-spans)).
 
 ### 5.2 Punctuation
 
-**5.2.1** Every sentence ends with exactly one of these marks:
+**5.2.1** Every sentence ends with exactly one of these marks. A closing
+quotation mark ([§5.2.4](#52-punctuation)) may follow it.
 
 | Mark | Used for |
 |---|---|
@@ -348,12 +349,18 @@ quotation mark or a backtick. Code spans are also exempt
 because of its words (a final `no` or the question word `wa`), not because of
 its `?`. The `!` shows only tone of voice.
 
-**5.2.3** Chatom uses **no commas**. Clause boundaries are always marked by
-linking words ([§17](#17-sentences-with-several-clauses)).
+**5.2.3** Chatom uses **no commas**, not even inside a foreign name
+([§20.6.6](#20-making-new-words)). Clause boundaries are always marked by
+linking words ([§17](#17-sentences-with-several-clauses)). The only place a
+comma may appear is inside a code span, whose contents are not Chatom
+([§5.3](#53-code-spans)).
 
-**5.2.4** Quoted words may be put in quotation marks (`"…"`) to make writing
-easier to read ([§18](#18-reported-speech-and-thought)). Quotation marks are
-optional.
+**5.2.4** Quoted sentences may be put in quotation marks (`"…"`) to make
+writing easier to read ([§18](#18-reported-speech-and-thought)). Quotation
+marks are optional. A quotation opens directly before the first word of a
+sentence and closes directly after a sentence's final mark, so it encloses one
+or more whole sentences. Quotation marks never appear inside a sentence, and
+they never change the grammar.
 
 **5.2.5 Digits.** Numbers may be written with the digits `0`–`9` instead of
 number words. Each digit stands for its digit word
@@ -573,8 +580,10 @@ A **noun phrase** is a noun together with any words that describe it, such as
 ### 8.1 The head comes last
 
 **8.1.1** In a noun phrase, the main word (its **head**) comes **last**.
-Everything that describes it comes before it, much as in English. The only word
-that may follow the head is the plural marker `dem`.
+Everything that describes it comes before it, much as in English. Nothing may
+follow the head of a noun phrase except the plural marker `dem`. In a
+possessive noun phrase, the head of the whole phrase is the head of the thing
+owned ([§8.8.4](#88-possession)).
 
 ### 8.2 Order of a noun phrase
 
@@ -672,8 +681,11 @@ dog  PL           two  dog  PL
 ```
 "dogs" / "two dogs"
 
-**8.5.3** The quantifiers `eri` ("every") and `notin` ("none") take a singular
-noun, so they are never followed by `dem` ([§19.3](#193-quantifiers)).
+**8.5.3** The number one (`wan` on its own) and the quantifiers `eri`
+("every") and `notin` ("none") take a singular head, so the head they count
+never takes `dem` ([§19.3](#193-quantifiers)): `wan dag` "one dog" and
+`eri dag` "every dog", never `wan dag dem` or `eri dag dem`. A longer number
+that begins with `wan`, such as `wan ziro` (10), is plural as usual.
 
 ### 8.6 Demonstratives: `ia` and `dea`
 
@@ -756,6 +768,11 @@ dog  its  egg                 dog  PL   their  egg  PL
 ```
 "the dog's egg" / "the dogs' eggs"
 
+The head of the whole noun phrase is the head of the thing owned: `eg` in both
+examples. The possessor is a smaller noun phrase inside it. The linking pronoun
+and the thing owned belong to the whole phrase, not to the possessor, so they
+do not break [§8.1.1](#81-the-head-comes-last).
+
 **8.8.5 Plural possessors.** A plural possessor takes `dem` like any other
 plural noun phrase ([§8.5.2](#85-plural)). The `dem` comes before the linking
 pronoun.
@@ -797,7 +814,7 @@ may be a noun possessor:
 dea   dei    eg                al   dei    dag  dem
 DIST  their  egg               all  their  dog  PL
 ```
-"that one's egg" / "everyone's dogs"
+"the egg of the one just mentioned" / "everyone's dogs"
 
 A standalone word never takes `dem`, but `al`, `som`, `nof` and `fiu` are
 plural, so the linking `dei` after them is glossed "their".
@@ -836,6 +853,10 @@ no head noun. Nothing may follow them except a linking pronoun
 - `ia`, which refers **forward** to something about to be said;
 - any quantifier ([§19.3](#193-quantifiers)), meaning that amount of the people
   or things being talked about.
+
+A standalone `ia` or `dea` never points at something in the world, as English
+"this one" or "that one" can. To point, use the demonstrative with a general
+noun: `dea tin` "that thing", `ia pasin` "this person".
 
 ```
 iu   niam  fish.   mi  sabi  dea.
@@ -930,7 +951,9 @@ dog  eats  fish
 
 **9.2.1** Every verb has a fixed **transitivity**, which says
 whether it takes an object. The dictionary records the transitivity of every
-verb. There are three kinds:
+verb it lists. Verbs made with `me-` are not listed
+([§20.5.7](#20-making-new-words)); they are always ambitransitive
+([§9.2.2](#92-transitivity)). There are three kinds:
 
 | Transitivity | Object |
 |---|---|
@@ -1278,8 +1301,8 @@ dog  COP  big  big
 "The dog is very big."
 
 **12.2.3** Because adjectives also begin noun phrases, the words after `bi` are
-a predicate adjective only if **no noun follows them**. If a noun follows, they
-all belong to a noun phrase:
+a predicate adjective only if **no noun or pronoun follows them**. If a noun
+or a pronoun follows, they all belong to a noun phrase:
 
 ```
 dag  bi   big  big.           dag  bi   big  big  kiat.
@@ -1287,8 +1310,9 @@ dog  COP  big  big            dog  COP  big  big  cat
 ```
 "The dog is very big." / "The dog is a very big cat."
 
-This is never ambiguous, because a noun cannot begin the next verb in a chain,
-but a reader must look past the adjectives to tell which is meant.
+This is never ambiguous, because neither a noun nor a pronoun can begin the
+next verb in a chain, but a reader must look past the adjectives to tell which
+is meant.
 
 ### 12.3 Existence: `abi`
 
@@ -1808,11 +1832,14 @@ prefixed describing noun:
 - **20.5.3** A word may have at most one prefix. Prefixes never stack.
 - **20.5.4** A prefixed word is an ordinary word of its new class.
 - **20.5.5** The meaning of a prefixed word is always exactly the meaning given
-  by 20.3. The dictionary never gives a prefixed word a special meaning. A
-  concept that needs a different meaning gets its own root word.
+  by 20.3. A prefixed word never has a special meaning of its own. A concept
+  that needs a different meaning gets its own root word.
 - **20.5.6** No other word may begin with `di`, `me` or `lai`, and no root may
   begin with `z` ([§3.2](#32-reserved-beginnings)), so a prefix and its
   root can always be told apart.
+- **20.5.7** Prefixed words are never listed in the dictionary. Their class
+  comes from the prefix, their meaning from 20.3, and, for a `me-` verb, its
+  transitivity from [§9.2.2](#92-transitivity). Only the root is looked up.
 
 **20.6 Proper names.** A **name** refers to one particular person, place or
 thing, such as "Sarah", "New York" or the Chatom language. Chatom has two kinds
@@ -1845,8 +1872,8 @@ of name: **native names** and **foreign names**.
   language is pronounced as in that language.
   > ⚠ **Not yet specified:** how an adapted foreign name is pronounced.
 - **20.6.6** A foreign name may contain any letter, digit or punctuation mark,
-  except that it must not contain a quotation mark (`"`) or a backtick
-  (`` ` ``), and it must not end in `.`, `?` or `!`. So a sentence's final mark
+  except that it must not contain a quotation mark (`"`), a backtick
+  (`` ` ``) or a comma (`,`), and it must not end in `.`, `?` or `!`. So a sentence's final mark
   is never part of a name, and quotation marks ([§5.2.4](#52-punctuation)) and
   code spans ([§5.3](#53-code-spans)) are never part of one.
 - **20.6.7** Several foreign names directly next to each other form a single
@@ -1927,7 +1954,7 @@ verbs, which are ordinary nouns and verbs, not function words
 |---|---|---|
 | `mi` | I, me | [§7](#7-pronouns) |
 | `iu` | you (one person) | [§7](#7-pronouns) |
-| `dei` | they (one person), it | [§7](#7-pronouns) |
+| `dei` | they (one person), it; linking pronoun in possession | [§7](#7-pronouns), [§8.8.4](#88-possession) |
 | `sef` | reflexive: myself, yourself, themself, itself…; with `dem`, each other | [§7.7](#7-pronouns), [§7.9](#7-pronouns) |
 | `dem` | plural marker | [§8.5](#85-plural) |
 | `ia` | this (near); refers forward | [§8.6](#86-demonstratives-ia-and-dea) |
@@ -2063,16 +2090,21 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
 
 - `noun`, `adjective` and the three kinds of verb are open-class words,
   identified from the dictionary ([§6.3](#63-identifying-a-words-class)). They
-  include the general nouns, the core verbs and words built with prefixes. The
-  dictionary records each verb's transitivity ([§9.2](#92-transitivity)); the
-  core verbs' transitivity is given in [§9.3](#93-no-prepositions), and every
-  `me-` verb is ambitransitive.
+  include the general nouns and the core verbs. Words built with prefixes are
+  also nouns, adjectives or verbs, but they are not listed: the prefix gives
+  their class ([§20.5.7](#20-making-new-words)). The dictionary records each
+  listed verb's transitivity ([§9.2](#92-transitivity)), including the core
+  verbs' ([§9.3](#93-no-prepositions)), and every `me-` verb is ambitransitive.
 - A `noun` may also be a foreign name: a run of one or more adjacent words
   that each contain an uppercase letter, treated as a single word
   ([§20.6](#20-making-new-words)). Native names are ordinary dictionary nouns.
 - A `noun` may also be a code span: text between two single backticks, treated
   as a single word whose contents are not Chatom ([§5.3](#53-code-spans)).
   Adjacent code spans are separate nouns.
+- A `number` may also be written with the digits `0`–`9`, each digit standing
+  for its digit word ([§5.2.5](#52-punctuation)): `23` is `"tu" "tiri"`.
+- Quotation marks enclose whole sentences and are ignored by these rules
+  ([§5.2.4](#52-punctuation)).
 - Repeating an adjective ([§8.4.3](#84-adjectives)) is covered by `adjective*`
   and `adjective+`.
 - A sentence-final `"no"` is the question marker ([§15.1](#151-yesno-questions)).
@@ -2093,7 +2125,8 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
   pronoun follows them; otherwise they begin a noun phrase
   ([§12.2.3](#122-adjectives-after-bi)).
 - Constraints not shown by the rules above:
-  - `"eri"` and `"notin"` are never followed by `"dem"` ([§8.5](#85-plural));
+  - a `nominal` whose `count` is `"wan"` alone, `"eri"` or `"notin"` has no
+    `"dem"` after its head ([§8.5.3](#85-plural));
   - a `number` greater than one, or `"al"`, `"som"`, `"nof"` or `"fiu"`, as
     the `count` requires `"dem"` after the head, whether it is a noun or a
     pronoun ([§8.5.2](#85-plural), [§8.10.2](#810-pronouns-in-noun-phrases),
