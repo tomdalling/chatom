@@ -770,7 +770,7 @@ no head noun. Nothing may follow them except a linking pronoun (§8.8.8):
 
 A standalone `ia` or `dea` never points at something in the world, as English
 "this one" or "that one" can. To point, use the demonstrative with a general
-noun: `dea tin` "that thing", `ia pasin` "this person".
+noun: `dea tinh` "that thing", `ia pasin` "this person".
 
 ```
 iu   bin  niam  fish.   mi  sabi  dea.
@@ -1403,7 +1403,7 @@ what kind of answer is wanted.
 | General noun | Meaning | Question phrase | English |
 |---|---|---|---|
 | `pasin` | person | `wa pasin` | who |
-| `tin` | thing | `wa tin` | what |
+| `tinh` | thing | `wa tinh` | what |
 | `pelais` | place | `wa pelais` | which place |
 | `taim` | time | `wa taim` | which time |
 | `rizon` | reason | `wa rizon` | which reason |
@@ -1417,7 +1417,7 @@ They may also be used in statements: `dea pasin` means "that person".
 The word order of the sentence does not change.
 
 ```
-iu   niam  wa     tin?
+iu   niam  wa     tinh?
 you  eat   which  thing
 ```
 "What do you eat?"
@@ -1464,7 +1464,7 @@ you  PST  drink  which  amount  MEAS  water
 **15.2.7** An answer to a question-word question must be a full clause (§9.5):
 
 ```
-iu   niam  wa     tin    dem?      mi  niam  fish  dem.
+iu   niam  wa     tinh   dem?      mi  niam  fish  dem.
 you  eat   which  thing  PL        I   eat   fish  PL
 ```
 "What do you eat?" "I eat fish."
@@ -1733,7 +1733,7 @@ describing noun:
 | Chatom | Literally | Meaning |
 |---|---|---|
 | `diniam pasin` | eating person | eater |
-| `dikot tin` | cutting thing | cutter |
+| `dikot tinh` | cutting thing | cutter |
 | `diseliep pelais` | sleeping place | bedroom |
 
 **20.5 Rules.**
@@ -1889,7 +1889,7 @@ verbs, which are ordinary nouns and verbs (§6.1.3).
 | Word | Meaning |
 |---|---|
 | `pasin` | person |
-| `tin` | thing |
+| `tinh` | thing |
 | `pelais` | place |
 | `taim` | time |
 | `rizon` | reason |

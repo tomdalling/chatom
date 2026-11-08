@@ -30,7 +30,7 @@ DIST  reason  COP  PROX   language  N-create  COP  fun
 > It is an analytic language, somewhat like an English creole, and is loosely
 > inspired by Jamaican Patois.
 
-chatom  bi   Analytic/Isolating Language  siem   English Creole  dem  an   dei  tek   som   tin    dem  kum        Jamaican Patois.
+chatom  bi   Analytic/Isolating Language  siem   English Creole  dem  an   dei  tek   som   tinh   dem  kum        Jamaican Patois.
 Chatom  COP  Analytic/Isolating Language  equal  English Creole  PL   and  it   take  some  thing  PL   come-from  Jamaican Patois
 
 >It is designed to be accessible by humans, software, and AI.
@@ -58,7 +58,7 @@ guan ia pelais tek airi!
 
 chatom tonh liv pon ia pelais. chatom bi baraniu sinitetik tonh. Tom Dalling bin
 kiriet dea tonh fi wan rizon. dea rizon bi ia. tonh dikiriet bi vaib. chatom bi
-Analytic/Isolating Language siem English Creole dem an dei tek som tin dem kum
+Analytic/Isolating Language siem English Creole dem an dei tek som tinh dem kum
 Jamaican Patois. Tom bin kiriet dei fi pasin dem fi robo dem fi AI dem.
 
 chatom dei tonh lo dem abi pon `chatom.md` an chatom dei al wod dem abi pon
