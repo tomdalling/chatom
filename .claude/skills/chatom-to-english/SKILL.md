@@ -174,7 +174,7 @@ I   PST  see  dog
 dei  bin  niam  fish  pon    ia    pelais.
 it   PST  eat   fish  be-at  PROX  place
 ```
-"It ate fish here."
+"It ate a fish here."
 
 ```
 mi  bi   tiad   tiad.
@@ -182,12 +182,12 @@ I   COP  tired  tired
 ```
 "I am very tired."
 
-**Translation:** "I saw a dog eat fish here. I'm exhausted."
+**Translation:** "I saw a dog eat a fish here. I'm exhausted."
 
 **Inferences:**
 - *a* dog: first mention.
 - *it*: `dei` most likely refers back to the dog, the only thing mentioned.
-- "a dog eat fish here": sentences 1 and 2 merged, since sentence 2 most
+- "a dog eat a fish here": sentences 1 and 2 merged, since sentence 2 most
   likely describes what was seen. "Eat", not "eating", because sentence 2 has
   no `am`.
 - "exhausted": `tiad tiad` is intensified "tired".

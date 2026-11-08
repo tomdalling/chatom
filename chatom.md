@@ -29,11 +29,13 @@ Technical terms are explained when they first appear.
 language. "May" states something that is allowed but optional.
 
 **1.2 Examples.** Examples are given in three lines: the Chatom sentence, a
-word-by-word gloss, and an English translation in quotes.
+word-by-word gloss, and an English translation in quotes. In a translation,
+words in parentheses are not in the Chatom. The translator inferred them from
+context, as with an unstated unit (§8.12.2).
 
 ```
-mi  niam  fish.
-I   eat   fish
+mi  niam  fish  dem.
+I   eat   fish  PL
 ```
 "I eat fish."
 
@@ -769,10 +771,10 @@ A standalone `ia` or `dea` never points at something in the world, as English
 noun: `dea tin` "that thing", `ia pasin` "this person".
 
 ```
-iu   niam  fish.   mi  sabi  dea.
-you  eat   fish    I   know  DIST
+iu   bin  niam  fish.   mi  sabi  dea.
+you  PST  eat   fish    I   know  DIST
 ```
-"You eat fish. I know that."
+"You ate the fish. I know that."
 
 ### 8.10 Pronouns in noun phrases
 
@@ -809,7 +811,7 @@ take adjectives.
   dag  niam  fish  an   kiat  niam  fish.
   dog  eats  fish  and  cat   eats  fish
   ```
-  "The dog and the cat eat fish."
+  "The dog and the cat each eat a fish."
 
 - **Use the core verb `wid`** ("be with") in a serial verb chain (§13):
 
@@ -817,7 +819,7 @@ take adjectives.
   dag  wid      kiat  niam  fish.
   dog  be-with  cat   eat   fish
   ```
-  "The dog eats fish with the cat."
+  "The dog eats a fish with the cat."
 
 - **"Or"** can only join whole clauses:
 
@@ -825,7 +827,7 @@ take adjectives.
   iu   niam  fish  ou  iu   niam  bared.
   you  eat   fish  or  you  eat   bread
   ```
-  "You eat fish or you eat bread."
+  "You eat a fish or you eat a (serving of) bread."
 
 ### 8.12 Amounts
 
@@ -929,7 +931,7 @@ my  dog  its  cup  MEAS  water
 ## 9. Clauses
 
 A **clause** is a single statement of "who does what (to what)", like "the dog
-eats fish".
+eats a fish".
 
 ### 9.1 Word order
 
@@ -963,7 +965,7 @@ with the prefix `me-` is ambitransitive (§20.3); such verbs are not listed
 mi  niam.            mi  niam  fish.            dag  seliep.
 I   eat              I   eat   fish             dog  sleeps
 ```
-"I eat." / "I eat fish." / "The dog sleeps."
+"I eat." / "I eat a fish." / "The dog sleeps."
 
 **9.2.3** Finding a verb's object never depends on its transitivity. A verb is
 followed by an object only if the next word can begin a noun phrase (a noun, a
@@ -1021,7 +1023,7 @@ I   take  knife  give
 mi  kuk   fish  fi   dei.
 I   cook  fish  for  them
 ```
-"I cook fish for them."
+"I cook a fish for them."
 
 ### 9.4 No embedded clauses
 
@@ -1039,8 +1041,8 @@ expressed in one of two ways:
 
 | English | Chatom approach |
 |---|---|
-| "I know *that you ate fish*." | "You ate fish. I know that." (§18) |
-| "The dog *that ate the fish* is sick." | "A dog ate fish. That dog is sick." |
+| "I know *that you ate the fish*." | "You ate the fish. I know that." (§18) |
+| "The dog *that ate the fish* is sick." | "A dog ate the fish. That dog is sick." |
 | "I slept *because you ate*." | "I slept `kaz` you ate." (§17) |
 
 ```
@@ -1093,7 +1095,7 @@ event that English would put in the present:
 mi  fina  seliep  if  iu   fina  niam  fish.
 I   FUT   sleep   if  you  FUT   eat   fish
 ```
-"I will sleep if you eat fish."
+"I will sleep if you eat the fish."
 
 **10.2.2** Tense is counted from the moment of speaking or writing. A quoted
 sentence (§18) keeps its speaker's own words, so its tense is counted from the
@@ -1162,19 +1164,19 @@ may appear at most once.
 mi  fina  am    niam  fish.
 I   FUT   PROG  eat   fish
 ```
-"I will be eating fish."
+"I will be eating the fish."
 
 ```
 mi  no   bin  am    niam  fish.
 I   NEG  PST  PROG  eat   fish
 ```
-"I wasn't eating fish."
+"I wasn't eating the fish."
 
 ```
 mi  no   bin  kian  niam  fish.
 I   NEG  PST  can   eat   fish
 ```
-"I couldn't eat fish."
+"I couldn't eat the fish."
 
 ---
 
@@ -1184,8 +1186,8 @@ I   NEG  PST  can   eat   fish
 tense, aspect or modal word (§10.4).
 
 ```
-mi  no   niam  fish.
-I   NEG  eat   fish
+mi  no   niam  fish  dem.
+I   NEG  eat   fish  PL
 ```
 "I don't eat fish."
 
@@ -1303,7 +1305,7 @@ only, and apply to the whole chain.
 With no object of their own, they come first in a chain, and the verbs after
 them say what is wanted, tried, started or stopped. Because they are verbs,
 not modals, several may be combined, and a modal may come before them: "I can
-start eating fish" is *I · can · start · eat · fish*.
+start eating the fish" is *I · can · start · eat · fish*.
 
 **13.5** Serial verbs replace prepositions (§9.3) and replace embedded clauses
 that share their subject with the main clause (§9.4).
@@ -1315,7 +1317,7 @@ that share their subject with the main clause (§9.4).
 mi  bin  niam  fish  pon    ia    pelais.
 I   PST  eat   fish  be-at  PROX  place
 ```
-"I ate fish here."
+"I ate a fish here."
 
 **13.7** The parser always knows where each verb's object ends, because the
 class of every word is known (§6.3): a noun phrase ends when the next word
@@ -1337,8 +1339,8 @@ dog  COP  big  pass  cat
 **14.2** Because `pas` works with any verb, it can also compare actions:
 
 ```
-mi  niam  fish  pas   iu.
-I   eat   fish  pass  you
+mi  niam  fish  dem  pas   iu.
+I   eat   fish  PL   pass  you
 ```
 "I eat more fish than you."
 
@@ -1369,8 +1371,8 @@ dog  COP  big  equal  cat
 ordinary statement.
 
 ```
-iu   niam  fish  no?
-you  eat   fish  Q
+iu   niam  fish  dem  no?
+you  eat   fish  PL   Q
 ```
 "Do you eat fish?"
 
@@ -1380,8 +1382,8 @@ negation always comes before a verb, and nothing follows the question marker.
 **15.1.3** Negative questions are allowed:
 
 ```
-iu   no   niam  fish  no?
-you  NEG  eat   fish  Q
+iu   no   niam  fish  dem  no?
+you  NEG  eat   fish  PL   Q
 ```
 "Don't you eat fish?"
 
@@ -1418,8 +1420,8 @@ you  eat   which  thing
 "What do you eat?"
 
 ```
-wa     pasin   niam  fish?
-which  person  eats  fish
+wa     pasin   niam  fish  dem?
+which  person  eats  fish  PL
 ```
 "Who eats fish?"
 
@@ -1437,7 +1439,7 @@ use the matching core verb in a serial chain:
 iu   kot  bared  tek  wa     wei?
 you  cut  bread  use  which  way
 ```
-"How do you cut bread?"
+"How do you cut a (loaf of) bread?"
 
 **15.2.5** "How many" and "how much" use `wa moch` ("which amount") as the
 unit of an amount phrase (§8.12):
@@ -1459,8 +1461,8 @@ you  PST  drink  which  amount  MEAS  water
 **15.2.7** An answer to a question-word question must be a full clause (§9.5):
 
 ```
-iu   niam  wa     tin?       mi  niam  fish.
-you  eat   which  thing      I   eat   fish
+iu   niam  wa     tin?       mi  niam  fish  dem.
+you  eat   which  thing      I   eat   fish  PL
 ```
 "What do you eat?" "I eat fish."
 
@@ -1470,8 +1472,8 @@ you  eat   which  thing      I   eat   fish
 alone as a sentence.
 
 ```
-iu   niam  fish  no?        ie.
-you  eat   fish  Q          yes
+iu   niam  fish  dem  no?   ie.
+you  eat   fish  PL   Q     yes
 ```
 "Do you eat fish?" "Yes."
 
@@ -1552,8 +1554,8 @@ a head noun ("dog cat").
 but every command clause must come **before** every other clause.
 
 ```
-no   niam  fish  if  iu   bi   sik.
-NEG  eat   fish  if  you  COP  sick
+no   niam  fish  dem  if  iu   bi   sik.
+NEG  eat   fish  PL   if  you  COP  sick
 ```
 "Don't eat fish if you're sick."
 
@@ -1561,11 +1563,11 @@ NEG  eat   fish  if  you  COP  sick
 luk   kiat  an   mi  fina  niam  fish.
 look  cat   and  I   FUT   eat   fish
 ```
-"Look at the cat, and I'll eat fish."
+"Look at the cat, and I'll eat the fish."
 
 **17.6.1** So a subjectless clause can only follow another command. A sentence
 such as `mi niam fish an luk kiat` is **ungrammatical**: it does not mean "I
-eat fish and see the cat". Give each clause its own subject instead:
+eat a fish and see the cat". Give each clause its own subject instead:
 `mi niam fish an mi luk kiat.`
 
 **17.7** Separate sentences need no linking word. Later sentences may refer
@@ -1661,8 +1663,8 @@ many  fish  PL         every  dog
 **19.3.4** A quantifier may stand alone as a complete noun phrase (§8.9):
 
 ```
-al   bin  niam  fish.
-all  PST  eat   fish
+al   bin  niam  fish  dem.
+all  PST  eat   fish  PL
 ```
 "Everyone ate fish."
 
