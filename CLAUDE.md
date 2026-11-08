@@ -31,9 +31,9 @@ without being asked (see the skill's "Committing" section).
 
 After any edit to the spec, check every item:
 
-1. **Appendix A** (words defined in the spec), **Appendix C** (grammar summary), the
-   **Contents** list and **§22** (open items) still agree with the body text.
-2. Every `§` cross-reference and anchor link still resolves, especially after
+1. **Appendix A** (words defined in the spec), **Appendix C** (grammar summary)
+   and **§22** (open items) still agree with the body text.
+2. Every `§` reference still points to the right section, especially after
    renumbering.
 3. Every new word (in examples or vocabulary) obeys the word-shape rules (§3)
    and the reserved beginnings (§3.2), and is not spelled like an
@@ -42,6 +42,12 @@ After any edit to the spec, check every item:
    Appendix C.
 5. The change preserves both founding principles: every sentence has exactly
    one parse, and spelling is fully phonetic.
+
+Keep the spec compact:
+
+- Write cross-references as plain `§n.n`, never as anchor links.
+- State each rule in exactly one place. Anywhere else that needs it points
+  there with a `§` reference instead of restating it.
 
 Match the spec's existing style: plain English for a reader with only a passing
 interest in linguistics, technical terms explained on first use, "must" and

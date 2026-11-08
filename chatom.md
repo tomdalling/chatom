@@ -10,9 +10,9 @@ unambiguous. Its two founding principles are:
    spelling is pronounced exactly one way. If you can read a word, you can say
    it; if you can hear a word, you can spell it. There are two exceptions.
    Foreign names are marked by an uppercase letter and may keep the spelling
-   and pronunciation of their source language ([§20.6](#20-making-new-words)).
+   and pronunciation of their source language (§20.6).
    Code spans are text between backticks that is not Chatom at all
-   ([§5.3](#53-code-spans)).
+   (§5.3).
 
 This document is the complete specification of the grammar and of every
 function word. It is meant to be precise enough to build software from, while
@@ -21,35 +21,7 @@ Technical terms are explained when they first appear.
 
 > **Status: draft.** A few small parts of the language are not yet decided.
 > They are marked **⚠ Not yet specified** and collected in
-> [§22](#22-not-yet-specified).
-
-## Contents
-
-1. [Conventions used in this document](#1-conventions-used-in-this-document)
-2. [Sounds](#2-sounds)
-3. [Word shape](#3-word-shape)
-4. [Stress](#4-stress)
-5. [Writing](#5-writing)
-6. [Word classes](#6-word-classes)
-7. [Pronouns](#7-pronouns)
-8. [Noun phrases](#8-noun-phrases)
-9. [Clauses](#9-clauses)
-10. [Tense, aspect and modality](#10-tense-aspect-and-modality)
-11. [Negation](#11-negation)
-12. [The copula `bi` and existence](#12-the-copula-bi-and-existence)
-13. [Serial verbs](#13-serial-verbs)
-14. [Comparison](#14-comparison)
-15. [Questions](#15-questions)
-16. [Commands](#16-commands)
-17. [Sentences with several clauses](#17-sentences-with-several-clauses)
-18. [Reported speech and thought](#18-reported-speech-and-thought)
-19. [Numbers and quantifiers](#19-numbers-and-quantifiers)
-20. [Making new words](#20-making-new-words)
-21. [Fixed phrases](#21-fixed-phrases)
-22. [Not yet specified](#22-not-yet-specified)
-23. [Appendix A: Words defined in this specification](#appendix-a-words-defined-in-this-specification)
-24. [Appendix B: Sample vocabulary (non-normative)](#appendix-b-sample-vocabulary-non-normative)
-25. [Appendix C: Grammar summary](#appendix-c-grammar-summary)
+> §22.
 
 ---
 
@@ -84,13 +56,13 @@ I   eat   fish
 | `N-` `V-` `A-` | noun-, verb- and adjective-making prefixes (`di-`, `me-`, `lai-`) |
 
 All other words are glossed with their English meaning. A pronoun used as a
-possessor ([§8.8](#88-possession)) is glossed with the English possessive:
+possessor (§8.8) is glossed with the English possessive:
 `mi` as "my", `dei` as "their" or "its", `sef` as "own". A following `dem` is
 still glossed `PL`: `mi dem buk` is "my PL book". The linking pronoun `dei`
-([§8.8.4](#88-possession)) is glossed "its" after a singular possessor that is
+(§8.8.4) is glossed "its" after a singular possessor that is
 a thing or an animal, and "their" after any other possessor.
 
-**1.3.1 No added gender.** Chatom has no gender ([§7.2](#7-pronouns)), so
+**1.3.1 No added gender.** Chatom has no gender (§7.2), so
 glosses and translations must not add one that the Chatom does not state.
 `dei` is glossed and translated "it" for a thing or an animal, and singular
 "they" for a person or for anything whose kind is unknown, with "themself" as
@@ -98,9 +70,9 @@ its reflexive. "He" or "she" may be used only when a word in the Chatom, such
 as a word meaning "mother", gives the gender. A name never gives the gender.
 
 **1.4 Sample vocabulary.** Most nouns, verbs and adjectives are not part of
-this specification (see [§6](#6-word-classes)). The examples borrow words from
+this specification (see §6). The examples borrow words from
 the non-normative sample vocabulary in
-[Appendix B](#appendix-b-sample-vocabulary-non-normative).
+Appendix B.
 
 ---
 
@@ -184,7 +156,7 @@ belong to different syllables: *mi · a · bi*, never *mia · bi*.
 
 - `r` is the English `r` as pronounced in Australian English: the tongue
   approaches the roof of the mouth without touching it. It is never tapped or
-  trilled. Because `r` can never end a word ([§3.1.3](#31-syllables)) and two
+  trilled. Because `r` can never end a word (§3.1.3) and two
   consonants never touch inside a word, `r` is always followed by a vowel, so
   it is always pronounced.
 - `g` is always "hard", as in **g**o, never as in **g**em.
@@ -239,7 +211,7 @@ such as `tt` or `nn` cannot occur.
 ### 3.2 Reserved beginnings
 
 **3.2.1** The letters `di`, `me` and `lai` at the start of a word are reserved
-for the word-making prefixes ([§20](#20-making-new-words)). No other word may
+for the word-making prefixes (§20). No other word may
 begin with them: not a root and not a function word. This holds even when they
 are only part of the first syllable, so `dian`, `mei`, `dish` and `laik` are
 not valid roots. A word that begins with `di`, `me` or `lai` is therefore
@@ -247,7 +219,7 @@ always a prefix followed by a root.
 
 **3.2.2** No noun, verb or adjective may begin with `z`. Function words, such
 as `ziro`, may. This lets each prefix take a linking `z` before a root that
-begins with a vowel ([§20.2](#20-making-new-words)).
+begins with a vowel (§20.2).
 
 ### 3.3 Formal definition
 
@@ -273,13 +245,13 @@ consonant at the very end of the word, which belongs to the last syllable.
 
 ### 3.4 Names
 
-**3.4.1** Foreign names ([§20.6](#20-making-new-words)) are exempt from every
-rule in this section and in [§2](#2-sounds) and [§4](#4-stress).
+**3.4.1** Foreign names (§20.6) are exempt from every
+rule in this section and in §2 and §4.
 
 **3.4.2** Native names, such as `chatom`, are ordinary Chatom words and obey
 every rule.
 
-**3.4.3** The contents of a code span ([§5.3](#53-code-spans)) are also exempt
+**3.4.3** The contents of a code span (§5.3) are also exempt
 from these rules.
 
 ---
@@ -287,11 +259,11 @@ from these rules.
 ## 4. Stress
 
 **4.1** In nouns, verbs and adjectives, stress always falls on the **first
-syllable**. In a word built with a prefix ([§20](#20-making-new-words)), the
+syllable**. In a word built with a prefix (§20), the
 prefix is the first syllable, so it carries the stress.
 
 **4.2** Function words are **unstressed** in normal speech. This includes the
-pronouns ([§7](#7-pronouns)) and `bi` ([§12.1](#121-bi)), even though they
+pronouns (§7) and `bi` (§12.1), even though they
 stand where a noun or a verb would.
 
 **4.3** Stress is never written, and it never changes the meaning of a word.
@@ -324,24 +296,24 @@ ever appears as part of `ch`.
 **5.1.3** Words are separated by spaces.
 
 **5.1.4** Everything except foreign names and code spans
-([§5.3](#53-code-spans)) is written in **lowercase**, including the first word
+(§5.3) is written in **lowercase**, including the first word
 of a sentence and native names such as `chatom`. Outside a code span, a word
 that contains an uppercase letter is always a foreign name
-([§20.6](#20-making-new-words)).
+(§20.6).
 
 **5.1.5** Foreign names are exempt from the alphabet above and from 5.1.1 and
 5.1.2. A foreign name may use any letter, digit or punctuation mark except a
 quotation mark, a backtick or a comma. Code spans are also exempt
-([§5.3](#53-code-spans)).
+(§5.3).
 
 ### 5.2 Punctuation
 
 **5.2.1** Every sentence ends with exactly one of these marks. A closing
-quotation mark ([§5.2.4](#52-punctuation)) may follow it.
+quotation mark (§5.2.4) may follow it.
 
 | Mark | Used for |
 |---|---|
-| `?` | every question ([§15](#15-questions)) |
+| `?` | every question (§15) |
 | `?!` | a shouted or exclaimed question |
 | `!` | any other shouted or exclaimed sentence |
 | `.` | every other sentence, including ordinary commands |
@@ -351,13 +323,13 @@ because of its words (a final `no` or the question word `wa`), not because of
 its `?`. The `!` shows only tone of voice.
 
 **5.2.3** Chatom uses **no commas**, not even inside a foreign name
-([§20.6.6](#20-making-new-words)). Clause boundaries are always marked by
-linking words ([§17](#17-sentences-with-several-clauses)). The only place a
+(§20.6.6). Clause boundaries are always marked by
+linking words (§17). The only place a
 comma may appear is inside a code span, whose contents are not Chatom
-([§5.3](#53-code-spans)).
+(§5.3).
 
 **5.2.4** Quoted sentences may be put in quotation marks (`"…"`) to make
-writing easier to read ([§18](#18-reported-speech-and-thought)). Quotation
+writing easier to read (§18). Quotation
 marks are optional. A quotation opens directly before the first word of a
 sentence and closes directly after a sentence's final mark, so it encloses one
 or more whole sentences. Quotation marks never appear inside a sentence, and
@@ -365,7 +337,7 @@ they never change the grammar.
 
 **5.2.5 Digits.** Numbers may be written with the digits `0`–`9` instead of
 number words. Each digit stands for its digit word
-([§19](#19-numbers-and-quantifiers)): `23` is read `tu tiri`.
+(§19): `23` is read `tu tiri`.
 
 ### 5.3 Code spans
 
@@ -388,23 +360,23 @@ backtick makes a sentence invalid.
 neighbours by spaces. The sentence's final mark may follow it directly.
 
 **5.3.4** A code span is a noun, and apart from 5.3.5 it follows the same
-grammar as a foreign name ([§20.6.9](#20-making-new-words)–[§20.6.11](#20-making-new-words)).
+grammar as a foreign name (§20.6.9–§20.6.11).
 It may be a head, a describing noun or a possessor, and it may take `dem`. It
 must not take a prefix, it is never listed in the dictionary, and in glosses it
 is glossed as itself, backticks included.
 
-**5.3.5** Unlike foreign names ([§20.6.7](#20-making-new-words)), code spans
+**5.3.5** Unlike foreign names (§20.6.7), code spans
 never join together. Two code spans side by side, or a code span beside a
 foreign name, are a describing noun followed by a head
-([§8.3](#83-describing-nouns)).
+(§8.3).
 
 **5.3.6** The contents of a code span are exempt from every rule in
-[§2](#2-sounds)–[§4](#4-stress), [§5.1](#51-the-alphabet) and
-[§5.2](#52-punctuation). A code span is pronounced however its
+§2–§4, §5.1 and
+§5.2. A code span is pronounced however its
 contents are normally read.
 
 **5.3.7** A code span may appear inside quotation marks
-([§5.2.4](#52-punctuation)). A quotation mark inside a code span is part of the
+(§5.2.4). A quotation mark inside a code span is part of the
 code span, never the start or end of a quotation.
 
 ```
@@ -426,7 +398,7 @@ Chatom has three **open classes** of words and one **closed class**.
 | Noun | open | the Chatom dictionary |
 | Verb | open | the Chatom dictionary |
 | Adjective | open | the Chatom dictionary |
-| Function word | closed | this specification ([Appendix A.1](#a1-function-words)) |
+| Function word | closed | this specification (Appendix A.1) |
 
 **6.1.1** An **open class** can gain new words at any time. Its words are listed
 in a separate dictionary and are not part of this specification.
@@ -436,15 +408,15 @@ defined in this specification. Function words include pronouns, grammatical
 markers, modals, linking words, quantifiers, digit words and prefixes.
 
 **6.1.3** This specification also defines a small, fixed set of **general
-nouns** ([§15.2](#152-question-word-questions)) and **core verbs**
-([§9.3](#93-no-prepositions)). Grammatically they are ordinary nouns and verbs,
+nouns** (§15.2) and **core verbs**
+(§9.3). Grammatically they are ordinary nouns and verbs,
 not function words. Because the grammar depends on them, they are defined here
-([Appendix A.2](#a2-general-nouns) and [A.3](#a3-core-verbs)). Like every
+(Appendix A.2 and A.3). Like every
 other noun and verb, they are also listed in the dictionary, which must agree
 with this specification.
 
 **6.1.4** Chatom has **no adverbs**. Meanings that other languages express with
-adverbs are expressed with serial verbs ([§13](#13-serial-verbs)) or with
+adverbs are expressed with serial verbs (§13) or with
 function words.
 
 ### 6.2 No inflection
@@ -454,13 +426,13 @@ grammar: there are no endings, no agreement and no irregular forms. Grammar is
 expressed entirely through word order and function words.
 
 **6.2.2** The only way to build one word from another is with the three
-class-changing prefixes ([§20](#20-making-new-words)). A prefixed word is a new
+class-changing prefixes (§20). A prefixed word is a new
 word in its own right, not a different form of the old one.
 
 **6.2.3** Chatom has no articles ("a", "the").
 
 **6.2.4** Chatom has no interjections. Greetings and similar expressions are
-fixed phrases built from ordinary sentences ([§21](#21-fixed-phrases)).
+fixed phrases built from ordinary sentences (§21).
 
 ### 6.3 Identifying a word's class
 
@@ -470,14 +442,14 @@ about its class. Any word may begin with any sound.
 **6.3.2** To find the class of a word:
 
 1. If it is a code span (text between backticks), it is a noun
-   ([§5.3](#53-code-spans)).
+   (§5.3).
 2. If it contains an uppercase letter, it is a foreign name, which is a noun
-   ([§20.6](#20-making-new-words)). Foreign names are never listed in the
+   (§20.6). Foreign names are never listed in the
    dictionary. Native names are dictionary nouns, found in step 5.
-3. If it is a function word ([Appendix A.1](#a1-function-words)), it is that
+3. If it is a function word (Appendix A.1), it is that
    function word.
 4. If it begins with `di`, `me` or `lai`, it is a prefixed word, and the prefix
-   gives its class ([§20](#20-making-new-words)).
+   gives its class (§20).
 5. Otherwise, look it up in the dictionary.
 
 **6.3.3** No noun, verb or adjective may be spelled the same as a function word.
@@ -488,7 +460,7 @@ about its class. Any word may begin with any sound.
 
 **7.1** Chatom has three personal pronouns, distinguished by **person** (I / you /
 they·it). Each one is made plural with the plural marker `dem`, which is a
-separate word ([§7.5](#7-pronouns)).
+separate word (§7.5).
 
 | | Singular | Plural |
 |---|---|---|
@@ -497,7 +469,7 @@ separate word ([§7.5](#7-pronouns)).
 | 3rd person | `dei` they, them (one person), it | `dei dem` they, them |
 
 **7.2** Pronouns have no gender. `dei` covers "he", "she", "it" and singular
-"they". Glosses and translations of `dei` follow [§1.3.1](#1-conventions-used-in-this-document).
+"they". Glosses and translations of `dei` follow §1.3.1.
 
 **7.3** There is only one "we". It does not distinguish "we, including you" from
 "we, not including you".
@@ -512,7 +484,7 @@ I   see  them        they  see  me
 "I see them." / "They see me."
 
 **7.5 Plural pronouns.** A pronoun is made plural in the same way as a noun:
-the plural marker `dem` follows it as a separate word ([§8.5](#85-plural)).
+the plural marker `dem` follows it as a separate word (§8.5).
 A plural pronoun is therefore two words, and `dem` must be used whenever the
 pronoun means more than one.
 
@@ -524,7 +496,7 @@ I   PL   see  they  PL
 
 **7.6** Anything else in the noun phrase comes before the pronoun, never
 between the pronoun and `dem`: `tu mi dem` means "we two"
-([§8.10](#810-pronouns-in-noun-phrases)).
+(§8.10).
 
 **7.7 Reflexive.** Chatom has a single reflexive pronoun, `sef`, used for every
 person and number. It is used when the object is the same as the subject.
@@ -545,16 +517,16 @@ they must not appear anywhere inside that subject: not as the subject itself,
 not as its possessor, and not deeper inside it. `sef luk mi.`,
 `sef dag luk mi.` and `sef dag dei eg bi big.` are ungrammatical.
 
-**7.7.2** A command has no subject ([§16](#16-commands)). In a command, `sef`
+**7.7.2** A command has no subject (§16). In a command, `sef`
 refers to the person spoken to, and `sef dem` to the people spoken to:
 `luk sef.` "Look at yourself."
 
 **7.8 Pronouns act like nouns.** A pronoun is a function word, not a noun. In
 a noun phrase, though, it acts like a noun: it may be the head of a noun phrase
-or a possessor ([§8.10](#810-pronouns-in-noun-phrases)). Elsewhere in this
+or a possessor (§8.10). Elsewhere in this
 specification, "noun" never includes pronouns.
 `mi`, `iu` and `dei` may take `dem`. `sef` takes `dem` only to mean "each
-other" ([§7.9](#7-pronouns)). A pronoun is never a describing noun.
+other" (§7.9). A pronoun is never a describing noun.
 
 **7.9 Reciprocal: "each other".** `sef` followed by `dem` means "each other".
 It is used when the members of a plural subject act on one another.
@@ -573,12 +545,12 @@ I   PL   take  fish  give  self  PL
 
 **7.9.1** `sef dem` may be used only when the subject of its clause is plural:
 its head must be followed by `dem`, or it must be a standalone `al`, `som`,
-`nof` or `fiu` ([§8.9](#89-noun-phrases-with-no-head-noun)). It may also be
-used in a command ([§16](#16-commands)), which then speaks to more than one
+`nof` or `fiu` (§8.9). It may also be
+used in a command (§16), which then speaks to more than one
 person. `dag luk sef dem.` and `eri dag luk sef dem.` are ungrammatical.
 
 **7.9.2** `sef dem` may be a possessor, meaning "each other's"
-([§8.8.3](#88-possession)).
+(§8.8.3).
 
 ---
 
@@ -593,8 +565,8 @@ A **noun phrase** is a noun together with any words that describe it, such as
 Everything that describes it comes before it, much as in English. Nothing may
 follow the head of a noun phrase except the plural marker `dem`. In a
 possessive noun phrase, the head of the whole phrase is the head of the thing
-owned ([§8.8.4](#88-possession)). In an amount phrase, it is the head of the
-kind measured ([§8.12.6](#812-amounts)).
+owned (§8.8.4). In an amount phrase, it is the head of the
+kind measured (§8.12.6).
 
 ### 8.2 Order of a noun phrase
 
@@ -603,7 +575,7 @@ is optional.
 
 | # | Part | Example |
 |---|---|---|
-| 1 | Determiner: a demonstrative (`ia` / `dea`), the question word `wa`, a possessive pronoun, **or** a possessor + linking pronoun ([§8.8](#88-possession)) | `dea` that |
+| 1 | Determiner: a demonstrative (`ia` / `dea`), the question word `wa`, a possessive pronoun, **or** a possessor + linking pronoun (§8.8) | `dea` that |
 | 2 | Number **or** quantifier | `tu` two |
 | 3 | Adjectives | `likil` small |
 | 4 | Describing nouns | `bad` bird |
@@ -624,10 +596,10 @@ my  two  small  bird  egg  PL
 
 **8.2.2** A noun phrase has at most one determiner. A demonstrative, `wa` and
 a possessor cannot be combined, so there is no direct equivalent of "those eggs
-of mine" ([§8.8.6](#88-possession)).
+of mine" (§8.8.6).
 
-**8.2.3** A possessive noun phrase ([§8.8](#88-possession)) or an amount
-phrase ([§8.12](#812-amounts)) joins two or more of these orders with a link
+**8.2.3** A possessive noun phrase (§8.8) or an amount
+phrase (§8.12) joins two or more of these orders with a link
 word, `dei` or `a`.
 
 ### 8.3 Describing nouns
@@ -684,12 +656,12 @@ big  big  big  dag      an extremely big dog
 
 **8.5.1** A noun with no plural marker is **singular**: `dag` means exactly one
 dog. This holds for every noun, including words for substances such as
-`wata` ("water"), where "one" means one portion ([§8.12](#812-amounts)).
+`wata` ("water"), where "one" means one portion (§8.12).
 
 **8.5.2** The plural marker `dem` comes directly after the head noun, like the
 English "-s". It must be used whenever there is more than one. This applies even
 when a number makes the amount obvious, and it applies to pronouns too
-([§7.5](#7-pronouns)) and to possessors ([§8.8.5](#88-possession)).
+(§7.5) and to possessors (§8.8.5).
 
 ```
 dag  dem          tu   dag  dem
@@ -699,7 +671,7 @@ dog  PL           two  dog  PL
 
 **8.5.3** The number one (`wan` on its own) and the quantifiers `eri`
 ("every") and `notin` ("none") take a singular head, so the head they count
-never takes `dem` ([§19.3](#193-quantifiers)): `wan dag` "one dog" and
+never takes `dem` (§19.3): `wan dag` "one dog" and
 `eri dag` "every dog", never `wan dag dem` or `eri dag dem`. A longer number
 that begins with `wan`, such as `wan ziro` (10), is plural as usual.
 
@@ -718,7 +690,7 @@ PROX  dog           DIST  dog  PL
 
 **8.7.1** `wa` means "which?". It fills the determiner slot at the start of the
 noun phrase. A noun phrase containing `wa` makes its sentence a question
-([§15.2](#152-question-word-questions)).
+(§15.2).
 
 ```
 wa     big  dag
@@ -751,11 +723,11 @@ my  PL   book         their  PL   two  dog  PL
 "our book" / "their two dogs"
 
 A possessor such as "we two" is expressed with a clause instead
-([§8.8.10](#88-possession)): `buk fi tu mi dem.` "The book belongs to us two."
+(§8.8.10): `buk fi tu mi dem.` "The book belongs to us two."
 
-**8.8.3 "Own": `sef`.** The reflexive `sef` ([§7.7](#7-pronouns)) may be a
+**8.8.3 "Own": `sef`.** The reflexive `sef` (§7.7) may be a
 possessor. It refers to the subject of the clause, like English "own", so it
-must not appear inside that subject ([§7.7.1](#7-pronouns)).
+must not appear inside that subject (§7.7.1).
 
 ```
 dei   luk  sef  buk.          dei   luk  dei    buk.
@@ -763,7 +735,7 @@ they  see  own  book          they  see  their  book
 ```
 "They see their own book." / "They see their book" (someone else's).
 
-The reciprocal `sef dem` ([§7.9](#7-pronouns)) may also be a possessor, meaning
+The reciprocal `sef dem` (§7.9) may also be a possessor, meaning
 "each other's".
 
 ```
@@ -777,7 +749,7 @@ followed by the **linking pronoun** `dei`, followed by the thing owned, much
 like English "the dog its egg". The linking pronoun is always `dei`, whatever
 the number of the possessor. In glosses it is "its" after a singular possessor
 that is a thing or an animal, and "their" after any other possessor
-([§1.3](#1-conventions-used-in-this-document)).
+(§1.3).
 
 ```
 dag  dei  eg                  dag  dem  dei    eg   dem
@@ -788,10 +760,10 @@ dog  its  egg                 dog  PL   their  egg  PL
 The head of the whole noun phrase is the head of the thing owned: `eg` in both
 examples. The possessor is a smaller noun phrase inside it. The linking pronoun
 and the thing owned belong to the whole phrase, not to the possessor, so they
-do not break [§8.1.1](#81-the-head-comes-last).
+do not break §8.1.1.
 
 **8.8.5 Plural possessors.** A plural possessor takes `dem` like any other
-plural noun phrase ([§8.5.2](#85-plural)). The `dem` comes before the linking
+plural noun phrase (§8.5.2). The `dem` comes before the linking
 pronoun.
 
 ```
@@ -824,7 +796,7 @@ my  dog  its  egg
 ```
 "my dog's egg": `mi dag` ("my dog") is the possessor of `eg`.
 
-**8.8.8** A standalone `ia`, `dea` or quantifier ([§8.9](#89-noun-phrases-with-no-head-noun))
+**8.8.8** A standalone `ia`, `dea` or quantifier (§8.9)
 may be a noun possessor:
 
 ```
@@ -845,13 +817,13 @@ plural, so the linking `dei` after them is glossed "their".
 - The head of the thing owned must be a noun, not a pronoun.
 
 These rules keep possession unambiguous. Two noun phrases never stand side by
-side, and a pronoun is never a describing noun ([§8.10](#810-pronouns-in-noun-phrases)).
+side, and a pronoun is never a describing noun (§8.10).
 So inside a noun phrase, a bare pronoun at the start that is followed by more
 of the noun phrase is always a possessor, and a pronoun directly after a
 possessor is always a linking pronoun.
 
 **8.8.10 Ownership as a statement.** To *say* that something belongs to
-someone, use the core verb `fi` ("belong to", [§9.3](#93-no-prepositions)):
+someone, use the core verb `fi` ("belong to", §9.3):
 
 ```
 buk   fi           mi.
@@ -863,12 +835,12 @@ book  belongs-to   me
 
 **8.9.1** Three kinds of word may stand alone as a complete noun phrase, with
 no head noun. Nothing may follow them except a linking pronoun
-([§8.8.8](#88-possession)):
+(§8.8.8):
 
 - `dea`, which refers **back** to something already said, including a whole
   previous clause or sentence;
 - `ia`, which refers **forward** to something about to be said;
-- any quantifier ([§19.3](#193-quantifiers)), meaning that amount of the people
+- any quantifier (§19.3), meaning that amount of the people
   or things being talked about.
 
 A standalone `ia` or `dea` never points at something in the world, as English
@@ -889,13 +861,13 @@ PROX  dog  COP  big  pass  all
 
 ### 8.10 Pronouns in noun phrases
 
-**8.10.1** A pronoun acts like a noun ([§7.8](#7-pronouns)), so it may be the
+**8.10.1** A pronoun acts like a noun (§7.8), so it may be the
 head of a noun phrase. A pronoun head may take only a number or quantifier,
-adjectives and `dem` (parts 2, 3 and 6 in [§8.2](#82-order-of-a-noun-phrase)).
+adjectives and `dem` (parts 2, 3 and 6 in §8.2).
 It must not take a determiner, so no demonstrative, no `wa` and no possessor
 may come before it, and it must not take describing nouns. Only `mi`, `iu` and
 `dei` may take `dem`, and `sef` may take it only as "each other"
-([§7.8](#7-pronouns)).
+(§7.8).
 
 `ia mi`, `wa dei dem` and `mi dei` are ungrammatical. To ask "which of them?",
 ask about a general noun instead, such as `wa pasin` ("which person?").
@@ -911,7 +883,7 @@ plural pronoun, in the same way that a plural number needs `dem` after a noun.
 `tu mi` is ungrammatical. "We two" is `tu mi dem`.
 
 **8.10.3** A pronoun is never a describing noun. A bare pronoun directly before
-the rest of a noun phrase is always its possessor ([§8.8.1](#88-possession)):
+the rest of a noun phrase is always its possessor (§8.8.1):
 `mi buk` means "my book".
 
 **8.10.4** `sef` and `sef dem` never take a number or quantifier. They may
@@ -922,7 +894,7 @@ take adjectives.
 **8.11.1** Chatom has no words for "and" or "or" between noun phrases. Instead:
 
 - **Repeat the clause**, joined with a linking word
-  ([§17](#17-sentences-with-several-clauses)):
+  (§17):
 
   ```
   dag  niam  fish  an   kiat  niam  fish.
@@ -931,7 +903,7 @@ take adjectives.
   "The dog and the cat eat fish."
 
 - **Use the core verb `wid`** ("be with") in a serial verb chain
-  ([§13](#13-serial-verbs)):
+  (§13):
 
   ```
   dag  wid      kiat  niam  fish.
@@ -956,7 +928,7 @@ substances, ideas and actions, such as `wata` ("water"), `airi` ("peace") and
 `diniam` ("eating").
 
 **8.12.2 One portion.** A noun with no `dem` always means exactly one
-([§8.5.1](#85-plural)). For a substance or an idea, "one" means one portion,
+(§8.5.1). For a substance or an idea, "one" means one portion,
 serving or instance, and the reader works out how much from context.
 
 ```
@@ -993,7 +965,7 @@ some  water  PL   exist
 notin  wata   abi.
 none   water  exist
 ```
-"There is no water." `notin` takes a singular noun ([§8.5.3](#85-plural)).
+"There is no water." `notin` takes a singular noun (§8.5.3).
 
 **8.12.4 Units.** To state the unit, put the unit first, then the
 **measure link** `a`, then the kind of thing being measured. This is called an
@@ -1012,21 +984,21 @@ unit. The unit is optional: `tu wata dem` leaves it to context, and
 **8.12.5 Meaning.** An amount phrase "X `a` Y" means only "an amount of Y,
 measured in X". `a` must not be used for any other kind of English "of". "A
 book about Chatom" is `chatom buk`, with a describing noun
-([§8.3](#83-describing-nouns)). "A person from Sydney" uses the core verb `kum`
-([§9.3](#93-no-prepositions)). Without `a`, `wata kop` is an ordinary
+(§8.3). "A person from Sydney" uses the core verb `kum`
+(§9.3). Without `a`, `wata kop` is an ordinary
 describing noun before a head: a water cup, that is, a cup used for water.
 
 **8.12.6 Grammar.** The measure link `a` follows the same grammar as the
-linking pronoun `dei` ([§8.8.4](#88-possession)–[§8.8.9](#88-possession)):
+linking pronoun `dei` (§8.8.4–§8.8.9):
 
 - Everything before `a`, back to the start of the noun phrase, is the unit.
   A determiner, possessor or count at the start belongs to the unit, and so do
   the adjectives before it. A plural unit's `dem` comes before `a`.
 - Everything after `a` is the kind measured. The head of the whole noun phrase
-  is the head of the kind ([§8.1.1](#81-the-head-comes-last)).
+  is the head of the kind (§8.1.1).
 - `a` must always be followed by the kind. A noun phrase never ends with `a`.
 - The unit must have a noun as its head. It must not be a pronoun or a
-  standalone `ia`, `dea` or quantifier ([§8.9](#89-noun-phrases-with-no-head-noun)),
+  standalone `ia`, `dea` or quantifier (§8.9),
   so `mi a wata`, `dea a wata` and `al a wata` are ungrammatical. "All the
   water" is `al wata dem`.
 - The kind must have a noun as its head.
@@ -1044,7 +1016,7 @@ the substance in general, and a kind with `dem` means separate items:
 place where a noun without `dem` does not mean exactly one.
 
 **8.12.8 Chains.** Links nest to the left, as in possession chains
-([§8.8.7](#88-possession)). Each `dei` or `a` applies to everything before it.
+(§8.8.7). Each `dei` or `a` applies to everything before it.
 
 ```
 mi  dag  dei  kop  a     wata
@@ -1074,8 +1046,8 @@ dog  eats  fish
 **9.2.1** Every verb has a fixed **transitivity**, which says
 whether it takes an object. The dictionary records the transitivity of every
 verb it lists. Verbs made with `me-` are not listed
-([§20.5.7](#20-making-new-words)); they are always ambitransitive
-([§9.2.2](#92-transitivity)). There are three kinds:
+(§20.5.7); they are always ambitransitive
+(§9.2.2). There are three kinds:
 
 | Transitivity | Object |
 |---|---|
@@ -1084,9 +1056,9 @@ verb it lists. Verbs made with `me-` are not listed
 | **ambitransitive** | may have an object or not |
 
 **9.2.2** The core verbs have the transitivity given in
-[§9.3](#93-no-prepositions). Every verb made with the prefix `me-` is
-ambitransitive ([§20.3](#20-making-new-words)). `bi` has its own rule
-([§12.1](#121-bi)).
+§9.3. Every verb made with the prefix `me-` is
+ambitransitive (§20.3). `bi` has its own rule
+(§12.1).
 
 `niam` ("eat") is ambitransitive, and `seliep` ("sleep") is intransitive:
 
@@ -1117,14 +1089,14 @@ one, is ungrammatical.
 
 **9.3.1** Chatom has **no prepositions** (words like "in", "with", "to", "for").
 Relationships such as instrument, recipient, location and direction are
-expressed with **core verbs** in a serial verb chain ([§13](#13-serial-verbs)).
-The measure link `a` ([§8.12](#812-amounts)) is not a preposition. Like the
+expressed with **core verbs** in a serial verb chain (§13).
+The measure link `a` (§8.12) is not a preposition. Like the
 linking pronoun `dei`, it links parts of a noun phrase, and it means only "an
 amount of".
 
 **9.3.2** The core verbs are a small, fixed set of verbs defined in this
 specification. Apart from being listed here, they are ordinary verbs. Each has
-the transitivity given in the table ([§9.2](#92-transitivity)).
+the transitivity given in the table (§9.2).
 
 | Word | Meaning | Role it expresses | Transitivity |
 |---|---|---|---|
@@ -1135,9 +1107,9 @@ the transitivity given in the table ([§9.2](#92-transitivity)).
 | `kum` | come from | source ("from the house"); with no object, "come" | ambitransitive |
 | `pon` | be at | location and time ("in the house", "at noon") | transitive |
 | `wid` | be with | accompaniment ("with them") | transitive |
-| `pas` | pass, exceed | comparison ("more than"), [§14](#14-comparison) | transitive |
-| `siem` | equal | comparison ("as … as"), [§14](#14-comparison) | transitive |
-| `abi` | exist | existence ("there is"), [§12.3](#123-existence-abi) | intransitive |
+| `pas` | pass, exceed | comparison ("more than"), §14 | transitive |
+| `siem` | equal | comparison ("as … as"), §14 | transitive |
+| `abi` | exist | existence ("there is"), §12.3 | intransitive |
 
 ```
 mi  tek  naif   kot  bared.
@@ -1178,15 +1150,15 @@ is no equivalent of English "that", "who" or "which" introducing a clause.
 expressed in one of two ways:
 
 - **Serial verbs.** Use these when the two actions share a subject: "I want to
-  eat fish", or "I went to buy food". See [§13](#13-serial-verbs).
+  eat fish", or "I went to buy food". See §13.
 - **Separate clauses.** Use these for everything else. The second clause refers
   back with a pronoun, a demonstrative, or a repeated noun.
 
 | English | Chatom approach |
 |---|---|
-| "I know *that you ate fish*." | "You ate fish. I know that." (see [§18](#18-reported-speech-and-thought)) |
+| "I know *that you ate fish*." | "You ate fish. I know that." (see §18) |
 | "The dog *that ate the fish* is sick." | "A dog ate fish. That dog is sick." |
-| "I slept *because you ate*." | "I slept `kaz` you ate." (see [§17](#17-sentences-with-several-clauses)) |
+| "I slept *because you ate*." | "I slept `kaz` you ate." (see §17) |
 
 ```
 dag  bin  niam  fish.   dea   dag  bi   sik.
@@ -1201,7 +1173,7 @@ its own is not a sentence: not as an answer, not as an exclamation, and not to
 call someone by name.
 
 **9.5.2** The only exceptions are the answers `ie.` ("yes") and `no.` ("no"),
-which may stand alone ([§15.3](#153-answering-yesno-questions)).
+which may stand alone (§15.3).
 
 **9.5.3** Chatom has no vocative (a way of calling someone by name, as in
 "Sara, look!"). Who is being spoken to is understood from context.
@@ -1213,8 +1185,8 @@ which may stand alone ([§15.3](#153-answering-yesno-questions)).
 **10.1** Tense (when something happens), aspect (how it unfolds over time) and
 modality (ability, necessity and possibility) are shown by function words
 placed directly before the first verb of the clause. Leaving out a tense or
-aspect marker has a fixed meaning of its own ([§10.2](#102-tense-and-aspect)).
-Modals are optional ([§10.3](#103-modals)).
+aspect marker has a fixed meaning of its own (§10.2).
+Modals are optional (§10.3).
 
 ### 10.2 Tense and aspect
 
@@ -1231,7 +1203,7 @@ means past or future, whatever the context: not because of an earlier sentence
 or clause, and not because of a time phrase such as `pon dea taim`. Every
 clause about the past must use `bin`, and every clause about the future must
 use `fina`. This includes a clause after a linking word
-([§17](#17-sentences-with-several-clauses)), and a future event that English
+(§17), and a future event that English
 would put in the present:
 
 ```
@@ -1241,7 +1213,7 @@ I   FUT   sleep   if  you  FUT   eat   fish
 "I will sleep if you eat fish."
 
 **10.2.2** Tense is counted from the moment of speaking or writing. A quoted
-sentence ([§18](#18-reported-speech-and-thought)) keeps its speaker's own
+sentence (§18) keeps its speaker's own
 words, so its tense is counted from the moment that speaker spoke.
 
 **10.2.3 Aspect.** A verb without `am` is never progressive. It presents the
@@ -1265,7 +1237,7 @@ dog  PROG  COP  sick
 "The dog is sick at the moment."
 
 **10.2.5** Commands never take a tense or aspect marker
-([§16.3](#16-commands)), so 10.2.1 and 10.2.3 do not apply to them.
+(§16.3), so 10.2.1 and 10.2.3 do not apply to them.
 
 **10.2.6** One tense marker may combine with `am`:
 
@@ -1292,7 +1264,7 @@ they cannot appear later in a serial verb chain.
 
 **10.3.4** "Want", "try", "start" and "stop" are **not** modals. They are
 ordinary verbs, used as the first verb of a serial chain
-([§13.4](#13-serial-verbs)).
+(§13.4).
 
 ### 10.4 Order before the verb
 
@@ -1303,7 +1275,7 @@ may appear at most once.
 **modal** → **verb**
 
 **10.4.2** All of these apply to the whole verb chain
-([§13.3](#13-serial-verbs)).
+(§13.3).
 
 ```
 mi  bin  niam  fish.
@@ -1340,7 +1312,7 @@ they  might  sleep
 ## 11. Negation
 
 **11.1** The negation word is `no`. It comes before the verb, and before any
-tense, aspect or modal word (see [§10.4](#104-order-before-the-verb)).
+tense, aspect or modal word (see §10.4).
 
 ```
 mi  no   niam  fish.
@@ -1349,7 +1321,7 @@ I   NEG  eat   fish
 "I don't eat fish."
 
 **11.2** In a serial verb chain, `no` comes before the first verb and negates the
-whole chain (see [§13.3](#13-serial-verbs)).
+whole chain (see §13.3).
 
 **11.3 Negation with a modal.** Because `no` always comes first, it negates the
 modal itself:
@@ -1362,8 +1334,8 @@ you  NEG  must  eat            you  NEG  can   eat
 
 There is no separate way to say "must not". Use `no kian` ("may not").
 
-**11.4** `no` is also the answer "no" ([§15.3](#153-answering-yesno-questions))
-and the question marker ([§15.1](#151-yesno-questions)). Its position always
+**11.4** `no` is also the answer "no" (§15.3)
+and the question marker (§15.1). Its position always
 makes clear which use is meant.
 
 ---
@@ -1377,13 +1349,13 @@ as" or "is a kind of". `bi` is a function word, not a verb, but it acts like
 one: it fills the verb slot, may take negation, tense, aspect and a modal, and
 may appear in a serial verb chain. Wherever this specification speaks of the
 verb of a clause or the verbs of a chain, `bi` is included. Rules about a
-verb's transitivity ([§9.2](#92-transitivity)) and about prefixes
-([§20.5.1](#20-making-new-words)) do not apply to it.
+verb's transitivity (§9.2) and about prefixes
+(§20.5.1) do not apply to it.
 
-**12.1.2** `bi` has no transitivity of its own ([§9.2](#92-transitivity)). It
+**12.1.2** `bi` has no transitivity of its own (§9.2). It
 must always be followed by a noun phrase or by one or more adjectives
-([§12.2](#122-adjectives-after-bi)). A bare `bi` is ungrammatical. To say that
-something exists, use `abi` ([§12.3](#123-existence-abi)).
+(§12.2). A bare `bi` is ungrammatical. To say that
+something exists, use `abi` (§12.3).
 
 ```
 mi  bi   pasin.
@@ -1405,7 +1377,7 @@ appear without a noun or a pronoun after it.
 
 **12.2.2** `bi` may be followed by one or more adjectives. Repeating an adjective
 intensifies it, just as in a noun phrase
-([§8.4.3](#84-adjectives)).
+(§8.4.3).
 
 ```
 dag  bi   big.
@@ -1442,7 +1414,7 @@ is meant.
 ### 12.3 Existence: `abi`
 
 **12.3.1** The core verb `abi` means "exist". It is how Chatom says "there is" or
-"there are". `abi` is intransitive ([§9.2](#92-transitivity)), so it never
+"there are". `abi` is intransitive (§9.2), so it never
 takes an object.
 
 ```
@@ -1488,15 +1460,15 @@ I   PST  take  knife  cut  bread
 
 **13.4 Want, try, start, stop.** Verbs such as "want", "try", "start" and
 "stop" are ordinary dictionary verbs, and they must not be transitive
-([§9.2](#92-transitivity)). With no object of their own, they come first in a
+(§9.2). With no object of their own, they come first in a
 chain, and the verbs after them say what is wanted, tried, started
 or stopped. Because they are verbs, not modals, several may be combined, and a
 modal may come before them: "I can start eating fish" is *I · can · start ·
 eat · fish*.
 
-**13.5** Serial verbs replace prepositions ([§9.3](#93-no-prepositions)) and
+**13.5** Serial verbs replace prepositions (§9.3) and
 replace embedded clauses that share their subject with the main clause
-([§9.4](#94-no-embedded-clauses)).
+(§9.4).
 
 **13.6 Place and time.** The place or time of an action is given with `pon`
 ("be at"), usually at the end of the chain:
@@ -1514,7 +1486,7 @@ dog  sleeps  be-at  DIST  time
 "The dog sleeps then."
 
 **13.7** The parser always knows where each verb's object ends, because the
-class of every word is known ([§6.3](#63-identifying-a-words-class)): a noun
+class of every word is known (§6.3): a noun
 phrase ends when the next word cannot continue it.
 
 ---
@@ -1581,7 +1553,7 @@ you  NEG  eat   fish  Q
 ```
 "Don't you eat fish?"
 
-**15.1.4** In a sentence with several clauses ([§17](#17-sentences-with-several-clauses)),
+**15.1.4** In a sentence with several clauses (§17),
 a final `no` makes the **whole sentence** a question. To ask about only one
 clause, make that clause its own sentence.
 
@@ -1642,7 +1614,7 @@ you  cut  bread  use  which  way
 "How do you cut bread?"
 
 **15.2.5** "How many" and "how much" use `wa moch` ("which amount") as the
-unit of an amount phrase ([§8.12](#812-amounts)):
+unit of an amount phrase (§8.12):
 
 ```
 iu   bin  niam  wa     moch    a     fish  dem?
@@ -1659,7 +1631,7 @@ you  PST  drink  which  amount  MEAS  water
 **15.2.6** A question-word question does not end in `no`.
 
 **15.2.7** An answer to a question-word question must be a full clause
-([§9.5](#95-every-sentence-is-a-clause)):
+(§9.5):
 
 ```
 iu   niam  wa     tin?       mi  niam  fish.
@@ -1680,7 +1652,7 @@ you  eat   fish  Q          yes
 
 ### 15.4 Questions and commands
 
-**15.4.1** A sentence that contains a command ([§16](#16-commands)) cannot be a
+**15.4.1** A sentence that contains a command (§16) cannot be a
 question. It may not end in the question marker `no`, and it may not contain
 `wa`.
 
@@ -1779,13 +1751,13 @@ mean "I eat fish and see the cat". Give each clause its own subject instead:
 `mi niam fish an mi luk kiat.`
 
 **17.7** Separate sentences need no linking word. Later sentences may refer
-back with pronouns, a repeated noun, or a standalone `dea` ([§8.9](#89-noun-phrases-with-no-head-noun)).
+back with pronouns, a repeated noun, or a standalone `dea` (§8.9).
 
 ---
 
 ## 18. Reported speech and thought
 
-**18.1** Because there are no embedded clauses ([§9.4](#94-no-embedded-clauses)),
+**18.1** Because there are no embedded clauses (§9.4),
 verbs of saying, thinking and knowing take a standalone demonstrative as their
 object, and the content is given in a separate sentence:
 
@@ -1808,7 +1780,7 @@ you  PST  eat   fish    I   know  DIST
 sentence keeps the speaker's own words.
 
 **18.3** Quotation marks around the reported sentence are optional
-([§5.2.4](#52-punctuation)).
+(§5.2.4).
 
 ---
 
@@ -1839,7 +1811,7 @@ which is `ziro` on its own.
 
 **19.1.4** Number words are function words. In a noun phrase they fill the
 number slot, after any determiner and before the adjectives
-([§8.2](#82-order-of-a-noun-phrase)).
+(§8.2).
 
 ```
 tu   tiri   dag  dem
@@ -1849,7 +1821,7 @@ two  three  dog  PL
 
 ### 19.2 Writing numbers as digits
 
-Numbers may be written with digits ([§5.2.5](#52-punctuation)): `23 dag dem`
+Numbers may be written with digits (§5.2.5): `23 dag dem`
 is read `tu tiri dag dem`.
 
 ### 19.3 Quantifiers
@@ -1878,7 +1850,7 @@ many  fish  PL         every  dog
 `notin dag` means "no dog".
 
 **19.3.4** A quantifier may stand alone as a complete noun phrase
-([§8.9](#89-noun-phrases-with-no-head-noun)):
+(§8.9):
 
 ```
 al   bin  niam  fish.
@@ -1896,7 +1868,7 @@ all  PST  eat   fish
 **20.1** Chatom has **no compounding** (joining two roots into one word) and no
 general system of derivation. New concepts are either new dictionary words, or
 noun phrases built from a head and describing nouns
-([§8.3](#83-describing-nouns)).
+(§8.3).
 
 **20.2 Class-changing prefixes.** Chatom has exactly three prefixes. Each one
 turns a word of one class into a word of another class. Each prefix has two
@@ -1914,13 +1886,13 @@ di + niam  = diniam      me + big  = mebig      lai + dag  = laidag
 di + abi   = dizabi      me + eg   = mezeg      lai + eg   = laizeg
 ```
 
-**20.2.1** Because no root begins with `z` ([§3.2.2](#32-reserved-beginnings)),
+**20.2.1** Because no root begins with `z` (§3.2.2),
 a `z` straight after a prefix is always the linking `z`, never part of the
 root. `dizabi` can only be `diz` + `abi`.
 
 **20.2.2** The linking `z` keeps the root's vowels apart from the prefix's, so a
 prefix never creates a doubled vowel or three vowels in a row
-([§2.2](#22-vowel-glides)).
+(§2.2).
 
 **20.2.3** In this document, prefixes are named by the form used before a
 consonant: "the prefix `di-`" includes `diz-`.
@@ -1935,7 +1907,7 @@ the class of the root:
 | `lai-` | tending to do it: `laiseliep` "sleepy" | — | like it, typical of it: `laidag` "dog-like" |
 
 Because a `me-` verb has a meaning both with and without an object, every `me-`
-verb is ambitransitive ([§9.2](#92-transitivity)).
+verb is ambitransitive (§9.2).
 
 ```
 mi  mebig  dag.        dag  mebig.
@@ -1966,11 +1938,11 @@ prefixed describing noun:
   by 20.3. A prefixed word never has a special meaning of its own. A concept
   that needs a different meaning gets its own root word.
 - **20.5.6** No other word may begin with `di`, `me` or `lai`, and no root may
-  begin with `z` ([§3.2](#32-reserved-beginnings)), so a prefix and its
+  begin with `z` (§3.2), so a prefix and its
   root can always be told apart.
 - **20.5.7** Prefixed words are never listed in the dictionary. Their class
   comes from the prefix, their meaning from 20.3, and, for a `me-` verb, its
-  transitivity from [§9.2.2](#92-transitivity). Only the root is looked up.
+  transitivity from §9.2.2. Only the root is looked up.
 
 **20.6 Proper names.** A **name** refers to one particular person, place or
 thing, such as "Sarah", "New York" or the Chatom language. Chatom has two kinds
@@ -1981,35 +1953,35 @@ of name: **native names** and **foreign names**.
 - **20.6.1** A **native name** is a Chatom word, such as `chatom`, the name of
   this language. It is written in **lowercase**, like every other Chatom word.
 - **20.6.2** A native name is an ordinary noun in every way. It obeys every
-  rule for sounds, word shape, stress and writing ([§2](#2-sounds)–[§5](#5-writing)),
+  rule for sounds, word shape, stress and writing (§2–§5),
   and it is listed in the dictionary.
 - **20.6.3** Like any noun, a native name may be a head, a describing noun or a
   possessor, it may take `dem`, and it may take a prefix: `laichatom`
   "Chatom-like". Two native names next to each other are a describing noun
-  followed by a head ([§8.3](#83-describing-nouns)), never a single name.
+  followed by a head (§8.3), never a single name.
 
 **Foreign names**
 
 - **20.6.4** A **foreign name** is a name taken from another language. Any
   word that contains an uppercase letter, anywhere in it, is a foreign name
-  (unless it is a code span, [§5.3](#53-code-spans)),
+  (unless it is a code span, §5.3),
   and every foreign name must contain at least one. Every foreign name is a
   noun.
 - **20.6.5** A foreign name may be written exactly as in its source language
   (`Sarah`), or it may be **adapted**: respelled to suit Chatom sounds (`Sara`).
   Either way, it keeps an uppercase letter, and it is exempt from the rules for
-  sounds, word shape, stress and the alphabet ([§2](#2-sounds)–[§4](#4-stress),
-  [§5.1.5](#51-the-alphabet)). A foreign name written as in its source
+  sounds, word shape, stress and the alphabet (§2–§4,
+  §5.1.5). A foreign name written as in its source
   language is pronounced as in that language.
   > ⚠ **Not yet specified:** how an adapted foreign name is pronounced.
 - **20.6.6** A foreign name may contain any letter, digit or punctuation mark,
   except that it must not contain a quotation mark (`"`), a backtick
   (`` ` ``) or a comma (`,`), and it must not end in `.`, `?` or `!`. So a sentence's final mark
-  is never part of a name, and quotation marks ([§5.2.4](#52-punctuation)) and
-  code spans ([§5.3](#53-code-spans)) are never part of one.
+  is never part of a name, and quotation marks (§5.2.4) and
+  code spans (§5.3) are never part of one.
 - **20.6.7** Several foreign names directly next to each other form a single
   name: `New York` is one noun, not a describing noun followed by a head
-  ([§8.3](#83-describing-nouns)). A consequence is that a foreign name can
+  (§8.3). A consequence is that a foreign name can
   never be a describing noun directly before another foreign name.
 - **20.6.8** A lowercase word is never part of a foreign name. A foreign name
   with a lowercase part may join it to its neighbours with hyphens, making one
@@ -2064,12 +2036,12 @@ Politeness is expressed through fixed phrases and through the choice of modal
 
 These small parts of the language are still open:
 
-- **Ordinals, fractions and decimals** ([§19](#19-numbers-and-quantifiers)).
-- **Zero and plurality.** Whether `ziro` takes `dem` ([§19](#19-numbers-and-quantifiers)).
+- **Ordinals, fractions and decimals** (§19).
+- **Zero and plurality.** Whether `ziro` takes `dem` (§19).
 - **More fixed phrases.** Whether more fixed phrases are listed
-  ([§21](#21-fixed-phrases)).
+  (§21).
 - **Adapted foreign names.** How an adapted foreign name is pronounced
-  ([§20.6](#20-making-new-words)).
+  (§20.6).
 
 ---
 
@@ -2077,35 +2049,35 @@ These small parts of the language are still open:
 
 A.1 lists every function word. A.2 and A.3 list the general nouns and core
 verbs, which are ordinary nouns and verbs, not function words
-([§6.1.3](#61-open-and-closed-classes)).
+(§6.1.3).
 
 ### A.1 Function words
 
 | Word | Meaning | Section |
 |---|---|---|
-| `mi` | I, me | [§7](#7-pronouns) |
-| `iu` | you (one person) | [§7](#7-pronouns) |
-| `dei` | they (one person), it; linking pronoun in possession | [§7](#7-pronouns), [§8.8.4](#88-possession) |
-| `sef` | reflexive: myself, yourself, themself, itself…; with `dem`, each other | [§7.7](#7-pronouns), [§7.9](#7-pronouns) |
-| `dem` | plural marker | [§8.5](#85-plural) |
-| `a` | measure link: an amount of | [§8.12](#812-amounts) |
-| `ia` | this (near); refers forward | [§8.6](#86-demonstratives-ia-and-dea) |
-| `dea` | that (far); refers back | [§8.6](#86-demonstratives-ia-and-dea) |
-| `wa` | which? (question word) | [§8.7](#87-the-question-word-wa) |
-| `bin` | past tense | [§10](#10-tense-aspect-and-modality) |
-| `fina` | future tense | [§10](#10-tense-aspect-and-modality) |
-| `am` | progressive aspect | [§10](#10-tense-aspect-and-modality) |
-| `kian` | can, may | [§10.3](#103-modals) |
-| `mos` | must | [§10.3](#103-modals) |
-| `shud` | should | [§10.3](#103-modals) |
-| `maita` | might | [§10.3](#103-modals) |
-| `no` | negation; yes/no question marker; the answer "no" | [§11](#11-negation), [§15](#15-questions) |
-| `ie` | the answer "yes" | [§15.3](#153-answering-yesno-questions) |
-| `bi` | copula ("is") | [§12](#12-the-copula-bi-and-existence) |
-| `an` `bot` `ou` `so` `kaz` `if` `wen` | linking words: and, but, or, so, because, if, when | [§17](#17-sentences-with-several-clauses) |
-| `al` `som` `nof` `fiu` `eri` `notin` | quantifiers: all, some, many, few, every, none | [§19.3](#193-quantifiers) |
-| `ziro` `wan` `tu` `tiri` `foa` `faiv` `sikis` `sefen` `eit` `nain` | digits 0–9 | [§19.1](#191-digit-words) |
-| `di-` `me-` `lai-` (`diz-` `mez-` `laiz-` before a vowel) | prefixes: make a noun, verb, adjective | [§20](#20-making-new-words) |
+| `mi` | I, me | §7 |
+| `iu` | you (one person) | §7 |
+| `dei` | they (one person), it; linking pronoun in possession | §7, §8.8.4 |
+| `sef` | reflexive: myself, yourself, themself, itself…; with `dem`, each other | §7.7, §7.9 |
+| `dem` | plural marker | §8.5 |
+| `a` | measure link: an amount of | §8.12 |
+| `ia` | this (near); refers forward | §8.6 |
+| `dea` | that (far); refers back | §8.6 |
+| `wa` | which? (question word) | §8.7 |
+| `bin` | past tense | §10 |
+| `fina` | future tense | §10 |
+| `am` | progressive aspect | §10 |
+| `kian` | can, may | §10.3 |
+| `mos` | must | §10.3 |
+| `shud` | should | §10.3 |
+| `maita` | might | §10.3 |
+| `no` | negation; yes/no question marker; the answer "no" | §11, §15 |
+| `ie` | the answer "yes" | §15.3 |
+| `bi` | copula ("is") | §12 |
+| `an` `bot` `ou` `so` `kaz` `if` `wen` | linking words: and, but, or, so, because, if, when | §17 |
+| `al` `som` `nof` `fiu` `eri` `notin` | quantifiers: all, some, many, few, every, none | §19.3 |
+| `ziro` `wan` `tu` `tiri` `foa` `faiv` `sikis` `sefen` `eit` `nain` | digits 0–9 | §19.1 |
+| `di-` `me-` `lai-` (`diz-` `mez-` `laiz-` before a vowel) | prefixes: make a noun, verb, adjective | §20 |
 
 ### A.2 General nouns
 
@@ -2140,8 +2112,8 @@ verbs, which are ordinary nouns and verbs, not function words
 
 These words are used in the examples in this document. They are **not** part of
 the specification: the real vocabulary belongs in the Chatom dictionary. Each
-word obeys the shape rules ([§3](#3-word-shape)). Each verb's transitivity
-([§9.2](#92-transitivity)) is chosen to fit the examples.
+word obeys the shape rules (§3). Each verb's transitivity
+(§9.2) is chosen to fit the examples.
 
 | Word | Class | Meaning | Transitivity |
 |---|---|---|---|
@@ -2224,69 +2196,69 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
 **Notes on the grammar:**
 
 - `noun`, `adjective` and the three kinds of verb are open-class words,
-  identified from the dictionary ([§6.3](#63-identifying-a-words-class)). They
+  identified from the dictionary (§6.3). They
   include the general nouns and the core verbs. Words built with prefixes are
   also nouns, adjectives or verbs, but they are not listed: the prefix gives
-  their class ([§20.5.7](#20-making-new-words)). The dictionary records each
-  listed verb's transitivity ([§9.2](#92-transitivity)), including the core
-  verbs' ([§9.3](#93-no-prepositions)), and every `me-` verb is ambitransitive.
+  their class (§20.5.7). The dictionary records each
+  listed verb's transitivity (§9.2), including the core
+  verbs' (§9.3), and every `me-` verb is ambitransitive.
 - A `noun` may also be a foreign name: a run of one or more adjacent words
   that each contain an uppercase letter, treated as a single word
-  ([§20.6](#20-making-new-words)). Native names are ordinary dictionary nouns.
+  (§20.6). Native names are ordinary dictionary nouns.
 - A `noun` may also be a code span: text between two single backticks, treated
-  as a single word whose contents are not Chatom ([§5.3](#53-code-spans)).
+  as a single word whose contents are not Chatom (§5.3).
   Adjacent code spans are separate nouns.
 - A `number` may also be written with the digits `0`–`9`, each digit standing
-  for its digit word ([§5.2.5](#52-punctuation)): `23` is `"tu" "tiri"`.
+  for its digit word (§5.2.5): `23` is `"tu" "tiri"`.
 - Quotation marks enclose whole sentences and are ignored by these rules
-  ([§5.2.4](#52-punctuation)).
-- Repeating an adjective ([§8.4.3](#84-adjectives)) is covered by `adjective*`
+  (§5.2.4).
+- Repeating an adjective (§8.4.3) is covered by `adjective*`
   and `adjective+`.
-- A sentence-final `"no"` is the question marker ([§15.1](#151-yesno-questions)).
+- A sentence-final `"no"` is the question marker (§15.1).
   A `"no"` at the start of a command, or before the tense, aspect, modal or verb
   of a statement, is negation.
 - In `nominal`, the head is always the last noun in the run; every one before
-  it is a describer ([§8.3.3](#83-describing-nouns)). A pronoun is never a
+  it is a describer (§8.3.3). A pronoun is never a
   describer, and a pronoun head never has describers.
 - A `possessor` (a pronoun, optionally followed by `"dem"`) before a
-  `nominal` in `base` is a possessor ([§8.8.1](#88-possession)). A `"dei"`
+  `nominal` in `base` is a possessor (§8.8.1). A `"dei"`
   `link` is a linking pronoun, and everything before it is the possessor of
   the `nominal` after it. An `"a"` `link` is the measure link: everything
   before it is the unit, and the `nominal` after it is the kind measured
-  ([§8.12](#812-amounts)).
-- `"sef" "dem"` is the reciprocal "each other" ([§7.9](#7-pronouns)).
+  (§8.12).
+- `"sef" "dem"` is the reciprocal "each other" (§7.9).
 - Possession and amounts nest to the left: in `A dei B dei C`, `A dei B` is the
-  possessor of `C` ([§8.8.7](#88-possession)), and in `A dei B a C`, `A dei B`
-  is the unit of `C` ([§8.12.8](#812-amounts)). A determiner belongs to the first
-  `nominal` ([§8.8.6](#88-possession)).
+  possessor of `C` (§8.8.7), and in `A dei B a C`, `A dei B`
+  is the unit of `C` (§8.12.8). A determiner belongs to the first
+  `nominal` (§8.8.6).
 - After `"bi"`, adjectives are a predicate (`adjective+`) only when no noun or
   pronoun follows them; otherwise they begin a noun phrase
-  ([§12.2.3](#122-adjectives-after-bi)).
+  (§12.2.3).
 - Constraints not shown by the rules above:
   - a `nominal` whose `count` is `"wan"` alone, `"eri"` or `"notin"` has no
-    `"dem"` after its head ([§8.5.3](#85-plural));
+    `"dem"` after its head (§8.5.3);
   - a `number` greater than one, or `"al"`, `"som"`, `"nof"` or `"fiu"`, as
     the `count` requires `"dem"` after the head, whether it is a noun or a
-    pronoun ([§8.5.2](#85-plural), [§8.10.2](#810-pronouns-in-noun-phrases),
-    [§19.3](#193-quantifiers));
+    pronoun (§8.5.2, §8.10.2,
+    §19.3);
   - `"sef"` never has a `count`, and `"sef" "dem"` appears only in a command
-    or in a clause whose subject is plural ([§7.9](#7-pronouns),
-    [§8.10.4](#810-pronouns-in-noun-phrases));
+    or in a clause whose subject is plural (§7.9,
+    §8.10.4);
   - `"sef"` and `"sef" "dem"` never appear anywhere inside the subject
-    `noun-phrase` of their own `statement` ([§7.7.1](#7-pronouns));
+    `noun-phrase` of their own `statement` (§7.7.1);
   - the `nominal` after a `determiner`, a `possessor` or a `link` has a
-    noun as its head ([§8.8](#88-possession),
-    [§8.10.1](#810-pronouns-in-noun-phrases));
+    noun as its head (§8.8,
+    §8.10.1);
   - the phrase before a `link` does not have a pronoun as its head
-    ([§8.8.9](#88-possession));
+    (§8.8.9);
   - the phrase before an `"a"` is not a `standalone`, and the `nominal`
-    after an `"a"` has no `count` ([§8.12.6](#812-amounts),
-    [§8.12.7](#812-amounts));
+    after an `"a"` has no `count` (§8.12.6,
+    §8.12.7);
   - a number must not begin with `"ziro"` unless it is `"ziro"` alone
-    ([§19.1.3](#191-digit-words));
+    (§19.1.3);
   - a sentence containing a command must not contain `"wa"`
-    ([§15.4](#154-questions-and-commands));
+    (§15.4);
   - a sentence containing `"wa"` must not end in the question marker
-    `"no"` ([§15.2.6](#152-question-word-questions));
+    `"no"` (§15.2.6);
   - a sentence ends in `"?"` or `"?!"` exactly when it is a question
-    ([§5.2](#52-punctuation)).
+    (§5.2).
