@@ -584,8 +584,11 @@ big  big  big  dag      an extremely big dog
 
 ### 8.5 Plural
 
-**8.5.1** A noun with no plural marker is **singular**: `dag` means exactly one
-dog. This holds for every noun, including substances (§8.12.2).
+**8.5.1** A head with no plural marker is **singular**: `dag` means exactly one
+dog. This holds for every head noun, including substances (§8.12.2). It does
+not apply to the two kinds of noun that name a kind of thing, not an amount:
+describing nouns (§8.3), which never take `dem`, and the kind in an amount
+phrase (§8.12.7).
 
 **8.5.2** The plural marker `dem` comes directly after the head, like the
 English "-s". In Chatom, **plural** means any amount other than exactly one,
@@ -832,10 +835,11 @@ take adjectives.
 
 **8.12.1 Every noun can be counted.** Chatom has no **mass nouns** (nouns like
 English "water" or "sand" that cannot take a number). Every noun may take a
-number, a quantifier and `dem`, including words for substances, ideas and
-actions, such as `wata` ("water"), `airi` ("peace") and `diniam` ("eating").
+number, a quantifier and `dem` when it is a head, including words for
+substances, ideas and actions, such as `wata` ("water"), `airi` ("peace") and
+`diniam` ("eating").
 
-**8.12.2 One portion.** A noun with no `dem` always means exactly one
+**8.12.2 One portion.** A head noun with no `dem` always means exactly one
 (§8.5.1). For a substance or an idea, "one" means one portion, serving or
 instance, and the reader works out how much from context.
 
@@ -914,8 +918,7 @@ not take a determiner, a possessor, a number or a quantifier. A bare kind means
 the substance in general, and a kind with `dem` means separate items:
 `kop a wata` "a cup of water", `kop a eg dem` "a cup of eggs". The unit carries
 the count, as in `tiri kop dem a wata` "three cups of water", so the kind's
-`dem` never shows an amount. This is the only place where a noun without `dem`
-does not mean exactly one.
+`dem` never shows an amount.
 
 **8.12.8 Chains.** Links nest to the left, as in possession chains (§8.8.7).
 Each `dei` or `a` applies to everything before it.
@@ -1461,8 +1464,8 @@ you  PST  drink  which  amount  MEAS  water
 **15.2.7** An answer to a question-word question must be a full clause (§9.5):
 
 ```
-iu   niam  wa     tin?       mi  niam  fish  dem.
-you  eat   which  thing      I   eat   fish  PL
+iu   niam  wa     tin    dem?      mi  niam  fish  dem.
+you  eat   which  thing  PL        I   eat   fish  PL
 ```
 "What do you eat?" "I eat fish."
 
