@@ -488,8 +488,8 @@ they  PL   see  self  PL            they  PL   see  self
 
 **7.9.1** `sef dem` may be used only when the subject of its clause is plural:
 its head must be followed by `dem`, or it must be a standalone `al`, `som`,
-`nof` or `fiu` (§8.9). It may also be used in a command (§16), which then
-speaks to more than one person. `dag luk sef dem.` and
+`nof`, `fiu` or `notin` (§8.9). It may also be used in a command (§16), which
+then speaks to more than one person. `dag luk sef dem.` and
 `eri dag luk sef dem.` are ungrammatical.
 
 **7.9.2** `sef dem` may be a possessor, meaning "each other's" (§8.8.3).
@@ -588,20 +588,22 @@ big  big  big  dag      an extremely big dog
 dog. This holds for every noun, including substances (§8.12.2).
 
 **8.5.2** The plural marker `dem` comes directly after the head, like the
-English "-s". It must be used whenever there is more than one, even when a
-number makes the amount obvious. This applies to nouns, to pronouns (§7.5,
-§8.10.2) and to possessors (§8.8.5).
+English "-s". In Chatom, **plural** means any amount other than exactly one,
+including zero and none. `dem` must be used whenever the amount is plural, even
+when a number makes the amount obvious. This applies to nouns, to pronouns
+(§7.5, §8.10.2) and to possessors (§8.8.5).
 
 ```
-dag  dem          tu   dag  dem
-dog  PL           two  dog  PL
+dag  dem          tu   dag  dem          ziro  dag  dem
+dog  PL           two  dog  PL           zero  dog  PL
 ```
-"dogs" / "two dogs"
+"dogs" / "two dogs" / "zero dogs"
 
-**8.5.3** The number one (`wan` on its own) and the quantifiers `eri`
-("every") and `notin` ("none") take a singular head, which never takes `dem`
-(§19.3): `wan dag` "one dog" and `eri dag` "every dog", never `wan dag dem` or
-`eri dag dem`. A longer number that begins with `wan`, such as `wan ziro` (10),
+**8.5.3** The number one (`wan` on its own) and the quantifier `eri`
+("every") take a singular head, which never takes `dem` (§19.3): `wan dag`
+"one dog" and `eri dag` "every dog", never `wan dag dem` or `eri dag dem`.
+`eri dag` means each single dog, taken one at a time, so its head still means
+exactly one. A longer number that begins with `wan`, such as `wan ziro` (10),
 is plural as usual.
 
 ### 8.6 Demonstratives: `ia` and `dea`
@@ -788,9 +790,9 @@ two  I   PL         all  they  PL         tired  I
 ```
 "we two" / "all of them" / "tired me"
 
-**8.10.2** A number or quantifier meaning more than one needs `dem` after a
-pronoun, as after a noun (§8.5.2): "we two" is `tu mi dem`, and `tu mi` is
-ungrammatical.
+**8.10.2** A pronoun head takes `dem` exactly as a noun does (§8.5.2,
+§8.5.3): "we two" is `tu mi dem`, and "none of you" is `notin iu dem`. `tu mi`
+and `notin iu` are ungrammatical.
 
 **8.10.3** A pronoun is never a describing noun (§7.8): `mi buk` means "my
 book".
@@ -851,9 +853,8 @@ two  water  PL
 "two waters": two cups, two bottles or two of some other portion, as context
 shows.
 
-**8.12.3 Other amounts.** Any amount that is not exactly one portion takes
-`dem`, just as a plural count noun does. This includes general statements
-about a substance.
+**8.12.3 Other amounts.** Any other amount takes `dem`, just as a plural count
+noun does (§8.5.2). This includes general statements about a substance.
 
 ```
 mi  chug   wata   dem.
@@ -862,10 +863,10 @@ I   drink  water  PL
 "I drink water." (in general, or an amount larger than one portion)
 
 ```
-notin  wata   abi.
-none   water  exist
+notin  wata   dem  abi.
+none   water  PL   exist
 ```
-"There is no water." `notin` takes a singular noun (§8.5.3).
+"There is no water."
 
 **8.12.4 Units.** To state the unit, put the unit first, then the **measure
 link** `a`, then the kind of thing being measured. This is called an **amount
@@ -911,8 +912,10 @@ PROX  big  cup  MEAS  water
 **8.12.7 The kind.** The kind says *what* is measured, not how many. It must
 not take a determiner, a possessor, a number or a quantifier. A bare kind means
 the substance in general, and a kind with `dem` means separate items:
-`kop a wata` "a cup of water", `kop a eg dem` "a cup of eggs". This is the only
-place where a noun without `dem` does not mean exactly one.
+`kop a wata` "a cup of water", `kop a eg dem` "a cup of eggs". The unit carries
+the count, as in `tiri kop dem a wata` "three cups of water", so the kind's
+`dem` never shows an amount. This is the only place where a noun without `dem`
+does not mean exactly one.
 
 **8.12.8 Chains.** Links nest to the left, as in possession chains (§8.8.7).
 Each `dei` or `a` applies to everything before it.
@@ -1644,7 +1647,7 @@ noun phrase.
 | `nof` | many | yes |
 | `fiu` | few | yes |
 | `eri` | every | no: singular noun |
-| `notin` | none, no | no: singular noun |
+| `notin` | none, no | yes |
 
 ```
 nof   fish  dem        eri    dag
@@ -1655,7 +1658,7 @@ many  fish  PL         every  dog
 **19.3.2** A noun phrase may contain a number **or** a quantifier, but not both.
 
 **19.3.3** `notin` ("none") is a different word from `no` (negation).
-`notin dag` means "no dog".
+`notin dag dem` means "no dog" or "no dogs".
 
 **19.3.4** A quantifier may stand alone as a complete noun phrase (§8.9):
 
@@ -1665,8 +1668,8 @@ all  PST  eat   fish  PL
 ```
 "Everyone ate fish."
 
-> ⚠ **Not yet specified:** ordinal numbers ("first", "second"), fractions,
-> decimals, and whether a noun counted with `ziro` takes `dem`. See §22.
+> ⚠ **Not yet specified:** ordinal numbers ("first", "second"), fractions and
+> decimals. See §22.
 
 ---
 
@@ -1837,8 +1840,8 @@ modal (for example `shud` instead of a bare command).
 
 These small parts of the language are still open:
 
-- **Ordinals, fractions and decimals** (§19).
-- **Zero and plurality.** Whether `ziro` takes `dem` (§19).
+- **Ordinals, fractions and decimals** (§19). A noun counted with a fraction
+  or decimal takes `dem` (§8.5.2). Only how they are formed is open.
 - **More fixed phrases.** Whether more fixed phrases are listed (§21).
 - **Adapted foreign names.** How an adapted foreign name is pronounced
   (§20.6).
@@ -2024,11 +2027,10 @@ digit         = "ziro" | "wan" | "tu" | "tiri" | "foa"
 - After `"bi"`, adjectives are a predicate (`adjective+`) only when no noun or
   pronoun follows them; otherwise they begin a noun phrase (§12.2.3).
 - Constraints not shown by the rules above:
-  - a `nominal` whose `count` is `"wan"` alone, `"eri"` or `"notin"` has no
-    `"dem"` (§8.5.3);
-  - a `nominal` whose `count` is a `number` above one, `"al"`, `"som"`,
-    `"nof"` or `"fiu"` has `"dem"`, whether its head is a noun or a pronoun
-    (§8.5.2, §8.10.2, §19.3);
+  - a `nominal` whose `count` is `"wan"` alone or `"eri"` has no `"dem"`
+    (§8.5.3);
+  - a `nominal` with any other `count` has `"dem"`, whether its head is a
+    noun or a pronoun (§8.5.2, §8.10.2, §19.3);
   - `"sef"` never has a `count`, and `"sef" "dem"` appears only in a command
     or a clause with a plural subject (§7.9, §8.10.4);
   - `"sef"` and `"sef" "dem"` never appear inside the subject `noun-phrase`

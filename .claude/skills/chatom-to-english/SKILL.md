@@ -66,9 +66,8 @@ If a sentence breaks a rule, list each violation with its § reference, then
 still give a best-effort translation, clearly marked
 **(best effort: ungrammatical)**.
 
-If a sentence touches an open item (§22), such as a noun counted with `ziro`,
-an ordinal or a fraction, say that the spec
-leaves it unspecified. Translate only what the grammar does specify, and don't
+If a sentence touches an open item (§22), such as an ordinal or a fraction, say
+that the spec leaves it unspecified. Translate only what the grammar does specify, and don't
 decide the open item.
 
 ### 3. Parse and gloss
