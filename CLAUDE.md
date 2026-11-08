@@ -37,7 +37,7 @@ After any edit to the spec, check every item:
    renumbering.
 3. Every new word (in examples or vocabulary) obeys the word-shape rules (§3)
    and the reserved beginnings (§3.2), and is not spelled like an
-   existing function word (§6.3.3).
+   existing function word (§6.3.2).
 4. Every new example uses the three-line format (§1.2) and parses under
    Appendix C.
 5. The change preserves both founding principles: every sentence has exactly

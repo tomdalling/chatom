@@ -33,7 +33,7 @@ memory.
 
 ### 1. Identify every word
 
-Classify each word as §6.3.2 does:
+Classify each word as §6.3.1 does:
 
 1. Text between single backticks is a **code span** (a noun, §5.3). Its
    contents are not Chatom: never translate, classify or check anything inside

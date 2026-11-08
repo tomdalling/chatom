@@ -402,10 +402,7 @@ fixed phrases built from ordinary sentences (§21).
 
 ### 6.3 Identifying a word's class
 
-**6.3.1** Apart from code spans and foreign names, a word's form says nothing
-about its class. Any word may begin with any sound.
-
-**6.3.2** To find the class of a word:
+**6.3.1** To find the class of a word:
 
 1. If it is a code span (text between backticks), it is a noun (§5.3).
 2. If it contains an uppercase letter, it is a foreign name, which is a noun
@@ -415,7 +412,7 @@ about its class. Any word may begin with any sound.
    gives its class (§20).
 5. Otherwise, look it up in the dictionary. Native names are found here.
 
-**6.3.3** No noun, verb or adjective may be spelled the same as a function word.
+**6.3.2** No noun, verb or adjective may be spelled the same as a function word.
 
 ---
 
